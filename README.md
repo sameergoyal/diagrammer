@@ -1,9 +1,9 @@
 # Diagrammer
 [![Build Status](https://travis-ci.com/sameergoyal/diagrammer.svg?branch=master)](https://travis-ci.com/sameergoyal/diagrammer)
-[![NPM Version](https://img.shields.io/npm/v/diagram-maker)](https://npmjs.org/package/diagram-maker)
-[![License](https://img.shields.io/npm/l/diagram-maker)](https://github.com/sameergoyal/diagrammer/blob/master/LICENSE)
-[![Bundle Size](https://img.shields.io/bundlephobia/minzip/diagram-maker)](https://bundlephobia.com/result?p=diagram-maker)
-[![Downloads](https://img.shields.io/npm/dw/diagram-maker)](https://npmjs.org/package/diagram-maker)
+[![NPM Version](https://img.shields.io/npm/v/diagrammer)](https://npmjs.org/package/diagrammer)
+[![License](https://img.shields.io/npm/l/diagrammer)](https://github.com/sameergoyal/diagrammer/blob/master/LICENSE)
+[![Bundle Size](https://img.shields.io/bundlephobia/minzip/diagrammer)](https://bundlephobia.com/result?p=diagrammer)
+[![Downloads](https://img.shields.io/npm/dw/diagrammer)](https://npmjs.org/package/diagrammer)
 [![Github Stars](https://img.shields.io/github/stars/sameergoyal/diagrammer?style=social)](https://github.com/sameergoyal/diagrammer)
 
 [Diagrammer](https://sameergoyal.github.io/diagrammer) is a library to display an interactive editor for any graph-like data.
