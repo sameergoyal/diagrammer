@@ -11,7 +11,7 @@ storybook
 .eslintrc
 .gitignore
 .npmignore
-.travis.yml
+.github
 cypress.json
 jest.json
 tsconfig.json

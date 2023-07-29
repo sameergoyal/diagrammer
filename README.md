@@ -1,5 +1,5 @@
 # Diagrammer
-[![Build Status](https://travis-ci.com/sameergoyal/diagrammer.svg?branch=master)](https://travis-ci.com/sameergoyal/diagrammer)
+[![Build Status](https://github.com/sameergoyal/diagrammer/actions/workflows/build-test.yml/badge.svg?branch=master)](https://github.com/sameergoyal/diagrammer/actions/workflows/build-test.yml)
 [![NPM Version](https://img.shields.io/npm/v/diagrammer)](https://npmjs.org/package/diagrammer)
 [![License](https://img.shields.io/npm/l/diagrammer)](https://github.com/sameergoyal/diagrammer/blob/master/LICENSE)
 [![Bundle Size](https://img.shields.io/bundlephobia/minzip/diagrammer)](https://bundlephobia.com/result?p=diagrammer)
