@@ -42,6 +42,8 @@ jobs:
       - name: Build 👷‍
         run: npm run build
       - name: Build Documentation 📕
+        run: npm run build:integ
+      - name: Build TypeDoc Documentation 📕
         run: npm run documentation
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
