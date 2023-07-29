@@ -6,7 +6,7 @@
 [![Downloads](https://img.shields.io/npm/dw/diagrammer)](https://npmjs.org/package/diagrammer)
 [![Github Stars](https://img.shields.io/github/stars/sameergoyal/diagrammer?style=social)](https://github.com/sameergoyal/diagrammer)
 
-[Diagrammer](https://sameergoyal.github.io/diagrammer) is a library to display an interactive editor for any graph-like data.
+[Diagrammer](https://sameergoyal.github.io/diagrammer) is a library to display an interactive editor for any graph-like data. It was forked from [Diagram Maker](https://github.com/awslabs/diagram-maker).
 
 Following is a screenshot from one of the consumers of this library, [AWS IoT Events Console](https://console.aws.amazon.com/iotevents/home?region=us-east-1#/create/detectormodel) with Diagrammer in action.
 ![IoT Events Screenshot](storybook/assets/IoTEventsScreenshot.png)
@@ -44,10 +44,6 @@ Check out our full documentation [here](https://sameergoyal.github.io/diagrammer
 
 ## Typedoc generated documentation
 Check out the [typedoc](http://typedoc.org/) generated documentation [here](https://sameergoyal.github.io/diagrammer/typedoc/modules.html) to find out more information about any of our exported symbols.
-
-## Security
-
-See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
 
 ## License
 
