@@ -7,7 +7,7 @@ exports[`Panel renders at the given position and size 1`] = `
   data-id="myPanel"
   data-type="Diagrammer.Panel"
   style={
-    Object {
+    {
       "height": 600,
       "transform": "translate3d(400px, 600px, 0)",
       "width": 300,
@@ -28,7 +28,7 @@ exports[`Panel renders panel docked at bottom left with correct size 1`] = `
   data-id="myPanel"
   data-type="Diagrammer.Panel"
   style={
-    Object {
+    {
       "height": 600,
       "transform": "translate3d(0px, 200px, 0)",
       "width": 300,
@@ -49,7 +49,7 @@ exports[`Panel renders panel docked at bottom left with correct size and relativ
   data-id="myPanel"
   data-type="Diagrammer.Panel"
   style={
-    Object {
+    {
       "height": 600,
       "transform": "translate3d(100px, 100px, 0)",
       "width": 300,
@@ -70,7 +70,7 @@ exports[`Panel renders panel docked at bottom right with correct size 1`] = `
   data-id="myPanel"
   data-type="Diagrammer.Panel"
   style={
-    Object {
+    {
       "height": 600,
       "transform": "translate3d(900px, 200px, 0)",
       "width": 300,
@@ -91,7 +91,7 @@ exports[`Panel renders panel docked at bottom right with correct size and relati
   data-id="myPanel"
   data-type="Diagrammer.Panel"
   style={
-    Object {
+    {
       "height": 600,
       "transform": "translate3d(800px, 100px, 0)",
       "width": 300,
@@ -112,7 +112,7 @@ exports[`Panel renders panel docked at top left with correct size 1`] = `
   data-id="myPanel"
   data-type="Diagrammer.Panel"
   style={
-    Object {
+    {
       "height": 600,
       "transform": "translate3d(0px, 0px, 0)",
       "width": 300,
@@ -133,7 +133,7 @@ exports[`Panel renders panel docked at top left with correct size and relative p
   data-id="myPanel"
   data-type="Diagrammer.Panel"
   style={
-    Object {
+    {
       "height": 600,
       "transform": "translate3d(100px, 100px, 0)",
       "width": 300,
@@ -154,7 +154,7 @@ exports[`Panel renders panel docked at top right with correct size 1`] = `
   data-id="myPanel"
   data-type="Diagrammer.Panel"
   style={
-    Object {
+    {
       "height": 600,
       "transform": "translate3d(900px, 0px, 0)",
       "width": 300,
@@ -175,7 +175,7 @@ exports[`Panel renders panel docked at top right with correct size and relative 
   data-id="myPanel"
   data-type="Diagrammer.Panel"
   style={
-    Object {
+    {
       "height": 600,
       "transform": "translate3d(800px, 100px, 0)",
       "width": 300,

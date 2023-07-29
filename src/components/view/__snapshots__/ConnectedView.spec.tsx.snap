@@ -3,15 +3,18 @@
 exports[`ConnectedView connects View component to redux store 1`] = `
 <Provider
   value={
-    Object {
-      "store": Object {
+    {
+      "getServerState": undefined,
+      "noopCheck": "once",
+      "stabilityCheck": "once",
+      "store": {
         "@@observable": [Function],
         "dispatch": [Function],
         "getState": [Function],
         "replaceReducer": [Function],
         "subscribe": [Function],
       },
-      "subscription": Object {
+      "subscription": {
         "addNestedSub": [Function],
         "getListeners": [Function],
         "handleChangeWrapper": [Function],
@@ -26,7 +29,7 @@ exports[`ConnectedView connects View component to redux store 1`] = `
 >
   <Connect(View)
     configService={
-      Object {
+      {
         "mockConfigService": [MockFunction],
       }
     }

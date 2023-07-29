@@ -7,7 +7,7 @@ exports[`Connector renders at the given position with input data attributes 1`] 
   data-id="test"
   data-type="Diagrammer.Connector"
   style={
-    Object {
+    {
       "transform": "translate3d(150px, 300px, 0)",
     }
   }
@@ -25,7 +25,7 @@ exports[`Connector renders at the given position with output data attributes 1`]
   data-id="test"
   data-type="Diagrammer.Connector"
   style={
-    Object {
+    {
       "transform": "translate3d(150px, 300px, 0)",
     }
   }

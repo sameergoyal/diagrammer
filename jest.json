@@ -32,11 +32,10 @@
   ],
   "testEnvironment": "jsdom",
   "testMatch": ["**/?(*.)(spec|test).(ts|tsx)"],
-  "testURL": "http://console.aws.amazon.com#mock",
   "transform": {
     "\\.(ts|tsx|js|jsx)": "ts-jest"
   },
   "transformIgnorePatterns": [
-    "/node_modules/(?!lodash-es)"
+    "/node_modules/(?!(lodash-es|preact|uuid))"
   ]
 }

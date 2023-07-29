@@ -10,7 +10,7 @@ exports[`Edge passes show arrowhead 1`] = `
   <EdgeCurve
     className="dm-path-inner"
     dest={
-      Object {
+      {
         "x": 100,
         "y": 0,
       }
@@ -18,7 +18,7 @@ exports[`Edge passes show arrowhead 1`] = `
     edgeStyle={0}
     showArrowhead={true}
     src={
-      Object {
+      {
         "x": 0,
         "y": 100,
       }
@@ -27,7 +27,7 @@ exports[`Edge passes show arrowhead 1`] = `
   <EdgeCurve
     className="dm-path-outer"
     dest={
-      Object {
+      {
         "x": 100,
         "y": 0,
       }
@@ -35,7 +35,7 @@ exports[`Edge passes show arrowhead 1`] = `
     edgeStyle={0}
     showArrowhead={true}
     src={
-      Object {
+      {
         "x": 0,
         "y": 100,
       }
@@ -54,14 +54,14 @@ exports[`Edge renders selected class 1`] = `
   <EdgeCurve
     className="dm-path-inner"
     dest={
-      Object {
+      {
         "x": 100,
         "y": 0,
       }
     }
     edgeStyle={0}
     src={
-      Object {
+      {
         "x": 0,
         "y": 100,
       }
@@ -70,14 +70,14 @@ exports[`Edge renders selected class 1`] = `
   <EdgeCurve
     className="dm-path-outer"
     dest={
-      Object {
+      {
         "x": 100,
         "y": 0,
       }
     }
     edgeStyle={0}
     src={
-      Object {
+      {
         "x": 0,
         "y": 100,
       }
@@ -98,14 +98,14 @@ exports[`Edge renders source & dest types 1`] = `
   <EdgeCurve
     className="dm-path-inner"
     dest={
-      Object {
+      {
         "x": 100,
         "y": 0,
       }
     }
     edgeStyle={0}
     src={
-      Object {
+      {
         "x": 0,
         "y": 100,
       }
@@ -114,14 +114,14 @@ exports[`Edge renders source & dest types 1`] = `
   <EdgeCurve
     className="dm-path-outer"
     dest={
-      Object {
+      {
         "x": 100,
         "y": 0,
       }
     }
     edgeStyle={0}
     src={
-      Object {
+      {
         "x": 0,
         "y": 100,
       }
@@ -140,14 +140,14 @@ exports[`Edge renders the paths using props 1`] = `
   <EdgeCurve
     className="dm-path-inner"
     dest={
-      Object {
+      {
         "x": 100,
         "y": 0,
       }
     }
     edgeStyle={0}
     src={
-      Object {
+      {
         "x": 0,
         "y": 100,
       }
@@ -156,14 +156,14 @@ exports[`Edge renders the paths using props 1`] = `
   <EdgeCurve
     className="dm-path-outer"
     dest={
-      Object {
+      {
         "x": 100,
         "y": 0,
       }
     }
     edgeStyle={0}
     src={
-      Object {
+      {
         "x": 0,
         "y": 100,
       }

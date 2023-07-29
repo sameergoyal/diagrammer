@@ -8,7 +8,7 @@ exports[`PotentialEdge passes show arrowhead 1`] = `
   <EdgeCurve
     className="dm-path-inner"
     dest={
-      Object {
+      {
         "x": 100,
         "y": 0,
       }
@@ -16,7 +16,7 @@ exports[`PotentialEdge passes show arrowhead 1`] = `
     edgeStyle={0}
     showArrowhead={true}
     src={
-      Object {
+      {
         "x": 0,
         "y": 100,
       }
@@ -33,14 +33,14 @@ exports[`PotentialEdge renders the paths using props 1`] = `
   <EdgeCurve
     className="dm-path-inner"
     dest={
-      Object {
+      {
         "x": 100,
         "y": 0,
       }
     }
     edgeStyle={0}
     src={
-      Object {
+      {
         "x": 0,
         "y": 100,
       }

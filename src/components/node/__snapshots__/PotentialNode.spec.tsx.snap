@@ -7,7 +7,7 @@ exports[`PotentialNode renders at the given position and size 1`] = `
   data-id="mockPotentialNodeId"
   data-type="Diagrammer.PotentialNode"
   style={
-    Object {
+    {
       "height": 300,
       "transform": "translate3d(400px, 600px, 0)",
       "width": 200,

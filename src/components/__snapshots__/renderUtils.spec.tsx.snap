@@ -2,7 +2,7 @@
 
 exports[`renderUtils render renders view 1`] = `
 <Provider
-  store={Object {}}
+  store={{}}
 >
   <Connect(View)
     configService="someConfig"

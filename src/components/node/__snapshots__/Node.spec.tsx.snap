@@ -8,7 +8,7 @@ exports[`Node renders at the given position and size 1`] = `
   data-id="myNode"
   data-type="Diagrammer.Node"
   style={
-    Object {
+    {
       "height": 300,
       "transform": "translate3d(400px, 600px, 0)",
       "width": 200,
@@ -30,7 +30,7 @@ exports[`Node renders connectors on the left and right 1`] = `
   data-id="myNode"
   data-type="Diagrammer.Node"
   style={
-    Object {
+    {
       "height": 300,
       "transform": "translate3d(400px, 600px, 0)",
       "width": 200,
@@ -45,7 +45,7 @@ exports[`Node renders connectors on the left and right 1`] = `
     id="myNode"
     key="myNode-0"
     position={
-      Object {
+      {
         "x": 0,
         "y": 150,
       }
@@ -56,7 +56,7 @@ exports[`Node renders connectors on the left and right 1`] = `
     id="myNode"
     key="myNode-1"
     position={
-      Object {
+      {
         "x": 200,
         "y": 150,
       }
@@ -74,7 +74,7 @@ exports[`Node renders connectors on the top and bottom 1`] = `
   data-id="myNode"
   data-type="Diagrammer.Node"
   style={
-    Object {
+    {
       "height": 300,
       "transform": "translate3d(400px, 600px, 0)",
       "width": 200,
@@ -89,7 +89,7 @@ exports[`Node renders connectors on the top and bottom 1`] = `
     id="myNode"
     key="myNode-0"
     position={
-      Object {
+      {
         "x": 100,
         "y": 0,
       }
@@ -100,7 +100,7 @@ exports[`Node renders connectors on the top and bottom 1`] = `
     id="myNode"
     key="myNode-1"
     position={
-      Object {
+      {
         "x": 100,
         "y": 300,
       }
@@ -118,7 +118,7 @@ exports[`Node renders without any connectors 1`] = `
   data-id="myNode"
   data-type="Diagrammer.Node"
   style={
-    Object {
+    {
       "height": 300,
       "transform": "translate3d(400px, 600px, 0)",
       "width": 200,
@@ -140,7 +140,7 @@ exports[`Node visibleConnectorTypes renders connector only for input 1`] = `
   data-id="myNode"
   data-type="Diagrammer.Node"
   style={
-    Object {
+    {
       "height": 300,
       "transform": "translate3d(400px, 600px, 0)",
       "width": 200,
@@ -155,7 +155,7 @@ exports[`Node visibleConnectorTypes renders connector only for input 1`] = `
     id="myNode"
     key="myNode-0"
     position={
-      Object {
+      {
         "x": 0,
         "y": 150,
       }
@@ -173,7 +173,7 @@ exports[`Node visibleConnectorTypes renders connector only for output 1`] = `
   data-id="myNode"
   data-type="Diagrammer.Node"
   style={
-    Object {
+    {
       "height": 300,
       "transform": "translate3d(400px, 600px, 0)",
       "width": 200,
@@ -188,7 +188,7 @@ exports[`Node visibleConnectorTypes renders connector only for output 1`] = `
     id="myNode"
     key="myNode-1"
     position={
-      Object {
+      {
         "x": 200,
         "y": 150,
       }
@@ -206,7 +206,7 @@ exports[`Node visibleConnectorTypes renders input & output connectors 1`] = `
   data-id="myNode"
   data-type="Diagrammer.Node"
   style={
-    Object {
+    {
       "height": 300,
       "transform": "translate3d(400px, 600px, 0)",
       "width": 200,
@@ -221,7 +221,7 @@ exports[`Node visibleConnectorTypes renders input & output connectors 1`] = `
     id="myNode"
     key="myNode-0"
     position={
-      Object {
+      {
         "x": 0,
         "y": 150,
       }
@@ -232,7 +232,7 @@ exports[`Node visibleConnectorTypes renders input & output connectors 1`] = `
     id="myNode"
     key="myNode-1"
     position={
-      Object {
+      {
         "x": 200,
         "y": 150,
       }
@@ -250,7 +250,7 @@ exports[`Node visibleConnectorTypes renders no connectors 1`] = `
   data-id="myNode"
   data-type="Diagrammer.Node"
   style={
-    Object {
+    {
       "height": 300,
       "transform": "translate3d(400px, 600px, 0)",
       "width": 200,

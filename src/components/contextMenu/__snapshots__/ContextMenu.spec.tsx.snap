@@ -5,7 +5,7 @@ exports[`ContextMenu renders at the given position and size 1`] = `
   className="dm-context-menu"
   data-type="Diagrammer.ContextMenu"
   style={
-    Object {
+    {
       "transform": "translate3d(400px, 600px, 0)",
     }
   }

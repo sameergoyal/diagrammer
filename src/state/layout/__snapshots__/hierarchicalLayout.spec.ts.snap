@@ -1,191 +1,191 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`hierarchicalLayout applies gravity away from the mean of fixed angles 1`] = `
-Object {
-  "edges": Object {
-    "edge-0": Object {
+{
+  "edges": {
+    "edge-0": {
       "dest": "node-center",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-0",
       "src": "fixed-node-1",
     },
-    "edge-1": Object {
+    "edge-1": {
       "dest": "node-center",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-1",
       "src": "fixed-node-2",
     },
-    "edge-2": Object {
+    "edge-2": {
       "dest": "node-center",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-2",
       "src": "fixed-node-3",
     },
-    "edge-3": Object {
+    "edge-3": {
       "dest": "node-1",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-3",
       "src": "node-center",
     },
-    "edge-4": Object {
+    "edge-4": {
       "dest": "node-2",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-4",
       "src": "node-center",
     },
-    "edge-5": Object {
+    "edge-5": {
       "dest": "node-3",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-5",
       "src": "node-center",
     },
-    "edge-6": Object {
+    "edge-6": {
       "dest": "node-4",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-6",
       "src": "node-center",
     },
-    "edge-7": Object {
+    "edge-7": {
       "dest": "node-5",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-7",
       "src": "node-center",
     },
-    "edge-8": Object {
+    "edge-8": {
       "dest": "node-6",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-8",
       "src": "node-center",
     },
   },
-  "editor": Object {
+  "editor": {
     "mode": "Select",
   },
-  "nodes": Object {
-    "fixed-node-1": Object {
-      "diagrammerData": Object {
-        "position": Object {
+  "nodes": {
+    "fixed-node-1": {
+      "diagrammerData": {
+        "position": {
           "x": 300,
           "y": 400,
         },
-        "size": Object {
+        "size": {
           "height": 40,
           "width": 40,
         },
       },
       "id": "fixed-node-1",
     },
-    "fixed-node-2": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "fixed-node-2": {
+      "diagrammerData": {
+        "position": {
           "x": 500,
           "y": 400,
         },
-        "size": Object {
+        "size": {
           "height": 40,
           "width": 40,
         },
       },
       "id": "fixed-node-2",
     },
-    "fixed-node-3": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "fixed-node-3": {
+      "diagrammerData": {
+        "position": {
           "x": 500,
           "y": 300,
         },
-        "size": Object {
+        "size": {
           "height": 40,
           "width": 40,
         },
       },
       "id": "fixed-node-3",
     },
-    "node-1": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-1": {
+      "diagrammerData": {
+        "position": {
           "x": 388.7992051638202,
           "y": 451.71201591153357,
         },
-        "size": Object {
+        "size": {
           "height": 40,
           "width": 40,
         },
       },
       "id": "node-1",
     },
-    "node-2": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-2": {
+      "diagrammerData": {
+        "position": {
           "x": 352.4784351781109,
           "y": 418.4207529237788,
         },
-        "size": Object {
+        "size": {
           "height": 40,
           "width": 40,
         },
       },
       "id": "node-2",
     },
-    "node-3": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-3": {
+      "diagrammerData": {
+        "position": {
           "x": 337.3443337051914,
           "y": 365.2134115656732,
         },
-        "size": Object {
+        "size": {
           "height": 40,
           "width": 40,
         },
       },
       "id": "node-3",
     },
-    "node-4": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-4": {
+      "diagrammerData": {
+        "position": {
           "x": 346.12577836656243,
           "y": 326.53136603595465,
         },
-        "size": Object {
+        "size": {
           "height": 40,
           "width": 40,
         },
       },
       "id": "node-4",
     },
-    "node-5": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-5": {
+      "diagrammerData": {
+        "position": {
           "x": 376.80336318236294,
           "y": 289.0756718623055,
         },
-        "size": Object {
+        "size": {
           "height": 40,
           "width": 40,
         },
       },
       "id": "node-5",
     },
-    "node-6": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-6": {
+      "diagrammerData": {
+        "position": {
           "x": 515.8902785313585,
           "y": 317.6732916087034,
         },
-        "size": Object {
+        "size": {
           "height": 40,
           "width": 40,
         },
       },
       "id": "node-6",
     },
-    "node-center": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-center": {
+      "diagrammerData": {
+        "position": {
           "x": 433.3333333333333,
           "y": 366.6666666666667,
         },
-        "size": Object {
+        "size": {
           "height": 40,
           "width": 40,
         },
@@ -193,18 +193,18 @@ Object {
       "id": "node-center",
     },
   },
-  "panels": Object {},
-  "workspace": Object {
-    "canvasSize": Object {
+  "panels": {},
+  "workspace": {
+    "canvasSize": {
       "height": 1600,
       "width": 1600,
     },
-    "position": Object {
+    "position": {
       "x": 0,
       "y": 0,
     },
     "scale": 1,
-    "viewContainerSize": Object {
+    "viewContainerSize": {
       "height": 800,
       "width": 800,
     },
@@ -213,267 +213,267 @@ Object {
 `;
 
 exports[`hierarchicalLayout correctly lays out a tree with multiple fixed nodes 1`] = `
-Object {
-  "edges": Object {
-    "edge-0": Object {
+{
+  "edges": {
+    "edge-0": {
       "dest": "node-a",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-0",
       "src": "node-start",
     },
-    "edge-1": Object {
+    "edge-1": {
       "dest": "node-b",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-1",
       "src": "node-start",
     },
-    "edge-10": Object {
+    "edge-10": {
       "dest": "node-c-1",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-10",
       "src": "node-c",
     },
-    "edge-11": Object {
+    "edge-11": {
       "dest": "node-c-2",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-11",
       "src": "node-c",
     },
-    "edge-12": Object {
+    "edge-12": {
       "dest": "node-c-1-1",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-12",
       "src": "node-c-1",
     },
-    "edge-2": Object {
+    "edge-2": {
       "dest": "node-c",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-2",
       "src": "node-start",
     },
-    "edge-3": Object {
+    "edge-3": {
       "dest": "node-a-1",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-3",
       "src": "node-a",
     },
-    "edge-4": Object {
+    "edge-4": {
       "dest": "node-a-2",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-4",
       "src": "node-a",
     },
-    "edge-5": Object {
+    "edge-5": {
       "dest": "node-a-3",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-5",
       "src": "node-a",
     },
-    "edge-6": Object {
+    "edge-6": {
       "dest": "node-a-4",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-6",
       "src": "node-a",
     },
-    "edge-7": Object {
+    "edge-7": {
       "dest": "node-b-1",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-7",
       "src": "node-b",
     },
-    "edge-8": Object {
+    "edge-8": {
       "dest": "node-b-2",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-8",
       "src": "node-b",
     },
-    "edge-9": Object {
+    "edge-9": {
       "dest": "node-b-3",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-9",
       "src": "node-b",
     },
   },
-  "editor": Object {
+  "editor": {
     "mode": "Select",
   },
-  "nodes": Object {
-    "node-a": Object {
-      "diagrammerData": Object {
-        "position": Object {
+  "nodes": {
+    "node-a": {
+      "diagrammerData": {
+        "position": {
           "x": 300,
           "y": 400,
         },
-        "size": Object {
+        "size": {
           "height": 20,
           "width": 20,
         },
       },
       "id": "node-a",
     },
-    "node-a-1": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-a-1": {
+      "diagrammerData": {
+        "position": {
           "x": 327.8115294937453,
           "y": 485.5950864665638,
         },
-        "size": Object {
+        "size": {
           "height": 20,
           "width": 20,
         },
       },
       "id": "node-a-1",
     },
-    "node-a-2": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-a-2": {
+      "diagrammerData": {
+        "position": {
           "x": 227.18847050625476,
           "y": 452.9006727063226,
         },
-        "size": Object {
+        "size": {
           "height": 20,
           "width": 20,
         },
       },
       "id": "node-a-2",
     },
-    "node-a-3": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-a-3": {
+      "diagrammerData": {
+        "position": {
           "x": 227.18847050625473,
           "y": 347.09932729367745,
         },
-        "size": Object {
+        "size": {
           "height": 20,
           "width": 20,
         },
       },
       "id": "node-a-3",
     },
-    "node-a-4": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-a-4": {
+      "diagrammerData": {
+        "position": {
           "x": 327.81152949374524,
           "y": 314.4049135334362,
         },
-        "size": Object {
+        "size": {
           "height": 20,
           "width": 20,
         },
       },
       "id": "node-a-4",
     },
-    "node-b": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-b": {
+      "diagrammerData": {
+        "position": {
           "x": 500,
           "y": 400,
         },
-        "size": Object {
+        "size": {
           "height": 20,
           "width": 20,
         },
       },
       "id": "node-b",
     },
-    "node-b-1": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-b-1": {
+      "diagrammerData": {
+        "position": {
           "x": 590,
           "y": 400,
         },
-        "size": Object {
+        "size": {
           "height": 20,
           "width": 20,
         },
       },
       "id": "node-b-1",
     },
-    "node-b-2": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-b-2": {
+      "diagrammerData": {
+        "position": {
           "x": 500,
           "y": 490,
         },
-        "size": Object {
+        "size": {
           "height": 20,
           "width": 20,
         },
       },
       "id": "node-b-2",
     },
-    "node-b-3": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-b-3": {
+      "diagrammerData": {
+        "position": {
           "x": 500,
           "y": 310,
         },
-        "size": Object {
+        "size": {
           "height": 20,
           "width": 20,
         },
       },
       "id": "node-b-3",
     },
-    "node-c": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-c": {
+      "diagrammerData": {
+        "position": {
           "x": 490,
           "y": 100,
         },
-        "size": Object {
+        "size": {
           "height": 20,
           "width": 20,
         },
       },
       "id": "node-c",
     },
-    "node-c-1": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-c-1": {
+      "diagrammerData": {
+        "position": {
           "x": 400,
           "y": 100,
         },
-        "size": Object {
+        "size": {
           "height": 20,
           "width": 20,
         },
       },
       "id": "node-c-1",
     },
-    "node-c-1-1": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-c-1-1": {
+      "diagrammerData": {
+        "position": {
           "x": 310,
           "y": 100.00000000000001,
         },
-        "size": Object {
+        "size": {
           "height": 20,
           "width": 20,
         },
       },
       "id": "node-c-1-1",
     },
-    "node-c-2": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-c-2": {
+      "diagrammerData": {
+        "position": {
           "x": 547.7650908368364,
           "y": 57.02100186588763,
         },
-        "size": Object {
+        "size": {
           "height": 20,
           "width": 20,
         },
       },
       "id": "node-c-2",
     },
-    "node-start": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-start": {
+      "diagrammerData": {
+        "position": {
           "x": 400,
           "y": 400,
         },
-        "size": Object {
+        "size": {
           "height": 20,
           "width": 20,
         },
@@ -481,18 +481,18 @@ Object {
       "id": "node-start",
     },
   },
-  "panels": Object {},
-  "workspace": Object {
-    "canvasSize": Object {
+  "panels": {},
+  "workspace": {
+    "canvasSize": {
       "height": 1600,
       "width": 1600,
     },
-    "position": Object {
+    "position": {
       "x": 0,
       "y": 0,
     },
     "scale": 1,
-    "viewContainerSize": Object {
+    "viewContainerSize": {
       "height": 800,
       "width": 800,
     },
@@ -501,267 +501,267 @@ Object {
 `;
 
 exports[`hierarchicalLayout correctly lays out a tree with one fixed node 1`] = `
-Object {
-  "edges": Object {
-    "edge-0": Object {
+{
+  "edges": {
+    "edge-0": {
       "dest": "node-a",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-0",
       "src": "node-start",
     },
-    "edge-1": Object {
+    "edge-1": {
       "dest": "node-b",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-1",
       "src": "node-start",
     },
-    "edge-10": Object {
+    "edge-10": {
       "dest": "node-c-1",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-10",
       "src": "node-c",
     },
-    "edge-11": Object {
+    "edge-11": {
       "dest": "node-c-2",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-11",
       "src": "node-c",
     },
-    "edge-12": Object {
+    "edge-12": {
       "dest": "node-c-1-1",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-12",
       "src": "node-c-1",
     },
-    "edge-2": Object {
+    "edge-2": {
       "dest": "node-c",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-2",
       "src": "node-start",
     },
-    "edge-3": Object {
+    "edge-3": {
       "dest": "node-a-1",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-3",
       "src": "node-a",
     },
-    "edge-4": Object {
+    "edge-4": {
       "dest": "node-a-2",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-4",
       "src": "node-a",
     },
-    "edge-5": Object {
+    "edge-5": {
       "dest": "node-a-3",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-5",
       "src": "node-a",
     },
-    "edge-6": Object {
+    "edge-6": {
       "dest": "node-a-4",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-6",
       "src": "node-a",
     },
-    "edge-7": Object {
+    "edge-7": {
       "dest": "node-b-1",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-7",
       "src": "node-b",
     },
-    "edge-8": Object {
+    "edge-8": {
       "dest": "node-b-2",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-8",
       "src": "node-b",
     },
-    "edge-9": Object {
+    "edge-9": {
       "dest": "node-b-3",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-9",
       "src": "node-b",
     },
   },
-  "editor": Object {
+  "editor": {
     "mode": "Select",
   },
-  "nodes": Object {
-    "node-a": Object {
-      "diagrammerData": Object {
-        "position": Object {
+  "nodes": {
+    "node-a": {
+      "diagrammerData": {
+        "position": {
           "x": 400,
           "y": 650,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
       },
       "id": "node-a",
     },
-    "node-a-1": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-a-1": {
+      "diagrammerData": {
+        "position": {
           "x": 488.167787843871,
           "y": 771.3525491562422,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
       },
       "id": "node-a-1",
     },
-    "node-a-2": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-a-2": {
+      "diagrammerData": {
+        "position": {
           "x": 311.83221215612906,
           "y": 771.3525491562422,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
       },
       "id": "node-a-2",
     },
-    "node-a-3": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-a-3": {
+      "diagrammerData": {
+        "position": {
           "x": 257.34152255572695,
           "y": 603.647450843758,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
       },
       "id": "node-a-3",
     },
-    "node-a-4": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-a-4": {
+      "diagrammerData": {
+        "position": {
           "x": 542.658477444273,
           "y": 603.6474508437578,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
       },
       "id": "node-a-4",
     },
-    "node-b": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-b": {
+      "diagrammerData": {
+        "position": {
           "x": 183.4936490538903,
           "y": 275.00000000000006,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
       },
       "id": "node-b",
     },
-    "node-b-1": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-b-1": {
+      "diagrammerData": {
+        "position": {
           "x": 108.49364905389032,
           "y": 404.90381056766586,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
       },
       "id": "node-b-1",
     },
-    "node-b-2": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-b-2": {
+      "diagrammerData": {
+        "position": {
           "x": 53.589838486224465,
           "y": 200.0000000000001,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
       },
       "id": "node-b-2",
     },
-    "node-b-3": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-b-3": {
+      "diagrammerData": {
+        "position": {
           "x": 258.4936490538902,
           "y": 145.0961894323342,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
       },
       "id": "node-b-3",
     },
-    "node-c": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-c": {
+      "diagrammerData": {
+        "position": {
           "x": 616.5063509461096,
           "y": 274.9999999999999,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
       },
       "id": "node-c",
     },
-    "node-c-1": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-c-1": {
+      "diagrammerData": {
+        "position": {
           "x": 746.4101615137754,
           "y": 349.9999999999999,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
       },
       "id": "node-c-1",
     },
-    "node-c-1-1": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-c-1-1": {
+      "diagrammerData": {
+        "position": {
           "x": 833.0127018922193,
           "y": 399.99999999999983,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
       },
       "id": "node-c-1-1",
     },
-    "node-c-2": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-c-2": {
+      "diagrammerData": {
+        "position": {
           "x": 616.5063509461096,
           "y": 124.99999999999989,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
       },
       "id": "node-c-2",
     },
-    "node-start": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-start": {
+      "diagrammerData": {
+        "position": {
           "x": 400,
           "y": 400,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
@@ -769,18 +769,18 @@ Object {
       "id": "node-start",
     },
   },
-  "panels": Object {},
-  "workspace": Object {
-    "canvasSize": Object {
+  "panels": {},
+  "workspace": {
+    "canvasSize": {
       "height": 1600,
       "width": 1600,
     },
-    "position": Object {
+    "position": {
       "x": 0,
       "y": 0,
     },
     "scale": 1,
-    "viewContainerSize": Object {
+    "viewContainerSize": {
       "height": 800,
       "width": 800,
     },
@@ -789,267 +789,267 @@ Object {
 `;
 
 exports[`hierarchicalLayout correctly propagates gravity throughout the graph 1`] = `
-Object {
-  "edges": Object {
-    "edge-0": Object {
+{
+  "edges": {
+    "edge-0": {
       "dest": "node-a",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-0",
       "src": "node-start",
     },
-    "edge-1": Object {
+    "edge-1": {
       "dest": "node-b",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-1",
       "src": "node-start",
     },
-    "edge-10": Object {
+    "edge-10": {
       "dest": "node-c-1",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-10",
       "src": "node-c",
     },
-    "edge-11": Object {
+    "edge-11": {
       "dest": "node-c-2",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-11",
       "src": "node-c",
     },
-    "edge-12": Object {
+    "edge-12": {
       "dest": "node-c-1-1",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-12",
       "src": "node-c-1",
     },
-    "edge-2": Object {
+    "edge-2": {
       "dest": "node-c",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-2",
       "src": "node-start",
     },
-    "edge-3": Object {
+    "edge-3": {
       "dest": "node-a-1",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-3",
       "src": "node-a",
     },
-    "edge-4": Object {
+    "edge-4": {
       "dest": "node-a-2",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-4",
       "src": "node-a",
     },
-    "edge-5": Object {
+    "edge-5": {
       "dest": "node-a-3",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-5",
       "src": "node-a",
     },
-    "edge-6": Object {
+    "edge-6": {
       "dest": "node-a-4",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-6",
       "src": "node-a",
     },
-    "edge-7": Object {
+    "edge-7": {
       "dest": "node-b-1",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-7",
       "src": "node-b",
     },
-    "edge-8": Object {
+    "edge-8": {
       "dest": "node-b-2",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-8",
       "src": "node-b",
     },
-    "edge-9": Object {
+    "edge-9": {
       "dest": "node-b-3",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-9",
       "src": "node-b",
     },
   },
-  "editor": Object {
+  "editor": {
     "mode": "Select",
   },
-  "nodes": Object {
-    "node-a": Object {
-      "diagrammerData": Object {
-        "position": Object {
+  "nodes": {
+    "node-a": {
+      "diagrammerData": {
+        "position": {
           "x": 616.5063509461097,
           "y": 524.9999999999999,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
       },
       "id": "node-a",
     },
-    "node-a-1": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-a-1": {
+      "diagrammerData": {
+        "position": {
           "x": 763.2284910561806,
           "y": 556.1867536226637,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
       },
       "id": "node-a-1",
     },
-    "node-a-2": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-a-2": {
+      "diagrammerData": {
+        "position": {
           "x": 716.8759418999385,
           "y": 636.471723821609,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
       },
       "id": "node-a-2",
     },
-    "node-a-3": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-a-3": {
+      "diagrammerData": {
+        "position": {
           "x": 608.6559575096683,
           "y": 674.7944302131859,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
       },
       "id": "node-a-3",
     },
-    "node-a-4": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-a-4": {
+      "diagrammerData": {
+        "position": {
           "x": 742.3069361379232,
           "y": 443.30414474774574,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
       },
       "id": "node-a-4",
     },
-    "node-b": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-b": {
+      "diagrammerData": {
+        "position": {
           "x": 400,
           "y": 650,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
       },
       "id": "node-b",
     },
-    "node-b-1": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-b-1": {
+      "diagrammerData": {
+        "position": {
           "x": 506.0660171779821,
           "y": 756.0660171779821,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
       },
       "id": "node-b-1",
     },
-    "node-b-2": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-b-2": {
+      "diagrammerData": {
+        "position": {
           "x": 400,
           "y": 800,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
       },
       "id": "node-b-2",
     },
-    "node-b-3": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-b-3": {
+      "diagrammerData": {
+        "position": {
           "x": 293.93398282201787,
           "y": 756.0660171779821,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
       },
       "id": "node-b-3",
     },
-    "node-c": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-c": {
+      "diagrammerData": {
+        "position": {
           "x": 183.49364905389038,
           "y": 525.0000000000001,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
       },
       "id": "node-c",
     },
-    "node-c-1": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-c-1": {
+      "diagrammerData": {
+        "position": {
           "x": 108.49364905389035,
           "y": 654.9038105676659,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
       },
       "id": "node-c-1",
     },
-    "node-c-1-1": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-c-1-1": {
+      "diagrammerData": {
+        "position": {
           "x": 58.49364905389025,
           "y": 741.5063509461097,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
       },
       "id": "node-c-1-1",
     },
-    "node-c-2": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-c-2": {
+      "diagrammerData": {
+        "position": {
           "x": 33.49364905389038,
           "y": 525.0000000000001,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
       },
       "id": "node-c-2",
     },
-    "node-start": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-start": {
+      "diagrammerData": {
+        "position": {
           "x": 400,
           "y": 400,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
@@ -1057,18 +1057,18 @@ Object {
       "id": "node-start",
     },
   },
-  "panels": Object {},
-  "workspace": Object {
-    "canvasSize": Object {
+  "panels": {},
+  "workspace": {
+    "canvasSize": {
       "height": 1600,
       "width": 1600,
     },
-    "position": Object {
+    "position": {
       "x": 0,
       "y": 0,
     },
     "scale": 1,
-    "viewContainerSize": Object {
+    "viewContainerSize": {
       "height": 800,
       "width": 800,
     },
@@ -1077,77 +1077,77 @@ Object {
 `;
 
 exports[`hierarchicalLayout falls back to initial \`gravityAngle\` when mean is NaN 1`] = `
-Object {
-  "edges": Object {
-    "edge-0": Object {
+{
+  "edges": {
+    "edge-0": {
       "dest": "node-center",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-0",
       "src": "fixed-node-1",
     },
-    "edge-1": Object {
+    "edge-1": {
       "dest": "node-center",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-1",
       "src": "fixed-node-2",
     },
-    "edge-2": Object {
+    "edge-2": {
       "dest": "node-1",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-2",
       "src": "node-center",
     },
   },
-  "editor": Object {
+  "editor": {
     "mode": "Select",
   },
-  "nodes": Object {
-    "fixed-node-1": Object {
-      "diagrammerData": Object {
-        "position": Object {
+  "nodes": {
+    "fixed-node-1": {
+      "diagrammerData": {
+        "position": {
           "x": 300,
           "y": 400,
         },
-        "size": Object {
+        "size": {
           "height": 50,
           "width": 50,
         },
       },
       "id": "fixed-node-1",
     },
-    "fixed-node-2": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "fixed-node-2": {
+      "diagrammerData": {
+        "position": {
           "x": 500,
           "y": 400,
         },
-        "size": Object {
+        "size": {
           "height": 50,
           "width": 50,
         },
       },
       "id": "fixed-node-2",
     },
-    "node-1": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-1": {
+      "diagrammerData": {
+        "position": {
           "x": 400,
           "y": 304,
         },
-        "size": Object {
+        "size": {
           "height": 50,
           "width": 50,
         },
       },
       "id": "node-1",
     },
-    "node-center": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-center": {
+      "diagrammerData": {
+        "position": {
           "x": 400,
           "y": 400,
         },
-        "size": Object {
+        "size": {
           "height": 50,
           "width": 50,
         },
@@ -1155,18 +1155,18 @@ Object {
       "id": "node-center",
     },
   },
-  "panels": Object {},
-  "workspace": Object {
-    "canvasSize": Object {
+  "panels": {},
+  "workspace": {
+    "canvasSize": {
       "height": 1600,
       "width": 1600,
     },
-    "position": Object {
+    "position": {
       "x": 0,
       "y": 0,
     },
     "scale": 1,
-    "viewContainerSize": Object {
+    "viewContainerSize": {
       "height": 800,
       "width": 800,
     },
@@ -1175,191 +1175,191 @@ Object {
 `;
 
 exports[`hierarchicalLayout finds optimal arrangement of free nodes between fixed nodes 1`] = `
-Object {
-  "edges": Object {
-    "edge-0": Object {
+{
+  "edges": {
+    "edge-0": {
       "dest": "node-center",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-0",
       "src": "fixed-node-1",
     },
-    "edge-1": Object {
+    "edge-1": {
       "dest": "node-center",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-1",
       "src": "fixed-node-2",
     },
-    "edge-2": Object {
+    "edge-2": {
       "dest": "node-center",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-2",
       "src": "fixed-node-3",
     },
-    "edge-3": Object {
+    "edge-3": {
       "dest": "node-1",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-3",
       "src": "node-center",
     },
-    "edge-4": Object {
+    "edge-4": {
       "dest": "node-2",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-4",
       "src": "node-center",
     },
-    "edge-5": Object {
+    "edge-5": {
       "dest": "node-3",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-5",
       "src": "node-center",
     },
-    "edge-6": Object {
+    "edge-6": {
       "dest": "node-4",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-6",
       "src": "node-center",
     },
-    "edge-7": Object {
+    "edge-7": {
       "dest": "node-5",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-7",
       "src": "node-center",
     },
-    "edge-8": Object {
+    "edge-8": {
       "dest": "node-6",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-8",
       "src": "node-center",
     },
   },
-  "editor": Object {
+  "editor": {
     "mode": "Select",
   },
-  "nodes": Object {
-    "fixed-node-1": Object {
-      "diagrammerData": Object {
-        "position": Object {
+  "nodes": {
+    "fixed-node-1": {
+      "diagrammerData": {
+        "position": {
           "x": 300,
           "y": 400,
         },
-        "size": Object {
+        "size": {
           "height": 40,
           "width": 40,
         },
       },
       "id": "fixed-node-1",
     },
-    "fixed-node-2": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "fixed-node-2": {
+      "diagrammerData": {
+        "position": {
           "x": 500,
           "y": 400,
         },
-        "size": Object {
+        "size": {
           "height": 40,
           "width": 40,
         },
       },
       "id": "fixed-node-2",
     },
-    "fixed-node-3": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "fixed-node-3": {
+      "diagrammerData": {
+        "position": {
           "x": 500,
           "y": 300,
         },
-        "size": Object {
+        "size": {
           "height": 40,
           "width": 40,
         },
       },
       "id": "fixed-node-3",
     },
-    "node-1": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-1": {
+      "diagrammerData": {
+        "position": {
           "x": 461.3508826485333,
           "y": 458.48723587841977,
         },
-        "size": Object {
+        "size": {
           "height": 40,
           "width": 40,
         },
       },
       "id": "node-1",
     },
-    "node-2": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-2": {
+      "diagrammerData": {
+        "position": {
           "x": 386.06428611749413,
           "y": 450.222858390002,
         },
-        "size": Object {
+        "size": {
           "height": 40,
           "width": 40,
         },
       },
       "id": "node-2",
     },
-    "node-3": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-3": {
+      "diagrammerData": {
+        "position": {
           "x": 345.11140852262724,
           "y": 328.8131069569892,
         },
-        "size": Object {
+        "size": {
           "height": 40,
           "width": 40,
         },
       },
       "id": "node-3",
     },
-    "node-4": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-4": {
+      "diagrammerData": {
+        "position": {
           "x": 386.0342470949084,
           "y": 283.1274756183327,
         },
-        "size": Object {
+        "size": {
           "height": 40,
           "width": 40,
         },
       },
       "id": "node-4",
     },
-    "node-5": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-5": {
+      "diagrammerData": {
+        "position": {
           "x": 446.2639795200021,
           "y": 271.5414944502907,
         },
-        "size": Object {
+        "size": {
           "height": 40,
           "width": 40,
         },
       },
       "id": "node-5",
     },
-    "node-6": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-6": {
+      "diagrammerData": {
+        "position": {
           "x": 528.093729266533,
           "y": 351.2891713379978,
         },
-        "size": Object {
+        "size": {
           "height": 40,
           "width": 40,
         },
       },
       "id": "node-6",
     },
-    "node-center": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-center": {
+      "diagrammerData": {
+        "position": {
           "x": 433.3333333333333,
           "y": 366.6666666666667,
         },
-        "size": Object {
+        "size": {
           "height": 40,
           "width": 40,
         },
@@ -1367,18 +1367,18 @@ Object {
       "id": "node-center",
     },
   },
-  "panels": Object {},
-  "workspace": Object {
-    "canvasSize": Object {
+  "panels": {},
+  "workspace": {
+    "canvasSize": {
       "height": 1600,
       "width": 1600,
     },
-    "position": Object {
+    "position": {
       "x": 0,
       "y": 0,
     },
     "scale": 1,
-    "viewContainerSize": Object {
+    "viewContainerSize": {
       "height": 800,
       "width": 800,
     },
@@ -1387,58 +1387,58 @@ Object {
 `;
 
 exports[`hierarchicalLayout handles nodes with varying sizes 1`] = `
-Object {
-  "edges": Object {
-    "edge-0": Object {
+{
+  "edges": {
+    "edge-0": {
       "dest": "node-1",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-0",
       "src": "node-start",
     },
-    "edge-1": Object {
+    "edge-1": {
       "dest": "node-2",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-1",
       "src": "node-1",
     },
   },
-  "editor": Object {
+  "editor": {
     "mode": "Select",
   },
-  "nodes": Object {
-    "node-1": Object {
-      "diagrammerData": Object {
-        "position": Object {
+  "nodes": {
+    "node-1": {
+      "diagrammerData": {
+        "position": {
           "x": 465,
           "y": 265,
         },
-        "size": Object {
+        "size": {
           "height": 80,
           "width": 20,
         },
       },
       "id": "node-1",
     },
-    "node-2": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-2": {
+      "diagrammerData": {
+        "position": {
           "x": 550,
           "y": 280,
         },
-        "size": Object {
+        "size": {
           "height": 50,
           "width": 50,
         },
       },
       "id": "node-2",
     },
-    "node-start": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-start": {
+      "diagrammerData": {
+        "position": {
           "x": 300,
           "y": 300,
         },
-        "size": Object {
+        "size": {
           "height": 10,
           "width": 150,
         },
@@ -1446,18 +1446,18 @@ Object {
       "id": "node-start",
     },
   },
-  "panels": Object {},
-  "workspace": Object {
-    "canvasSize": Object {
+  "panels": {},
+  "workspace": {
+    "canvasSize": {
       "height": 1600,
       "width": 1600,
     },
-    "position": Object {
+    "position": {
       "x": 0,
       "y": 0,
     },
     "scale": 1,
-    "viewContainerSize": Object {
+    "viewContainerSize": {
       "height": 800,
       "width": 800,
     },
@@ -1466,96 +1466,96 @@ Object {
 `;
 
 exports[`hierarchicalLayout pushes nodes towards \`gravityAngle\` (even number of nodes) 1`] = `
-Object {
-  "edges": Object {
-    "edge-0": Object {
+{
+  "edges": {
+    "edge-0": {
       "dest": "node-a",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-0",
       "src": "node-start",
     },
-    "edge-1": Object {
+    "edge-1": {
       "dest": "node-b",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-1",
       "src": "node-start",
     },
-    "edge-2": Object {
+    "edge-2": {
       "dest": "node-c",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-2",
       "src": "node-start",
     },
-    "edge-3": Object {
+    "edge-3": {
       "dest": "node-d",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-3",
       "src": "node-start",
     },
   },
-  "editor": Object {
+  "editor": {
     "mode": "Select",
   },
-  "nodes": Object {
-    "node-a": Object {
-      "diagrammerData": Object {
-        "position": Object {
+  "nodes": {
+    "node-a": {
+      "diagrammerData": {
+        "position": {
           "x": 437.87030088828516,
           "y": 509.09128643864267,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
       },
       "id": "node-a",
     },
-    "node-b": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-b": {
+      "diagrammerData": {
+        "position": {
           "x": 314.8690171883659,
           "y": 599.261221781989,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
       },
       "id": "node-b",
     },
-    "node-c": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-c": {
+      "diagrammerData": {
+        "position": {
           "x": 305.4674869181774,
           "y": 300.09967782956716,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
       },
       "id": "node-c",
     },
-    "node-d": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-d": {
+      "diagrammerData": {
+        "position": {
           "x": 433.88787276781886,
           "y": 382.3683688965855,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
       },
       "id": "node-d",
     },
-    "node-start": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-start": {
+      "diagrammerData": {
+        "position": {
           "x": 300,
           "y": 450,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
@@ -1563,18 +1563,18 @@ Object {
       "id": "node-start",
     },
   },
-  "panels": Object {},
-  "workspace": Object {
-    "canvasSize": Object {
+  "panels": {},
+  "workspace": {
+    "canvasSize": {
       "height": 1600,
       "width": 1600,
     },
-    "position": Object {
+    "position": {
       "x": 0,
       "y": 0,
     },
     "scale": 1,
-    "viewContainerSize": Object {
+    "viewContainerSize": {
       "height": 800,
       "width": 800,
     },
@@ -1583,115 +1583,115 @@ Object {
 `;
 
 exports[`hierarchicalLayout pushes nodes towards \`gravityAngle\` (odd number of nodes) 1`] = `
-Object {
-  "edges": Object {
-    "edge-0": Object {
+{
+  "edges": {
+    "edge-0": {
       "dest": "node-a",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-0",
       "src": "node-start",
     },
-    "edge-1": Object {
+    "edge-1": {
       "dest": "node-b",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-1",
       "src": "node-start",
     },
-    "edge-2": Object {
+    "edge-2": {
       "dest": "node-c",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-2",
       "src": "node-start",
     },
-    "edge-3": Object {
+    "edge-3": {
       "dest": "node-d",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-3",
       "src": "node-start",
     },
-    "edge-4": Object {
+    "edge-4": {
       "dest": "node-e",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-4",
       "src": "node-start",
     },
   },
-  "editor": Object {
+  "editor": {
     "mode": "Select",
   },
-  "nodes": Object {
-    "node-a": Object {
-      "diagrammerData": Object {
-        "position": Object {
+  "nodes": {
+    "node-a": {
+      "diagrammerData": {
+        "position": {
           "x": 217.79675701591964,
           "y": 486.64187280830834,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
       },
       "id": "node-a",
     },
-    "node-b": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-b": {
+      "diagrammerData": {
+        "position": {
           "x": 214.8107747659059,
           "y": 420.96905265040795,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
       },
       "id": "node-b",
     },
-    "node-c": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-c": {
+      "diagrammerData": {
+        "position": {
           "x": 236.36038969321072,
           "y": 386.3603896932107,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
       },
       "id": "node-c",
     },
-    "node-d": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-d": {
+      "diagrammerData": {
+        "position": {
           "x": 270.96905265040795,
           "y": 364.8107747659059,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
       },
       "id": "node-d",
     },
-    "node-e": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-e": {
+      "diagrammerData": {
+        "position": {
           "x": 336.6418728083082,
           "y": 367.79675701591964,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
       },
       "id": "node-e",
     },
-    "node-start": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-start": {
+      "diagrammerData": {
+        "position": {
           "x": 300,
           "y": 450,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
@@ -1699,18 +1699,18 @@ Object {
       "id": "node-start",
     },
   },
-  "panels": Object {},
-  "workspace": Object {
-    "canvasSize": Object {
+  "panels": {},
+  "workspace": {
+    "canvasSize": {
       "height": 1600,
       "width": 1600,
     },
-    "position": Object {
+    "position": {
       "x": 0,
       "y": 0,
     },
     "scale": 1,
-    "viewContainerSize": Object {
+    "viewContainerSize": {
       "height": 800,
       "width": 800,
     },
@@ -1719,39 +1719,39 @@ Object {
 `;
 
 exports[`hierarchicalLayout pushes nodes towards \`gravityAngle\` (single node) 1`] = `
-Object {
-  "edges": Object {
-    "edge-0": Object {
+{
+  "edges": {
+    "edge-0": {
       "dest": "node-a",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-0",
       "src": "node-start",
     },
   },
-  "editor": Object {
+  "editor": {
     "mode": "Select",
   },
-  "nodes": Object {
-    "node-a": Object {
-      "diagrammerData": Object {
-        "position": Object {
+  "nodes": {
+    "node-a": {
+      "diagrammerData": {
+        "position": {
           "x": 270,
           "y": 450,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
       },
       "id": "node-a",
     },
-    "node-start": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-start": {
+      "diagrammerData": {
+        "position": {
           "x": 450,
           "y": 450,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
@@ -1759,18 +1759,18 @@ Object {
       "id": "node-start",
     },
   },
-  "panels": Object {},
-  "workspace": Object {
-    "canvasSize": Object {
+  "panels": {},
+  "workspace": {
+    "canvasSize": {
       "height": 1600,
       "width": 1600,
     },
-    "position": Object {
+    "position": {
       "x": 0,
       "y": 0,
     },
     "scale": 1,
-    "viewContainerSize": Object {
+    "viewContainerSize": {
       "height": 800,
       "width": 800,
     },
@@ -1779,96 +1779,96 @@ Object {
 `;
 
 exports[`hierarchicalLayout uses \`gravityAngle\` even when \`gravityStrength\` is zero (even number of nodes) 1`] = `
-Object {
-  "edges": Object {
-    "edge-0": Object {
+{
+  "edges": {
+    "edge-0": {
       "dest": "node-a",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-0",
       "src": "node-start",
     },
-    "edge-1": Object {
+    "edge-1": {
       "dest": "node-b",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-1",
       "src": "node-start",
     },
-    "edge-2": Object {
+    "edge-2": {
       "dest": "node-c",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-2",
       "src": "node-start",
     },
-    "edge-3": Object {
+    "edge-3": {
       "dest": "node-d",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-3",
       "src": "node-start",
     },
   },
-  "editor": Object {
+  "editor": {
     "mode": "Select",
   },
-  "nodes": Object {
-    "node-a": Object {
-      "diagrammerData": Object {
-        "position": Object {
+  "nodes": {
+    "node-a": {
+      "diagrammerData": {
+        "position": {
           "x": 633.3379259803436,
           "y": 521.1186527804311,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
       },
       "id": "node-a",
     },
-    "node-b": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-b": {
+      "diagrammerData": {
+        "position": {
           "x": 478.88134721956885,
           "y": 633.3379259803436,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
       },
       "id": "node-b",
     },
-    "node-c": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-c": {
+      "diagrammerData": {
+        "position": {
           "x": 366.6620740196564,
           "y": 478.88134721956885,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
       },
       "id": "node-c",
     },
-    "node-d": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-d": {
+      "diagrammerData": {
+        "position": {
           "x": 521.1186527804311,
           "y": 366.6620740196564,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
       },
       "id": "node-d",
     },
-    "node-start": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-start": {
+      "diagrammerData": {
+        "position": {
           "x": 500,
           "y": 500,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
@@ -1876,18 +1876,18 @@ Object {
       "id": "node-start",
     },
   },
-  "panels": Object {},
-  "workspace": Object {
-    "canvasSize": Object {
+  "panels": {},
+  "workspace": {
+    "canvasSize": {
       "height": 1600,
       "width": 1600,
     },
-    "position": Object {
+    "position": {
       "x": 0,
       "y": 0,
     },
     "scale": 1,
-    "viewContainerSize": Object {
+    "viewContainerSize": {
       "height": 800,
       "width": 800,
     },
@@ -1896,77 +1896,77 @@ Object {
 `;
 
 exports[`hierarchicalLayout uses \`gravityAngle\` even when \`gravityStrength\` is zero (odd number of nodes) 1`] = `
-Object {
-  "edges": Object {
-    "edge-0": Object {
+{
+  "edges": {
+    "edge-0": {
       "dest": "node-a",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-0",
       "src": "node-start",
     },
-    "edge-1": Object {
+    "edge-1": {
       "dest": "node-b",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-1",
       "src": "node-start",
     },
-    "edge-2": Object {
+    "edge-2": {
       "dest": "node-c",
-      "diagrammerData": Object {},
+      "diagrammerData": {},
       "id": "edge-2",
       "src": "node-start",
     },
   },
-  "editor": Object {
+  "editor": {
     "mode": "Select",
   },
-  "nodes": Object {
-    "node-a": Object {
-      "diagrammerData": Object {
-        "position": Object {
+  "nodes": {
+    "node-a": {
+      "diagrammerData": {
+        "position": {
           "x": 694.8557158514988,
           "y": 612.4999999999999,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
       },
       "id": "node-a",
     },
-    "node-b": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-b": {
+      "diagrammerData": {
+        "position": {
           "x": 305.14428414850136,
           "y": 612.5000000000002,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
       },
       "id": "node-b",
     },
-    "node-c": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-c": {
+      "diagrammerData": {
+        "position": {
           "x": 500,
           "y": 275,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
       },
       "id": "node-c",
     },
-    "node-start": Object {
-      "diagrammerData": Object {
-        "position": Object {
+    "node-start": {
+      "diagrammerData": {
+        "position": {
           "x": 500,
           "y": 500,
         },
-        "size": Object {
+        "size": {
           "height": 30,
           "width": 30,
         },
@@ -1974,18 +1974,18 @@ Object {
       "id": "node-start",
     },
   },
-  "panels": Object {},
-  "workspace": Object {
-    "canvasSize": Object {
+  "panels": {},
+  "workspace": {
+    "canvasSize": {
       "height": 1600,
       "width": 1600,
     },
-    "position": Object {
+    "position": {
       "x": 0,
       "y": 0,
     },
     "scale": 1,
-    "viewContainerSize": Object {
+    "viewContainerSize": {
       "height": 800,
       "width": 800,
     },

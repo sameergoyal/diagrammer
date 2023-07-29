@@ -8,7 +8,7 @@ exports[`Workspace renders canvas given dot pattern 1`] = `
   data-event-target={true}
   data-type="Diagrammer.Workspace"
   style={
-    Object {
+    {
       "height": 400,
       "transform": "translate3d(0px, 0px, 0) scale(1)",
       "width": 800,
@@ -64,7 +64,7 @@ exports[`Workspace renders canvas given grid pattern 1`] = `
   data-event-target={true}
   data-type="Diagrammer.Workspace"
   style={
-    Object {
+    {
       "height": 400,
       "transform": "translate3d(0px, 0px, 0) scale(1)",
       "width": 800,
@@ -128,7 +128,7 @@ exports[`Workspace renders dot pattern as default 1`] = `
   data-event-target={true}
   data-type="Diagrammer.Workspace"
   style={
-    Object {
+    {
       "height": 400,
       "transform": "translate3d(0px, 0px, 0) scale(1)",
       "width": 800,
