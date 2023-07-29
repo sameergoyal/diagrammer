@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout 🛎️
+      - name: Checkout
         uses: actions/checkout@v3
 
       - name: Install Node.js 🔧
@@ -26,7 +26,7 @@ jobs:
       - name: Test
         run: npm run test
 
-      - name: Build 👷‍
+      - name: Build
         run: npm run build
         
       - name: Browser Tests
