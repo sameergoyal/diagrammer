@@ -3,9 +3,9 @@ import * as Preact from 'preact';
 import { mount, shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-import { Node, NodeProps } from 'diagramMaker/components/node';
-import { ConnectorPlacement, VisibleConnectorTypes } from 'diagramMaker/service/ConfigService';
-import { DiagramMakerNode } from 'diagramMaker/state/types';
+import { Node, NodeProps } from 'diagrammer/components/node';
+import { ConnectorPlacement, VisibleConnectorTypes } from 'diagrammer/service/ConfigService';
+import { DiagrammerNode } from 'diagrammer/state/types';
 
 describe('Node', () => {
   const destroyCallback = jest.fn();
@@ -16,8 +16,8 @@ describe('Node', () => {
     return element;
   });
 
-  const getDiagramMakerNode = (): Draft<DiagramMakerNode<void>> => ({
-    diagramMakerData: {
+  const getDiagrammerNode = (): Draft<DiagrammerNode<void>> => ({
+    diagrammerData: {
       position: {
         x: 400,
         y: 600,
@@ -37,7 +37,7 @@ describe('Node', () => {
   it('renders at the given position and size', () => {
     const node = shallow(
       <Node
-        diagramMakerNode={getDiagramMakerNode()}
+        diagrammerNode={getDiagrammerNode()}
         renderCallback={renderCallback}
         destroyCallback={destroyCallback}
       />,
@@ -49,7 +49,7 @@ describe('Node', () => {
   it('renders without any connectors', () => {
     const node = shallow(
       <Node
-        diagramMakerNode={getDiagramMakerNode()}
+        diagrammerNode={getDiagrammerNode()}
         renderCallback={renderCallback}
         destroyCallback={destroyCallback}
       />,
@@ -61,7 +61,7 @@ describe('Node', () => {
   it('renders connectors on the top and bottom', () => {
     const node = shallow(
       <Node
-        diagramMakerNode={getDiagramMakerNode()}
+        diagrammerNode={getDiagrammerNode()}
         renderCallback={renderCallback}
         connectorPlacement={ConnectorPlacement.TOP_BOTTOM}
         destroyCallback={destroyCallback}
@@ -74,7 +74,7 @@ describe('Node', () => {
   it('renders connectors on the left and right', () => {
     const node = shallow(
       <Node
-        diagramMakerNode={getDiagramMakerNode()}
+        diagrammerNode={getDiagrammerNode()}
         renderCallback={renderCallback}
         connectorPlacement={ConnectorPlacement.LEFT_RIGHT}
         destroyCallback={destroyCallback}
@@ -86,11 +86,11 @@ describe('Node', () => {
 
   describe('visibleConnectorTypes', () => {
     it('renders connector only for output', () => {
-      const diagramMakerNode = getDiagramMakerNode();
+      const diagrammerNode = getDiagrammerNode();
       const visibleConnectorTypes = VisibleConnectorTypes.OUTPUT_ONLY;
       const node = shallow(
         <Node
-          diagramMakerNode={diagramMakerNode}
+          diagrammerNode={diagrammerNode}
           renderCallback={renderCallback}
           connectorPlacement={ConnectorPlacement.LEFT_RIGHT}
           destroyCallback={destroyCallback}
@@ -102,11 +102,11 @@ describe('Node', () => {
     });
 
     it('renders connector only for input', () => {
-      const diagramMakerNode = getDiagramMakerNode();
+      const diagrammerNode = getDiagrammerNode();
       const visibleConnectorTypes = VisibleConnectorTypes.INPUT_ONLY;
       const node = shallow(
         <Node
-          diagramMakerNode={diagramMakerNode}
+          diagrammerNode={diagrammerNode}
           renderCallback={renderCallback}
           connectorPlacement={ConnectorPlacement.LEFT_RIGHT}
           destroyCallback={destroyCallback}
@@ -118,11 +118,11 @@ describe('Node', () => {
     });
 
     it('renders no connectors', () => {
-      const diagramMakerNode = getDiagramMakerNode();
+      const diagrammerNode = getDiagrammerNode();
       const visibleConnectorTypes = VisibleConnectorTypes.NONE;
       const node = shallow(
         <Node
-          diagramMakerNode={diagramMakerNode}
+          diagrammerNode={diagrammerNode}
           renderCallback={renderCallback}
           connectorPlacement={ConnectorPlacement.LEFT_RIGHT}
           destroyCallback={destroyCallback}
@@ -134,11 +134,11 @@ describe('Node', () => {
     });
 
     it('renders input & output connectors', () => {
-      const diagramMakerNode = getDiagramMakerNode();
+      const diagrammerNode = getDiagrammerNode();
       const visibleConnectorTypes = VisibleConnectorTypes.BOTH;
       const node = shallow(
         <Node
-          diagramMakerNode={diagramMakerNode}
+          diagrammerNode={diagrammerNode}
           renderCallback={renderCallback}
           connectorPlacement={ConnectorPlacement.LEFT_RIGHT}
           destroyCallback={destroyCallback}
@@ -152,10 +152,10 @@ describe('Node', () => {
 
   describe('shouldComponentUpdate', () => {
     it('returns false if nextProps and the current props point to the same object', () => {
-      const nodeData = getDiagramMakerNode();
+      const nodeData = getDiagrammerNode();
       const node = mount<Node<{}>, NodeProps<{}>>(
         <Node
-          diagramMakerNode={nodeData}
+          diagrammerNode={nodeData}
           renderCallback={renderCallback}
           destroyCallback={destroyCallback}
         />,
@@ -164,17 +164,17 @@ describe('Node', () => {
       node.setProps({
         renderCallback,
         destroyCallback,
-        diagramMakerNode: nodeData as DiagramMakerNode<{}>,
+        diagrammerNode: nodeData as DiagrammerNode<{}>,
       });
 
       expect(renderCallback).toHaveBeenCalledTimes(1);
     });
 
     it('returns true if nextProps and the current props point to a different object', () => {
-      const nodeData = getDiagramMakerNode();
+      const nodeData = getDiagrammerNode();
       const node = mount<Node<{}>, NodeProps<{}>>(
         <Node
-          diagramMakerNode={nodeData}
+          diagrammerNode={nodeData}
           renderCallback={renderCallback}
           destroyCallback={destroyCallback}
         />,
@@ -183,7 +183,7 @@ describe('Node', () => {
       node.setProps({
         renderCallback,
         destroyCallback,
-        diagramMakerNode: getDiagramMakerNode() as DiagramMakerNode<{}>,
+        diagrammerNode: getDiagrammerNode() as DiagrammerNode<{}>,
       });
 
       expect(renderCallback).toHaveBeenCalledTimes(2);

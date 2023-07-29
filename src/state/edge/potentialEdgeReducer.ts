@@ -1,14 +1,14 @@
 import { produce } from 'immer';
 
-import { DiagramMakerAction } from 'diagramMaker/state/actions';
-import { DiagramMakerPotentialEdge } from 'diagramMaker/state/types';
+import { DiagrammerAction } from 'diagrammer/state/actions';
+import { DiagrammerPotentialEdge } from 'diagrammer/state/types';
 
 import { EdgeActionsType } from './edgeActions';
 
 export default function potentialEdgeReducer<NodeType, EdgeType>(
-  state: DiagramMakerPotentialEdge | null | undefined,
-  action: DiagramMakerAction<NodeType, EdgeType>,
-): DiagramMakerPotentialEdge | null {
+  state: DiagrammerPotentialEdge | null | undefined,
+  action: DiagrammerAction<NodeType, EdgeType>,
+): DiagrammerPotentialEdge | null {
   if (state === undefined) {
     return null;
   }

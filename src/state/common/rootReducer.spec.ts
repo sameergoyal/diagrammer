@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
 import { undoHistoryReducer } from 'redux-undo-redo';
 
-import { edgeReducer, potentialEdgeReducer } from 'diagramMaker/state/edge';
-import { editorReducer } from 'diagramMaker/state/editor';
-import { nodeReducer, potentialNodeReducer } from 'diagramMaker/state/node';
-import { panelReducer } from 'diagramMaker/state/panel';
-import { pluginReducer } from 'diagramMaker/state/plugin';
-import { workspaceReducer } from 'diagramMaker/state/workspace';
+import { edgeReducer, potentialEdgeReducer } from 'diagrammer/state/edge';
+import { editorReducer } from 'diagrammer/state/editor';
+import { nodeReducer, potentialNodeReducer } from 'diagrammer/state/node';
+import { panelReducer } from 'diagrammer/state/panel';
+import { pluginReducer } from 'diagrammer/state/plugin';
+import { workspaceReducer } from 'diagrammer/state/workspace';
 
 import { getRootReducer } from './rootReducer';
 

@@ -1,8 +1,8 @@
 import classnames from 'classnames';
 import * as Preact from 'preact';
 
-import { DiagramMakerComponentsType } from 'diagramMaker/service/ui/types';
-import { Position } from 'diagramMaker/state/types';
+import { DiagrammerComponentsType } from 'diagrammer/service/ui/types';
+import { Position } from 'diagrammer/state/types';
 
 import EdgeCurve, { EdgeStyle } from './EdgeCurve';
 
@@ -44,7 +44,7 @@ export default class Edge extends Preact.Component<EdgeProps> {
       <g
         className={classNames}
         data-id={id}
-        data-type={DiagramMakerComponentsType.EDGE}
+        data-type={DiagrammerComponentsType.EDGE}
         data-event-target
         data-edge-source-type={this.props.srcTypeId}
         data-edge-dest-type={this.props.destTypeId}

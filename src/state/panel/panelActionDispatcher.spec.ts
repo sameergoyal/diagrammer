@@ -1,4 +1,4 @@
-import { DiagramMakerComponentsType } from 'diagramMaker/service/ui/types';
+import { DiagrammerComponentsType } from 'diagrammer/service/ui/types';
 
 import {
   handlePanelDrag,
@@ -41,7 +41,7 @@ describe('panelActionDispatcher', () => {
       const dragHandleElement = document.createElement('div');
       const panelElement = document.createElement('div');
 
-      panelElement.setAttribute('data-type', DiagramMakerComponentsType.PANEL);
+      panelElement.setAttribute('data-type', DiagrammerComponentsType.PANEL);
       panelElement.appendChild(dragHandleElement);
 
       dragHandleElement.getBoundingClientRect = jest.fn(() => ({ top: 20, left: 20 })) as any;
@@ -62,7 +62,7 @@ describe('panelActionDispatcher', () => {
       const dragHandlePosition = { x: 100, y: 200 };
 
       const panelElement = document.createElement('div');
-      panelElement.setAttribute('data-type', DiagramMakerComponentsType.PANEL);
+      panelElement.setAttribute('data-type', DiagrammerComponentsType.PANEL);
 
       const contentElement = document.createElement('div');
       const dragHandleElement = document.createElement('div');

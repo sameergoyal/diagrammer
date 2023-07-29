@@ -1,5 +1,5 @@
-import { DiagramMakerComponentsType } from 'diagramMaker/service/ui/types';
-import { Position } from 'diagramMaker/state/types';
+import { DiagrammerComponentsType } from 'diagrammer/service/ui/types';
+import { Position } from 'diagrammer/state/types';
 import * as Preact from 'preact';
 
 import './SelectionMarquee.scss';
@@ -45,7 +45,7 @@ export default class SelectionMarquee extends Preact.Component<SelectionMarqueeP
         className={classes}
         style={style}
         data-event-target
-        data-type={DiagramMakerComponentsType.SELECTION_MARQUEE}
+        data-type={DiagrammerComponentsType.SELECTION_MARQUEE}
       />
     );
   }

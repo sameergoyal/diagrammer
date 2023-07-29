@@ -1,5 +1,5 @@
 import {
-  getAllEdges, getAllNodes, getContextMenu, getDiagramMakerView, getEdgeById, getElementByType,
+  getAllEdges, getAllNodes, getContextMenu, getDiagrammerView, getEdgeById, getElementByType,
   getNodeById, getPanelById, getPotentialNodeById, getWorkspace,
 } from '../common/getters';
 import {
@@ -7,10 +7,10 @@ import {
 } from '../common/interaction';
 import { convertScaleToMatrix, convertTranslate2dToMatrix } from '../common/utils';
 
-describe('DiagramMaker.Configurations', () => {
+describe('Diagrammer.Configurations', () => {
   describe('nodeTypeConfiguration', () => {
     beforeEach(() => {
-      cy.visit('/iframe.html?id=demos-diagram-maker--left-right-rectangular&args=&viewMode=story');
+      cy.visit('/iframe.html?id=demos-diagrammer--left-right-rectangular&args=&viewMode=story');
     });
 
     describe('size', () => {
@@ -225,7 +225,7 @@ describe('DiagramMaker.Configurations', () => {
 
   describe('context menu', () => {
     beforeEach(() => {
-      cy.visit('/iframe.html?id=demos-diagram-maker--left-right-rectangular&args=&viewMode=story');
+      cy.visit('/iframe.html?id=demos-diagrammer--left-right-rectangular&args=&viewMode=story');
     });
 
     describe('workspace', () => {
@@ -409,20 +409,20 @@ describe('DiagramMaker.Configurations', () => {
 
   describe('action interceptor', () => {
     beforeEach(() => {
-      cy.visit('/iframe.html?id=demos-diagram-maker--action-interceptor&args=&viewMode=story');
+      cy.visit('/iframe.html?id=demos-diagrammer--action-interceptor&args=&viewMode=story');
     });
 
     describe('logging an action', () => {
       it('logs workspace deselect action', () => {
         clickElement(getWorkspace());
-        getElementByType('DiagramMaker.ActionType').should('have.length', 1);
+        getElementByType('Diagrammer.ActionType').should('have.length', 1);
       });
 
       it('logs node move action', () => {
         const node = getNodeById('node1');
         dragStartElement(node, { pageX: 500, pageY: 500 });
-        getElementByType('DiagramMaker.ActionType').should('have.length', 1);
-        getElementByType('DiagramMaker.ActionPayload').should('have.length', 1);
+        getElementByType('Diagrammer.ActionType').should('have.length', 1);
+        getElementByType('Diagrammer.ActionPayload').should('have.length', 1);
       });
     });
 
@@ -430,7 +430,7 @@ describe('DiagramMaker.Configurations', () => {
       it('cancels delete node action', () => {
         const node = getNodeById('node1');
         clickElement(node);
-        triggerKeyboardEvent(getDiagramMakerView(), 'Delete');
+        triggerKeyboardEvent(getDiagrammerView(), 'Delete');
         getNodeById('node1').should('exist');
       });
     });

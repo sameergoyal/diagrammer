@@ -1,7 +1,7 @@
 import * as Preact from 'preact';
 
-import { destroy, render } from 'diagramMaker/components/renderUtils';
-import { asMock } from 'diagramMaker/testing/testUtils';
+import { destroy, render } from 'diagrammer/components/renderUtils';
+import { asMock } from 'diagrammer/testing/testUtils';
 
 jest.mock('preact', () => {
   const originalPreact = jest.requireActual('preact');

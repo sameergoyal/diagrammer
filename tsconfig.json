@@ -9,7 +9,7 @@
     "moduleResolution": "node",
     "paths": {
       "*": ["./src/typings/*"],
-      "diagramMaker/*": ["./src/*"],
+      "diagrammer/*": ["./src/*"],
       "react": ["./node_modules/preact/compat"],
       "react-dom": ["./node_modules/preact/compat"]
     },

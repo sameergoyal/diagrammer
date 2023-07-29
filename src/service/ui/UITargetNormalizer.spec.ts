@@ -1,5 +1,5 @@
-import * as browserUtils from 'diagramMaker/service/browserUtils';
-import * as positionUtils from 'diagramMaker/service/positionUtils';
+import * as browserUtils from 'diagrammer/service/browserUtils';
+import * as positionUtils from 'diagrammer/service/positionUtils';
 
 import { EventAttribute } from './UIEventNormalizer';
 import UITargetNormalizer, { NormalizedTarget } from './UITargetNormalizer';

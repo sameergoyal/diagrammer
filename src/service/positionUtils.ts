@@ -1,6 +1,6 @@
 import clamp from 'lodash-es/clamp';
 
-import { Position, Rectangle, Size } from 'diagramMaker/state/types';
+import { Position, Rectangle, Size } from 'diagrammer/state/types';
 
 /**
  * Finds a center point within a Bezier curve

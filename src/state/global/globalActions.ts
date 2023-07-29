@@ -1,6 +1,6 @@
 import { Action } from 'redux';
 
-import { DiagramMakerEdge, DiagramMakerNode } from 'diagramMaker/state/types';
+import { DiagrammerEdge, DiagrammerNode } from 'diagrammer/state/types';
 
 export enum GlobalActionsType {
   /** Delete several items including nodes, edges together */
@@ -29,9 +29,9 @@ export interface CreateItemsAction<NodeType, EdgeType> extends Action {
   type: GlobalActionsType.CREATE_ITEMS;
   payload: {
     /** Node objects with all node info to create */
-    nodes: DiagramMakerNode<NodeType>[];
+    nodes: DiagrammerNode<NodeType>[];
     /** Edge objects with all edge info to create */
-    edges: DiagramMakerEdge<EdgeType>[];
+    edges: DiagrammerEdge<EdgeType>[];
   };
 }
 

@@ -3,8 +3,8 @@ import { Provider } from 'react-redux';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-import { getConnectedView } from 'diagramMaker/components/view/ConnectedView';
-import createStore from 'diagramMaker/state/createStore';
+import { getConnectedView } from 'diagrammer/components/view/ConnectedView';
+import createStore from 'diagrammer/state/createStore';
 
 describe('ConnectedView', () => {
   it('connects View component to redux store', () => {

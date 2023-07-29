@@ -1,15 +1,15 @@
 import * as Preact from 'preact';
 
-import { ComposeView } from 'diagramMaker/components/common';
+import { ComposeView } from 'diagrammer/components/common';
 import {
   Connector, ConnectorProps, ConnectorType,
-} from 'diagramMaker/components/connector';
+} from 'diagrammer/components/connector';
 import {
   BoundRenderCallback, ConnectorPlacement, ConnectorPlacementType, DestroyCallback,
   TypeForVisibleConnectorTypes, VisibleConnectorTypes,
-} from 'diagramMaker/service/ConfigService';
-import { DiagramMakerComponentsType } from 'diagramMaker/service/ui/types';
-import { DiagramMakerNode } from 'diagramMaker/state/types';
+} from 'diagrammer/service/ConfigService';
+import { DiagrammerComponentsType } from 'diagrammer/service/ui/types';
+import { DiagrammerNode } from 'diagrammer/state/types';
 
 import './Node.scss';
 
@@ -17,15 +17,15 @@ export interface NodeProps<NodeType> {
   connectorPlacement?: ConnectorPlacementType;
   renderCallback: BoundRenderCallback;
   destroyCallback: DestroyCallback;
-  diagramMakerNode: DiagramMakerNode<NodeType>;
+  diagrammerNode: DiagrammerNode<NodeType>;
   visibleConnectorTypes?: TypeForVisibleConnectorTypes;
 }
 
 export default class Node<NodeType> extends Preact.Component<NodeProps<NodeType>, {}> {
   public render(): JSX.Element {
-    const { diagramMakerData, id } = this.props.diagramMakerNode;
-    const { x, y } = diagramMakerData.position;
-    const { width, height } = diagramMakerData.size;
+    const { diagrammerData, id } = this.props.diagrammerNode;
+    const { x, y } = diagrammerData.position;
+    const { width, height } = diagrammerData.size;
     const transform = `translate3d(${x}px, ${y}px, 0)`;
     const { renderCallback, destroyCallback } = this.props;
 
@@ -34,7 +34,7 @@ export default class Node<NodeType> extends Preact.Component<NodeProps<NodeType>
         className="dm-node"
         style={{ width, height, transform }}
         data-id={id}
-        data-type={DiagramMakerComponentsType.NODE}
+        data-type={DiagrammerComponentsType.NODE}
         data-event-target
         data-draggable
       >
@@ -49,12 +49,12 @@ export default class Node<NodeType> extends Preact.Component<NodeProps<NodeType>
 
   public shouldComponentUpdate = (
     nextProps: NodeProps<NodeType>,
-  ) => nextProps.diagramMakerNode !== this.props.diagramMakerNode;
+  ) => nextProps.diagrammerNode !== this.props.diagrammerNode;
 
   private getConnectors(): ConnectorProps[] {
-    const { id, diagramMakerData } = this.props.diagramMakerNode;
+    const { id, diagrammerData } = this.props.diagrammerNode;
     const { connectorPlacement } = this.props;
-    const { width, height } = diagramMakerData.size;
+    const { width, height } = diagrammerData.size;
     const horizontalCenter = width / 2;
     const verticalCenter = height / 2;
     const { INPUT, OUTPUT } = ConnectorType;

@@ -12,9 +12,9 @@ module.exports = merge(baseConfig, {
   devtool: 'source-map',
   bail: true,
   output: {
-    filename: 'diagramMaker.js',
+    filename: 'diagrammer.js',
     path: path.resolve(__dirname, 'dist'),
-    library: 'diagramMaker',
+    library: 'diagrammer',
     libraryTarget: 'umd',
     umdNamedDefine: true
   },
@@ -30,7 +30,7 @@ module.exports = merge(baseConfig, {
   plugins: [
     // Extract all CSS
     new MiniCssExtractPlugin({
-      filename: 'diagramMaker.css'
+      filename: 'diagrammer.css'
     }),
     new BundleDeclarationsWebpackPlugin({
       entry: {
@@ -42,7 +42,7 @@ module.exports = merge(baseConfig, {
           inlineDeclareGlobals: true
         }
       },
-      outFile: 'diagramMaker.d.ts'
+      outFile: 'diagrammer.d.ts'
     })
   ],
   // This is because of a limitation in ts-loader

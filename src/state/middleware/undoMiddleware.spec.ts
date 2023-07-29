@@ -2,16 +2,16 @@ import {
   createUndoMiddleware, RevertingActionsFunction, RevertingActionsObject, UndoMiddlewareConfig,
 } from 'redux-undo-redo';
 
-import { CreateEdgeAction, EdgeActions, EdgeActionsType } from 'diagramMaker/state/edge/edgeActions';
-import { createDeleteItemsAction, createNewItemsAction } from 'diagramMaker/state/global/globalActionDispatcher';
-import { DeleteItemsAction, GlobalActions } from 'diagramMaker/state/global/globalActions';
-import { CreateNodeAction, NodeActions, NodeActionsType } from 'diagramMaker/state/node/nodeActions';
-import { DiagramMakerData } from 'diagramMaker/state/types';
-import { asMock } from 'diagramMaker/testing/testUtils';
+import { CreateEdgeAction, EdgeActions, EdgeActionsType } from 'diagrammer/state/edge/edgeActions';
+import { createDeleteItemsAction, createNewItemsAction } from 'diagrammer/state/global/globalActionDispatcher';
+import { DeleteItemsAction, GlobalActions } from 'diagrammer/state/global/globalActions';
+import { CreateNodeAction, NodeActions, NodeActionsType } from 'diagrammer/state/node/nodeActions';
+import { DiagrammerData } from 'diagrammer/state/types';
+import { asMock } from 'diagrammer/testing/testUtils';
 
 import { getUndoMiddleware } from './undoMiddleware';
 
-jest.mock('diagramMaker/state/global/globalActionDispatcher', () => ({
+jest.mock('diagrammer/state/global/globalActionDispatcher', () => ({
   createDeleteItemsAction: jest.fn(),
   createNewItemsAction: jest.fn(),
 }));
@@ -79,7 +79,7 @@ describe('undoMiddleware', () => {
 
     describe('delete items', () => {
       const tempRevertObj = configObject.revertingActions[GlobalActions.DELETE_ITEMS];
-      const revertObj = tempRevertObj as RevertingActionsObject<DiagramMakerData<{}, {}>>;
+      const revertObj = tempRevertObj as RevertingActionsObject<DiagrammerData<{}, {}>>;
       const revertFunc = revertObj.action;
       const { createArgs } = revertObj;
       it('calls createNewItemsAction with node id', () => {

@@ -5,55 +5,55 @@ Object {
   "edges": Object {
     "edge-0": Object {
       "dest": "node-center",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-0",
       "src": "fixed-node-1",
     },
     "edge-1": Object {
       "dest": "node-center",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-1",
       "src": "fixed-node-2",
     },
     "edge-2": Object {
       "dest": "node-center",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-2",
       "src": "fixed-node-3",
     },
     "edge-3": Object {
       "dest": "node-1",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-3",
       "src": "node-center",
     },
     "edge-4": Object {
       "dest": "node-2",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-4",
       "src": "node-center",
     },
     "edge-5": Object {
       "dest": "node-3",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-5",
       "src": "node-center",
     },
     "edge-6": Object {
       "dest": "node-4",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-6",
       "src": "node-center",
     },
     "edge-7": Object {
       "dest": "node-5",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-7",
       "src": "node-center",
     },
     "edge-8": Object {
       "dest": "node-6",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-8",
       "src": "node-center",
     },
@@ -63,7 +63,7 @@ Object {
   },
   "nodes": Object {
     "fixed-node-1": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 300,
           "y": 400,
@@ -76,7 +76,7 @@ Object {
       "id": "fixed-node-1",
     },
     "fixed-node-2": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 500,
           "y": 400,
@@ -89,7 +89,7 @@ Object {
       "id": "fixed-node-2",
     },
     "fixed-node-3": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 500,
           "y": 300,
@@ -102,7 +102,7 @@ Object {
       "id": "fixed-node-3",
     },
     "node-1": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 388.7992051638202,
           "y": 451.71201591153357,
@@ -115,7 +115,7 @@ Object {
       "id": "node-1",
     },
     "node-2": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 352.4784351781109,
           "y": 418.4207529237788,
@@ -128,7 +128,7 @@ Object {
       "id": "node-2",
     },
     "node-3": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 337.3443337051914,
           "y": 365.2134115656732,
@@ -141,7 +141,7 @@ Object {
       "id": "node-3",
     },
     "node-4": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 346.12577836656243,
           "y": 326.53136603595465,
@@ -154,7 +154,7 @@ Object {
       "id": "node-4",
     },
     "node-5": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 376.80336318236294,
           "y": 289.0756718623055,
@@ -167,7 +167,7 @@ Object {
       "id": "node-5",
     },
     "node-6": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 515.8902785313585,
           "y": 317.6732916087034,
@@ -180,7 +180,7 @@ Object {
       "id": "node-6",
     },
     "node-center": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 433.3333333333333,
           "y": 366.6666666666667,
@@ -217,79 +217,79 @@ Object {
   "edges": Object {
     "edge-0": Object {
       "dest": "node-a",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-0",
       "src": "node-start",
     },
     "edge-1": Object {
       "dest": "node-b",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-1",
       "src": "node-start",
     },
     "edge-10": Object {
       "dest": "node-c-1",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-10",
       "src": "node-c",
     },
     "edge-11": Object {
       "dest": "node-c-2",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-11",
       "src": "node-c",
     },
     "edge-12": Object {
       "dest": "node-c-1-1",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-12",
       "src": "node-c-1",
     },
     "edge-2": Object {
       "dest": "node-c",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-2",
       "src": "node-start",
     },
     "edge-3": Object {
       "dest": "node-a-1",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-3",
       "src": "node-a",
     },
     "edge-4": Object {
       "dest": "node-a-2",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-4",
       "src": "node-a",
     },
     "edge-5": Object {
       "dest": "node-a-3",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-5",
       "src": "node-a",
     },
     "edge-6": Object {
       "dest": "node-a-4",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-6",
       "src": "node-a",
     },
     "edge-7": Object {
       "dest": "node-b-1",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-7",
       "src": "node-b",
     },
     "edge-8": Object {
       "dest": "node-b-2",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-8",
       "src": "node-b",
     },
     "edge-9": Object {
       "dest": "node-b-3",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-9",
       "src": "node-b",
     },
@@ -299,7 +299,7 @@ Object {
   },
   "nodes": Object {
     "node-a": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 300,
           "y": 400,
@@ -312,7 +312,7 @@ Object {
       "id": "node-a",
     },
     "node-a-1": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 327.8115294937453,
           "y": 485.5950864665638,
@@ -325,7 +325,7 @@ Object {
       "id": "node-a-1",
     },
     "node-a-2": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 227.18847050625476,
           "y": 452.9006727063226,
@@ -338,7 +338,7 @@ Object {
       "id": "node-a-2",
     },
     "node-a-3": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 227.18847050625473,
           "y": 347.09932729367745,
@@ -351,7 +351,7 @@ Object {
       "id": "node-a-3",
     },
     "node-a-4": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 327.81152949374524,
           "y": 314.4049135334362,
@@ -364,7 +364,7 @@ Object {
       "id": "node-a-4",
     },
     "node-b": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 500,
           "y": 400,
@@ -377,7 +377,7 @@ Object {
       "id": "node-b",
     },
     "node-b-1": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 590,
           "y": 400,
@@ -390,7 +390,7 @@ Object {
       "id": "node-b-1",
     },
     "node-b-2": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 500,
           "y": 490,
@@ -403,7 +403,7 @@ Object {
       "id": "node-b-2",
     },
     "node-b-3": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 500,
           "y": 310,
@@ -416,7 +416,7 @@ Object {
       "id": "node-b-3",
     },
     "node-c": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 490,
           "y": 100,
@@ -429,7 +429,7 @@ Object {
       "id": "node-c",
     },
     "node-c-1": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 400,
           "y": 100,
@@ -442,7 +442,7 @@ Object {
       "id": "node-c-1",
     },
     "node-c-1-1": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 310,
           "y": 100.00000000000001,
@@ -455,7 +455,7 @@ Object {
       "id": "node-c-1-1",
     },
     "node-c-2": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 547.7650908368364,
           "y": 57.02100186588763,
@@ -468,7 +468,7 @@ Object {
       "id": "node-c-2",
     },
     "node-start": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 400,
           "y": 400,
@@ -505,79 +505,79 @@ Object {
   "edges": Object {
     "edge-0": Object {
       "dest": "node-a",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-0",
       "src": "node-start",
     },
     "edge-1": Object {
       "dest": "node-b",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-1",
       "src": "node-start",
     },
     "edge-10": Object {
       "dest": "node-c-1",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-10",
       "src": "node-c",
     },
     "edge-11": Object {
       "dest": "node-c-2",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-11",
       "src": "node-c",
     },
     "edge-12": Object {
       "dest": "node-c-1-1",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-12",
       "src": "node-c-1",
     },
     "edge-2": Object {
       "dest": "node-c",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-2",
       "src": "node-start",
     },
     "edge-3": Object {
       "dest": "node-a-1",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-3",
       "src": "node-a",
     },
     "edge-4": Object {
       "dest": "node-a-2",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-4",
       "src": "node-a",
     },
     "edge-5": Object {
       "dest": "node-a-3",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-5",
       "src": "node-a",
     },
     "edge-6": Object {
       "dest": "node-a-4",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-6",
       "src": "node-a",
     },
     "edge-7": Object {
       "dest": "node-b-1",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-7",
       "src": "node-b",
     },
     "edge-8": Object {
       "dest": "node-b-2",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-8",
       "src": "node-b",
     },
     "edge-9": Object {
       "dest": "node-b-3",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-9",
       "src": "node-b",
     },
@@ -587,7 +587,7 @@ Object {
   },
   "nodes": Object {
     "node-a": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 400,
           "y": 650,
@@ -600,7 +600,7 @@ Object {
       "id": "node-a",
     },
     "node-a-1": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 488.167787843871,
           "y": 771.3525491562422,
@@ -613,7 +613,7 @@ Object {
       "id": "node-a-1",
     },
     "node-a-2": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 311.83221215612906,
           "y": 771.3525491562422,
@@ -626,7 +626,7 @@ Object {
       "id": "node-a-2",
     },
     "node-a-3": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 257.34152255572695,
           "y": 603.647450843758,
@@ -639,7 +639,7 @@ Object {
       "id": "node-a-3",
     },
     "node-a-4": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 542.658477444273,
           "y": 603.6474508437578,
@@ -652,7 +652,7 @@ Object {
       "id": "node-a-4",
     },
     "node-b": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 183.4936490538903,
           "y": 275.00000000000006,
@@ -665,7 +665,7 @@ Object {
       "id": "node-b",
     },
     "node-b-1": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 108.49364905389032,
           "y": 404.90381056766586,
@@ -678,7 +678,7 @@ Object {
       "id": "node-b-1",
     },
     "node-b-2": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 53.589838486224465,
           "y": 200.0000000000001,
@@ -691,7 +691,7 @@ Object {
       "id": "node-b-2",
     },
     "node-b-3": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 258.4936490538902,
           "y": 145.0961894323342,
@@ -704,7 +704,7 @@ Object {
       "id": "node-b-3",
     },
     "node-c": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 616.5063509461096,
           "y": 274.9999999999999,
@@ -717,7 +717,7 @@ Object {
       "id": "node-c",
     },
     "node-c-1": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 746.4101615137754,
           "y": 349.9999999999999,
@@ -730,7 +730,7 @@ Object {
       "id": "node-c-1",
     },
     "node-c-1-1": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 833.0127018922193,
           "y": 399.99999999999983,
@@ -743,7 +743,7 @@ Object {
       "id": "node-c-1-1",
     },
     "node-c-2": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 616.5063509461096,
           "y": 124.99999999999989,
@@ -756,7 +756,7 @@ Object {
       "id": "node-c-2",
     },
     "node-start": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 400,
           "y": 400,
@@ -793,79 +793,79 @@ Object {
   "edges": Object {
     "edge-0": Object {
       "dest": "node-a",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-0",
       "src": "node-start",
     },
     "edge-1": Object {
       "dest": "node-b",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-1",
       "src": "node-start",
     },
     "edge-10": Object {
       "dest": "node-c-1",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-10",
       "src": "node-c",
     },
     "edge-11": Object {
       "dest": "node-c-2",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-11",
       "src": "node-c",
     },
     "edge-12": Object {
       "dest": "node-c-1-1",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-12",
       "src": "node-c-1",
     },
     "edge-2": Object {
       "dest": "node-c",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-2",
       "src": "node-start",
     },
     "edge-3": Object {
       "dest": "node-a-1",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-3",
       "src": "node-a",
     },
     "edge-4": Object {
       "dest": "node-a-2",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-4",
       "src": "node-a",
     },
     "edge-5": Object {
       "dest": "node-a-3",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-5",
       "src": "node-a",
     },
     "edge-6": Object {
       "dest": "node-a-4",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-6",
       "src": "node-a",
     },
     "edge-7": Object {
       "dest": "node-b-1",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-7",
       "src": "node-b",
     },
     "edge-8": Object {
       "dest": "node-b-2",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-8",
       "src": "node-b",
     },
     "edge-9": Object {
       "dest": "node-b-3",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-9",
       "src": "node-b",
     },
@@ -875,7 +875,7 @@ Object {
   },
   "nodes": Object {
     "node-a": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 616.5063509461097,
           "y": 524.9999999999999,
@@ -888,7 +888,7 @@ Object {
       "id": "node-a",
     },
     "node-a-1": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 763.2284910561806,
           "y": 556.1867536226637,
@@ -901,7 +901,7 @@ Object {
       "id": "node-a-1",
     },
     "node-a-2": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 716.8759418999385,
           "y": 636.471723821609,
@@ -914,7 +914,7 @@ Object {
       "id": "node-a-2",
     },
     "node-a-3": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 608.6559575096683,
           "y": 674.7944302131859,
@@ -927,7 +927,7 @@ Object {
       "id": "node-a-3",
     },
     "node-a-4": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 742.3069361379232,
           "y": 443.30414474774574,
@@ -940,7 +940,7 @@ Object {
       "id": "node-a-4",
     },
     "node-b": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 400,
           "y": 650,
@@ -953,7 +953,7 @@ Object {
       "id": "node-b",
     },
     "node-b-1": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 506.0660171779821,
           "y": 756.0660171779821,
@@ -966,7 +966,7 @@ Object {
       "id": "node-b-1",
     },
     "node-b-2": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 400,
           "y": 800,
@@ -979,7 +979,7 @@ Object {
       "id": "node-b-2",
     },
     "node-b-3": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 293.93398282201787,
           "y": 756.0660171779821,
@@ -992,7 +992,7 @@ Object {
       "id": "node-b-3",
     },
     "node-c": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 183.49364905389038,
           "y": 525.0000000000001,
@@ -1005,7 +1005,7 @@ Object {
       "id": "node-c",
     },
     "node-c-1": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 108.49364905389035,
           "y": 654.9038105676659,
@@ -1018,7 +1018,7 @@ Object {
       "id": "node-c-1",
     },
     "node-c-1-1": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 58.49364905389025,
           "y": 741.5063509461097,
@@ -1031,7 +1031,7 @@ Object {
       "id": "node-c-1-1",
     },
     "node-c-2": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 33.49364905389038,
           "y": 525.0000000000001,
@@ -1044,7 +1044,7 @@ Object {
       "id": "node-c-2",
     },
     "node-start": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 400,
           "y": 400,
@@ -1081,19 +1081,19 @@ Object {
   "edges": Object {
     "edge-0": Object {
       "dest": "node-center",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-0",
       "src": "fixed-node-1",
     },
     "edge-1": Object {
       "dest": "node-center",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-1",
       "src": "fixed-node-2",
     },
     "edge-2": Object {
       "dest": "node-1",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-2",
       "src": "node-center",
     },
@@ -1103,7 +1103,7 @@ Object {
   },
   "nodes": Object {
     "fixed-node-1": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 300,
           "y": 400,
@@ -1116,7 +1116,7 @@ Object {
       "id": "fixed-node-1",
     },
     "fixed-node-2": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 500,
           "y": 400,
@@ -1129,7 +1129,7 @@ Object {
       "id": "fixed-node-2",
     },
     "node-1": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 400,
           "y": 304,
@@ -1142,7 +1142,7 @@ Object {
       "id": "node-1",
     },
     "node-center": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 400,
           "y": 400,
@@ -1179,55 +1179,55 @@ Object {
   "edges": Object {
     "edge-0": Object {
       "dest": "node-center",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-0",
       "src": "fixed-node-1",
     },
     "edge-1": Object {
       "dest": "node-center",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-1",
       "src": "fixed-node-2",
     },
     "edge-2": Object {
       "dest": "node-center",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-2",
       "src": "fixed-node-3",
     },
     "edge-3": Object {
       "dest": "node-1",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-3",
       "src": "node-center",
     },
     "edge-4": Object {
       "dest": "node-2",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-4",
       "src": "node-center",
     },
     "edge-5": Object {
       "dest": "node-3",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-5",
       "src": "node-center",
     },
     "edge-6": Object {
       "dest": "node-4",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-6",
       "src": "node-center",
     },
     "edge-7": Object {
       "dest": "node-5",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-7",
       "src": "node-center",
     },
     "edge-8": Object {
       "dest": "node-6",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-8",
       "src": "node-center",
     },
@@ -1237,7 +1237,7 @@ Object {
   },
   "nodes": Object {
     "fixed-node-1": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 300,
           "y": 400,
@@ -1250,7 +1250,7 @@ Object {
       "id": "fixed-node-1",
     },
     "fixed-node-2": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 500,
           "y": 400,
@@ -1263,7 +1263,7 @@ Object {
       "id": "fixed-node-2",
     },
     "fixed-node-3": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 500,
           "y": 300,
@@ -1276,7 +1276,7 @@ Object {
       "id": "fixed-node-3",
     },
     "node-1": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 461.3508826485333,
           "y": 458.48723587841977,
@@ -1289,7 +1289,7 @@ Object {
       "id": "node-1",
     },
     "node-2": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 386.06428611749413,
           "y": 450.222858390002,
@@ -1302,7 +1302,7 @@ Object {
       "id": "node-2",
     },
     "node-3": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 345.11140852262724,
           "y": 328.8131069569892,
@@ -1315,7 +1315,7 @@ Object {
       "id": "node-3",
     },
     "node-4": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 386.0342470949084,
           "y": 283.1274756183327,
@@ -1328,7 +1328,7 @@ Object {
       "id": "node-4",
     },
     "node-5": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 446.2639795200021,
           "y": 271.5414944502907,
@@ -1341,7 +1341,7 @@ Object {
       "id": "node-5",
     },
     "node-6": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 528.093729266533,
           "y": 351.2891713379978,
@@ -1354,7 +1354,7 @@ Object {
       "id": "node-6",
     },
     "node-center": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 433.3333333333333,
           "y": 366.6666666666667,
@@ -1391,13 +1391,13 @@ Object {
   "edges": Object {
     "edge-0": Object {
       "dest": "node-1",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-0",
       "src": "node-start",
     },
     "edge-1": Object {
       "dest": "node-2",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-1",
       "src": "node-1",
     },
@@ -1407,7 +1407,7 @@ Object {
   },
   "nodes": Object {
     "node-1": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 465,
           "y": 265,
@@ -1420,7 +1420,7 @@ Object {
       "id": "node-1",
     },
     "node-2": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 550,
           "y": 280,
@@ -1433,7 +1433,7 @@ Object {
       "id": "node-2",
     },
     "node-start": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 300,
           "y": 300,
@@ -1470,25 +1470,25 @@ Object {
   "edges": Object {
     "edge-0": Object {
       "dest": "node-a",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-0",
       "src": "node-start",
     },
     "edge-1": Object {
       "dest": "node-b",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-1",
       "src": "node-start",
     },
     "edge-2": Object {
       "dest": "node-c",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-2",
       "src": "node-start",
     },
     "edge-3": Object {
       "dest": "node-d",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-3",
       "src": "node-start",
     },
@@ -1498,7 +1498,7 @@ Object {
   },
   "nodes": Object {
     "node-a": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 437.87030088828516,
           "y": 509.09128643864267,
@@ -1511,7 +1511,7 @@ Object {
       "id": "node-a",
     },
     "node-b": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 314.8690171883659,
           "y": 599.261221781989,
@@ -1524,7 +1524,7 @@ Object {
       "id": "node-b",
     },
     "node-c": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 305.4674869181774,
           "y": 300.09967782956716,
@@ -1537,7 +1537,7 @@ Object {
       "id": "node-c",
     },
     "node-d": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 433.88787276781886,
           "y": 382.3683688965855,
@@ -1550,7 +1550,7 @@ Object {
       "id": "node-d",
     },
     "node-start": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 300,
           "y": 450,
@@ -1587,31 +1587,31 @@ Object {
   "edges": Object {
     "edge-0": Object {
       "dest": "node-a",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-0",
       "src": "node-start",
     },
     "edge-1": Object {
       "dest": "node-b",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-1",
       "src": "node-start",
     },
     "edge-2": Object {
       "dest": "node-c",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-2",
       "src": "node-start",
     },
     "edge-3": Object {
       "dest": "node-d",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-3",
       "src": "node-start",
     },
     "edge-4": Object {
       "dest": "node-e",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-4",
       "src": "node-start",
     },
@@ -1621,7 +1621,7 @@ Object {
   },
   "nodes": Object {
     "node-a": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 217.79675701591964,
           "y": 486.64187280830834,
@@ -1634,7 +1634,7 @@ Object {
       "id": "node-a",
     },
     "node-b": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 214.8107747659059,
           "y": 420.96905265040795,
@@ -1647,7 +1647,7 @@ Object {
       "id": "node-b",
     },
     "node-c": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 236.36038969321072,
           "y": 386.3603896932107,
@@ -1660,7 +1660,7 @@ Object {
       "id": "node-c",
     },
     "node-d": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 270.96905265040795,
           "y": 364.8107747659059,
@@ -1673,7 +1673,7 @@ Object {
       "id": "node-d",
     },
     "node-e": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 336.6418728083082,
           "y": 367.79675701591964,
@@ -1686,7 +1686,7 @@ Object {
       "id": "node-e",
     },
     "node-start": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 300,
           "y": 450,
@@ -1723,7 +1723,7 @@ Object {
   "edges": Object {
     "edge-0": Object {
       "dest": "node-a",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-0",
       "src": "node-start",
     },
@@ -1733,7 +1733,7 @@ Object {
   },
   "nodes": Object {
     "node-a": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 270,
           "y": 450,
@@ -1746,7 +1746,7 @@ Object {
       "id": "node-a",
     },
     "node-start": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 450,
           "y": 450,
@@ -1783,25 +1783,25 @@ Object {
   "edges": Object {
     "edge-0": Object {
       "dest": "node-a",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-0",
       "src": "node-start",
     },
     "edge-1": Object {
       "dest": "node-b",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-1",
       "src": "node-start",
     },
     "edge-2": Object {
       "dest": "node-c",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-2",
       "src": "node-start",
     },
     "edge-3": Object {
       "dest": "node-d",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-3",
       "src": "node-start",
     },
@@ -1811,7 +1811,7 @@ Object {
   },
   "nodes": Object {
     "node-a": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 633.3379259803436,
           "y": 521.1186527804311,
@@ -1824,7 +1824,7 @@ Object {
       "id": "node-a",
     },
     "node-b": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 478.88134721956885,
           "y": 633.3379259803436,
@@ -1837,7 +1837,7 @@ Object {
       "id": "node-b",
     },
     "node-c": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 366.6620740196564,
           "y": 478.88134721956885,
@@ -1850,7 +1850,7 @@ Object {
       "id": "node-c",
     },
     "node-d": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 521.1186527804311,
           "y": 366.6620740196564,
@@ -1863,7 +1863,7 @@ Object {
       "id": "node-d",
     },
     "node-start": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 500,
           "y": 500,
@@ -1900,19 +1900,19 @@ Object {
   "edges": Object {
     "edge-0": Object {
       "dest": "node-a",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-0",
       "src": "node-start",
     },
     "edge-1": Object {
       "dest": "node-b",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-1",
       "src": "node-start",
     },
     "edge-2": Object {
       "dest": "node-c",
-      "diagramMakerData": Object {},
+      "diagrammerData": Object {},
       "id": "edge-2",
       "src": "node-start",
     },
@@ -1922,7 +1922,7 @@ Object {
   },
   "nodes": Object {
     "node-a": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 694.8557158514988,
           "y": 612.4999999999999,
@@ -1935,7 +1935,7 @@ Object {
       "id": "node-a",
     },
     "node-b": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 305.14428414850136,
           "y": 612.5000000000002,
@@ -1948,7 +1948,7 @@ Object {
       "id": "node-b",
     },
     "node-c": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 500,
           "y": 275,
@@ -1961,7 +1961,7 @@ Object {
       "id": "node-c",
     },
     "node-start": Object {
-      "diagramMakerData": Object {
+      "diagrammerData": Object {
         "position": Object {
           "x": 500,
           "y": 500,

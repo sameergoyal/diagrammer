@@ -3,7 +3,7 @@
 exports[`View does not render edge when accomplying node(s) do not exist 1`] = `
 <div
   className="dm-view"
-  data-type="DiagramMaker.View"
+  data-type="Diagrammer.View"
   tabIndex={0}
 >
   <Workspace
@@ -31,10 +31,10 @@ exports[`View does not render edge when accomplying node(s) do not exist 1`] = `
       <Node
         connectorPlacement="Centered"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 0,
                 "y": 0,
@@ -54,10 +54,10 @@ exports[`View does not render edge when accomplying node(s) do not exist 1`] = `
       <Node
         connectorPlacement="Centered"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 100,
                 "y": 200,
@@ -108,7 +108,7 @@ exports[`View does not render edge when accomplying node(s) do not exist 1`] = `
 exports[`View nodes with edge & a new edge drawing renders a new edge with centered connector 1`] = `
 <div
   className="dm-view"
-  data-type="DiagramMaker.View"
+  data-type="Diagrammer.View"
   tabIndex={0}
 >
   <Workspace
@@ -155,10 +155,10 @@ exports[`View nodes with edge & a new edge drawing renders a new edge with cente
       <Node
         connectorPlacement="Centered"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 0,
                 "y": 0,
@@ -178,10 +178,10 @@ exports[`View nodes with edge & a new edge drawing renders a new edge with cente
       <Node
         connectorPlacement="Centered"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 100,
                 "y": 200,
@@ -250,7 +250,7 @@ exports[`View nodes with edge & a new edge drawing renders a new edge with cente
 exports[`View nodes with edge & a new edge drawing renders a new edge with default connector 1`] = `
 <div
   className="dm-view"
-  data-type="DiagramMaker.View"
+  data-type="Diagrammer.View"
   tabIndex={0}
 >
   <Workspace
@@ -297,10 +297,10 @@ exports[`View nodes with edge & a new edge drawing renders a new edge with defau
       <Node
         connectorPlacement="Centered"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 0,
                 "y": 0,
@@ -320,10 +320,10 @@ exports[`View nodes with edge & a new edge drawing renders a new edge with defau
       <Node
         connectorPlacement="Centered"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 100,
                 "y": 200,
@@ -392,7 +392,7 @@ exports[`View nodes with edge & a new edge drawing renders a new edge with defau
 exports[`View nodes with edge & a new edge drawing renders a new edge with left/right connector 1`] = `
 <div
   className="dm-view"
-  data-type="DiagramMaker.View"
+  data-type="Diagrammer.View"
   tabIndex={0}
 >
   <Workspace
@@ -439,10 +439,10 @@ exports[`View nodes with edge & a new edge drawing renders a new edge with left/
       <Node
         connectorPlacement="LeftRight"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 0,
                 "y": 0,
@@ -462,10 +462,10 @@ exports[`View nodes with edge & a new edge drawing renders a new edge with left/
       <Node
         connectorPlacement="LeftRight"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 100,
                 "y": 200,
@@ -534,7 +534,7 @@ exports[`View nodes with edge & a new edge drawing renders a new edge with left/
 exports[`View nodes with edge & a new edge drawing renders a new edge with top/bottom connector 1`] = `
 <div
   className="dm-view"
-  data-type="DiagramMaker.View"
+  data-type="Diagrammer.View"
   tabIndex={0}
 >
   <Workspace
@@ -581,10 +581,10 @@ exports[`View nodes with edge & a new edge drawing renders a new edge with top/b
       <Node
         connectorPlacement="TopBottom"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 0,
                 "y": 0,
@@ -604,10 +604,10 @@ exports[`View nodes with edge & a new edge drawing renders a new edge with top/b
       <Node
         connectorPlacement="TopBottom"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 100,
                 "y": 200,
@@ -676,7 +676,7 @@ exports[`View nodes with edge & a new edge drawing renders a new edge with top/b
 exports[`View nodes with edge & a new node dragging doesnt render potential node with no render callback 1`] = `
 <div
   className="dm-view"
-  data-type="DiagramMaker.View"
+  data-type="Diagrammer.View"
   tabIndex={0}
 >
   <Workspace
@@ -723,10 +723,10 @@ exports[`View nodes with edge & a new node dragging doesnt render potential node
       <Node
         connectorPlacement="Centered"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 0,
                 "y": 0,
@@ -746,10 +746,10 @@ exports[`View nodes with edge & a new node dragging doesnt render potential node
       <Node
         connectorPlacement="Centered"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 100,
                 "y": 200,
@@ -800,7 +800,7 @@ exports[`View nodes with edge & a new node dragging doesnt render potential node
 exports[`View nodes with edge & a new node dragging renders a potential node when render callback is provided 1`] = `
 <div
   className="dm-view"
-  data-type="DiagramMaker.View"
+  data-type="Diagrammer.View"
   tabIndex={0}
 >
   <Workspace
@@ -847,10 +847,10 @@ exports[`View nodes with edge & a new node dragging renders a potential node whe
       <Node
         connectorPlacement="Centered"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 0,
                 "y": 0,
@@ -870,10 +870,10 @@ exports[`View nodes with edge & a new node dragging renders a potential node whe
       <Node
         connectorPlacement="Centered"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 100,
                 "y": 200,
@@ -943,7 +943,7 @@ exports[`View nodes with edge & a new node dragging renders a potential node whe
 exports[`View nodes with edge and context menu doesnt render if render context menu callbacks dont exist 1`] = `
 <div
   className="dm-view"
-  data-type="DiagramMaker.View"
+  data-type="Diagrammer.View"
   tabIndex={0}
 >
   <Workspace
@@ -990,10 +990,10 @@ exports[`View nodes with edge and context menu doesnt render if render context m
       <Node
         connectorPlacement="LeftRight"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 0,
                 "y": 0,
@@ -1013,10 +1013,10 @@ exports[`View nodes with edge and context menu doesnt render if render context m
       <Node
         connectorPlacement="LeftRight"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 100,
                 "y": 200,
@@ -1067,7 +1067,7 @@ exports[`View nodes with edge and context menu doesnt render if render context m
 exports[`View nodes with edge and context menu renders context menu if render context menu callbacks do exist 1`] = `
 <div
   className="dm-view"
-  data-type="DiagramMaker.View"
+  data-type="Diagrammer.View"
   tabIndex={0}
 >
   <Workspace
@@ -1114,10 +1114,10 @@ exports[`View nodes with edge and context menu renders context menu if render co
       <Node
         connectorPlacement="Centered"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 0,
                 "y": 0,
@@ -1137,10 +1137,10 @@ exports[`View nodes with edge and context menu renders context menu if render co
       <Node
         connectorPlacement="Centered"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 100,
                 "y": 200,
@@ -1202,7 +1202,7 @@ exports[`View nodes with edge and context menu renders context menu if render co
 exports[`View nodes with edge nodes with types with connector placement override renders the node passing the correct connector placement 1`] = `
 <div
   className="dm-view"
-  data-type="DiagramMaker.View"
+  data-type="Diagrammer.View"
   tabIndex={0}
 >
   <Workspace
@@ -1251,10 +1251,10 @@ exports[`View nodes with edge nodes with types with connector placement override
       <Node
         connectorPlacement="TopBottom"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 0,
                 "y": 0,
@@ -1274,10 +1274,10 @@ exports[`View nodes with edge nodes with types with connector placement override
       <Node
         connectorPlacement="Centered"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 100,
                 "y": 200,
@@ -1328,7 +1328,7 @@ exports[`View nodes with edge nodes with types with connector placement override
 exports[`View nodes with edge nodes with types with shape & boundary defined defaults to center based edges if circles overlap each other perfectly 1`] = `
 <div
   className="dm-view"
-  data-type="DiagramMaker.View"
+  data-type="Diagrammer.View"
   tabIndex={0}
 >
   <Workspace
@@ -1377,10 +1377,10 @@ exports[`View nodes with edge nodes with types with shape & boundary defined def
       <Node
         connectorPlacement="Boundary"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 0,
                 "y": 0,
@@ -1400,10 +1400,10 @@ exports[`View nodes with edge nodes with types with shape & boundary defined def
       <Node
         connectorPlacement="Boundary"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 0,
                 "y": 0,
@@ -1454,7 +1454,7 @@ exports[`View nodes with edge nodes with types with shape & boundary defined def
 exports[`View nodes with edge nodes with types with shape & boundary defined renders the edge from the boundary of the node 1`] = `
 <div
   className="dm-view"
-  data-type="DiagramMaker.View"
+  data-type="Diagrammer.View"
   tabIndex={0}
 >
   <Workspace
@@ -1503,10 +1503,10 @@ exports[`View nodes with edge nodes with types with shape & boundary defined ren
       <Node
         connectorPlacement="Boundary"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 0,
                 "y": 0,
@@ -1526,10 +1526,10 @@ exports[`View nodes with edge nodes with types with shape & boundary defined ren
       <Node
         connectorPlacement="Boundary"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 100,
                 "y": 200,
@@ -1580,7 +1580,7 @@ exports[`View nodes with edge nodes with types with shape & boundary defined ren
 exports[`View nodes with edge nodes with types with shape & boundary defined renders the edge on the boundary of a rectangular node when orthogonal 1`] = `
 <div
   className="dm-view"
-  data-type="DiagramMaker.View"
+  data-type="Diagrammer.View"
   tabIndex={0}
 >
   <Workspace
@@ -1689,10 +1689,10 @@ exports[`View nodes with edge nodes with types with shape & boundary defined ren
       <Node
         connectorPlacement="Boundary"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 0,
                 "y": 0,
@@ -1712,10 +1712,10 @@ exports[`View nodes with edge nodes with types with shape & boundary defined ren
       <Node
         connectorPlacement="Boundary"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 0,
                 "y": 200,
@@ -1735,10 +1735,10 @@ exports[`View nodes with edge nodes with types with shape & boundary defined ren
       <Node
         connectorPlacement="Boundary"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 0,
                 "y": 400,
@@ -1758,10 +1758,10 @@ exports[`View nodes with edge nodes with types with shape & boundary defined ren
       <Node
         connectorPlacement="Boundary"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 200,
                 "y": 200,
@@ -1781,10 +1781,10 @@ exports[`View nodes with edge nodes with types with shape & boundary defined ren
       <Node
         connectorPlacement="Boundary"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 200,
                 "y": 400,
@@ -1835,7 +1835,7 @@ exports[`View nodes with edge nodes with types with shape & boundary defined ren
 exports[`View nodes with edge nodes with types with shape & boundary defined renders the edge on the side boundary of a rectangular node 1`] = `
 <div
   className="dm-view"
-  data-type="DiagramMaker.View"
+  data-type="Diagrammer.View"
   tabIndex={0}
 >
   <Workspace
@@ -1884,10 +1884,10 @@ exports[`View nodes with edge nodes with types with shape & boundary defined ren
       <Node
         connectorPlacement="Boundary"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 0,
                 "y": 0,
@@ -1907,10 +1907,10 @@ exports[`View nodes with edge nodes with types with shape & boundary defined ren
       <Node
         connectorPlacement="Boundary"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 200,
                 "y": 50,
@@ -1961,7 +1961,7 @@ exports[`View nodes with edge nodes with types with shape & boundary defined ren
 exports[`View nodes with edge nodes with types with shape & boundary defined renders the edge on the top boundary of a rectangular node 1`] = `
 <div
   className="dm-view"
-  data-type="DiagramMaker.View"
+  data-type="Diagrammer.View"
   tabIndex={0}
 >
   <Workspace
@@ -2010,10 +2010,10 @@ exports[`View nodes with edge nodes with types with shape & boundary defined ren
       <Node
         connectorPlacement="Boundary"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 0,
                 "y": 0,
@@ -2033,10 +2033,10 @@ exports[`View nodes with edge nodes with types with shape & boundary defined ren
       <Node
         connectorPlacement="Boundary"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 50,
                 "y": 200,
@@ -2087,7 +2087,7 @@ exports[`View nodes with edge nodes with types with shape & boundary defined ren
 exports[`View nodes with edge nodes with types with visible connector types config renders the node passing the correct visible connector typess config 1`] = `
 <div
   className="dm-view"
-  data-type="DiagramMaker.View"
+  data-type="Diagrammer.View"
   tabIndex={0}
 >
   <Workspace
@@ -2136,10 +2136,10 @@ exports[`View nodes with edge nodes with types with visible connector types conf
       <Node
         connectorPlacement="Centered"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 0,
                 "y": 0,
@@ -2160,10 +2160,10 @@ exports[`View nodes with edge nodes with types with visible connector types conf
       <Node
         connectorPlacement="Centered"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 100,
                 "y": 200,
@@ -2214,7 +2214,7 @@ exports[`View nodes with edge nodes with types with visible connector types conf
 exports[`View nodes with edge renders at the given position and size with nodes and a single edge with arrowhead 1`] = `
 <div
   className="dm-view"
-  data-type="DiagramMaker.View"
+  data-type="Diagrammer.View"
   tabIndex={0}
 >
   <Workspace
@@ -2277,10 +2277,10 @@ exports[`View nodes with edge renders at the given position and size with nodes 
       <Node
         connectorPlacement="Centered"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 0,
                 "y": 0,
@@ -2300,10 +2300,10 @@ exports[`View nodes with edge renders at the given position and size with nodes 
       <Node
         connectorPlacement="Centered"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 100,
                 "y": 200,
@@ -2354,7 +2354,7 @@ exports[`View nodes with edge renders at the given position and size with nodes 
 exports[`View nodes with edge renders at the given position and size with nodes and a single edge with centered connector 1`] = `
 <div
   className="dm-view"
-  data-type="DiagramMaker.View"
+  data-type="Diagrammer.View"
   tabIndex={0}
 >
   <Workspace
@@ -2401,10 +2401,10 @@ exports[`View nodes with edge renders at the given position and size with nodes 
       <Node
         connectorPlacement="Centered"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 0,
                 "y": 0,
@@ -2424,10 +2424,10 @@ exports[`View nodes with edge renders at the given position and size with nodes 
       <Node
         connectorPlacement="Centered"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 100,
                 "y": 200,
@@ -2478,7 +2478,7 @@ exports[`View nodes with edge renders at the given position and size with nodes 
 exports[`View nodes with edge renders at the given position and size with nodes and a single edge with default connector 1`] = `
 <div
   className="dm-view"
-  data-type="DiagramMaker.View"
+  data-type="Diagrammer.View"
   tabIndex={0}
 >
   <Workspace
@@ -2525,10 +2525,10 @@ exports[`View nodes with edge renders at the given position and size with nodes 
       <Node
         connectorPlacement="Centered"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 0,
                 "y": 0,
@@ -2548,10 +2548,10 @@ exports[`View nodes with edge renders at the given position and size with nodes 
       <Node
         connectorPlacement="Centered"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 100,
                 "y": 200,
@@ -2602,7 +2602,7 @@ exports[`View nodes with edge renders at the given position and size with nodes 
 exports[`View nodes with edge renders at the given position and size with nodes and a single edge with edge render callback 1`] = `
 <div
   className="dm-view"
-  data-type="DiagramMaker.View"
+  data-type="Diagrammer.View"
   tabIndex={0}
 >
   <Workspace
@@ -2667,10 +2667,10 @@ exports[`View nodes with edge renders at the given position and size with nodes 
       <Node
         connectorPlacement="Centered"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 0,
                 "y": 0,
@@ -2690,10 +2690,10 @@ exports[`View nodes with edge renders at the given position and size with nodes 
       <Node
         connectorPlacement="Centered"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 100,
                 "y": 200,
@@ -2744,7 +2744,7 @@ exports[`View nodes with edge renders at the given position and size with nodes 
 exports[`View nodes with edge renders at the given position and size with nodes and a single edge with left/right connector 1`] = `
 <div
   className="dm-view"
-  data-type="DiagramMaker.View"
+  data-type="Diagrammer.View"
   tabIndex={0}
 >
   <Workspace
@@ -2791,10 +2791,10 @@ exports[`View nodes with edge renders at the given position and size with nodes 
       <Node
         connectorPlacement="LeftRight"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 0,
                 "y": 0,
@@ -2814,10 +2814,10 @@ exports[`View nodes with edge renders at the given position and size with nodes 
       <Node
         connectorPlacement="LeftRight"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 100,
                 "y": 200,
@@ -2868,7 +2868,7 @@ exports[`View nodes with edge renders at the given position and size with nodes 
 exports[`View nodes with edge renders at the given position and size with nodes and a single edge with top/bottom connector 1`] = `
 <div
   className="dm-view"
-  data-type="DiagramMaker.View"
+  data-type="Diagrammer.View"
   tabIndex={0}
 >
   <Workspace
@@ -2915,10 +2915,10 @@ exports[`View nodes with edge renders at the given position and size with nodes 
       <Node
         connectorPlacement="TopBottom"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 0,
                 "y": 0,
@@ -2938,10 +2938,10 @@ exports[`View nodes with edge renders at the given position and size with nodes 
       <Node
         connectorPlacement="TopBottom"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 100,
                 "y": 200,
@@ -2992,7 +2992,7 @@ exports[`View nodes with edge renders at the given position and size with nodes 
 exports[`View nodes with overlapping edges renders two curved lines when an overlapping edge exists 1`] = `
 <div
   className="dm-view"
-  data-type="DiagramMaker.View"
+  data-type="Diagrammer.View"
   tabIndex={0}
 >
   <Workspace
@@ -3095,10 +3095,10 @@ exports[`View nodes with overlapping edges renders two curved lines when an over
       <Node
         connectorPlacement="Centered"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 0,
                 "y": 0,
@@ -3118,10 +3118,10 @@ exports[`View nodes with overlapping edges renders two curved lines when an over
       <Node
         connectorPlacement="Centered"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 100,
                 "y": 200,
@@ -3172,7 +3172,7 @@ exports[`View nodes with overlapping edges renders two curved lines when an over
 exports[`View renders selection marquee 1`] = `
 <div
   className="dm-view"
-  data-type="DiagramMaker.View"
+  data-type="Diagrammer.View"
   tabIndex={0}
 >
   <Workspace
@@ -3200,10 +3200,10 @@ exports[`View renders selection marquee 1`] = `
       <Node
         connectorPlacement="Centered"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 0,
                 "y": 0,
@@ -3223,10 +3223,10 @@ exports[`View renders selection marquee 1`] = `
       <Node
         connectorPlacement="Centered"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 100,
                 "y": 200,
@@ -3292,7 +3292,7 @@ exports[`View renders selection marquee 1`] = `
 exports[`View renders two nodes without edges 1`] = `
 <div
   className="dm-view"
-  data-type="DiagramMaker.View"
+  data-type="Diagrammer.View"
   tabIndex={0}
 >
   <Workspace
@@ -3320,10 +3320,10 @@ exports[`View renders two nodes without edges 1`] = `
       <Node
         connectorPlacement="Centered"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 0,
                 "y": 0,
@@ -3343,10 +3343,10 @@ exports[`View renders two nodes without edges 1`] = `
       <Node
         connectorPlacement="Centered"
         destroyCallback={[MockFunction]}
-        diagramMakerNode={
+        diagrammerNode={
           Object {
             "consumerData": undefined,
-            "diagramMakerData": Object {
+            "diagrammerData": Object {
               "position": Object {
                 "x": 100,
                 "y": 200,
@@ -3397,7 +3397,7 @@ exports[`View renders two nodes without edges 1`] = `
 exports[`View renders two panels without nodes or edges 1`] = `
 <div
   className="dm-view"
-  data-type="DiagramMaker.View"
+  data-type="Diagrammer.View"
   tabIndex={0}
 >
   <Workspace

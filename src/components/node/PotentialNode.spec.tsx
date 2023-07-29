@@ -2,7 +2,7 @@ import * as Preact from 'preact';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-import { PotentialNode } from 'diagramMaker/components/node';
+import { PotentialNode } from 'diagrammer/components/node';
 
 describe('PotentialNode', () => {
   const destroyCallback = jest.fn();

@@ -3,7 +3,7 @@
 exports[`PotentialEdge passes show arrowhead 1`] = `
 <g
   className="dm-edge"
-  data-type="DiagramMaker.PotentialEdge"
+  data-type="Diagrammer.PotentialEdge"
 >
   <EdgeCurve
     className="dm-path-inner"
@@ -28,7 +28,7 @@ exports[`PotentialEdge passes show arrowhead 1`] = `
 exports[`PotentialEdge renders the paths using props 1`] = `
 <g
   className="dm-edge"
-  data-type="DiagramMaker.PotentialEdge"
+  data-type="Diagrammer.PotentialEdge"
 >
   <EdgeCurve
     className="dm-path-inner"

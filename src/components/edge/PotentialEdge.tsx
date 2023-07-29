@@ -1,8 +1,8 @@
 import classnames from 'classnames';
 import * as Preact from 'preact';
 
-import { DiagramMakerComponentsType } from 'diagramMaker/service/ui/types';
-import { Position } from 'diagramMaker/state/types';
+import { DiagrammerComponentsType } from 'diagrammer/service/ui/types';
+import { Position } from 'diagrammer/state/types';
 
 import EdgeCurve, { EdgeStyle } from './EdgeCurve';
 
@@ -46,7 +46,7 @@ function PotentialEdge(props: Preact.RenderableProps<PotentialEdgeProps>): JSX.E
   return (
     <g
       className={classNames}
-      data-type={DiagramMakerComponentsType.POTENTIAL_EDGE}
+      data-type={DiagrammerComponentsType.POTENTIAL_EDGE}
     >
       {curvePath}
     </g>

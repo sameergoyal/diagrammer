@@ -21,7 +21,7 @@
   "moduleFileExtensions": ["ts", "tsx", "js", "jsx"],
   "moduleNameMapper": {
     "\\.(css|less|sass|scss)$": "<rootDir>/src/__mocks__/style.ts",
-    "^diagramMaker/(.*)$": "<rootDir>/src/$1",
+    "^diagrammer/(.*)$": "<rootDir>/src/$1",
     "^react$": "preact/compat",
     "^react-dom/test-utils$": "preact/test-utils",
     "^react-dom$": "preact/compat",

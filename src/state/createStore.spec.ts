@@ -2,16 +2,16 @@ import {
   applyMiddleware, compose, createStore as reduxCreateStore, Reducer,
 } from 'redux';
 
-import { getRootReducer } from 'diagramMaker/state/common/rootReducer';
-import { sequenceReducers } from 'diagramMaker/state/common/sequenceReducers';
-import { layoutReducer } from 'diagramMaker/state/layout';
-import * as middleware from 'diagramMaker/state/middleware';
-import { DiagramMakerWorkspace, EditorMode } from 'diagramMaker/state/types';
-import { asMock } from 'diagramMaker/testing/testUtils';
+import { getRootReducer } from 'diagrammer/state/common/rootReducer';
+import { sequenceReducers } from 'diagrammer/state/common/sequenceReducers';
+import { layoutReducer } from 'diagrammer/state/layout';
+import * as middleware from 'diagrammer/state/middleware';
+import { DiagrammerWorkspace, EditorMode } from 'diagrammer/state/types';
+import { asMock } from 'diagrammer/testing/testUtils';
 
-import { DiagramMakerAction } from './actions';
+import { DiagrammerAction } from './actions';
 import createStore from './createStore';
-import { DiagramMakerData } from './types';
+import { DiagrammerData } from './types';
 
 jest.mock('redux', () => ({
   applyMiddleware: jest.fn(),
@@ -19,15 +19,15 @@ jest.mock('redux', () => ({
   createStore: jest.fn(),
 }));
 
-jest.mock('diagramMaker/state/middleware', () => ({
+jest.mock('diagrammer/state/middleware', () => ({
   createInterceptorMiddleware: jest.fn(),
   getUndoMiddleware: jest.fn(),
 }));
 
 describe('createStore', () => {
-  let initialData: DiagramMakerData<{}, {}>;
+  let initialData: DiagrammerData<{}, {}>;
   let finalReducer: () => void;
-  let consumerReducer: Reducer<DiagramMakerData<{}, {}>, DiagramMakerAction<{}, {}>>;
+  let consumerReducer: Reducer<DiagrammerData<{}, {}>, DiagrammerAction<{}, {}>>;
   let actionInterceptor: middleware.ActionInterceptor<{}, {}>;
   const nodes = {};
   const panels = {};
@@ -35,7 +35,7 @@ describe('createStore', () => {
   const editor = {
     mode: EditorMode.DRAG,
   };
-  const workspace: DiagramMakerWorkspace = {
+  const workspace: DiagrammerWorkspace = {
     position: {
       x: 0,
       y: 0,
@@ -61,7 +61,7 @@ describe('createStore', () => {
     actionInterceptor = jest.fn();
   });
 
-  it('calls redux create store with diagramMaker root reducer and layout reducer', () => {
+  it('calls redux create store with diagrammer root reducer and layout reducer', () => {
     asMock(sequenceReducers).mockReturnValueOnce(finalReducer);
 
     createStore();

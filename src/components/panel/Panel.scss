@@ -1,9 +1,9 @@
-@import '~diagramMaker/styles/mixins';
+@import '~diagrammer/styles/mixins';
 
 .dm-panel {
   @include dm-container-shadow;
   position: absolute;
-  background-color: var(--diagram-maker-container-background-color);
+  background-color: var(--diagrammer-container-background-color);
   overflow: hidden;
   .dm-content {
     padding: 20px;

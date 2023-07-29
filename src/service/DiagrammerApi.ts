@@ -3,34 +3,34 @@ import { actions as undoActions } from 'redux-undo-redo';
 
 import {
   createFitAction, createFocusNodeAction, createSetEditorModeAction,
-} from 'diagramMaker/state/editor/editorActionDispatcher';
-import { createLayoutAction, LayoutConfig } from 'diagramMaker/state/layout';
-import { DiagramMakerData, EditorModeType } from 'diagramMaker/state/types';
+} from 'diagrammer/state/editor/editorActionDispatcher';
+import { createLayoutAction, LayoutConfig } from 'diagrammer/state/layout';
+import { DiagrammerData, EditorModeType } from 'diagrammer/state/types';
 import {
   createWorkspaceResetZoomAction, createZoomWorkspaceAction,
-} from 'diagramMaker/state/workspace/workspaceActionDispatcher';
+} from 'diagrammer/state/workspace/workspaceActionDispatcher';
 
 const DEFAULT_ZOOM_DELTA = 50;
 
-export default class DiagramMakerApi<NodeType = {}, EdgeType = {}> {
+export default class DiagrammerApi<NodeType = {}, EdgeType = {}> {
   constructor(
-    private store: Store<DiagramMakerData<NodeType, EdgeType>>,
+    private store: Store<DiagrammerData<NodeType, EdgeType>>,
   ) {}
 
   /**
    * Arranges nodes according to the specified layout type.
    *
    * @param {LayoutConfig} layoutConfig - Layout type and its parameters.
-   * @returns {DiagramMakerApi} - Returns this `DiagramMakerApi` instance for method chaining.
+   * @returns {DiagrammerApi} - Returns this `DiagrammerApi` instance for method chaining.
    *
    * NOTE FOR "WORKFLOW" LAYOUT:
    * "Workflow" layout uses Dagre library underneath:
    * https://github.com/dagrejs/dagre
    *
-   * We don't bundle it with DiagramMaker, as not all consumers need this functionality.
+   * We don't bundle it with Diagrammer, as not all consumers need this functionality.
    * To use "Workflow" layout, you'll need to add Dagre library to your package.json.
    */
-  public layout(layoutConfig: LayoutConfig): DiagramMakerApi<NodeType, EdgeType> {
+  public layout(layoutConfig: LayoutConfig): DiagrammerApi<NodeType, EdgeType> {
     this.store.dispatch(createLayoutAction(layoutConfig));
     return this;
   }
@@ -39,9 +39,9 @@ export default class DiagramMakerApi<NodeType = {}, EdgeType = {}> {
    * Sets the editor to the given mode, in order to modify its UI behavior.
    *
    * @param {EditorModeType} mode - The mode to set the editor to.
-   * @returns {DiagramMakerApi} - Returns this `DiagramMakerApi` instance for method chaining.
+   * @returns {DiagrammerApi} - Returns this `DiagrammerApi` instance for method chaining.
    */
-  public setEditorMode(mode: EditorModeType): DiagramMakerApi<NodeType, EdgeType> {
+  public setEditorMode(mode: EditorModeType): DiagrammerApi<NodeType, EdgeType> {
     this.store.dispatch(createSetEditorModeAction(mode));
     return this;
   }
@@ -53,16 +53,16 @@ export default class DiagramMakerApi<NodeType = {}, EdgeType = {}> {
    * @param {string} nodeId - ID of the node to focus
    * @param {number} [leftPanelWidth] - Width of the fixed left panel
    * @param {number} [rightPanelWidth] - Width of the fixed right panel
-   * @returns {DiagramMakerApi} - Returns this `DiagramMakerApi` instance for method chaining.
+   * @returns {DiagrammerApi} - Returns this `DiagrammerApi` instance for method chaining.
    */
   public focusNode(
     nodeId: string,
     leftPanelWidth?: number,
     rightPanelWidth?: number,
-  ): DiagramMakerApi<NodeType, EdgeType> {
+  ): DiagrammerApi<NodeType, EdgeType> {
     const nodeState = this.store.getState().nodes[nodeId];
     if (nodeState) {
-      const { position, size } = nodeState.diagramMakerData;
+      const { position, size } = nodeState.diagrammerData;
       this.store.dispatch(createFocusNodeAction(nodeId, position, size, leftPanelWidth, rightPanelWidth));
     }
     return this;
@@ -75,12 +75,12 @@ export default class DiagramMakerApi<NodeType = {}, EdgeType = {}> {
    *
    * @param {number} [leftPanelWidth] - Width of the fixed left panel
    * @param {number} [rightPanelWidth] - Width of the fixed right panel
-   * @returns {DiagramMakerApi} - Returns this `DiagramMakerApi` instance for method chaining.
+   * @returns {DiagrammerApi} - Returns this `DiagrammerApi` instance for method chaining.
    */
-  public focusSelected(leftPanelWidth?: number, rightPanelWidth?: number): DiagramMakerApi<NodeType, EdgeType> {
+  public focusSelected(leftPanelWidth?: number, rightPanelWidth?: number): DiagrammerApi<NodeType, EdgeType> {
     const state = this.store.getState();
     const nodeKeys = Object.keys(state.nodes);
-    const selectedNodes = nodeKeys.filter((nodeKey) => state.nodes[nodeKey].diagramMakerData.selected);
+    const selectedNodes = nodeKeys.filter((nodeKey) => state.nodes[nodeKey].diagrammerData.selected);
     if (selectedNodes.length === 0) {
       this.resetZoom();
     } else if (selectedNodes.length === 1) {
@@ -98,41 +98,41 @@ export default class DiagramMakerApi<NodeType = {}, EdgeType = {}> {
    * @param {number} [rightPanelWidth] - Width of the fixed right panel
    * @param {string[]} [nodeKeys] - Optional. List of node IDs which need to be fit in the screen,
    * Defaults to fitting all the nodes.
-   * @returns {DiagramMakerApi} - Returns this `DiagramMakerApi` instance for method chaining.
+   * @returns {DiagrammerApi} - Returns this `DiagrammerApi` instance for method chaining.
    */
   public fit(
     leftPanelWidth?: number,
     rightPanelWidth?: number,
     nodeKeys?: string[],
-  ): DiagramMakerApi<NodeType, EdgeType> {
+  ): DiagrammerApi<NodeType, EdgeType> {
     const state = this.store.getState();
     const nodesToFit = nodeKeys || Object.keys(state.nodes);
     const nodeRects = nodesToFit.map((nodeKey) => ({
-      position: state.nodes[nodeKey].diagramMakerData.position,
-      size: state.nodes[nodeKey].diagramMakerData.size,
+      position: state.nodes[nodeKey].diagrammerData.position,
+      size: state.nodes[nodeKey].diagrammerData.size,
     }));
     this.store.dispatch(createFitAction(nodeRects, leftPanelWidth, rightPanelWidth));
     return this;
   }
 
   /**
-   * Zooms in one level into the diagram maker workspace at the center.
+   * Zooms in one level into the diagrammer workspace at the center.
    *
    * @param {number} [zoom=50] - Zoom factor to zoom by
-   * @returns {DiagramMakerApi} - Returns this `DiagramMakerApi` instance for method chaining.
+   * @returns {DiagrammerApi} - Returns this `DiagrammerApi` instance for method chaining.
    */
-  public zoomIn(zoom = DEFAULT_ZOOM_DELTA): DiagramMakerApi<NodeType, EdgeType> {
+  public zoomIn(zoom = DEFAULT_ZOOM_DELTA): DiagrammerApi<NodeType, EdgeType> {
     this.workspaceZoom(zoom);
     return this;
   }
 
   /**
-   * Zooms out one level into the diagram maker workspace at the center.
+   * Zooms out one level into the diagrammer workspace at the center.
    *
    * @param {number} [zoom=50] - Zoom factor to zoom by
-   * @returns {DiagramMakerApi} - Returns this `DiagramMakerApi` instance for method chaining.
+   * @returns {DiagrammerApi} - Returns this `DiagrammerApi` instance for method chaining.
    */
-  public zoomOut(zoom = DEFAULT_ZOOM_DELTA): DiagramMakerApi<NodeType, EdgeType> {
+  public zoomOut(zoom = DEFAULT_ZOOM_DELTA): DiagrammerApi<NodeType, EdgeType> {
     this.workspaceZoom(-zoom);
     return this;
   }
@@ -140,9 +140,9 @@ export default class DiagramMakerApi<NodeType = {}, EdgeType = {}> {
   /**
    * Resets the zoom to base level.
    *
-   * @returns {DiagramMakerApi} - Returns this `DiagramMakerApi` instance for method chaining.
+   * @returns {DiagrammerApi} - Returns this `DiagrammerApi` instance for method chaining.
    */
-  public resetZoom(): DiagramMakerApi<NodeType, EdgeType> {
+  public resetZoom(): DiagrammerApi<NodeType, EdgeType> {
     this.store.dispatch(createWorkspaceResetZoomAction());
     return this;
   }
@@ -150,7 +150,7 @@ export default class DiagramMakerApi<NodeType = {}, EdgeType = {}> {
   /**
    * Undo the last undoable action.
    *
-   * @returns {DiagramMakerApi} - Returns this `DiagramMakerApi` instance for method chaining.
+   * @returns {DiagrammerApi} - Returns this `DiagrammerApi` instance for method chaining.
    */
   public undo() {
     this.store.dispatch(undoActions.undo());
@@ -160,7 +160,7 @@ export default class DiagramMakerApi<NodeType = {}, EdgeType = {}> {
   /**
    * Redo the last undone action.
    *
-   * @returns {DiagramMakerApi} - Returns this `DiagramMakerApi` instance for method chaining.
+   * @returns {DiagrammerApi} - Returns this `DiagrammerApi` instance for method chaining.
    */
   public redo() {
     this.store.dispatch(undoActions.redo());

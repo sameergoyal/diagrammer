@@ -1,10 +1,10 @@
 import * as Preact from 'preact';
 
-import { ComposeView } from 'diagramMaker/components/common';
-import { BoundRenderCallback, DestroyCallback } from 'diagramMaker/service/ConfigService';
-import { getCenterCoordinateForCurve, getInflectionPoint } from 'diagramMaker/service/positionUtils';
-import { DiagramMakerComponentsType } from 'diagramMaker/service/ui/types';
-import { Position } from 'diagramMaker/state/types';
+import { ComposeView } from 'diagrammer/components/common';
+import { BoundRenderCallback, DestroyCallback } from 'diagrammer/service/ConfigService';
+import { getCenterCoordinateForCurve, getInflectionPoint } from 'diagrammer/service/positionUtils';
+import { DiagrammerComponentsType } from 'diagrammer/service/ui/types';
+import { Position } from 'diagrammer/state/types';
 
 import './EdgeBadge.scss';
 
@@ -45,7 +45,7 @@ export default class EdgeBadge extends Preact.Component<EdgeBadgeProps> {
       >
         <div
           data-id={id}
-          data-type={DiagramMakerComponentsType.EDGE_BADGE}
+          data-type={DiagrammerComponentsType.EDGE_BADGE}
           data-event-target
           className="dm-badge-inner"
         >

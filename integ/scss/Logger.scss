@@ -1,13 +1,13 @@
-@import '~diagramMaker/styles/mixins';
+@import '~diagrammer/styles/mixins';
 
-#diagramMakerLogger {
+#diagrammerLogger {
   @include dm-container-shadow;
-  color: var(--diagram-maker-text-color);
+  color: var(--diagrammer-text-color);
   width: 50%;
   height: 100px;
   position: absolute;
   bottom: 0;
   left: 25%;
-  background-color: var(--diagram-maker-container-background-color);
+  background-color: var(--diagrammer-container-background-color);
   padding: 20px;
 }

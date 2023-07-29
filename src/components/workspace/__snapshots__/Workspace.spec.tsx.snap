@@ -6,7 +6,7 @@ exports[`Workspace renders canvas given dot pattern 1`] = `
   data-draggable={true}
   data-dropzone={true}
   data-event-target={true}
-  data-type="DiagramMaker.Workspace"
+  data-type="Diagrammer.Workspace"
   style={
     Object {
       "height": 400,
@@ -62,7 +62,7 @@ exports[`Workspace renders canvas given grid pattern 1`] = `
   data-draggable={true}
   data-dropzone={true}
   data-event-target={true}
-  data-type="DiagramMaker.Workspace"
+  data-type="Diagrammer.Workspace"
   style={
     Object {
       "height": 400,
@@ -126,7 +126,7 @@ exports[`Workspace renders dot pattern as default 1`] = `
   data-draggable={true}
   data-dropzone={true}
   data-event-target={true}
-  data-type="DiagramMaker.Workspace"
+  data-type="Diagrammer.Workspace"
   style={
     Object {
       "height": 400,

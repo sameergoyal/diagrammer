@@ -1,12 +1,12 @@
-import { EditorMode, PositionAnchor } from 'diagramMaker/index';
-import { DiagramMakerData } from 'diagramMaker/state/types';
+import { EditorMode, PositionAnchor } from 'diagrammer/index';
+import { DiagrammerData } from 'diagrammer/state/types';
 
-const graph: DiagramMakerData<{}, {}> = {
+const graph: DiagrammerData<{}, {}> = {
   nodes: {
     node1: {
       id: 'node1',
       typeId: 'testId-normal',
-      diagramMakerData: {
+      diagrammerData: {
         position: { x: 200, y: 150 },
         size: { width: 100, height: 100 },
       },
@@ -14,7 +14,7 @@ const graph: DiagramMakerData<{}, {}> = {
     node2: {
       id: 'node2',
       typeId: 'testId-normal',
-      diagramMakerData: {
+      diagrammerData: {
         position: { x: 400, y: 300 },
         size: { width: 100, height: 100 },
       },
@@ -22,7 +22,7 @@ const graph: DiagramMakerData<{}, {}> = {
     node3: {
       id: 'node3',
       typeId: 'testId-normal',
-      diagramMakerData: {
+      diagrammerData: {
         position: { x: 600, y: 100 },
         size: { width: 100, height: 100 },
       },
@@ -30,7 +30,7 @@ const graph: DiagramMakerData<{}, {}> = {
     node4: {
       id: 'node4',
       typeId: 'testId-normal',
-      diagramMakerData: {
+      diagrammerData: {
         position: { x: 800, y: 150 },
         size: { width: 100, height: 100 },
       },
@@ -41,19 +41,19 @@ const graph: DiagramMakerData<{}, {}> = {
       id: 'edge1',
       src: 'node1',
       dest: 'node2',
-      diagramMakerData: { },
+      diagrammerData: { },
     },
     edge2: {
       id: 'edge2',
       src: 'node3',
       dest: 'node4',
-      diagramMakerData: { },
+      diagrammerData: { },
     },
     edge3: {
       id: 'edge3',
       src: 'node4',
       dest: 'node3',
-      diagramMakerData: { },
+      diagrammerData: { },
     },
   },
   panels: {

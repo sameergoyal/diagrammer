@@ -1,4 +1,4 @@
-import { DiagramMakerComponentsType } from 'diagramMaker/service/ui/types';
+import { DiagrammerComponentsType } from 'diagrammer/service/ui/types';
 import {
   ContainerEventType,
   DragEventType,
@@ -6,8 +6,8 @@ import {
   MouseClickEventType,
   WheelEventType,
   WindowEventType,
-} from 'diagramMaker/service/ui/UIEventManager';
-import { NormalizedEvent } from 'diagramMaker/service/ui/UIEventNormalizer';
+} from 'diagrammer/service/ui/UIEventManager';
+import { NormalizedEvent } from 'diagrammer/service/ui/UIEventNormalizer';
 
 import readOnlyEventFilter from './readOnlyEventFilter';
 
@@ -24,7 +24,7 @@ describe('readOnlyEventFilter', () => {
 
   it('allows all WORKSPACE_RESIZE events, regardless of the target', () => {
     const event = {
-      type: ContainerEventType.DIAGRAM_MAKER_CONTAINER_UPDATE,
+      type: ContainerEventType.DIAGRAMMER_CONTAINER_UPDATE,
     };
 
     const result = readOnlyEventFilter(event as NormalizedEvent);
@@ -35,7 +35,7 @@ describe('readOnlyEventFilter', () => {
   it('allows DRAG events when the target is the workspace', () => {
     const event = {
       target: {
-        type: DiagramMakerComponentsType.WORKSPACE,
+        type: DiagrammerComponentsType.WORKSPACE,
       },
       type: DragEventType.DRAG,
     };
@@ -48,7 +48,7 @@ describe('readOnlyEventFilter', () => {
   it('does not allow DRAG events when the target is not the workspace', () => {
     const event = {
       target: {
-        type: DiagramMakerComponentsType.NODE,
+        type: DiagrammerComponentsType.NODE,
       },
       type: DragEventType.DRAG,
     };

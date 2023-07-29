@@ -1,6 +1,6 @@
-import { getBrowserRectangle } from 'diagramMaker/service/browserUtils';
-import { fromContainerToPage, fromPageToScreen, isPositionInRectangle } from 'diagramMaker/service/positionUtils';
-import { Position } from 'diagramMaker/state/types';
+import { getBrowserRectangle } from 'diagrammer/service/browserUtils';
+import { fromContainerToPage, fromPageToScreen, isPositionInRectangle } from 'diagrammer/service/positionUtils';
+import { Position } from 'diagrammer/state/types';
 
 export interface NormalizedTarget {
   originalTarget: HTMLElement;
@@ -44,7 +44,7 @@ export default class UITargetNormalizer {
     // instead return the root HTML tag.
     //
     // An example of an event being fired outside of the window:
-    // If a drag event starts on DiagramMaker but the mouse is
+    // If a drag event starts on Diagrammer but the mouse is
     // then moved outside of the browser window.
     //
     // In order to make Firefox match Chrome and Safari, we'll change

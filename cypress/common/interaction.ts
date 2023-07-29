@@ -1,16 +1,16 @@
 import { getNodeById } from './getters';
 
 /**
- * Returns parameters required for DiagramMaker
- * DiagramMaker currently exposes an enum for MouseEvents => MouseClickEventType
+ * Returns parameters required for Diagrammer
+ * Diagrammer currently exposes an enum for MouseEvents => MouseClickEventType
  */
 function getLeftButtonMouseEventParams() {
   return { button: 0 };
 }
 
 /**
- * Returns parameters required for DiagramMaker
- * DiagramMaker currently exposes an enum for MouseEvents => MouseClickEventType
+ * Returns parameters required for Diagrammer
+ * Diagrammer currently exposes an enum for MouseEvents => MouseClickEventType
  */
 function getRightButtonMouseEventParams() {
   return { button: 1 };
@@ -19,7 +19,7 @@ function getRightButtonMouseEventParams() {
 /**
  * Drags element to position dictated
  * @param {Cypress.Chainable} element DOM element to be dragged
- * @param {{ button: number }} mouseParams DiagramMaker expected button params
+ * @param {{ button: number }} mouseParams Diagrammer expected button params
  * @param {} position Object representing position to move; i.e. {pageX: 0, pageY: 0} or {clientX: 0, clientY: 0}
  */
 export function dragAndDropElement(
@@ -35,7 +35,7 @@ export function dragAndDropElement(
 /**
  * Starts dragging element to position dictated
  * @param {Cypress.Chainable} element DOM element to be dragged
- * @param {{ button: number }} mouseParams DiagramMaker expected button params
+ * @param {{ button: number }} mouseParams Diagrammer expected button params
  * @param {} position Object representing position to move; i.e. {pageX: 0, pageY: 0} or {clientX: 0, clientY: 0}
  */
 export function dragStartElement(
@@ -53,7 +53,7 @@ export function dragStartElement(
 /**
  * Drags element to position dictated
  * @param {Cypress.Chainable} element DOM element to be dragged
- * @param {{ button: number }} mouseParams DiagramMaker expected button params
+ * @param {{ button: number }} mouseParams Diagrammer expected button params
  * @param {} position Object representing position to move; i.e. {pageX: 0, pageY: 0} or {clientX: 0, clientY: 0}
  */
 export function dragElement(
@@ -67,7 +67,7 @@ export function dragElement(
 /**
  * Drops element to position dictated
  * @param {Cypress.Chainable} element DOM element to be dragged
- * @param {{ button: number }} mouseParams DiagramMaker expected button params
+ * @param {{ button: number }} mouseParams Diagrammer expected button params
  * @param {} position Object representing position to move; i.e. {pageX: 0, pageY: 0} or {clientX: 0, clientY: 0}
  */
 export function dropElement(
@@ -84,7 +84,7 @@ export function dropElement(
  * So, force must be used to force cypress to move mouse
  * This is necessary for tests where mouse position matters, like edge creation
  * @param {Cypress.Chainable} element DOM element to be dragged
- * @param {{ button: number }} mouseParams DiagramMaker expected button params
+ * @param {{ button: number }} mouseParams Diagrammer expected button params
  * @param {} position Object representing position to move; i.e. {pageX: 0, pageY: 0} or {clientX: 0, clientY: 0}
  */
 export function forceDragAndDropElement(
@@ -101,7 +101,7 @@ export function forceDragAndDropElement(
  * Clicks on an element based on PositionType
  * @param {Cypress.Chainable} element DOM element to be selected
  * @param {Cypress.PositionType} position String representation of location for click
- * @param {{ button: number }} mouseParams DiagramMaker expected button params
+ * @param {{ button: number }} mouseParams Diagrammer expected button params
  */
 export function clickElement(
   element: Cypress.Chainable,
@@ -116,7 +116,7 @@ export function clickElement(
  * Right clicks an element based on PositionType
  * @param {Cypress.Chainable} element DOM element to be selected
  * @param {Cypress.PositionType} position String representation of location for click
- * @param {{ button: number }} mouseParams DiagramMaker expected button params
+ * @param {{ button: number }} mouseParams Diagrammer expected button params
  */
 export function rightClickElement(
   element: Cypress.Chainable,

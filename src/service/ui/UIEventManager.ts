@@ -1,5 +1,5 @@
-import Observer from 'diagramMaker/service/observer/Observer';
-import { fromContainerToPage, fromScreenToPage, subtract } from 'diagramMaker/service/positionUtils';
+import Observer from 'diagrammer/service/observer/Observer';
+import { fromContainerToPage, fromScreenToPage, subtract } from 'diagrammer/service/positionUtils';
 import UIEventNormalizer, {
   EventNormalizer,
   getRequiredAttribute,
@@ -7,12 +7,12 @@ import UIEventNormalizer, {
   NormalizedContainerEvent,
   NormalizedMouseClickEvent,
   NormalizedMouseMoveEvent,
-} from 'diagramMaker/service/ui/UIEventNormalizer';
-import UITargetNormalizer from 'diagramMaker/service/ui/UITargetNormalizer';
-import { Position } from 'diagramMaker/state/types';
+} from 'diagrammer/service/ui/UIEventNormalizer';
+import UITargetNormalizer from 'diagrammer/service/ui/UITargetNormalizer';
+import { Position } from 'diagrammer/state/types';
 
 export enum ContainerEventType {
-  DIAGRAM_MAKER_CONTAINER_UPDATE = 'diagramMakerContainerUpdate',
+  DIAGRAMMER_CONTAINER_UPDATE = 'diagrammerContainerUpdate',
 }
 
 export enum DestroyEventType {
@@ -100,7 +100,7 @@ const {
   DROP, DRAG_OVER, DRAG_ENTER, DRAG_LEAVE,
 } = DropEventType;
 const { KEY_DOWN, KEY_UP, KEY_PRESS } = KeyboardEventType;
-const { DIAGRAM_MAKER_CONTAINER_UPDATE } = ContainerEventType;
+const { DIAGRAMMER_CONTAINER_UPDATE } = ContainerEventType;
 const { DESTROY } = DestroyEventType;
 
 const { normalizeTarget, getTarget } = UITargetNormalizer;
@@ -166,7 +166,7 @@ export default class UIEventManager {
     subscribe(MOUSE_MOVE, this.handleMouseMove);
 
     // Listen to CONSUMER_CONTAINER_RESIZE to update cached container offsets
-    subscribe(DIAGRAM_MAKER_CONTAINER_UPDATE, this.updateContext);
+    subscribe(DIAGRAMMER_CONTAINER_UPDATE, this.updateContext);
 
     // Listen to DESTROY to cleanup application/application context
     subscribe(DESTROY, this.destroyCreatedEventListeners);

@@ -1,9 +1,9 @@
 import set from 'lodash-es/set';
 
-import { DiagramMakerComponentsType } from 'diagramMaker/service/ui/types';
+import { DiagrammerComponentsType } from 'diagrammer/service/ui/types';
 import {
-  DiagramMakerEditor, EditorMode, EditorModeType, Position,
-} from 'diagramMaker/state/types';
+  DiagrammerEditor, EditorMode, EditorModeType, Position,
+} from 'diagrammer/state/types';
 
 import {
   EditorActionsType,
@@ -17,16 +17,16 @@ import {
 import editorReducer from './editorReducer';
 
 describe('editorReducer', () => {
-  const getState = (): DiagramMakerEditor => ({
+  const getState = (): DiagrammerEditor => ({
     contextMenu: {
       position: { x: 0, y: 0 },
       targetId: 'node-1',
-      targetType: DiagramMakerComponentsType.NODE,
+      targetType: DiagrammerComponentsType.NODE,
     },
     mode: EditorMode.DRAG,
   });
 
-  const getStateWithMarquee = (): DiagramMakerEditor => ({
+  const getStateWithMarquee = (): DiagrammerEditor => ({
     mode: EditorMode.SELECT,
     selectionMarquee: {
       anchor: { x: 10, y: 10 },
@@ -38,7 +38,7 @@ describe('editorReducer', () => {
     mode: EditorMode.DRAG,
   };
 
-  function checkReducerPurity(state: DiagramMakerEditor, expectedState: DiagramMakerEditor) {
+  function checkReducerPurity(state: DiagrammerEditor, expectedState: DiagrammerEditor) {
     expect(state).toEqual(expectedState);
   }
 
@@ -61,7 +61,7 @@ describe('editorReducer', () => {
   describe('show context menu action', () => {
     it('sets the context menu with position, target type & id from action payload', () => {
       const targetId = 'node-2';
-      const targetType = DiagramMakerComponentsType.NODE;
+      const targetType = DiagrammerComponentsType.NODE;
       const position = { x: 17, y: 17 };
       const action: ShowContextMenuAction = {
         type: EditorActionsType.SHOW_CONTEXT_MENU,

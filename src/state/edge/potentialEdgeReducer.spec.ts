@@ -1,6 +1,6 @@
 import set from 'lodash-es/set';
 
-import { DiagramMakerPotentialEdge } from 'diagramMaker/state/types';
+import { DiagrammerPotentialEdge } from 'diagrammer/state/types';
 
 import {
   DragEdgeAction, DragEndEdgeAction, DragStartEdgeAction, EdgeActionsType,
@@ -8,12 +8,12 @@ import {
 import potentialEdgeReducer from './potentialEdgeReducer';
 
 describe('potentialEdgeReducer', () => {
-  const getState = (): DiagramMakerPotentialEdge => ({
+  const getState = (): DiagrammerPotentialEdge => ({
     src: 'node-1',
     position: { x: 0, y: 0 },
   });
 
-  function checkReducerPurity(state: DiagramMakerPotentialEdge) {
+  function checkReducerPurity(state: DiagrammerPotentialEdge) {
     expect(state).toEqual(getState());
   }
 

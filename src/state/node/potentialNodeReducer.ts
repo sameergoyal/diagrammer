@@ -1,16 +1,16 @@
 import { produce } from 'immer';
 
-import { constrainRectangleWithinRectangle } from 'diagramMaker/service/positionUtils';
-import { DiagramMakerAction } from 'diagramMaker/state/actions';
-import { DiagramMakerPotentialNode } from 'diagramMaker/state/types';
+import { constrainRectangleWithinRectangle } from 'diagrammer/service/positionUtils';
+import { DiagrammerAction } from 'diagrammer/state/actions';
+import { DiagrammerPotentialNode } from 'diagrammer/state/types';
 
 import { MARGIN_PX } from './nodeActionDispatcher';
 import { NodeActionsType } from './nodeActions';
 
 export default function potentialNodeReducer<NodeType, EdgeType>(
-  state: DiagramMakerPotentialNode | null | undefined,
-  action: DiagramMakerAction<NodeType, EdgeType>,
-): DiagramMakerPotentialNode | null {
+  state: DiagrammerPotentialNode | null | undefined,
+  action: DiagrammerAction<NodeType, EdgeType>,
+): DiagrammerPotentialNode | null {
   if (state === undefined) {
     return null;
   }

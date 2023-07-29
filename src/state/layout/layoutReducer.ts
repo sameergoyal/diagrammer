@@ -1,6 +1,6 @@
-import { DiagramMakerAction } from 'diagramMaker/state/actions';
-import getInitialState from 'diagramMaker/state/getInitialState';
-import { DiagramMakerData } from 'diagramMaker/state/types';
+import { DiagrammerAction } from 'diagrammer/state/actions';
+import getInitialState from 'diagrammer/state/getInitialState';
+import { DiagrammerData } from 'diagrammer/state/types';
 import { produce } from 'immer';
 
 import hierarchicalLayout from './hierarchicalLayout';
@@ -8,8 +8,8 @@ import { LayoutActionsType, LayoutType } from './layoutActions';
 import workflowLayout from './workflowLayout';
 
 export function adjustWorkspace<NodeType, EdgeType>(
-  state: DiagramMakerData<NodeType, EdgeType>,
-): DiagramMakerData<NodeType, EdgeType> {
+  state: DiagrammerData<NodeType, EdgeType>,
+): DiagrammerData<NodeType, EdgeType> {
   const { nodes } = state;
   const workspaceSize = state.workspace.canvasSize;
   let rightMost = workspaceSize.width;
@@ -20,8 +20,8 @@ export function adjustWorkspace<NodeType, EdgeType>(
   const nodeIds = Object.keys(nodes);
   nodeIds.forEach((nodeId) => {
     const node = nodes[nodeId];
-    const { position } = node.diagramMakerData;
-    const { size } = node.diagramMakerData;
+    const { position } = node.diagrammerData;
+    const { size } = node.diagrammerData;
     rightMost = Math.max(position.x + size.width, rightMost);
     bottomMost = Math.max(position.y + size.height, bottomMost);
     leftMost = Math.min(position.x, leftMost);
@@ -38,21 +38,21 @@ export function adjustWorkspace<NodeType, EdgeType>(
     // move all nodes if node beyond top left boundary
     if (leftMost < 0 || topMost < 0) {
       nodeIds.forEach((nodeId) => {
-        const oldPos = draftState.nodes[nodeId].diagramMakerData.position;
+        const oldPos = draftState.nodes[nodeId].diagrammerData.position;
         const position = {
           x: oldPos.x - leftMost,
           y: oldPos.y - topMost,
         };
-        draftState.nodes[nodeId].diagramMakerData.position = position;
+        draftState.nodes[nodeId].diagrammerData.position = position;
       });
     }
   });
 }
 
 export default function layoutReducer<NodeType, EdgeType>(
-  state: DiagramMakerData<NodeType, EdgeType> | undefined,
-  action: DiagramMakerAction<NodeType, EdgeType>,
-): DiagramMakerData<NodeType, EdgeType> {
+  state: DiagrammerData<NodeType, EdgeType> | undefined,
+  action: DiagrammerAction<NodeType, EdgeType>,
+): DiagrammerData<NodeType, EdgeType> {
   if (!state) {
     return getInitialState();
   }

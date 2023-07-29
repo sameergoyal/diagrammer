@@ -4,9 +4,9 @@ import cloneDeep from 'lodash-es/cloneDeep';
 import keys from 'lodash-es/keys';
 import values from 'lodash-es/values';
 
-import { Size } from 'diagramMaker/state/types';
-import { fromAdjacencyList } from 'diagramMaker/testing/diagramMakerDataBuilder';
-import { asMock } from 'diagramMaker/testing/testUtils';
+import { Size } from 'diagrammer/state/types';
+import { fromAdjacencyList } from 'diagrammer/testing/diagrammerDataBuilder';
+import { asMock } from 'diagrammer/testing/testUtils';
 
 import { LayoutType, WorkflowLayoutConfig, WorkflowLayoutDirection } from './layoutActions';
 import workflowLayout from './workflowLayout';
@@ -108,9 +108,9 @@ describe('workflowLayout', () => {
     });
 
     const expectedOutput = produce(graph, (graphDraft) => {
-      graphDraft.nodes['node-a'].diagramMakerData.position = { x: 1, y: 10 };
-      graphDraft.nodes['node-b'].diagramMakerData.position = { x: 2, y: 20 };
-      graphDraft.nodes['node-c'].diagramMakerData.position = { x: 3, y: 30 };
+      graphDraft.nodes['node-a'].diagrammerData.position = { x: 1, y: 10 };
+      graphDraft.nodes['node-b'].diagrammerData.position = { x: 2, y: 20 };
+      graphDraft.nodes['node-c'].diagrammerData.position = { x: 3, y: 30 };
     });
 
     const output = workflowLayout(graph, layoutConfig);
@@ -135,7 +135,7 @@ describe('workflowLayout', () => {
       'node-c': [],
     });
     graph = produce(graph, (draft) => {
-      draft.nodes['node-b'].diagramMakerData.position = { x: 500, y: 500 };
+      draft.nodes['node-b'].diagrammerData.position = { x: 500, y: 500 };
     });
 
     const layoutConfig: WorkflowLayoutConfig = {
@@ -156,9 +156,9 @@ describe('workflowLayout', () => {
     });
 
     const expectedOutput = produce(graph, (graphDraft) => {
-      graphDraft.nodes['node-a'].diagramMakerData.position = { x: 400, y: 500 };
-      graphDraft.nodes['node-b'].diagramMakerData.position = { x: 500, y: 500 }; // 'node-b' must stay
-      graphDraft.nodes['node-c'].diagramMakerData.position = { x: 600, y: 500 };
+      graphDraft.nodes['node-a'].diagrammerData.position = { x: 400, y: 500 };
+      graphDraft.nodes['node-b'].diagrammerData.position = { x: 500, y: 500 }; // 'node-b' must stay
+      graphDraft.nodes['node-c'].diagrammerData.position = { x: 600, y: 500 };
     });
 
     const output = workflowLayout(graph, layoutConfig);

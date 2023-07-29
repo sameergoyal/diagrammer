@@ -1,6 +1,6 @@
 import { v4 as uuid } from 'uuid';
 
-import { asMock } from 'diagramMaker/testing/testUtils';
+import { asMock } from 'diagrammer/testing/testUtils';
 
 import {
   handleNodeClick, handleNodeCreate, handleNodeDrag, handleNodeDragEnd,
@@ -20,7 +20,7 @@ describe('nodeActionDispatcher', () => {
     getState: jest.fn(() => ({
       nodes: {
         node1: {
-          diagramMakerData: {
+          diagrammerData: {
             size: { width: 0, height: 0 },
           },
         },

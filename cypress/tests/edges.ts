@@ -1,14 +1,14 @@
 import {
-  getAllEdges, getDiagramMakerView, getEdgeBadgeById, getEdgeById, getNodeById, getPotentialEdge,
+  getAllEdges, getDiagrammerView, getEdgeBadgeById, getEdgeById, getNodeById, getPotentialEdge,
 } from '../common/getters';
 import {
   clickElement, createEdgeBetween, dragAndDropElement, dragStartElement, triggerKeyboardEvent,
 } from '../common/interaction';
 
-describe('DiagramMaker.Edges', () => {
+describe('Diagrammer.Edges', () => {
   describe('Edges with left right rectangular nodes', () => {
     beforeEach(() => {
-      cy.visit('/iframe.html?id=demos-diagram-maker--left-right-rectangular&args=&viewMode=story');
+      cy.visit('/iframe.html?id=demos-diagrammer--left-right-rectangular&args=&viewMode=story');
     });
 
     describe('edge rendering', () => {
@@ -58,7 +58,7 @@ describe('DiagramMaker.Edges', () => {
       function selectEdgeAndKeyboardEvent(keyboardEvent: string): Cypress.Chainable {
         const edge = getEdgeById('edge1');
         clickElement(edge);
-        triggerKeyboardEvent(getDiagramMakerView(), keyboardEvent);
+        triggerKeyboardEvent(getDiagrammerView(), keyboardEvent);
         return getEdgeById('edge1');
       }
 
@@ -95,7 +95,7 @@ describe('DiagramMaker.Edges', () => {
 
   describe('Edges with circular boundary nodes', () => {
     beforeEach(() => {
-      cy.visit('/iframe.html?id=demos-diagram-maker--boundary-circular&args=&viewMode=story');
+      cy.visit('/iframe.html?id=demos-diagrammer--boundary-circular&args=&viewMode=story');
     });
 
     describe('edge rendering', () => {
@@ -195,7 +195,7 @@ describe('DiagramMaker.Edges', () => {
 
   describe('Edges with top bottom rectangular nodes', () => {
     beforeEach(() => {
-      cy.visit('/iframe.html?id=demos-diagram-maker--top-bottom-rectangular&args=&viewMode=story');
+      cy.visit('/iframe.html?id=demos-diagrammer--top-bottom-rectangular&args=&viewMode=story');
     });
 
     describe('edge rendering', () => {

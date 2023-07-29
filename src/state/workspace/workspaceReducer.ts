@@ -1,17 +1,17 @@
 import { Draft, produce } from 'immer';
 import { clamp } from 'lodash-es';
 
-import { DiagramMakerAction } from 'diagramMaker/state/actions';
-import { EditorActionsType, FitAction, FocusNodeAction } from 'diagramMaker/state/editor/editorActions';
-import { NodeActionsType } from 'diagramMaker/state/node/nodeActions';
-import { DiagramMakerWorkspace, Position, Size } from 'diagramMaker/state/types';
+import { DiagrammerAction } from 'diagrammer/state/actions';
+import { EditorActionsType, FitAction, FocusNodeAction } from 'diagrammer/state/editor/editorActions';
+import { NodeActionsType } from 'diagrammer/state/node/nodeActions';
+import { DiagrammerWorkspace, Position, Size } from 'diagrammer/state/types';
 import {
   createDragWorkspaceAction,
   createResizeWorkspaceCanvasAction,
-} from 'diagramMaker/state/workspace/workspaceActionDispatcher';
+} from 'diagrammer/state/workspace/workspaceActionDispatcher';
 import {
   DragWorkspaceAction, ResizeWorkspaceAction, ResizeWorkspaceCanvasAction, WorkspaceActionsType, ZoomWorkspaceAction,
-} from 'diagramMaker/state/workspace/workspaceActions';
+} from 'diagrammer/state/workspace/workspaceActions';
 
 const ZoomDefaults = {
   MAX: 3,
@@ -21,7 +21,7 @@ const ZoomDefaults = {
 
 const FIT_BUFFER = 50;
 
-export function getDefaultWorkspaceState(): DiagramMakerWorkspace {
+export function getDefaultWorkspaceState(): DiagrammerWorkspace {
   return {
     position: {
       x: 0,
@@ -53,7 +53,7 @@ const clampZoom = (zoom: number, size: Size, containerSize: Size): number => {
   return Number(clampedZoom.toPrecision(4));
 };
 
-const getNewZoomLevel = (currentState: Draft<DiagramMakerWorkspace>, action: ZoomWorkspaceAction): number => {
+const getNewZoomLevel = (currentState: Draft<DiagrammerWorkspace>, action: ZoomWorkspaceAction): number => {
   const zoom = currentState.scale;
   const zoomFactor = Math.max(-1, Math.min(1, zoom)) * ZoomDefaults.SPEED;
   const containerSize = currentState.viewContainerSize;
@@ -77,7 +77,7 @@ const getNewZoomPosition = (
   return { x, y };
 };
 
-const getNewDragPosition = (currentState: Draft<DiagramMakerWorkspace>, action: DragWorkspaceAction): Position => {
+const getNewDragPosition = (currentState: Draft<DiagrammerWorkspace>, action: DragWorkspaceAction): Position => {
   const { x } = action.payload.position;
   const { y } = action.payload.position;
   const containerSize = currentState.viewContainerSize;
@@ -87,7 +87,7 @@ const getNewDragPosition = (currentState: Draft<DiagramMakerWorkspace>, action: 
   return newPosition;
 };
 
-const zoomReducer = (draftState: Draft<DiagramMakerWorkspace>, action: ZoomWorkspaceAction) => {
+const zoomReducer = (draftState: Draft<DiagrammerWorkspace>, action: ZoomWorkspaceAction) => {
   const currentWorkspace = draftState;
 
   const { position } = action.payload;
@@ -109,12 +109,12 @@ const zoomReducer = (draftState: Draft<DiagramMakerWorkspace>, action: ZoomWorks
   currentWorkspace.position = newPosition;
 };
 
-const dragReducer = (draftState: Draft<DiagramMakerWorkspace>, action: DragWorkspaceAction) => {
+const dragReducer = (draftState: Draft<DiagrammerWorkspace>, action: DragWorkspaceAction) => {
   const currentWorkspace = draftState;
   currentWorkspace.position = getNewDragPosition(currentWorkspace, action);
 };
 
-const resizeReducer = (draftState: Draft<DiagramMakerWorkspace>, action: ResizeWorkspaceAction) => {
+const resizeReducer = (draftState: Draft<DiagrammerWorkspace>, action: ResizeWorkspaceAction) => {
   const currentWorkspace = draftState;
   currentWorkspace.viewContainerSize = action.payload.containerSize;
 
@@ -132,12 +132,12 @@ const resizeReducer = (draftState: Draft<DiagramMakerWorkspace>, action: ResizeW
   );
 };
 
-const canvasResizeReducer = (draftState: Draft<DiagramMakerWorkspace>, action: ResizeWorkspaceCanvasAction) => {
+const canvasResizeReducer = (draftState: Draft<DiagrammerWorkspace>, action: ResizeWorkspaceCanvasAction) => {
   const currentWorkspace = draftState;
   currentWorkspace.canvasSize = action.payload.canvasSize;
 };
 
-const focusReducer = (draftState: Draft<DiagramMakerWorkspace>, action: FocusNodeAction) => {
+const focusReducer = (draftState: Draft<DiagrammerWorkspace>, action: FocusNodeAction) => {
   draftState.scale = 1;
   const { position, size } = action.payload;
   const nodeCenter = {
@@ -158,7 +158,7 @@ const focusReducer = (draftState: Draft<DiagramMakerWorkspace>, action: FocusNod
   draftState.position = clampPosition(workspacePosition, canvasSize, 1, updatedViewContainer);
 };
 
-const fitReducer = (draftState: Draft<DiagramMakerWorkspace>, action: FitAction) => {
+const fitReducer = (draftState: Draft<DiagrammerWorkspace>, action: FitAction) => {
   const { nodeRects } = action.payload;
   let minX = draftState.canvasSize.width;
   let minY = draftState.canvasSize.height;
@@ -189,7 +189,7 @@ const fitReducer = (draftState: Draft<DiagramMakerWorkspace>, action: FitAction)
   draftState.position = position;
 };
 
-const resetZoomReducer = (draftState: Draft<DiagramMakerWorkspace>) => {
+const resetZoomReducer = (draftState: Draft<DiagrammerWorkspace>) => {
   const { canvasSize, viewContainerSize } = draftState;
   const workspaceCenter = {
     x: canvasSize.width / 2,
@@ -208,9 +208,9 @@ const resetZoomReducer = (draftState: Draft<DiagramMakerWorkspace>) => {
 };
 
 export default function workspaceReducer<NodeType, EdgeType>(
-  state: DiagramMakerWorkspace | undefined,
-  action: DiagramMakerAction<NodeType, EdgeType>,
-): DiagramMakerWorkspace {
+  state: DiagrammerWorkspace | undefined,
+  action: DiagrammerAction<NodeType, EdgeType>,
+): DiagrammerWorkspace {
   if (state === undefined) {
     return getDefaultWorkspaceState();
   }

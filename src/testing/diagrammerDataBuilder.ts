@@ -1,13 +1,13 @@
 import {
-  DiagramMakerData, DiagramMakerEdge, DiagramMakerEditor, DiagramMakerNode, DiagramMakerWorkspace, EditorMode,
+  DiagrammerData, DiagrammerEdge, DiagrammerEditor, DiagrammerNode, DiagrammerWorkspace, EditorMode,
   Size,
-} from 'diagramMaker/state/types';
+} from 'diagrammer/state/types';
 
 interface AdjacencyList {
   [key: string]: string[];
 }
 
-export function buildWorkspace(): DiagramMakerWorkspace {
+export function buildWorkspace(): DiagrammerWorkspace {
   return {
     position: { x: 0, y: 0 },
     scale: 1.0,
@@ -16,7 +16,7 @@ export function buildWorkspace(): DiagramMakerWorkspace {
   };
 }
 
-export function buildEditor(): DiagramMakerEditor {
+export function buildEditor(): DiagrammerEditor {
   return {
     mode: EditorMode.SELECT,
   };
@@ -25,13 +25,13 @@ export function buildEditor(): DiagramMakerEditor {
 export function fromAdjacencyList<NodeType = {}, EdgeType = {}>(
   adjacencyList: AdjacencyList,
   nodeSize?: Size,
-): DiagramMakerData<NodeType, EdgeType> {
+): DiagrammerData<NodeType, EdgeType> {
   // Prepare nodes
-  const nodes: { [key: string]: DiagramMakerNode<NodeType> } = {};
+  const nodes: { [key: string]: DiagrammerNode<NodeType> } = {};
   Object.keys(adjacencyList).forEach((nodeId) => {
     nodes[nodeId] = {
       id: nodeId,
-      diagramMakerData: {
+      diagrammerData: {
         position: { x: 0, y: 0 },
         size: nodeSize || { width: 150, height: 50 },
       },
@@ -39,7 +39,7 @@ export function fromAdjacencyList<NodeType = {}, EdgeType = {}>(
   });
 
   // Prepare edges
-  const edges: { [key: string]: DiagramMakerEdge<EdgeType> } = {};
+  const edges: { [key: string]: DiagrammerEdge<EdgeType> } = {};
   let edgeCount = 0;
   Object.keys(adjacencyList).forEach((sourceNodeId) => {
     adjacencyList[sourceNodeId].forEach((destinationNodeId) => {
@@ -48,7 +48,7 @@ export function fromAdjacencyList<NodeType = {}, EdgeType = {}>(
         id: edgeId,
         src: sourceNodeId,
         dest: destinationNodeId,
-        diagramMakerData: {},
+        diagrammerData: {},
       };
 
       edgeCount += 1;

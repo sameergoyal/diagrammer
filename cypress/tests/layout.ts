@@ -1,11 +1,11 @@
 import { getElementByDataIdAndType, getNodeById, getWorkspace } from '../common/getters';
 import { convertTranslate2dToMatrix } from '../common/utils';
 
-describe('DiagramMaker Layout', () => {
+describe('Diagrammer Layout', () => {
   beforeEach(() => {
-    cy.visit('/iframe.html?id=demos-diagram-maker--layout&args=&viewMode=story');
+    cy.visit('/iframe.html?id=demos-diagrammer--layout&args=&viewMode=story');
   });
-  const toolsType = 'DiagramMaker.Tools';
+  const toolsType = 'Diagrammer.Tools';
   const workspace = { width: 1200, height: 800 };
   const nodeRect = { width: 300, height: 100 };
   const distanceMin = 200;

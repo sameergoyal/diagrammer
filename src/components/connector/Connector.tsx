@@ -1,8 +1,8 @@
 import classnames from 'classnames';
 import * as Preact from 'preact';
 
-import { DiagramMakerComponentsType } from 'diagramMaker/service/ui/types';
-import { Position } from 'diagramMaker/state/types';
+import { DiagrammerComponentsType } from 'diagrammer/service/ui/types';
+import { Position } from 'diagrammer/state/types';
 
 import './Connector.scss';
 
@@ -39,7 +39,7 @@ export default class Connector extends Preact.Component<ConnectorProps, {}> {
         className={classes}
         style={{ transform }}
         data-id={id}
-        data-type={DiagramMakerComponentsType.NODE_CONNECTOR}
+        data-type={DiagrammerComponentsType.NODE_CONNECTOR}
         data-dropzone={droppable}
         data-draggable={draggable}
       >

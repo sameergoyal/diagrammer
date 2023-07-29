@@ -1,5 +1,5 @@
-import * as positionUtils from 'diagramMaker/service/positionUtils';
-import { DiagramMakerPanels, PositionAnchorType } from 'diagramMaker/state/types';
+import * as positionUtils from 'diagrammer/service/positionUtils';
+import { DiagrammerPanels, PositionAnchorType } from 'diagrammer/state/types';
 
 import {
   DragPanelAction,
@@ -10,7 +10,7 @@ import {
 import panelReducer from './panelReducer';
 
 describe('panelReducer', () => {
-  const getState = (): DiagramMakerPanels => ({
+  const getState = (): DiagrammerPanels => ({
     'panel-1': {
       id: 'panel-1',
       position: { x: 0, y: 0 },
@@ -46,7 +46,7 @@ describe('panelReducer', () => {
     width: 1000,
   };
 
-  function checkReducerPurity(state: DiagramMakerPanels) {
+  function checkReducerPurity(state: DiagrammerPanels) {
     expect(state).toEqual(getState());
   }
 
@@ -57,7 +57,7 @@ describe('panelReducer', () => {
 
   it('returns old state when unknown action is passed', () => {
     const action: any = { type: 'randomAction' };
-    const state: DiagramMakerPanels = getState();
+    const state: DiagrammerPanels = getState();
     expect(panelReducer(state, action)).toBe(state);
   });
 
@@ -75,7 +75,7 @@ describe('panelReducer', () => {
         },
       };
       const constrainRectangleWithinRectangleSpy = jest.spyOn(positionUtils, 'constrainRectangleWithinRectangle');
-      const expectedState: DiagramMakerPanels = {
+      const expectedState: DiagrammerPanels = {
         ...state,
         'panel-1': {
           id: 'panel-1',
@@ -112,7 +112,7 @@ describe('panelReducer', () => {
         type: PanelActionsType.PANEL_RESIZE,
         payload: { id: 'panel-1', size: { width: 150, height: 200 } },
       };
-      const expectedState: DiagramMakerPanels = {
+      const expectedState: DiagrammerPanels = {
         ...state,
         'panel-1': {
           id: 'panel-1',
@@ -145,7 +145,7 @@ describe('panelReducer', () => {
         type: PanelActionsType.PANEL_DRAG_START,
         payload: { id: 'panel-3' },
       };
-      const expectedState: DiagramMakerPanels = {
+      const expectedState: DiagrammerPanels = {
         ...state,
         'panel-3': {
           id: 'panel-3',
@@ -164,7 +164,7 @@ describe('panelReducer', () => {
         type: PanelActionsType.PANEL_DRAG_START,
         payload: { id: 'panel-1' },
       };
-      const expectedState: DiagramMakerPanels = {
+      const expectedState: DiagrammerPanels = {
         ...state,
         'panel-1': {
           id: 'panel-1',
@@ -191,7 +191,7 @@ describe('panelReducer', () => {
           viewContainerSize,
         },
       };
-      const expectedState: DiagramMakerPanels = {
+      const expectedState: DiagrammerPanels = {
         ...state,
         'panel-2': {
           id: 'panel-2',
@@ -215,7 +215,7 @@ describe('panelReducer', () => {
           viewContainerSize,
         },
       };
-      const expectedState: DiagramMakerPanels = {
+      const expectedState: DiagrammerPanels = {
         ...state,
         'panel-4': {
           id: 'panel-4',
@@ -243,7 +243,7 @@ describe('panelReducer', () => {
           viewContainerSize,
         },
       };
-      const expectedState: DiagramMakerPanels = {
+      const expectedState: DiagrammerPanels = {
         ...state,
         'panel-5': {
           id: 'panel-5',
@@ -272,7 +272,7 @@ describe('panelReducer', () => {
           viewContainerSize,
         },
       };
-      const expectedState: DiagramMakerPanels = {
+      const expectedState: DiagrammerPanels = {
         ...state,
         'panel-5': {
           id: 'panel-5',
@@ -301,7 +301,7 @@ describe('panelReducer', () => {
           viewContainerSize,
         },
       };
-      const expectedState: DiagramMakerPanels = {
+      const expectedState: DiagrammerPanels = {
         ...state,
         'panel-5': {
           id: 'panel-5',
@@ -330,7 +330,7 @@ describe('panelReducer', () => {
           viewContainerSize,
         },
       };
-      const expectedState: DiagramMakerPanels = {
+      const expectedState: DiagrammerPanels = {
         ...state,
         'panel-5': {
           id: 'panel-5',
@@ -359,7 +359,7 @@ describe('panelReducer', () => {
           viewContainerSize,
         },
       };
-      const expectedState: DiagramMakerPanels = {
+      const expectedState: DiagrammerPanels = {
         ...state,
         'panel-5': {
           id: 'panel-5',

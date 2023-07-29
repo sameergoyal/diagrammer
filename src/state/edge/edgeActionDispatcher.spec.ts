@@ -1,6 +1,6 @@
 import { v4 as uuid } from 'uuid';
 
-import { asMock } from 'diagramMaker/testing/testUtils';
+import { asMock } from 'diagrammer/testing/testUtils';
 
 import {
   handleEdgeClick,

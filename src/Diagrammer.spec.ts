@@ -1,36 +1,36 @@
-import { destroy, render } from 'diagramMaker/components/renderUtils';
-import ConfigService from 'diagramMaker/service/ConfigService';
-import DiagramMakerApi from 'diagramMaker/service/DiagramMakerApi';
-import Observer from 'diagramMaker/service/observer/Observer';
+import { destroy, render } from 'diagrammer/components/renderUtils';
+import ConfigService from 'diagrammer/service/ConfigService';
+import DiagrammerApi from 'diagrammer/service/DiagrammerApi';
+import Observer from 'diagrammer/service/observer/Observer';
 import UIEventManager, {
   ContainerEventType,
   DestroyEventType,
-} from 'diagramMaker/service/ui/UIEventManager';
-import UIEventNormalizer from 'diagramMaker/service/ui/UIEventNormalizer';
-import ActionDispatcher from 'diagramMaker/state/ActionDispatcher';
-import createStore from 'diagramMaker/state/createStore';
-import { asMock } from 'diagramMaker/testing/testUtils';
+} from 'diagrammer/service/ui/UIEventManager';
+import UIEventNormalizer from 'diagrammer/service/ui/UIEventNormalizer';
+import ActionDispatcher from 'diagrammer/state/ActionDispatcher';
+import createStore from 'diagrammer/state/createStore';
+import { asMock } from 'diagrammer/testing/testUtils';
 
-import { DiagramMaker } from '.';
+import { Diagrammer } from '.';
 
-jest.mock('diagramMaker/state/createStore', () => ({ default: jest.fn() }));
-jest.mock('diagramMaker/state/ActionDispatcher', () => ({ default: jest.fn() }));
-jest.mock('diagramMaker/service/observer/Observer', () => ({ default: jest.fn() }));
-jest.mock('diagramMaker/service/ui/UIEventManager', () => ({
+jest.mock('diagrammer/state/createStore', () => ({ default: jest.fn() }));
+jest.mock('diagrammer/state/ActionDispatcher', () => ({ default: jest.fn() }));
+jest.mock('diagrammer/service/observer/Observer', () => ({ default: jest.fn() }));
+jest.mock('diagrammer/service/ui/UIEventManager', () => ({
   ContainerEventType: 'mockEvent',
   default: jest.fn(),
   DestroyEventType: 'mockEvent',
 }));
-jest.mock('diagramMaker/service/ui/UIEventNormalizer', () => ({ default: { normalizeContainerEvent: jest.fn() } }));
-jest.mock('diagramMaker/components/renderUtils', () => ({ destroy: jest.fn(), render: jest.fn() }));
-jest.mock('diagramMaker/service/ConfigService', () => ({ default: jest.fn() }));
-jest.mock('diagramMaker/service/DiagramMakerApi', () => ({ default: jest.fn() }));
+jest.mock('diagrammer/service/ui/UIEventNormalizer', () => ({ default: { normalizeContainerEvent: jest.fn() } }));
+jest.mock('diagrammer/components/renderUtils', () => ({ destroy: jest.fn(), render: jest.fn() }));
+jest.mock('diagrammer/service/ConfigService', () => ({ default: jest.fn() }));
+jest.mock('diagrammer/service/DiagrammerApi', () => ({ default: jest.fn() }));
 
 const context = document.body;
 let config: any;
 let actionInterceptor: any;
 
-describe('DiagramMaker', () => {
+describe('Diagrammer', () => {
   beforeEach(() => {
     jest.clearAllMocks();
     context.innerHTML = '';
@@ -58,7 +58,7 @@ describe('DiagramMaker', () => {
       asMock(Observer as any).mockImplementationOnce(() => mockObserver);
       asMock(createStore).mockImplementationOnce(() => mockStore);
 
-      new DiagramMaker(
+      new Diagrammer(
         context,
         config,
         {
@@ -71,14 +71,14 @@ describe('DiagramMaker', () => {
 
       expect(ConfigService).toHaveBeenCalledWith(config);
       expect(createStore).toHaveBeenCalledWith(initialData, consumerRootReducer, consumerEnhancer, actionInterceptor);
-      expect(DiagramMakerApi).toHaveBeenCalledTimes(1);
-      expect(DiagramMakerApi).toHaveBeenCalledWith(mockStore);
+      expect(DiagrammerApi).toHaveBeenCalledTimes(1);
+      expect(DiagrammerApi).toHaveBeenCalledWith(mockStore);
       expect(Observer).toHaveBeenCalledTimes(1);
       expect(mockObserver.subscribeAll).toHaveBeenCalledWith(eventListener);
       expect(UIEventManager).toHaveBeenCalledWith(mockObserver, context);
       expect(ActionDispatcher).toHaveBeenCalledWith(mockObserver, mockStore, mockConfigService);
       expect(render).toHaveBeenCalledWith(mockStore, context, mockConfigService);
-      expect(mockObserver.publish).toHaveBeenCalledWith(ContainerEventType.DIAGRAM_MAKER_CONTAINER_UPDATE, mockEvent);
+      expect(mockObserver.publish).toHaveBeenCalledWith(ContainerEventType.DIAGRAMMER_CONTAINER_UPDATE, mockEvent);
     });
 
     it('instantiates config, store, observer, event manager, action dispatcher when dom handle is string', () => {
@@ -95,7 +95,7 @@ describe('DiagramMaker', () => {
       testContext.id = testId;
       context.appendChild(testContext);
 
-      new DiagramMaker(testId, config);
+      new Diagrammer(testId, config);
 
       expect(ConfigService).toHaveBeenCalledWith(config);
       expect(createStore).toHaveBeenCalledWith(undefined, undefined, undefined, actionInterceptor);
@@ -112,7 +112,7 @@ describe('DiagramMaker', () => {
       asMock(ConfigService as any).mockImplementationOnce(() => mockConfigService);
 
       expect(() => {
-        new DiagramMaker(testId, config);
+        new Diagrammer(testId, config);
       }).toThrowError('Container not found');
     });
   });
@@ -130,15 +130,15 @@ describe('DiagramMaker', () => {
       asMock(ConfigService as any).mockImplementationOnce(() => mockConfigService);
       asMock(Observer as any).mockImplementationOnce(() => mockObserver);
 
-      const diagramMaker = new DiagramMaker(context, config);
+      const diagrammer = new Diagrammer(context, config);
 
       // Constructor calls updateContainer, so explicitly test here
       jest.clearAllMocks();
       asMock(UIEventNormalizer.normalizeContainerEvent).mockReturnValueOnce(mockEvent);
-      diagramMaker.updateContainer();
+      diagrammer.updateContainer();
 
       expect(UIEventNormalizer.normalizeContainerEvent).toHaveBeenCalledTimes(1);
-      expect(mockObserver.publish).toHaveBeenCalledWith(ContainerEventType.DIAGRAM_MAKER_CONTAINER_UPDATE, mockEvent);
+      expect(mockObserver.publish).toHaveBeenCalledWith(ContainerEventType.DIAGRAMMER_CONTAINER_UPDATE, mockEvent);
     });
   });
 
@@ -150,8 +150,8 @@ describe('DiagramMaker', () => {
       asMock(ConfigService as any).mockImplementationOnce(() => mockConfigService);
       asMock(Observer as any).mockImplementationOnce(() => mockObserver);
 
-      const diagramMaker = new DiagramMaker(context, config);
-      diagramMaker.destroy();
+      const diagrammer = new Diagrammer(context, config);
+      diagrammer.destroy();
 
       expect(mockObserver.publish).toHaveBeenCalledWith(DestroyEventType.DESTROY);
       expect(destroy).toHaveBeenCalledWith(context);

@@ -1,13 +1,13 @@
 import { Draft, produce } from 'immer';
 
-import { DiagramMakerAction } from 'diagramMaker/state/actions';
-import { EdgeActionsType } from 'diagramMaker/state/edge';
-import { EditorActionsType } from 'diagramMaker/state/editor/editorActions';
-import { GlobalActionsType } from 'diagramMaker/state/global/globalActions';
+import { DiagrammerAction } from 'diagrammer/state/actions';
+import { EdgeActionsType } from 'diagrammer/state/edge';
+import { EditorActionsType } from 'diagrammer/state/editor/editorActions';
+import { GlobalActionsType } from 'diagrammer/state/global/globalActions';
 import {
-  DiagramMakerNode, DiagramMakerNodes, Position, Size,
-} from 'diagramMaker/state/types';
-import { WorkspaceActionsType } from 'diagramMaker/state/workspace';
+  DiagrammerNode, DiagrammerNodes, Position, Size,
+} from 'diagrammer/state/types';
+import { WorkspaceActionsType } from 'diagrammer/state/workspace';
 
 import { NodeActionsType } from './nodeActions';
 
@@ -34,9 +34,9 @@ function isInsideBoundingBox(
 }
 
 export default function nodeReducer<NodeType, EdgeType>(
-  state: DiagramMakerNodes<NodeType> | undefined,
-  action: DiagramMakerAction<NodeType, EdgeType>,
-): DiagramMakerNodes<NodeType> {
+  state: DiagrammerNodes<NodeType> | undefined,
+  action: DiagrammerAction<NodeType, EdgeType>,
+): DiagrammerNodes<NodeType> {
   if (state === undefined) {
     return {};
   }
@@ -44,7 +44,7 @@ export default function nodeReducer<NodeType, EdgeType>(
     case GlobalActionsType.CREATE_ITEMS:
       return produce(state, (draftState) => {
         action.payload.nodes.forEach((node) => {
-          draftState[node.id] = node as Draft<DiagramMakerNode<NodeType>>;
+          draftState[node.id] = node as Draft<DiagrammerNode<NodeType>>;
         });
       });
     case NodeActionsType.NODE_CREATE:
@@ -54,7 +54,7 @@ export default function nodeReducer<NodeType, EdgeType>(
         } = action.payload;
         const consumerData = untypedConsumerData as Draft<NodeType>;
         draftState[id] = {
-          id, typeId, consumerData, diagramMakerData: { position, size },
+          id, typeId, consumerData, diagrammerData: { position, size },
         };
       });
     case NodeActionsType.NODE_DELETE:
@@ -67,9 +67,9 @@ export default function nodeReducer<NodeType, EdgeType>(
         const nodeIds = Object.keys(draftState);
         nodeIds.forEach((nodeId) => {
           if (nodeId !== action.payload.id) {
-            draftState[nodeId].diagramMakerData.selected = false;
+            draftState[nodeId].diagrammerData.selected = false;
           } else {
-            draftState[nodeId].diagramMakerData.selected = true;
+            draftState[nodeId].diagrammerData.selected = true;
           }
         });
       });
@@ -77,7 +77,7 @@ export default function nodeReducer<NodeType, EdgeType>(
       return produce(state, (draftState) => {
         const currentNode = draftState[action.payload.id];
         if (currentNode) {
-          currentNode.diagramMakerData.dragging = true;
+          currentNode.diagrammerData.dragging = true;
         }
       });
     case NodeActionsType.NODE_DRAG:
@@ -85,19 +85,19 @@ export default function nodeReducer<NodeType, EdgeType>(
         const currentNode = draftState[action.payload.id];
         if (currentNode) {
           const { position } = action.payload;
-          currentNode.diagramMakerData.position = position;
+          currentNode.diagrammerData.position = position;
 
           // Shift all the nodes when node is dragged outside top boundary
           if (position.y < 0) {
             const offset = { x: 0, y: -position.y };
             const nodeIds = Object.keys(draftState);
             nodeIds.forEach((nodeId) => {
-              const oldPos = draftState[nodeId].diagramMakerData.position;
+              const oldPos = draftState[nodeId].diagrammerData.position;
               const newPos = {
                 x: oldPos.x + offset.x,
                 y: oldPos.y + offset.y,
               };
-              draftState[nodeId].diagramMakerData.position = newPos;
+              draftState[nodeId].diagrammerData.position = newPos;
             });
           }
           // Shift all the nodes when node is dragged outside left boundary
@@ -105,12 +105,12 @@ export default function nodeReducer<NodeType, EdgeType>(
             const offset = { x: -position.x, y: 0 };
             const nodeIds = Object.keys(draftState);
             nodeIds.forEach((nodeId) => {
-              const oldPos = draftState[nodeId].diagramMakerData.position;
+              const oldPos = draftState[nodeId].diagrammerData.position;
               const newPos = {
                 x: oldPos.x + offset.x,
                 y: oldPos.y + offset.y,
               };
-              draftState[nodeId].diagramMakerData.position = newPos;
+              draftState[nodeId].diagrammerData.position = newPos;
             });
           }
         }
@@ -119,7 +119,7 @@ export default function nodeReducer<NodeType, EdgeType>(
       return produce(state, (draftState) => {
         const currentNode = draftState[action.payload.id];
         if (currentNode) {
-          currentNode.diagramMakerData.dragging = false;
+          currentNode.diagrammerData.dragging = false;
         }
       });
     case EditorActionsType.UPDATE_SELECTION_MARQUEE:
@@ -127,14 +127,14 @@ export default function nodeReducer<NodeType, EdgeType>(
         const nodeIds = Object.keys(draftState);
         nodeIds.forEach((nodeId) => {
           if (isInsideBoundingBox(
-            draftState[nodeId].diagramMakerData.position,
-            draftState[nodeId].diagramMakerData.size,
+            draftState[nodeId].diagrammerData.position,
+            draftState[nodeId].diagrammerData.size,
             action.payload.anchor,
             action.payload.position,
           )) {
-            draftState[nodeId].diagramMakerData.selected = true;
+            draftState[nodeId].diagrammerData.selected = true;
           } else {
-            draftState[nodeId].diagramMakerData.selected = false;
+            draftState[nodeId].diagrammerData.selected = false;
           }
         });
       });
@@ -143,14 +143,14 @@ export default function nodeReducer<NodeType, EdgeType>(
       return produce(state, (draftState) => {
         const nodeIds = Object.keys(draftState);
         nodeIds.forEach((nodeId) => {
-          draftState[nodeId].diagramMakerData.selected = false;
+          draftState[nodeId].diagrammerData.selected = false;
         });
       });
     case WorkspaceActionsType.WORKSPACE_SELECT_ALL:
       return produce(state, (draftState) => {
         const nodeIds = Object.keys(draftState);
         nodeIds.forEach((nodeId) => {
-          draftState[nodeId].diagramMakerData.selected = true;
+          draftState[nodeId].diagrammerData.selected = true;
         });
       });
     case GlobalActionsType.DELETE_ITEMS:

@@ -1,7 +1,7 @@
 import { Store } from 'redux';
 
-import { DiagramMakerComponents } from 'diagramMaker/service/ui/types';
-import { DiagramMakerData, Position, Size } from 'diagramMaker/state/types';
+import { DiagrammerComponents } from 'diagrammer/service/ui/types';
+import { DiagrammerData, Position, Size } from 'diagrammer/state/types';
 
 import {
   DragPanelAction,
@@ -17,7 +17,7 @@ function getPanelAttributeAsBoolean(target: Element): boolean {
     return false;
   }
 
-  if (value === DiagramMakerComponents.PANEL) {
+  if (value === DiagrammerComponents.PANEL) {
     return true;
   }
 
@@ -80,7 +80,7 @@ function createDragPanelStartAction(id: string): DragStartPanelAction {
 }
 
 export function handlePanelResize<NodeType, EdgeType>(
-  store: Store<DiagramMakerData<NodeType, EdgeType>>,
+  store: Store<DiagrammerData<NodeType, EdgeType>>,
   id: string | undefined,
   size: Size,
 ) {
@@ -91,7 +91,7 @@ export function handlePanelResize<NodeType, EdgeType>(
 }
 
 export function handlePanelDrag<NodeType, EdgeType>(
-  store: Store<DiagramMakerData<NodeType, EdgeType>>,
+  store: Store<DiagrammerData<NodeType, EdgeType>>,
   id: string | undefined,
   draggableElement: HTMLElement,
   normalizedPosition: Position,
@@ -105,7 +105,7 @@ export function handlePanelDrag<NodeType, EdgeType>(
 }
 
 export function handlePanelDragStart<NodeType, EdgeType>(
-  store: Store<DiagramMakerData<NodeType, EdgeType>>,
+  store: Store<DiagrammerData<NodeType, EdgeType>>,
   id: string | undefined,
 ) {
   if (id) {

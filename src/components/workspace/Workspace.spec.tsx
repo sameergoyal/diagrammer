@@ -2,8 +2,8 @@ import * as Preact from 'preact';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-import { DotPattern, GridPattern } from 'diagramMaker/components/canvas/patterns';
-import { Workspace } from 'diagramMaker/components/workspace';
+import { DotPattern, GridPattern } from 'diagrammer/components/canvas/patterns';
+import { Workspace } from 'diagrammer/components/workspace';
 
 describe('Workspace', () => {
   it('renders canvas given dot pattern', () => {

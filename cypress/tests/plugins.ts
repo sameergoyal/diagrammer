@@ -5,9 +5,9 @@ import {
 import { clickElement } from '../common/interaction';
 import { convertTranslate2dToMatrix } from '../common/utils';
 
-describe('DiagramMakerPlugin', () => {
+describe('DiagrammerPlugin', () => {
   beforeEach(() => {
-    cy.visit('/iframe.html?id=demos-diagram-maker--plugins&args=&viewMode=story');
+    cy.visit('/iframe.html?id=demos-diagrammer--plugins&args=&viewMode=story');
   });
 
   describe('render testPlugin', () => {

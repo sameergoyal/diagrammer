@@ -1,9 +1,9 @@
 import { Action } from 'redux';
 
-import { DiagramMakerComponentsType } from 'diagramMaker/service/ui/types';
+import { DiagrammerComponentsType } from 'diagrammer/service/ui/types';
 import {
   EditorModeType, Position, Rectangle, Size,
-} from 'diagramMaker/state/types';
+} from 'diagrammer/state/types';
 
 export enum EditorActionsType {
   /** Set the mode for the editor. */
@@ -44,7 +44,7 @@ export interface ShowContextMenuAction extends Action {
     /** Position to render the context menu */
     position: Position,
     /** Type of UI Element to show the context menu for. */
-    targetType: DiagramMakerComponentsType,
+    targetType: DiagrammerComponentsType,
     /** ID of the UI Element in case it was a node, edge or a panel. */
     targetId?: string
   };

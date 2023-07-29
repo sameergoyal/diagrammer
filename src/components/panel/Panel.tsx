@@ -1,9 +1,9 @@
 import * as Preact from 'preact';
 
-import { ComposeView } from 'diagramMaker/components/common';
-import { BoundRenderCallback, DestroyCallback } from 'diagramMaker/service/ConfigService';
-import { DiagramMakerComponentsType } from 'diagramMaker/service/ui/types';
-import { Position, PositionAnchorType, Size } from 'diagramMaker/state/types';
+import { ComposeView } from 'diagrammer/components/common';
+import { BoundRenderCallback, DestroyCallback } from 'diagrammer/service/ConfigService';
+import { DiagrammerComponentsType } from 'diagrammer/service/ui/types';
+import { Position, PositionAnchorType, Size } from 'diagrammer/state/types';
 
 import './Panel.scss';
 
@@ -64,7 +64,7 @@ export default class Panel extends Preact.Component<PanelProps> {
     return (
       <div
         data-id={this.props.id}
-        data-type={DiagramMakerComponentsType.PANEL}
+        data-type={DiagrammerComponentsType.PANEL}
         data-event-target
         className="dm-panel"
         style={{ width, height, transform }}

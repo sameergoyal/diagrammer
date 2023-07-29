@@ -1,73 +1,73 @@
-export enum DiagramMakerComponentsType {
+export enum DiagrammerComponentsType {
   /**
-   * Used on context menus rendered by diagram maker.
+   * Used on context menus rendered by diagrammer.
    * For internal use only.
    */
-  CONTEXT_MENU = 'DiagramMaker.ContextMenu',
+  CONTEXT_MENU = 'Diagrammer.ContextMenu',
   /**
-   * Used on edges rendered by diagram maker.
+   * Used on edges rendered by diagrammer.
    * For internal use only.
    */
-  EDGE = 'DiagramMaker.Edge',
+  EDGE = 'Diagrammer.Edge',
   /**
-   * Used on edge badges rendered by diagram maker.
+   * Used on edge badges rendered by diagrammer.
    * For internal use only.
    */
-  EDGE_BADGE = 'DiagramMaker.EdgeBadge',
+  EDGE_BADGE = 'Diagrammer.EdgeBadge',
   /**
-   * Used on potential edges rendered by diagram maker.
+   * Used on potential edges rendered by diagrammer.
    * For internal use only.
    */
-  POTENTIAL_EDGE = 'DiagramMaker.PotentialEdge',
+  POTENTIAL_EDGE = 'Diagrammer.PotentialEdge',
   /**
-   * Used on potential nodes being dragged currently by diagram maker.
+   * Used on potential nodes being dragged currently by diagrammer.
    * Also used by consumers on the drag targets for potential nodes.
    */
-  POTENTIAL_NODE = 'DiagramMaker.PotentialNode',
+  POTENTIAL_NODE = 'Diagrammer.PotentialNode',
   /**
-   * Used on nodes rendered by diagram maker.
+   * Used on nodes rendered by diagrammer.
    * For internal use only.
    */
-  NODE = 'DiagramMaker.Node',
+  NODE = 'Diagrammer.Node',
   /**
-   * Used on node connectors displayed by diagram maker.
+   * Used on node connectors displayed by diagrammer.
    * Can also be used within the node to make the entire node,
    * or parts of the node DOM be droppable for completion of edge creation
    * or draggable for starting edge creation.
    */
-  NODE_CONNECTOR = 'DiagramMaker.Connector',
+  NODE_CONNECTOR = 'Diagrammer.Connector',
   /**
-   * Used on panels rendered by diagram maker.
+   * Used on panels rendered by diagrammer.
    * For internal use only.
    */
-  PANEL = 'DiagramMaker.Panel',
+  PANEL = 'Diagrammer.Panel',
 
   /**
-   * Used as a drag handle on panels rendered by diagram maker.
+   * Used as a drag handle on panels rendered by diagrammer.
    * If you give an element this data-type in the panel render callback
    * dragging this element will drag the panel
    */
-  PANEL_DRAG_HANDLE = 'DiagramMaker.PanelDragHandle',
+  PANEL_DRAG_HANDLE = 'Diagrammer.PanelDragHandle',
 
   /**
-   * Used on selection marquee rendered by diagram maker in select mode.
+   * Used on selection marquee rendered by diagrammer in select mode.
    * For internal use only.
    */
-  SELECTION_MARQUEE = 'DiagramMaker.SelectionMarquee',
+  SELECTION_MARQUEE = 'Diagrammer.SelectionMarquee',
 
   /**
-   * Used on top level container rendered by diagram maker.
+   * Used on top level container rendered by diagrammer.
    * For internal use only.
    */
-  VIEW = 'DiagramMaker.View',
+  VIEW = 'Diagrammer.View',
 
   /**
-   * Used on workspace rendered by diagram maker.
+   * Used on workspace rendered by diagrammer.
    * For internal use only.
    */
-  WORKSPACE = 'DiagramMaker.Workspace',
+  WORKSPACE = 'Diagrammer.Workspace',
 }
 
-export const DiagramMakerComponents = {
-  ...DiagramMakerComponentsType,
+export const DiagrammerComponents = {
+  ...DiagrammerComponentsType,
 };

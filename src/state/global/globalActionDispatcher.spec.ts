@@ -1,6 +1,6 @@
 import {
-  DiagramMakerEdge, DiagramMakerEdges, DiagramMakerNode, DiagramMakerNodes,
-} from 'diagramMaker/state/types';
+  DiagrammerEdge, DiagrammerEdges, DiagrammerNode, DiagrammerNodes,
+} from 'diagrammer/state/types';
 
 import { createDeleteItemsAction, createNewItemsAction, handleDeleteSelectedItems } from './globalActionDispatcher';
 import { GlobalActionsType } from './globalActions';
@@ -25,22 +25,22 @@ describe('globalActionDispatcher', () => {
 
   describe('createNewItemsAction', () => {
     it('returns create items action', () => {
-      const nodes: DiagramMakerNode<{}>[] = [
+      const nodes: DiagrammerNode<{}>[] = [
         {
           id: 'node-1',
-          diagramMakerData: { position, size, selected: false },
+          diagrammerData: { position, size, selected: false },
         },
         {
           id: 'node-2',
-          diagramMakerData: { position, size, selected: true },
+          diagrammerData: { position, size, selected: true },
         },
       ];
-      const edges: DiagramMakerEdge<{}>[] = [
+      const edges: DiagrammerEdge<{}>[] = [
         {
           id: 'edge-1',
           src: 'node-1',
           dest: 'node-2',
-          diagramMakerData: {
+          diagrammerData: {
             selected: true,
           },
         },
@@ -48,7 +48,7 @@ describe('globalActionDispatcher', () => {
           id: 'edge-2',
           src: 'node-2',
           dest: 'node-1',
-          diagramMakerData: {
+          diagrammerData: {
             selected: false,
           },
         },
@@ -65,17 +65,17 @@ describe('globalActionDispatcher', () => {
 
   describe('handleDeleteSelectedItems', () => {
     it('includes selected node IDs', () => {
-      const nodes: DiagramMakerNodes<{}> = {
+      const nodes: DiagrammerNodes<{}> = {
         'node-1': {
           id: 'node-1',
-          diagramMakerData: { position, size, selected: false },
+          diagrammerData: { position, size, selected: false },
         },
         'node-2': {
           id: 'node-2',
-          diagramMakerData: { position, size, selected: true },
+          diagrammerData: { position, size, selected: true },
         },
       };
-      const edges: DiagramMakerEdges<{}> = {};
+      const edges: DiagrammerEdges<{}> = {};
       const dispatch = jest.fn();
 
       const store: any = {
@@ -98,23 +98,23 @@ describe('globalActionDispatcher', () => {
     });
 
     it('includes selected edge IDs', () => {
-      const nodes: DiagramMakerNodes<{}> = {
+      const nodes: DiagrammerNodes<{}> = {
         'node-1': {
           id: 'node-1',
-          diagramMakerData: { position, size },
+          diagrammerData: { position, size },
         },
         'node-2': {
           id: 'node-2',
-          diagramMakerData: { position, size },
+          diagrammerData: { position, size },
         },
       };
 
-      const edges: DiagramMakerEdges<{}> = {
+      const edges: DiagrammerEdges<{}> = {
         'edge-1': {
           id: 'edge-1',
           src: 'node-1',
           dest: 'node-2',
-          diagramMakerData: {
+          diagrammerData: {
             selected: true,
           },
         },
@@ -122,7 +122,7 @@ describe('globalActionDispatcher', () => {
           id: 'edge-2',
           src: 'node-2',
           dest: 'node-1',
-          diagramMakerData: {
+          diagrammerData: {
             selected: false,
           },
         },
@@ -150,27 +150,27 @@ describe('globalActionDispatcher', () => {
     });
 
     it('includes IDs for edges whose source node was deleted (partially stranded)', () => {
-      const nodes: DiagramMakerNodes<{}> = {
+      const nodes: DiagrammerNodes<{}> = {
         'node-1': {
           id: 'node-1',
-          diagramMakerData: { position, size },
+          diagrammerData: { position, size },
         },
         'node-2': {
           id: 'node-2',
-          diagramMakerData: { position, size },
+          diagrammerData: { position, size },
         },
         'node-3': {
           id: 'node-3',
-          diagramMakerData: { position, size, selected: true },
+          diagrammerData: { position, size, selected: true },
         },
       };
 
-      const edges: DiagramMakerEdges<{}> = {
+      const edges: DiagrammerEdges<{}> = {
         'edge-1': {
           id: 'edge-1',
           src: 'node-3',
           dest: 'node-1',
-          diagramMakerData: {
+          diagrammerData: {
             selected: false,
           },
         },
@@ -178,7 +178,7 @@ describe('globalActionDispatcher', () => {
           id: 'edge-2',
           src: 'node-1',
           dest: 'node-2',
-          diagramMakerData: {
+          diagrammerData: {
             selected: false,
           },
         },
@@ -206,27 +206,27 @@ describe('globalActionDispatcher', () => {
     });
 
     it('includes IDs for edges whose destination node was deleted (partially stranded)', () => {
-      const nodes: DiagramMakerNodes<{}> = {
+      const nodes: DiagrammerNodes<{}> = {
         'node-1': {
           id: 'node-1',
-          diagramMakerData: { position, size },
+          diagrammerData: { position, size },
         },
         'node-2': {
           id: 'node-2',
-          diagramMakerData: { position, size },
+          diagrammerData: { position, size },
         },
         'node-3': {
           id: 'node-3',
-          diagramMakerData: { position, size, selected: true },
+          diagrammerData: { position, size, selected: true },
         },
       };
 
-      const edges: DiagramMakerEdges<{}> = {
+      const edges: DiagrammerEdges<{}> = {
         'edge-1': {
           id: 'edge-1',
           src: 'node-1',
           dest: 'node-3',
-          diagramMakerData: {
+          diagrammerData: {
             selected: false,
           },
         },
@@ -234,7 +234,7 @@ describe('globalActionDispatcher', () => {
           id: 'edge-2',
           src: 'node-1',
           dest: 'node-2',
-          diagramMakerData: {
+          diagrammerData: {
             selected: false,
           },
         },
@@ -262,27 +262,27 @@ describe('globalActionDispatcher', () => {
     });
 
     it('includes IDs for edges whose source and destination nodes were deleted (completely stranded)', () => {
-      const nodes: DiagramMakerNodes<{}> = {
+      const nodes: DiagrammerNodes<{}> = {
         'node-1': {
           id: 'node-1',
-          diagramMakerData: { position, size, selected: true },
+          diagrammerData: { position, size, selected: true },
         },
         'node-2': {
           id: 'node-2',
-          diagramMakerData: { position, size, selected: true },
+          diagrammerData: { position, size, selected: true },
         },
         'node-3': {
           id: 'node-3',
-          diagramMakerData: { position, size },
+          diagrammerData: { position, size },
         },
       };
 
-      const edges: DiagramMakerEdges<{}> = {
+      const edges: DiagrammerEdges<{}> = {
         'edge-1': {
           id: 'edge-1',
           src: 'node-3',
           dest: 'node-3',
-          diagramMakerData: {
+          diagrammerData: {
             selected: false,
           },
         },
@@ -290,7 +290,7 @@ describe('globalActionDispatcher', () => {
           id: 'edge-2',
           src: 'node-1',
           dest: 'node-2',
-          diagramMakerData: {
+          diagrammerData: {
             selected: false,
           },
         },

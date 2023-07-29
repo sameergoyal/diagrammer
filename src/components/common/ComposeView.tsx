@@ -1,6 +1,6 @@
 import * as Preact from 'preact';
 
-import { BoundRenderCallback, DestroyCallback } from 'diagramMaker/service/ConfigService';
+import { BoundRenderCallback, DestroyCallback } from 'diagrammer/service/ConfigService';
 
 export interface ComposeViewProps {
   renderCallback: BoundRenderCallback;
@@ -8,7 +8,7 @@ export interface ComposeViewProps {
 }
 
 export default class ComposeView extends Preact.Component<ComposeViewProps> {
-  private diagramMakerContainer: HTMLElement | undefined | null;
+  private diagrammerContainer: HTMLElement | undefined | null;
 
   private consumerContainer: HTMLElement | undefined | void;
 
@@ -16,7 +16,7 @@ export default class ComposeView extends Preact.Component<ComposeViewProps> {
     return (
       <div
         className="dm-content"
-        ref={(el) => { this.diagramMakerContainer = el; }}
+        ref={(el) => { this.diagrammerContainer = el; }}
       />
     );
   }
@@ -30,14 +30,14 @@ export default class ComposeView extends Preact.Component<ComposeViewProps> {
   };
 
   public componentWillUnmount = () => {
-    // diagramMakerContainer is always available because this is called after render
-    this.props.destroyCallback(this.diagramMakerContainer as HTMLElement, this.consumerContainer);
+    // diagrammerContainer is always available because this is called after render
+    this.props.destroyCallback(this.diagrammerContainer as HTMLElement, this.consumerContainer);
   };
 
   private rerenderConsumerNode = () => {
-    // diagramMakerContainer is always available because this is called after render
+    // diagrammerContainer is always available because this is called after render
     this.consumerContainer = this.props.renderCallback(
-      this.diagramMakerContainer as HTMLElement,
+      this.diagrammerContainer as HTMLElement,
       this.consumerContainer,
     );
   };

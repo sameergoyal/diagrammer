@@ -1,25 +1,22 @@
 {
-  "name": "diagram-maker",
+  "name": "diagrammer",
   "description": "A library to display an interactive editor for any graph-like data.",
-  "version": "2.0.1",
+  "version": "1.0.0",
   "author": {
-    "name": "Amazon Web Services",
-    "url": "https://aws.amazon.com/"
+    "name": "Sameer Goyal"
   },
-  "homepage": "https://awslabs.github.io/diagram-maker",
+  "homepage": "https://sameergoyal.github.io/diagrammer",
   "contributors": [
-    "Sameer Goyal <sameeg@amazon.com>",
-    "Matthew Oakes <mattoa@amazon.com>"
+    "Sameer Goyal"
   ],
   "engines": {
     "node": ">=16"
   },
-  "main": "dist/diagramMaker.js",
-  "types": "dist/diagramMaker.d.ts",
-  "typings": "dist/diagramMaker.d.ts",
+  "main": "dist/diagrammer.js",
+  "types": "dist/diagrammer.d.ts",
+  "typings": "dist/diagrammer.d.ts",
   "license": "Apache-2.0",
   "keywords": [
-    "aws",
     "visualizaton",
     "diagram",
     "interactive",
@@ -30,7 +27,8 @@
     "workflow",
     "state-machine",
     "flowchart",
-    "diagram-maker"
+    "diagram-maker",
+    "diagrammer"
   ],
   "dependencies": {},
   "devDependencies": {
@@ -110,9 +108,9 @@
     "server": "npm run start",
     "lint": "eslint --ext .js,.ts,.tsx src/",
     "lint:fix": "eslint --ext .js,.ts,.tsx src/ --fix",
-    "test": "tsc --noEmit -p . && jest --config jest.json",
-    "test:dev": "tsc --noEmit -p . && jest --config jest.json --watch",
-    "test:update": "tsc --noEmit -p . && jest --config jest.json --updateSnapshot",
+    "test": "tsc --noEmit -p . && npx jest --config jest.json",
+    "test:dev": "tsc --noEmit -p . && npx jest --config jest.json --watch",
+    "test:update": "tsc --noEmit -p . && npx jest --config jest.json --updateSnapshot",
     "release": "npm run lint && npm run test && npm run build && npm run release:integ && npm run documentation",
     "build:integ": "build-storybook -o docs/",
     "lint:integ": "npx eslint --ext .js,.ts,.tsx integ/ -c integ/.eslintrc && eslint --ext .js,.ts,.tsx cypress/tests/ -c cypress/.eslintrc",
@@ -124,6 +122,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/awslabs/diagram-maker"
+    "url": "git://github.com/sameergoyal/diagrammer"
   }
 }

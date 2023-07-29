@@ -1,11 +1,11 @@
-@import '~diagramMaker/styles/variables';
+@import '~diagrammer/styles/variables';
 
 .dm-dots {
   shape-rendering: geometricPrecision;
 
   pattern {
     path {
-      fill: var(--diagram-maker-canvas-dots-color)
+      fill: var(--diagrammer-canvas-dots-color)
     }
   }
 }

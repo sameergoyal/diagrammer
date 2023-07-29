@@ -1,10 +1,10 @@
-import { DiagramMakerAction } from 'diagramMaker/state/actions';
-import { DiagramMakerPlugins } from 'diagramMaker/state/types';
+import { DiagrammerAction } from 'diagrammer/state/actions';
+import { DiagrammerPlugins } from 'diagrammer/state/types';
 
 export default function pluginReducer<NodeType, EdgeType>(
-  state: DiagramMakerPlugins | undefined,
-  _action: DiagramMakerAction<NodeType, EdgeType>,
-): DiagramMakerPlugins {
+  state: DiagrammerPlugins | undefined,
+  _action: DiagrammerAction<NodeType, EdgeType>,
+): DiagrammerPlugins {
   if (state === undefined) {
     return {};
   }

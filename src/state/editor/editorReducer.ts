@@ -1,14 +1,14 @@
 import { produce } from 'immer';
 
-import { DiagramMakerAction } from 'diagramMaker/state/actions';
-import { DiagramMakerEditor, EditorMode } from 'diagramMaker/state/types';
+import { DiagrammerAction } from 'diagrammer/state/actions';
+import { DiagrammerEditor, EditorMode } from 'diagrammer/state/types';
 
 import { EditorActionsType } from './editorActions';
 
 export default function editorReducer<NodeType, EdgeType>(
-  state: DiagramMakerEditor | undefined,
-  action: DiagramMakerAction<NodeType, EdgeType>,
-): DiagramMakerEditor {
+  state: DiagrammerEditor | undefined,
+  action: DiagrammerAction<NodeType, EdgeType>,
+): DiagrammerEditor {
   if (state === undefined) {
     return {
       mode: EditorMode.DRAG,

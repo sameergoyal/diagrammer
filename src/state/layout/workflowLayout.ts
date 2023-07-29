@@ -2,7 +2,7 @@ import { produce } from 'immer';
 import keys from 'lodash-es/keys';
 import values from 'lodash-es/values';
 
-import { DiagramMakerData, Position } from 'diagramMaker/state/types';
+import { DiagrammerData, Position } from 'diagrammer/state/types';
 
 import { WorkflowLayoutConfig, WorkflowLayoutDirection } from './layoutActions';
 
@@ -22,9 +22,9 @@ const WORKFLOW_DIRECTION_TO_DAGRE_MAP = {
 };
 
 export default function workflowLayout<NodeType, EdgeType>(
-  state: DiagramMakerData<NodeType, EdgeType>,
+  state: DiagrammerData<NodeType, EdgeType>,
   workflowConfig: WorkflowLayoutConfig,
-): DiagramMakerData<NodeType, EdgeType> {
+): DiagrammerData<NodeType, EdgeType> {
   if (!Dagre) {
     throw new Error(
       'Could not find "dagre" library. It must be included in your application in order to use "Workflow" layout.',
@@ -40,7 +40,7 @@ export default function workflowLayout<NodeType, EdgeType>(
   dagreGraph.setDefaultEdgeLabel(() => ({}));
 
   keys(state.nodes).forEach((nodeId) => {
-    const nodeData = state.nodes[nodeId].diagramMakerData;
+    const nodeData = state.nodes[nodeId].diagrammerData;
     dagreGraph.setNode(nodeId, {
       height: nodeData.size.height,
       width: nodeData.size.width,
@@ -58,7 +58,7 @@ export default function workflowLayout<NodeType, EdgeType>(
   // (That is, when `fixedNodeId` is provided.)
   let offset: Position = { x: 0, y: 0 };
   if (workflowConfig.fixedNodeId) {
-    const initialFixedNodePosition = state.nodes[workflowConfig.fixedNodeId].diagramMakerData.position;
+    const initialFixedNodePosition = state.nodes[workflowConfig.fixedNodeId].diagrammerData.position;
     const dagreFixedNode = dagreGraph.node(workflowConfig.fixedNodeId);
     offset = {
       x: initialFixedNodePosition.x - dagreFixedNode.x,
@@ -69,7 +69,7 @@ export default function workflowLayout<NodeType, EdgeType>(
   return produce(state, (draftState) => {
     dagreGraph.nodes().forEach((nodeId: any) => {
       const dagreNode = dagreGraph.node(nodeId);
-      draftState.nodes[nodeId].diagramMakerData.position = {
+      draftState.nodes[nodeId].diagrammerData.position = {
         x: dagreNode.x + offset.x,
         y: dagreNode.y + offset.y,
       };

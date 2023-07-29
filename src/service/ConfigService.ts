@@ -1,8 +1,8 @@
-import { DiagramMakerComponentsType } from 'diagramMaker/service/ui/types';
-import { ActionInterceptor } from 'diagramMaker/state/middleware';
+import { DiagrammerComponentsType } from 'diagrammer/service/ui/types';
+import { ActionInterceptor } from 'diagrammer/state/middleware';
 import {
-  DiagramMakerData, DiagramMakerEdge, DiagramMakerNode, DiagramMakerPanel, DiagramMakerPotentialNode, Position, Size,
-} from 'diagramMaker/state/types';
+  DiagrammerData, DiagrammerEdge, DiagrammerNode, DiagrammerPanel, DiagrammerPotentialNode, Position, Size,
+} from 'diagrammer/state/types';
 
 export enum ConnectorPlacementType {
   /**
@@ -38,23 +38,23 @@ export const ConnectorPlacement = {
 };
 
 export type BoundRenderCallback = (
-  diagramMakerContainer: HTMLElement,
+  diagrammerContainer: HTMLElement,
   consumerContainer?: HTMLElement | void
 ) => (HTMLElement | undefined | void);
 
 /**
  * This callback is called to cleanup event handlers for DOM rendered by the consumer
- * before diagram maker removes the DOM.
+ * before diagrammer removes the DOM.
  * @callback DestroyCallback
- * @param diagramMakerContainer - The container in which consumer rendered some DOM.
+ * @param diagrammerContainer - The container in which consumer rendered some DOM.
  * @param consumerContainer - This is passed only if the consumer returned this in renderCallback.
  * Useful for Preact, where you need to provide the element within the container to diff against.
  * @returns {void}
  * @example <caption> Destroy callback when using React </caption>
- * (diagramMakerContainer: HTMLElement) => ReactDOM.unmountComponentAtNode(diagramMakerContainer)
+ * (diagrammerContainer: HTMLElement) => ReactDOM.unmountComponentAtNode(diagrammerContainer)
  */
 export type DestroyCallback = (
-  diagramMakerContainer: HTMLElement,
+  diagrammerContainer: HTMLElement,
   consumerContainer?: HTMLElement | void
 ) => void;
 
@@ -63,7 +63,7 @@ export type DestroyCallback = (
  * @callback ContextMenuRenderCallbackWithId
  * @param id - The ID of the element which was clicked. Since, we have different callbacks for node, edge, panel,
  * it is assumed that the type of the element is known before hand.
- * @param diagramMakerContainer - The container in which the consumer renders the context menu.
+ * @param diagrammerContainer - The container in which the consumer renders the context menu.
  * This is an empty container with only the position set correctly.
  * Could diff against content already present in the container using React, Preact or any other VDOM.
  * @param consumerContainer - This is passed only if the consumer returned this in prior calls to this callback.
@@ -72,7 +72,7 @@ export type DestroyCallback = (
  */
 type ContextMenuRenderCallbackWithId = (
   id: string | undefined,
-  diagramMakerContainer: HTMLElement,
+  diagrammerContainer: HTMLElement,
   consumerContainer?: HTMLElement | void
 ) => (HTMLElement | undefined | void);
 
@@ -81,7 +81,7 @@ type ContextMenuRenderCallbackWithId = (
  * Since, we have different callbacks for node, edge, panel,
  * it is assumed that the type of the element is known before hand.
  * @callback ContextMenuRenderCallback
- * @param diagramMakerContainer - The container in which the consumer renders the context menu.
+ * @param diagrammerContainer - The container in which the consumer renders the context menu.
  * This is an empty container with only the position set correctly.
  * Could diff against content already present in the container using React, Preact or any other VDOM.
  * @param consumerContainer - This is passed only if the consumer returned this in prior calls to this callback.
@@ -89,7 +89,7 @@ type ContextMenuRenderCallbackWithId = (
  * @returns {HTMLElement | undefined | void} - HTMLElement in case of Preact, or void or undefined everywhere else.
  */
 type ContextMenuRenderCallback = (
-  diagramMakerContainer: HTMLElement,
+  diagrammerContainer: HTMLElement,
   consumerContainer?: HTMLElement | void
 ) => (HTMLElement | undefined | void);
 
@@ -123,7 +123,7 @@ export interface ContextMenuRenderCallbacks {
 interface RenderCallbacks<NodeType, EdgeType> {
   /**
    * Callback to cleanup DOM rendered by the consumer properly
-   * before diagram maker removes it.
+   * before diagrammer removes it.
    * In case, consumers are using React or any other rendering framework,
    * the framework attaches event handlers that if not removed correctly,
    * could cause a memory leak.
@@ -132,9 +132,9 @@ interface RenderCallbacks<NodeType, EdgeType> {
   destroy: DestroyCallback;
   /**
    * Callback to render a badge centered within the edge.
-   * @param {DiagramMakerEdge<EdgeType>} - The object representing the current state of the edge
+   * @param {DiagrammerEdge<EdgeType>} - The object representing the current state of the edge
    * for which the badge is being rendered.
-   * @param {HTMLElement} diagramMakerContainer - Container managed by diagram maker to render content in
+   * @param {HTMLElement} diagrammerContainer - Container managed by diagrammer to render content in
    * Could diff against content already present in the container using React, Preact or any other VDOM.
    * @param {HTMLElement} consumerContainer - Container used by consumer to render. Optional.
    * Useful only when using Preact, since Preact appends by default
@@ -143,14 +143,14 @@ interface RenderCallbacks<NodeType, EdgeType> {
    * or undefined or void everywhere else.
    */
   edge?: (
-    edge: DiagramMakerEdge<EdgeType>,
-    diagramMakerContainer: HTMLElement,
+    edge: DiagrammerEdge<EdgeType>,
+    diagrammerContainer: HTMLElement,
     consumerContainer?: HTMLElement | void
   ) => (HTMLElement | undefined | void);
   /**
    * Callback to render a node.
-   * @param {DiagramMakerNode<NodeType>} - The object representing the current state of the node being rendered.
-   * @param {HTMLElement} diagramMakerContainer - Container managed by diagram maker to render content in
+   * @param {DiagrammerNode<NodeType>} - The object representing the current state of the node being rendered.
+   * @param {HTMLElement} diagrammerContainer - Container managed by diagrammer to render content in
    * Could diff against content already present in the container using React, Preact or any other VDOM.
    * @param {HTMLElement} consumerContainer - Container used by consumer to render. Optional.
    * Useful only when using Preact, since Preact appends by default
@@ -159,15 +159,15 @@ interface RenderCallbacks<NodeType, EdgeType> {
    * or undefined or void everywhere else.
    */
   node: (
-    node: DiagramMakerNode<NodeType>,
-    diagramMakerContainer: HTMLElement,
+    node: DiagrammerNode<NodeType>,
+    diagrammerContainer: HTMLElement,
     consumerContainer?: HTMLElement | void
   ) => (HTMLElement | undefined | void);
   /**
    * Callback to render a potential node. Optional. Only useful when user might be dragging new nodes out of a panel.
-   * @param {DiagramMakerPotentialNode} - The object representing the current state of the potential node
+   * @param {DiagrammerPotentialNode} - The object representing the current state of the potential node
    * being rendered.
-   * @param {HTMLElement} diagramMakerContainer - Container managed by diagram maker to render content in
+   * @param {HTMLElement} diagrammerContainer - Container managed by diagrammer to render content in
    * Could diff against content already present in the container using React, Preact or any other VDOM.
    * @param {HTMLElement} consumerContainer - Container used by consumer to render. Optional.
    * Useful only when using Preact, since Preact appends by default
@@ -176,16 +176,16 @@ interface RenderCallbacks<NodeType, EdgeType> {
    * or undefined or void everywhere else.
    */
   potentialNode?: (
-    node: DiagramMakerPotentialNode,
-    diagramMakerContainer: HTMLElement,
+    node: DiagrammerPotentialNode,
+    diagrammerContainer: HTMLElement,
     consumerContainer?: HTMLElement | void
   ) => (HTMLElement | undefined | void);
   /** Object containing render callbacks for several panels keyed on panel name */
   panels: {
     /**
      * Callback to render a panel.
-     * @param {DiagramMakerPanel} - The object representing the current state of the panel being rendered.
-     * @param {HTMLElement} diagramMakerContainer - Container managed by diagram maker to render content in
+     * @param {DiagrammerPanel} - The object representing the current state of the panel being rendered.
+     * @param {HTMLElement} diagrammerContainer - Container managed by diagrammer to render content in
      * Could diff against content already present in the container using React, Preact or any other VDOM.
      * @param {HTMLElement} consumerContainer - Container used by consumer to render. Optional.
      * Useful only when using Preact, since Preact appends by default
@@ -194,15 +194,15 @@ interface RenderCallbacks<NodeType, EdgeType> {
      * or undefined or void everywhere else.
      */
     [name: string]: (
-      panel: DiagramMakerPanel,
-      state: DiagramMakerData<NodeType, EdgeType>,
-      diagramMakerContainer: HTMLElement,
+      panel: DiagrammerPanel,
+      state: DiagrammerData<NodeType, EdgeType>,
+      diagrammerContainer: HTMLElement,
       consumerContainer?: HTMLElement | void
     ) => (HTMLElement | undefined | void);
   };
   /**
    * Object containing render callbacks for context menus for various targets. Optional.
-   * If provided, diagram maker will use these context menu render callbacks to show a context menu,
+   * If provided, diagrammer will use these context menu render callbacks to show a context menu,
    * and suppress the browser rendered context menu.
    */
   contextMenu?: ContextMenuRenderCallbacks;
@@ -253,14 +253,14 @@ export interface CustomConnectorType {
 }
 
 /** Interface for storing configuration for a given node type */
-export interface DiagramMakerNodeTypeConfiguration {
+export interface DiagrammerNodeTypeConfiguration {
   /**
    * Size used if override not provided by data attrs for potential nodes using this type.
    */
   size: Size;
   /**
    * Used for overriding visible connectors for nodes using this type.
-   * This is useful only in case diagram maker renders connectors by default i.e. LEFT_RIGHT or TOP_BOTTOM.
+   * This is useful only in case diagrammer renders connectors by default i.e. LEFT_RIGHT or TOP_BOTTOM.
    */
   visibleConnectorTypes?: TypeForVisibleConnectorTypes;
   /**
@@ -280,9 +280,9 @@ export interface DiagramMakerNodeTypeConfiguration {
   }
 }
 
-export interface DiagramMakerConfig<NodeType, EdgeType> {
+export interface DiagrammerConfig<NodeType, EdgeType> {
   /**
-   * Optional configuration for diagram maker
+   * Optional configuration for diagrammer
    */
   options?: {
     /**
@@ -323,35 +323,35 @@ export interface DiagramMakerConfig<NodeType, EdgeType> {
    * node types.
    */
   nodeTypeConfig?: {
-    [typeId: string]: DiagramMakerNodeTypeConfiguration;
+    [typeId: string]: DiagrammerNodeTypeConfiguration;
   };
 }
 export default class ConfigService<NodeType, EdgeType> {
-  constructor(private config: DiagramMakerConfig<NodeType, EdgeType>) {
+  constructor(private config: DiagrammerConfig<NodeType, EdgeType>) {
   }
 
   public getRenderNode = (): (
-    node: DiagramMakerNode<NodeType>,
-    diagramMakerContainer: HTMLElement,
+    node: DiagrammerNode<NodeType>,
+    diagrammerContainer: HTMLElement,
     consumerContainer?: HTMLElement | void
   ) => (HTMLElement | undefined | void) => this.getRenderCallbacks().node;
 
   public getRenderEdge = (): ((
-    edge: DiagramMakerEdge<EdgeType>,
-    diagramMakerContainer: HTMLElement,
+    edge: DiagrammerEdge<EdgeType>,
+    diagrammerContainer: HTMLElement,
     consumerContainer?: HTMLElement | void
   ) => (HTMLElement | undefined | void)) | undefined => this.getRenderCallbacks().edge;
 
   public getRenderPanel = (name: string): (
-    panel: DiagramMakerPanel,
-    state: DiagramMakerData<NodeType, EdgeType>,
-    diagramMakerContainer: HTMLElement,
+    panel: DiagrammerPanel,
+    state: DiagrammerData<NodeType, EdgeType>,
+    diagrammerContainer: HTMLElement,
     consumerContainer?: HTMLElement | void
   ) => (HTMLElement | undefined | void) => this.getRenderCallbacks().panels[name];
 
   public getRenderPotentialNode = (): ((
-    node: DiagramMakerPotentialNode,
-    diagramMakerContainer: HTMLElement,
+    node: DiagrammerPotentialNode,
+    diagrammerContainer: HTMLElement,
     consumerContainer?: HTMLElement | void
   ) => (HTMLElement | undefined | void)) | undefined => this.getRenderCallbacks().potentialNode;
 
@@ -364,13 +364,13 @@ export default class ConfigService<NodeType, EdgeType> {
     }
 
     switch (type) {
-      case DiagramMakerComponentsType.NODE:
+      case DiagrammerComponentsType.NODE:
         return contextMenuCallbacks.node && contextMenuCallbacks.node.bind(null, id);
-      case DiagramMakerComponentsType.EDGE:
+      case DiagrammerComponentsType.EDGE:
         return contextMenuCallbacks.edge && contextMenuCallbacks.edge.bind(null, id);
-      case DiagramMakerComponentsType.PANEL:
+      case DiagrammerComponentsType.PANEL:
         return contextMenuCallbacks.panel && contextMenuCallbacks.panel.bind(null, id);
-      case DiagramMakerComponentsType.WORKSPACE:
+      case DiagrammerComponentsType.WORKSPACE:
         return contextMenuCallbacks.workspace;
       default:
         return undefined;
@@ -412,7 +412,7 @@ export default class ConfigService<NodeType, EdgeType> {
 
   private getNodeTypeConfiguration = (
     typeId: string,
-  ): DiagramMakerNodeTypeConfiguration | undefined => this.config.nodeTypeConfig && this.config.nodeTypeConfig[typeId];
+  ): DiagrammerNodeTypeConfiguration | undefined => this.config.nodeTypeConfig && this.config.nodeTypeConfig[typeId];
 
   private getRenderContextMenu = (): ContextMenuRenderCallbacks | undefined => this.getRenderCallbacks().contextMenu;
 

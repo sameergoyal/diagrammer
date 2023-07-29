@@ -1,6 +1,6 @@
 import { Store } from 'redux';
 
-import { DiagramMakerData, Position, Size } from 'diagramMaker/state/types';
+import { DiagrammerData, Position, Size } from 'diagrammer/state/types';
 import {
   DeselectAction,
   DragWorkspaceAction,
@@ -59,7 +59,7 @@ function createSelectAllAction(): SelectAllAction {
 }
 
 export function handleWorkspaceDrag<NodeType, EdgeType>(
-  store: Store<DiagramMakerData<NodeType, EdgeType>>,
+  store: Store<DiagrammerData<NodeType, EdgeType>>,
   position: Position,
 ) {
   const action = createDragWorkspaceAction(position);
@@ -67,7 +67,7 @@ export function handleWorkspaceDrag<NodeType, EdgeType>(
 }
 
 export function handleWorkspaceZoom<NodeType, EdgeType>(
-  store: Store<DiagramMakerData<NodeType, EdgeType>>,
+  store: Store<DiagrammerData<NodeType, EdgeType>>,
   zoom: number,
   position: Position,
 ) {
@@ -76,14 +76,14 @@ export function handleWorkspaceZoom<NodeType, EdgeType>(
 }
 
 export function handleWorkspaceClick<NodeType, EdgeType>(
-  store: Store<DiagramMakerData<NodeType, EdgeType>>,
+  store: Store<DiagrammerData<NodeType, EdgeType>>,
 ) {
   const action = createDeselectAction();
   store.dispatch(action);
 }
 
 export function handleWorkspaceResize<NodeType, EdgeType>(
-  store: Store<DiagramMakerData<NodeType, EdgeType>>,
+  store: Store<DiagrammerData<NodeType, EdgeType>>,
   containerSize: Size,
 ) {
   const action = createResizeWorkspaceAction(containerSize);
@@ -91,7 +91,7 @@ export function handleWorkspaceResize<NodeType, EdgeType>(
 }
 
 export function handleSelectAll<NodeType, EdgeType>(
-  store: Store<DiagramMakerData<NodeType, EdgeType>>,
+  store: Store<DiagrammerData<NodeType, EdgeType>>,
 ) {
   const action = createSelectAllAction();
   store.dispatch(action);

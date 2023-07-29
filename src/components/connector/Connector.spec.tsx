@@ -2,7 +2,7 @@ import * as Preact from 'preact';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-import { Connector, ConnectorType } from 'diagramMaker/components/connector';
+import { Connector, ConnectorType } from 'diagrammer/components/connector';
 
 describe('Connector', () => {
   it('renders at the given position with output data attributes', () => {

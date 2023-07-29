@@ -1,23 +1,23 @@
 import set from 'lodash-es/set';
 
-import { EditorActionsType, FitAction, FocusNodeAction } from 'diagramMaker/state/editor/editorActions';
-import { DragNodeAction, NodeActionsType } from 'diagramMaker/state/node/nodeActions';
-import { DiagramMakerWorkspace, Position } from 'diagramMaker/state/types';
+import { EditorActionsType, FitAction, FocusNodeAction } from 'diagrammer/state/editor/editorActions';
+import { DragNodeAction, NodeActionsType } from 'diagrammer/state/node/nodeActions';
+import { DiagrammerWorkspace, Position } from 'diagrammer/state/types';
 import {
   DragWorkspaceAction,
   ResizeWorkspaceAction,
   WorkspaceActionsType,
   WorkspaceResetZoomAction,
   ZoomWorkspaceAction,
-} from 'diagramMaker/state/workspace/workspaceActions';
+} from 'diagrammer/state/workspace/workspaceActions';
 import workspaceReducer from './workspaceReducer';
 
 describe('workspaceReducer', () => {
-  function checkReducerPurity(state: DiagramMakerWorkspace, expectedState: DiagramMakerWorkspace) {
+  function checkReducerPurity(state: DiagrammerWorkspace, expectedState: DiagrammerWorkspace) {
     expect(state).toEqual(expectedState);
   }
 
-  const getState1 = (testScale = 1): DiagramMakerWorkspace => ({
+  const getState1 = (testScale = 1): DiagrammerWorkspace => ({
     position: {
       x: 0,
       y: 0,
@@ -33,7 +33,7 @@ describe('workspaceReducer', () => {
     },
   });
 
-  const getState2 = (): DiagramMakerWorkspace => ({
+  const getState2 = (): DiagrammerWorkspace => ({
     position: {
       x: 0,
       y: 0,
@@ -49,7 +49,7 @@ describe('workspaceReducer', () => {
     },
   });
 
-  const getState3 = (): DiagramMakerWorkspace => ({
+  const getState3 = (): DiagrammerWorkspace => ({
     position: {
       x: 10,
       y: 10,

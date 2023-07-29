@@ -1,18 +1,18 @@
-import { EditorMode, PositionAnchor } from 'diagramMaker/index';
-import { DiagramMakerData } from 'diagramMaker/state/types';
+import { EditorMode, PositionAnchor } from 'diagrammer/index';
+import { DiagrammerData } from 'diagrammer/state/types';
 
-const graph: DiagramMakerData<{}, {}> = {
+const graph: DiagrammerData<{}, {}> = {
   nodes: {
     node1: {
       id: 'node1',
-      diagramMakerData: {
+      diagrammerData: {
         position: { x: 200, y: 150 },
         size: { width: 100, height: 50 },
       },
     },
     node2: {
       id: 'node2',
-      diagramMakerData: {
+      diagrammerData: {
         position: { x: 400, y: 300 },
         size: { width: 100, height: 50 },
       },
@@ -23,7 +23,7 @@ const graph: DiagramMakerData<{}, {}> = {
       id: 'edge1',
       src: 'node1',
       dest: 'node2',
-      diagramMakerData: { },
+      diagrammerData: { },
     },
   },
   panels: {

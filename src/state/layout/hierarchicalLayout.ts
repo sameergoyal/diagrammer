@@ -4,7 +4,7 @@ import isFinite from 'lodash-es/isFinite';
 import isNumber from 'lodash-es/isNumber';
 import values from 'lodash-es/values';
 
-import { DiagramMakerData } from 'diagramMaker/state/types';
+import { DiagrammerData } from 'diagrammer/state/types';
 
 import { HierarchicalLayoutConfig } from './layoutActions';
 
@@ -370,9 +370,9 @@ function applyGravity(
 }
 
 export default function hierarchicalLayout<NodeType, EdgeType>(
-  state: DiagramMakerData<NodeType, EdgeType>,
+  state: DiagrammerData<NodeType, EdgeType>,
   layoutConfig: HierarchicalLayoutConfig,
-): DiagramMakerData<NodeType, EdgeType> {
+): DiagrammerData<NodeType, EdgeType> {
   // Initialize config values with defaults, if needed.
   const { distanceMin } = layoutConfig;
   const distanceMax = isNumber(layoutConfig.distanceMax) ? layoutConfig.distanceMax : (3 * distanceMin);
@@ -399,8 +399,8 @@ export default function hierarchicalLayout<NodeType, EdgeType>(
       parents: [],
     };
 
-    const { position } = node.diagramMakerData;
-    const { size } = node.diagramMakerData;
+    const { position } = node.diagrammerData;
+    const { size } = node.diagrammerData;
     if (fixedNodeIdSet[node.id]) {
       graphNode.isFixed = true;
       graphNode.x = position.x + size.width / 2;
@@ -411,7 +411,7 @@ export default function hierarchicalLayout<NodeType, EdgeType>(
     return graphNode;
   });
 
-  // Add neighbor information based on DiagramMaker edges.
+  // Add neighbor information based on Diagrammer edges.
   values(state.edges).forEach((edge) => {
     const srcIndex = nodeIndex[edge.src];
     const destIndex = nodeIndex[edge.dest];
@@ -523,8 +523,8 @@ export default function hierarchicalLayout<NodeType, EdgeType>(
   return produce(state, (draftState) => {
     graph.forEach((node) => {
       if (isFinite(node.x) && isFinite(node.y)) {
-        const nodeSize = draftState.nodes[node.id].diagramMakerData.size;
-        draftState.nodes[node.id].diagramMakerData.position = {
+        const nodeSize = draftState.nodes[node.id].diagrammerData.size;
+        draftState.nodes[node.id].diagrammerData.position = {
           x: (node.x as number) - nodeSize.width / 2,
           y: (node.y as number) - nodeSize.height / 2,
         };

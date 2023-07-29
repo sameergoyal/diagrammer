@@ -4,12 +4,12 @@ import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
 import ConfigService, {
-  ConnectorPlacement, DiagramMakerConfig, Shape, VisibleConnectorTypes,
-} from 'diagramMaker/service/ConfigService';
-import { DiagramMakerComponentsType } from 'diagramMaker/service/ui/types';
+  ConnectorPlacement, DiagrammerConfig, Shape, VisibleConnectorTypes,
+} from 'diagrammer/service/ConfigService';
+import { DiagrammerComponentsType } from 'diagrammer/service/ui/types';
 import {
-  DiagramMakerNodes, DiagramMakerWorkspace, EditorMode, Position,
-} from 'diagramMaker/state/types';
+  DiagrammerNodes, DiagrammerWorkspace, EditorMode, Position,
+} from 'diagrammer/state/types';
 
 import { View } from '.';
 
@@ -23,7 +23,7 @@ describe('View', () => {
     mode: EditorMode.DRAG,
   };
 
-  const workspaceState: DiagramMakerWorkspace = {
+  const workspaceState: DiagrammerWorkspace = {
     position: {
       x: 0,
       y: 0,
@@ -56,15 +56,15 @@ describe('View', () => {
       },
       overrideOptions,
     );
-    const config: DiagramMakerConfig<void, void> = configOptions;
+    const config: DiagrammerConfig<void, void> = configOptions;
     return new ConfigService(config);
   };
 
-  const generateNode = (nodeKey: string, x = 0, y = 0, type?: string): DiagramMakerNodes<void> => ({
+  const generateNode = (nodeKey: string, x = 0, y = 0, type?: string): DiagrammerNodes<void> => ({
     [nodeKey]: {
       id: nodeKey,
       typeId: type,
-      diagramMakerData: {
+      diagrammerData: {
         position: { x, y },
         size: { width: 100, height: 100 },
       },
@@ -75,14 +75,14 @@ describe('View', () => {
   const generateEdge = (edgeKey: string, edgeSrc: string, edgeDest: string) => ({
     [edgeKey]: {
       dest: edgeDest,
-      diagramMakerData: {},
+      diagrammerData: {},
       id: edgeKey,
       src: edgeSrc,
     },
   });
 
   const generateContextMenu = (
-    targetType: DiagramMakerComponentsType,
+    targetType: DiagrammerComponentsType,
     targetId?: string,
     position: Position = { x: 0, y: 0 },
   ) => ({
@@ -483,7 +483,7 @@ describe('View', () => {
   describe('nodes with edge and context menu', () => {
     const mockNodes = { ...generateNode('node-1'), ...generateNode('node-2', 100, 200) };
     const mockEdges = { ...generateEdge('edge-1', 'node-1', 'node-2') };
-    const mockContextMenu = { ...generateContextMenu(DiagramMakerComponentsType.NODE, 'node-1') };
+    const mockContextMenu = { ...generateContextMenu(DiagrammerComponentsType.NODE, 'node-1') };
     const mockState = {
       edges: mockEdges,
       editor: {
@@ -521,7 +521,7 @@ describe('View', () => {
     const panel1Callback = jest.fn(() => 'panel1Content') as any;
     const panel2Callback = jest.fn(() => 'panel2Content') as any;
 
-    const config: DiagramMakerConfig<{}, {}> = {
+    const config: DiagrammerConfig<{}, {}> = {
       options: {
         connectorPlacement: ConnectorPlacement.LEFT_RIGHT,
       },

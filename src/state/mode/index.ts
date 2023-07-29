@@ -1,3 +1,3 @@
 export { default as rootEventFilter } from './rootEventFilter';
 
-export { default as readOnlyEventFilter } from 'diagramMaker/state/mode/readOnly/readOnlyEventFilter';
+export { default as readOnlyEventFilter } from 'diagrammer/state/mode/readOnly/readOnlyEventFilter';

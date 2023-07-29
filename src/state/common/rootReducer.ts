@@ -1,22 +1,22 @@
 import { combineReducers, Reducer } from 'redux';
 import { undoHistoryReducer } from 'redux-undo-redo';
 
-import { DiagramMakerAction } from 'diagramMaker/state/actions';
-import { edgeReducer, potentialEdgeReducer } from 'diagramMaker/state/edge';
-import { editorReducer } from 'diagramMaker/state/editor';
-import { nodeReducer, potentialNodeReducer } from 'diagramMaker/state/node';
-import { panelReducer } from 'diagramMaker/state/panel';
-import { pluginReducer } from 'diagramMaker/state/plugin';
-import { DiagramMakerData } from 'diagramMaker/state/types';
-import { workspaceReducer } from 'diagramMaker/state/workspace';
+import { DiagrammerAction } from 'diagrammer/state/actions';
+import { edgeReducer, potentialEdgeReducer } from 'diagrammer/state/edge';
+import { editorReducer } from 'diagrammer/state/editor';
+import { nodeReducer, potentialNodeReducer } from 'diagrammer/state/node';
+import { panelReducer } from 'diagrammer/state/panel';
+import { pluginReducer } from 'diagrammer/state/plugin';
+import { DiagrammerData } from 'diagrammer/state/types';
+import { workspaceReducer } from 'diagrammer/state/workspace';
 
 type RootReducer<NodeType, EdgeType> = Reducer<
-DiagramMakerData<NodeType, EdgeType>,
-DiagramMakerAction<NodeType, EdgeType>
+DiagrammerData<NodeType, EdgeType>,
+DiagrammerAction<NodeType, EdgeType>
 >;
 
 export function getRootReducer<NodeType, EdgeType>(): RootReducer<NodeType, EdgeType> {
-  return combineReducers<DiagramMakerData<NodeType, EdgeType>, DiagramMakerAction<NodeType, EdgeType>>({
+  return combineReducers<DiagrammerData<NodeType, EdgeType>, DiagrammerAction<NodeType, EdgeType>>({
     edges: edgeReducer,
     editor: editorReducer,
     nodes: nodeReducer,

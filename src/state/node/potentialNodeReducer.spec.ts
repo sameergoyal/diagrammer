@@ -1,7 +1,7 @@
 import set from 'lodash-es/set';
 
-import * as positionUtils from 'diagramMaker/service/positionUtils';
-import { DiagramMakerPotentialNode } from 'diagramMaker/state/types';
+import * as positionUtils from 'diagrammer/service/positionUtils';
+import { DiagrammerPotentialNode } from 'diagrammer/state/types';
 
 import {
   DragEndPotentialNodeAction, DragPotentialNodeAction, DragStartPotentialNodeAction, NodeActionsType,
@@ -9,7 +9,7 @@ import {
 import potentialNodeReducer from './potentialNodeReducer';
 
 describe('potentialNodeReducer', () => {
-  const getState = (): DiagramMakerPotentialNode => ({
+  const getState = (): DiagrammerPotentialNode => ({
     typeId: 'node-1',
     position: { x: 0, y: 0 },
     size: { width: 200, height: 200 },
@@ -25,7 +25,7 @@ describe('potentialNodeReducer', () => {
     },
   };
 
-  function checkReducerPurity(state: DiagramMakerPotentialNode) {
+  function checkReducerPurity(state: DiagrammerPotentialNode) {
     expect(state).toEqual(getState());
   }
 

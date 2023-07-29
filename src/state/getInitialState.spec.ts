@@ -1,15 +1,15 @@
-import { DiagramMakerWorkspace, EditorMode } from 'diagramMaker/state/types';
-import { getDefaultWorkspaceState } from 'diagramMaker/state/workspace';
-import { asMock } from 'diagramMaker/testing/testUtils';
+import { DiagrammerWorkspace, EditorMode } from 'diagrammer/state/types';
+import { getDefaultWorkspaceState } from 'diagrammer/state/workspace';
+import { asMock } from 'diagrammer/testing/testUtils';
 import getInitialState from './getInitialState';
 
-jest.mock('diagramMaker/state/workspace', () => ({
+jest.mock('diagrammer/state/workspace', () => ({
   getDefaultWorkspaceState: jest.fn(),
 }));
 
 describe('getInitialState', () => {
   it('collects initial state from the defaults used in slice reducers', () => {
-    const workspaceState: DiagramMakerWorkspace = {
+    const workspaceState: DiagrammerWorkspace = {
       position: { x: 250, y: 250 },
       scale: 1.5,
       canvasSize: { width: 1000, height: 1000 },

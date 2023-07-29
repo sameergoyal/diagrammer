@@ -1,7 +1,7 @@
 import {
-  DiagramMaker, EditorMode, Event, Layout, WorkflowLayoutDirection, WorkspaceActions,
-} from 'diagramMaker/index';
-import { DiagramMakerNode, DiagramMakerPotentialNode, Size } from 'diagramMaker/state/types';
+  Diagrammer, EditorMode, Event, Layout, WorkflowLayoutDirection, WorkspaceActions,
+} from 'diagrammer/index';
+import { DiagrammerNode, DiagrammerPotentialNode, Size } from 'diagrammer/state/types';
 import { Action, AnyAction } from 'redux';
 
 export function createDivWithText(text: string) {
@@ -11,7 +11,7 @@ export function createDivWithText(text: string) {
   return newDiv;
 }
 
-export function createPotentialNode(node: DiagramMakerPotentialNode, container: HTMLElement) {
+export function createPotentialNode(node: DiagrammerPotentialNode, container: HTMLElement) {
   const id = node.typeId;
   const newDiv = createDivWithText(id);
   newDiv.classList.add('rectangle', 'example-node');
@@ -20,11 +20,11 @@ export function createPotentialNode(node: DiagramMakerPotentialNode, container: 
   return newDiv;
 }
 
-export function createRectangularNode(node: DiagramMakerNode<{ odd?: boolean }>, container: HTMLElement) {
+export function createRectangularNode(node: DiagrammerNode<{ odd?: boolean }>, container: HTMLElement) {
   const id = node.id.substring(0, 13);
   const newDiv = createDivWithText(id);
   newDiv.classList.add('rectangle', 'example-node');
-  if (node.diagramMakerData.selected) {
+  if (node.diagrammerData.selected) {
     newDiv.classList.add('selected');
   }
   if (node.consumerData) {
@@ -39,32 +39,32 @@ export function createRectangularNode(node: DiagramMakerNode<{ odd?: boolean }>,
   return newDiv;
 }
 
-export function createRectangularConnectorNode(node: DiagramMakerNode<{ odd?: boolean }>, container: HTMLElement) {
+export function createRectangularConnectorNode(node: DiagrammerNode<{ odd?: boolean }>, container: HTMLElement) {
   const id = node.id.substring(0, 13);
   const newDiv = createDivWithText(id);
   newDiv.classList.add('rectangle', 'example-node', 'connector-node');
-  if (node.diagramMakerData.selected) {
+  if (node.diagrammerData.selected) {
     newDiv.classList.add('selected');
   }
   container.innerHTML = '';
   const connectorDiv = document.createElement('div');
   connectorDiv.classList.add('outer', 'outer-rectangle');
   connectorDiv.setAttribute('data-id', node.id);
-  connectorDiv.setAttribute('data-type', 'DiagramMaker.Connector');
+  connectorDiv.setAttribute('data-type', 'Diagrammer.Connector');
   connectorDiv.setAttribute('data-draggable', 'true');
   connectorDiv.setAttribute('data-event-target', 'true');
   newDiv.setAttribute('data-id', node.id);
-  newDiv.setAttribute('data-type', 'DiagramMaker.Connector');
+  newDiv.setAttribute('data-type', 'Diagrammer.Connector');
   newDiv.setAttribute('data-dropzone', 'true');
   container.appendChild(connectorDiv);
   container.appendChild(newDiv);
   return newDiv;
 }
 
-export function createNodeWithInput(node: DiagramMakerNode<any>, container: HTMLElement) {
+export function createNodeWithInput(node: DiagrammerNode<any>, container: HTMLElement) {
   if (container.innerHTML !== '') {
     const childDiv = container.children[0];
-    if (node.diagramMakerData.selected) {
+    if (node.diagrammerData.selected) {
       childDiv.classList.add('selected');
     } else {
       childDiv.classList.remove('selected');
@@ -78,17 +78,17 @@ export function createNodeWithInput(node: DiagramMakerNode<any>, container: HTML
   input.setAttribute('data-draggable', 'true');
   newDiv.appendChild(input);
   newDiv.classList.add('rectangle', 'example-node');
-  if (node.diagramMakerData.selected) {
+  if (node.diagrammerData.selected) {
     newDiv.classList.add('selected');
   }
   container.appendChild(newDiv);
   return newDiv;
 }
 
-export function createNodeWithDropdown(node: DiagramMakerNode<any>, container: HTMLElement) {
+export function createNodeWithDropdown(node: DiagrammerNode<any>, container: HTMLElement) {
   if (container.innerHTML !== '') {
     const childDiv = container.children[0];
-    if (node.diagramMakerData.selected) {
+    if (node.diagrammerData.selected) {
       childDiv.classList.add('selected');
     } else {
       childDiv.classList.remove('selected');
@@ -105,29 +105,29 @@ export function createNodeWithDropdown(node: DiagramMakerNode<any>, container: H
   select.setAttribute('data-event-target', 'true');
   newDiv.appendChild(select);
   newDiv.classList.add('rectangle', 'example-node');
-  if (node.diagramMakerData.selected) {
+  if (node.diagrammerData.selected) {
     newDiv.classList.add('selected');
   }
   container.appendChild(newDiv);
   return newDiv;
 }
 
-export function createCircularNode(node: DiagramMakerNode<any>, container: HTMLElement) {
+export function createCircularNode(node: DiagrammerNode<any>, container: HTMLElement) {
   const id = node.id.substring(0, 13);
   const newDiv = createDivWithText(id);
   newDiv.classList.add('circle', 'example-node');
-  if (node.diagramMakerData.selected) {
+  if (node.diagrammerData.selected) {
     newDiv.classList.add('selected');
   }
   container.innerHTML = '';
   const connectorDiv = document.createElement('div');
   connectorDiv.classList.add('outer');
   connectorDiv.setAttribute('data-id', node.id);
-  connectorDiv.setAttribute('data-type', 'DiagramMaker.Connector');
+  connectorDiv.setAttribute('data-type', 'Diagrammer.Connector');
   connectorDiv.setAttribute('data-draggable', 'true');
   connectorDiv.setAttribute('data-event-target', 'true');
   newDiv.setAttribute('data-id', node.id);
-  newDiv.setAttribute('data-type', 'DiagramMaker.Connector');
+  newDiv.setAttribute('data-type', 'Diagrammer.Connector');
   newDiv.setAttribute('data-dropzone', 'true');
   container.appendChild(connectorDiv);
   container.appendChild(newDiv);
@@ -173,7 +173,7 @@ export function createPanelNode(testId: string, text: string, size?: Size) {
   const newDiv = createDivWithText(text);
   newDiv.classList.add('rectangle', 'example-node', 'potential-node');
   newDiv.setAttribute('data-id', testId);
-  newDiv.setAttribute('data-type', 'DiagramMaker.PotentialNode');
+  newDiv.setAttribute('data-type', 'Diagrammer.PotentialNode');
   newDiv.setAttribute('data-draggable', 'true');
   newDiv.setAttribute('data-event-target', 'true');
   if (size) {
@@ -199,7 +199,7 @@ export function createLibraryPanel(container: HTMLElement) {
   draggableElement.classList.add('draggableElement');
   draggableElement.setAttribute('data-event-target', 'true');
   draggableElement.setAttribute('data-draggable', 'true');
-  draggableElement.setAttribute('data-type', 'DiagramMaker.PanelDragHandle');
+  draggableElement.setAttribute('data-type', 'Diagrammer.PanelDragHandle');
   draggableElement.setAttribute('data-id', 'library');
 
   newDiv.appendChild(draggableElement);
@@ -219,93 +219,93 @@ export function createLibraryPanel(container: HTMLElement) {
 
 function createToolButton(text: string, eventListener: () => void) {
   const newDiv = createDivWithText(text);
-  newDiv.setAttribute('data-type', 'DiagramMaker.Tools');
+  newDiv.setAttribute('data-type', 'Diagrammer.Tools');
   newDiv.setAttribute('data-id', text);
   newDiv.addEventListener('click', eventListener);
   return newDiv;
 }
 
-function createUpdateContainerButton(getDiagramMakerObj: () => DiagramMaker) {
+function createUpdateContainerButton(getDiagrammerObj: () => Diagrammer) {
   return createToolButton('UpdateContainer', () => {
-    getDiagramMakerObj().updateContainer();
+    getDiagrammerObj().updateContainer();
   });
 }
 
-function createDestroyButton(getDiagramMakerObj: () => DiagramMaker) {
+function createDestroyButton(getDiagrammerObj: () => Diagrammer) {
   return createToolButton('Destroy', () => {
-    getDiagramMakerObj().destroy();
+    getDiagrammerObj().destroy();
   });
 }
 
-function createDragToolButton(getDiagramMakerObj: () => DiagramMaker) {
+function createDragToolButton(getDiagrammerObj: () => Diagrammer) {
   return createToolButton('Drag', () => {
-    getDiagramMakerObj().api.setEditorMode(EditorMode.DRAG);
+    getDiagrammerObj().api.setEditorMode(EditorMode.DRAG);
   });
 }
 
-function createSelectToolButton(getDiagramMakerObj: () => DiagramMaker) {
+function createSelectToolButton(getDiagrammerObj: () => Diagrammer) {
   return createToolButton('Select', () => {
-    getDiagramMakerObj().api.setEditorMode(EditorMode.SELECT);
+    getDiagrammerObj().api.setEditorMode(EditorMode.SELECT);
   });
 }
 
-function createReadOnlyToolButton(getDiagramMakerObj: () => DiagramMaker) {
+function createReadOnlyToolButton(getDiagrammerObj: () => Diagrammer) {
   return createToolButton('ReadOnly', () => {
-    getDiagramMakerObj().api.setEditorMode(EditorMode.READ_ONLY);
+    getDiagrammerObj().api.setEditorMode(EditorMode.READ_ONLY);
   });
 }
 
-function createFocusNodeButton(getDiagramMakerObj: () => DiagramMaker) {
+function createFocusNodeButton(getDiagrammerObj: () => Diagrammer) {
   return createToolButton('FocusNode', () => {
-    getDiagramMakerObj().api.focusNode('node1');
+    getDiagrammerObj().api.focusNode('node1');
   });
 }
 
-function createFocusSelectedButton(getDiagramMakerObj: () => DiagramMaker) {
+function createFocusSelectedButton(getDiagrammerObj: () => Diagrammer) {
   return createToolButton('FocusSelected', () => {
-    getDiagramMakerObj().api.focusSelected();
+    getDiagrammerObj().api.focusSelected();
   });
 }
 
-function createFitButton(getDiagramMakerObj: () => DiagramMaker) {
+function createFitButton(getDiagrammerObj: () => Diagrammer) {
   return createToolButton('Fit', () => {
-    getDiagramMakerObj().api.fit();
+    getDiagrammerObj().api.fit();
   });
 }
 
-function createZoomInButton(getDiagramMakerObj: () => DiagramMaker) {
+function createZoomInButton(getDiagrammerObj: () => Diagrammer) {
   return createToolButton('ZoomIn', () => {
-    getDiagramMakerObj().api.zoomIn();
+    getDiagrammerObj().api.zoomIn();
   });
 }
 
-function createZoomOutButton(getDiagramMakerObj: () => DiagramMaker) {
+function createZoomOutButton(getDiagrammerObj: () => Diagrammer) {
   return createToolButton('ZoomOut', () => {
-    getDiagramMakerObj().api.zoomOut();
+    getDiagrammerObj().api.zoomOut();
   });
 }
 
-function createResetZoomButton(getDiagramMakerObj: () => DiagramMaker) {
+function createResetZoomButton(getDiagrammerObj: () => Diagrammer) {
   return createToolButton('ResetZoom', () => {
-    getDiagramMakerObj().api.resetZoom();
+    getDiagrammerObj().api.resetZoom();
   });
 }
 
-function createUndoButton(getDiagramMakerObj: () => DiagramMaker) {
+function createUndoButton(getDiagrammerObj: () => Diagrammer) {
   return createToolButton('Undo', () => {
-    getDiagramMakerObj().api.undo();
+    getDiagrammerObj().api.undo();
   });
 }
 
-function createRedoButton(getDiagramMakerObj: () => DiagramMaker) {
+function createRedoButton(getDiagrammerObj: () => Diagrammer) {
   return createToolButton('Redo', () => {
-    getDiagramMakerObj().api.redo();
+    getDiagrammerObj().api.redo();
   });
 }
 
-function createWorkflowLayoutButton(getDiagramMakerObj: () => DiagramMaker) {
+function createWorkflowLayoutButton(getDiagrammerObj: () => Diagrammer) {
   return createToolButton('WorkflowLayout', () => {
-    getDiagramMakerObj().api.layout({
+    getDiagrammerObj().api.layout({
       direction: WorkflowLayoutDirection.LEFT_RIGHT,
       distanceMin: 200,
       layoutType: Layout.WORKFLOW,
@@ -313,9 +313,9 @@ function createWorkflowLayoutButton(getDiagramMakerObj: () => DiagramMaker) {
   });
 }
 
-function createHierarchicalLayoutButton(getDiagramMakerObj: () => DiagramMaker) {
+function createHierarchicalLayoutButton(getDiagrammerObj: () => Diagrammer) {
   return createToolButton('HierarchicalLayout', () => {
-    getDiagramMakerObj().api.layout({
+    getDiagrammerObj().api.layout({
       distanceMin: 200,
       fixedNodeIds: ['node1'],
       layoutType: Layout.HIERARCHICAL,
@@ -327,14 +327,14 @@ function createTestInput() {
   const div = document.createElement('div');
   const input = document.createElement('input');
   input.classList.add('testInput');
-  input.setAttribute('data-type', 'DiagramMaker.Tools');
+  input.setAttribute('data-type', 'Diagrammer.Tools');
   input.setAttribute('data-id', 'TestInput');
   input.setAttribute('type', 'text');
   div.appendChild(input);
   return div;
 }
 
-export function createToolsPanel(container: HTMLElement, getDiagramMakerObj: () => DiagramMaker) {
+export function createToolsPanel(container: HTMLElement, getDiagrammerObj: () => Diagrammer) {
   if (container.innerHTML !== '') {
     return;
   }
@@ -342,21 +342,21 @@ export function createToolsPanel(container: HTMLElement, getDiagramMakerObj: () 
   const newDiv = document.createElement('div');
   newDiv.classList.add('tools');
 
-  newDiv.appendChild(createUpdateContainerButton(getDiagramMakerObj));
-  newDiv.appendChild(createDestroyButton(getDiagramMakerObj));
-  newDiv.appendChild(createDragToolButton(getDiagramMakerObj));
-  newDiv.appendChild(createSelectToolButton(getDiagramMakerObj));
-  newDiv.appendChild(createReadOnlyToolButton(getDiagramMakerObj));
-  newDiv.appendChild(createFocusNodeButton(getDiagramMakerObj));
-  newDiv.appendChild(createFocusSelectedButton(getDiagramMakerObj));
-  newDiv.appendChild(createFitButton(getDiagramMakerObj));
-  newDiv.appendChild(createZoomInButton(getDiagramMakerObj));
-  newDiv.appendChild(createZoomOutButton(getDiagramMakerObj));
-  newDiv.appendChild(createResetZoomButton(getDiagramMakerObj));
-  newDiv.appendChild(createUndoButton(getDiagramMakerObj));
-  newDiv.appendChild(createRedoButton(getDiagramMakerObj));
-  newDiv.appendChild(createWorkflowLayoutButton(getDiagramMakerObj));
-  newDiv.appendChild(createHierarchicalLayoutButton(getDiagramMakerObj));
+  newDiv.appendChild(createUpdateContainerButton(getDiagrammerObj));
+  newDiv.appendChild(createDestroyButton(getDiagrammerObj));
+  newDiv.appendChild(createDragToolButton(getDiagrammerObj));
+  newDiv.appendChild(createSelectToolButton(getDiagrammerObj));
+  newDiv.appendChild(createReadOnlyToolButton(getDiagrammerObj));
+  newDiv.appendChild(createFocusNodeButton(getDiagrammerObj));
+  newDiv.appendChild(createFocusSelectedButton(getDiagrammerObj));
+  newDiv.appendChild(createFitButton(getDiagrammerObj));
+  newDiv.appendChild(createZoomInButton(getDiagrammerObj));
+  newDiv.appendChild(createZoomOutButton(getDiagrammerObj));
+  newDiv.appendChild(createResetZoomButton(getDiagrammerObj));
+  newDiv.appendChild(createUndoButton(getDiagrammerObj));
+  newDiv.appendChild(createRedoButton(getDiagrammerObj));
+  newDiv.appendChild(createWorkflowLayoutButton(getDiagrammerObj));
+  newDiv.appendChild(createHierarchicalLayoutButton(getDiagrammerObj));
   newDiv.appendChild(createTestInput());
 
   container.appendChild(newDiv);
@@ -378,7 +378,7 @@ export function createPluginPanel(container: HTMLElement, state: any) {
   draggableElement.classList.add('draggableElement');
   draggableElement.setAttribute('data-event-target', 'true');
   draggableElement.setAttribute('data-draggable', 'true');
-  draggableElement.setAttribute('data-type', 'DiagramMaker.PanelDragHandle');
+  draggableElement.setAttribute('data-type', 'Diagrammer.PanelDragHandle');
   draggableElement.setAttribute('data-id', 'plugin');
   newDiv.appendChild(draggableElement);
 
@@ -400,13 +400,13 @@ export function createPluginPanel(container: HTMLElement, state: any) {
   return newDiv;
 }
 
-export function handleTestPluginEvent(event: any, diagramMaker: any) {
+export function handleTestPluginEvent(event: any, diagrammer: any) {
   if (event.type === Event.LEFT_CLICK && event.target.type === 'testPlugin') {
-    const state = diagramMaker.store.getState();
+    const state = diagrammer.store.getState();
     if (!state.plugins) return;
     const position = state.plugins.testPlugin.data.workspacePos;
 
-    diagramMaker.api.dispatch({
+    diagrammer.api.dispatch({
       payload: { position },
       type: WorkspaceActions.WORKSPACE_DRAG,
     });
@@ -415,16 +415,16 @@ export function handleTestPluginEvent(event: any, diagramMaker: any) {
 
 export function updateActionInLogger(action: Action) {
   const anyAction = action as AnyAction;
-  const logger = document.getElementById('diagramMakerLogger');
+  const logger = document.getElementById('diagrammerLogger');
   if (logger) {
     const type = createDivWithText(`Type is ${action.type}`);
-    type.setAttribute('data-type', 'DiagramMaker.ActionType');
+    type.setAttribute('data-type', 'Diagrammer.ActionType');
     type.setAttribute('data-id', action.type);
     logger.innerHTML = '';
     logger.appendChild(type);
     if (anyAction.payload) {
       const payload = createDivWithText(`Payload is ${JSON.stringify(anyAction.payload)}`);
-      payload.setAttribute('data-type', 'DiagramMaker.ActionPayload');
+      payload.setAttribute('data-type', 'Diagrammer.ActionPayload');
       payload.setAttribute('data-id', action.type);
       logger.appendChild(payload);
     }

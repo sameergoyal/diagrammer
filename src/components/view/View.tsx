@@ -1,24 +1,24 @@
 import * as Preact from 'preact';
 
-import { ContextMenu } from 'diagramMaker/components/contextMenu';
+import { ContextMenu } from 'diagrammer/components/contextMenu';
 import {
   Edge, EdgeBadge, EdgeStyle, PotentialEdge,
-} from 'diagramMaker/components/edge';
-import { Node, PotentialNode } from 'diagramMaker/components/node';
-import { Panel } from 'diagramMaker/components/panel';
-import { SelectionMarquee } from 'diagramMaker/components/selectionMarquee';
-import { Workspace } from 'diagramMaker/components/workspace';
+} from 'diagrammer/components/edge';
+import { Node, PotentialNode } from 'diagrammer/components/node';
+import { Panel } from 'diagrammer/components/panel';
+import { SelectionMarquee } from 'diagrammer/components/selectionMarquee';
+import { Workspace } from 'diagrammer/components/workspace';
 import ConfigService, {
   ConnectorPlacement, ConnectorPlacementType, CustomConnectorType, Shape, ShapeType, TypeForVisibleConnectorTypes,
-} from 'diagramMaker/service/ConfigService';
-import { getInflectionPoint } from 'diagramMaker/service/positionUtils';
-import { DiagramMakerComponentsType } from 'diagramMaker/service/ui/types';
+} from 'diagrammer/service/ConfigService';
+import { getInflectionPoint } from 'diagrammer/service/positionUtils';
+import { DiagrammerComponentsType } from 'diagrammer/service/ui/types';
 import {
-  DiagramMakerData,
-  DiagramMakerNode,
+  DiagrammerData,
+  DiagrammerNode,
   Position,
   Size,
-} from 'diagramMaker/state/types';
+} from 'diagrammer/state/types';
 
 import './View.scss';
 
@@ -36,12 +36,12 @@ interface EdgeCoordinatePair {
 }
 
 export interface ViewProps<NodeType, EdgeType> {
-  state: DiagramMakerData<NodeType, EdgeType>;
+  state: DiagrammerData<NodeType, EdgeType>;
   configService: ConfigService<NodeType, EdgeType>;
 }
 
 const getConnectorPlacementForNode = <NodeType, EdgeType>(
-  node: DiagramMakerNode<NodeType>,
+  node: DiagrammerNode<NodeType>,
   configService: ConfigService<NodeType, EdgeType>,
 ) => {
   const { typeId } = node;
@@ -53,7 +53,7 @@ const getConnectorPlacementForNode = <NodeType, EdgeType>(
 };
 
 const getCustomConnectorsForNode = <NodeType, EdgeType>(
-  node: DiagramMakerNode<NodeType>,
+  node: DiagrammerNode<NodeType>,
   configService: ConfigService<NodeType, EdgeType>,
 ): { [connectorId: string]: CustomConnectorType } => {
   const { typeId } = node;
@@ -64,8 +64,8 @@ const getCustomConnectorsForNode = <NodeType, EdgeType>(
   return configService.getCustomConnectorTypesForNodeType(typeId);
 };
 
-const getCenteredConnectorCoordinates = <NodeType extends any>(node: DiagramMakerNode<NodeType>): Position => {
-  const { position, size } = node.diagramMakerData;
+const getCenteredConnectorCoordinates = <NodeType extends any>(node: DiagrammerNode<NodeType>): Position => {
+  const { position, size } = node.diagrammerData;
   return {
     x: position.x + size.width / 2,
     y: position.y + size.height / 2,
@@ -73,14 +73,14 @@ const getCenteredConnectorCoordinates = <NodeType extends any>(node: DiagramMake
 };
 
 const getCustomConnectorCoordinates = <NodeType, EdgeType>(
-  node: DiagramMakerNode<NodeType>,
+  node: DiagrammerNode<NodeType>,
   configService: ConfigService<NodeType, EdgeType>,
   connectorType: string,
 ): Position => {
   const connectors = getCustomConnectorsForNode(node, configService);
   const connector = connectors[connectorType];
   if (connector && connector.position) {
-    const nodePosition = node.diagramMakerData.position;
+    const nodePosition = node.diagrammerData.position;
     return {
       x: nodePosition.x + connector.position.x,
       y: nodePosition.y + connector.position.y,
@@ -89,32 +89,32 @@ const getCustomConnectorCoordinates = <NodeType, EdgeType>(
   return getCenteredConnectorCoordinates(node);
 };
 
-const getLeftRightConnectorCoordinatesSource = <NodeType extends any>(node: DiagramMakerNode<NodeType>): Position => {
-  const { position, size } = node.diagramMakerData;
+const getLeftRightConnectorCoordinatesSource = <NodeType extends any>(node: DiagrammerNode<NodeType>): Position => {
+  const { position, size } = node.diagrammerData;
   return {
     x: position.x + size.width,
     y: position.y + size.height / 2,
   };
 };
 
-const getLeftRightConnectorCoordinatesDest = <NodeType extends any>(node: DiagramMakerNode<NodeType>): Position => {
-  const { position, size } = node.diagramMakerData;
+const getLeftRightConnectorCoordinatesDest = <NodeType extends any>(node: DiagrammerNode<NodeType>): Position => {
+  const { position, size } = node.diagrammerData;
   return {
     x: position.x,
     y: position.y + size.height / 2,
   };
 };
 
-const getTopBottomConnectorCoordinatesDest = <NodeType extends any>(node: DiagramMakerNode<NodeType>): Position => {
-  const { position, size } = node.diagramMakerData;
+const getTopBottomConnectorCoordinatesDest = <NodeType extends any>(node: DiagrammerNode<NodeType>): Position => {
+  const { position, size } = node.diagrammerData;
   return {
     x: position.x + size.width / 2,
     y: position.y,
   };
 };
 
-const getTopBottomConnectorCoordinatesSource = <NodeType extends any>(node: DiagramMakerNode<NodeType>): Position => {
-  const { position, size } = node.diagramMakerData;
+const getTopBottomConnectorCoordinatesSource = <NodeType extends any>(node: DiagrammerNode<NodeType>): Position => {
+  const { position, size } = node.diagrammerData;
   return {
     x: position.x + size.width / 2,
     y: position.y + size.height,
@@ -122,7 +122,7 @@ const getTopBottomConnectorCoordinatesSource = <NodeType extends any>(node: Diag
 };
 
 const getEdgeCoordinateSource = <NodeType, EdgeType>(
-  node: DiagramMakerNode<NodeType>,
+  node: DiagrammerNode<NodeType>,
   configService: ConfigService<NodeType, EdgeType>,
   connectorSrcType?: string,
 ): Position => {
@@ -145,7 +145,7 @@ const getEdgeCoordinateSource = <NodeType, EdgeType>(
 };
 
 const getEdgeCoordinateDestination = <NodeType, EdgeType>(
-  node: DiagramMakerNode<NodeType>,
+  node: DiagrammerNode<NodeType>,
   configService: ConfigService<NodeType, EdgeType>,
   connectorDestType?: string,
 ): Position => {
@@ -272,7 +272,7 @@ const getBoundaryCoordinates = (
 
 const applyBoundaryCheck = <NodeType, EdgeType>(
   configService: ConfigService<NodeType, EdgeType>,
-  nodeSrc: DiagramMakerNode<NodeType>,
+  nodeSrc: DiagrammerNode<NodeType>,
   positionSrc: Position,
   positionDest: Position,
 ) => {
@@ -285,7 +285,7 @@ const applyBoundaryCheck = <NodeType, EdgeType>(
     return getBoundaryCoordinates(
       positionSrc,
       sourceShape,
-      nodeSrc.diagramMakerData.size,
+      nodeSrc.diagrammerData.size,
       positionDest,
     );
   }
@@ -294,8 +294,8 @@ const applyBoundaryCheck = <NodeType, EdgeType>(
 };
 
 const getEdgeCoordinatePair = <NodeType, EdgeType>(
-  nodeSrc: DiagramMakerNode<NodeType>,
-  nodeDest: DiagramMakerNode<NodeType>,
+  nodeSrc: DiagrammerNode<NodeType>,
+  nodeDest: DiagrammerNode<NodeType>,
   configService: ConfigService<NodeType, EdgeType>,
   overlappingEdge?: boolean,
   connectorSrcType?: string,
@@ -357,7 +357,7 @@ class View<NodeType, EdgeType> extends Preact.Component<ViewProps<NodeType, Edge
 
     return (
       // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
-      <div className="dm-view" tabIndex={0} data-type={DiagramMakerComponentsType.VIEW}>
+      <div className="dm-view" tabIndex={0} data-type={DiagrammerComponentsType.VIEW}>
         <Workspace
           position={workspacePosition}
           canvasSize={workspaceSize}
@@ -439,7 +439,7 @@ class View<NodeType, EdgeType> extends Preact.Component<ViewProps<NodeType, Edge
           renderCallback={renderCallback.bind(null, nodes[nodeKey])}
           destroyCallback={destroyCallback}
           connectorPlacement={connectorPlacement}
-          diagramMakerNode={nodes[nodeKey]}
+          diagrammerNode={nodes[nodeKey]}
           visibleConnectorTypes={visibleConnectorTypes}
         />
       );
@@ -510,7 +510,7 @@ class View<NodeType, EdgeType> extends Preact.Component<ViewProps<NodeType, Edge
         srcTypeId={edgeSource.typeId}
         destTypeId={edgeDestination.typeId}
         edgeStyle={edgeStyle}
-        selected={edges[edgeKey].diagramMakerData.selected}
+        selected={edges[edgeKey].diagrammerData.selected}
         showArrowhead={this.props.configService.getShowArrowhead()}
       />
     );

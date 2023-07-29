@@ -1,7 +1,7 @@
-import { fromPageToContainer, fromScreenToPage, subtract } from 'diagramMaker/service/positionUtils';
-import { DiagramMakerComponentsType } from 'diagramMaker/service/ui/types';
-import UITargetNormalizer, { NormalizedTarget } from 'diagramMaker/service/ui/UITargetNormalizer';
-import { Position, Size } from 'diagramMaker/state/types';
+import { fromPageToContainer, fromScreenToPage, subtract } from 'diagrammer/service/positionUtils';
+import { DiagrammerComponentsType } from 'diagrammer/service/ui/types';
+import UITargetNormalizer, { NormalizedTarget } from 'diagrammer/service/ui/UITargetNormalizer';
+import { Position, Size } from 'diagrammer/state/types';
 
 import {
   ContainerEventType,
@@ -226,7 +226,7 @@ export default class UIEventNormalizer {
 
     return {
       contextRect,
-      type: ContainerEventType.DIAGRAM_MAKER_CONTAINER_UPDATE,
+      type: ContainerEventType.DIAGRAMMER_CONTAINER_UPDATE,
     };
   }
 
@@ -252,10 +252,10 @@ export default class UIEventNormalizer {
     const modKey = IS_MAC ? metaKey : ctrlKey;
 
     if (target
-      && UITargetNormalizer.checkAttributeValue(target as Element, 'data-type', DiagramMakerComponentsType.VIEW)) {
+      && UITargetNormalizer.checkAttributeValue(target as Element, 'data-type', DiagrammerComponentsType.VIEW)) {
       if (key === KeyboardCode.BACKSPACE || (key === 'a' && modKey)) {
         // Prevent the browser from navigating back
-        // Since the back is fired on diagram maker
+        // Since the back is fired on diagrammer
         event.preventDefault();
       }
 

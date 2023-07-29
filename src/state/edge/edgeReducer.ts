@@ -1,17 +1,17 @@
 import { Draft, produce } from 'immer';
 
-import { DiagramMakerAction } from 'diagramMaker/state/actions';
-import { GlobalActionsType } from 'diagramMaker/state/global/globalActions';
-import { NodeActionsType } from 'diagramMaker/state/node';
-import { DiagramMakerEdge, DiagramMakerEdges } from 'diagramMaker/state/types';
-import { WorkspaceActionsType } from 'diagramMaker/state/workspace';
+import { DiagrammerAction } from 'diagrammer/state/actions';
+import { GlobalActionsType } from 'diagrammer/state/global/globalActions';
+import { NodeActionsType } from 'diagrammer/state/node';
+import { DiagrammerEdge, DiagrammerEdges } from 'diagrammer/state/types';
+import { WorkspaceActionsType } from 'diagrammer/state/workspace';
 
 import { EdgeActionsType } from './edgeActions';
 
 export default function edgeReducer<NodeType, EdgeType>(
-  state: DiagramMakerEdges<EdgeType> | undefined,
-  action: DiagramMakerAction<NodeType, EdgeType>,
-): DiagramMakerEdges<EdgeType> {
+  state: DiagrammerEdges<EdgeType> | undefined,
+  action: DiagrammerAction<NodeType, EdgeType>,
+): DiagrammerEdges<EdgeType> {
   if (state === undefined) {
     return {};
   }
@@ -19,7 +19,7 @@ export default function edgeReducer<NodeType, EdgeType>(
     case GlobalActionsType.CREATE_ITEMS:
       return produce(state, (draftState) => {
         action.payload.edges.forEach((edge) => {
-          draftState[edge.id] = edge as Draft<DiagramMakerEdge<EdgeType>>;
+          draftState[edge.id] = edge as Draft<DiagrammerEdge<EdgeType>>;
         });
       });
     case EdgeActionsType.EDGE_DELETE:
@@ -32,11 +32,11 @@ export default function edgeReducer<NodeType, EdgeType>(
           id, src, dest, consumerData: untypedConsumerData, connectorSrcType, connectorDestType,
         } = action.payload;
         const consumerData = untypedConsumerData as Draft<EdgeType>;
-        const diagramMakerData = {};
+        const diagrammerData = {};
         draftState[id] = {
           consumerData,
           dest,
-          diagramMakerData,
+          diagrammerData,
           id,
           src,
           connectorSrcType,
@@ -48,9 +48,9 @@ export default function edgeReducer<NodeType, EdgeType>(
         const edgeIds = Object.keys(draftState);
         edgeIds.forEach((edgeId) => {
           if (edgeId !== action.payload.id) {
-            draftState[edgeId].diagramMakerData.selected = false;
+            draftState[edgeId].diagrammerData.selected = false;
           } else {
-            draftState[edgeId].diagramMakerData.selected = true;
+            draftState[edgeId].diagrammerData.selected = true;
           }
         });
       });
@@ -59,7 +59,7 @@ export default function edgeReducer<NodeType, EdgeType>(
       return produce(state, (draftState) => {
         const edgeIds = Object.keys(draftState);
         edgeIds.forEach((edgeId) => {
-          draftState[edgeId].diagramMakerData.selected = false;
+          draftState[edgeId].diagrammerData.selected = false;
         });
       });
     case (GlobalActionsType.DELETE_ITEMS):

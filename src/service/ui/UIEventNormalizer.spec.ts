@@ -1,4 +1,4 @@
-import { DiagramMakerComponentsType } from 'diagramMaker/service/ui/types';
+import { DiagrammerComponentsType } from 'diagrammer/service/ui/types';
 import {
   DragEventType,
   KeyboardEventType,
@@ -6,8 +6,8 @@ import {
   MouseMoveEventType,
   WheelEventType,
   WindowEventType,
-} from 'diagramMaker/service/ui/UIEventManager';
-import UITargetNormalizer from 'diagramMaker/service/ui/UITargetNormalizer';
+} from 'diagrammer/service/ui/UIEventManager';
+import UITargetNormalizer from 'diagrammer/service/ui/UITargetNormalizer';
 
 import UIEventNormalizer, { EventAttribute, getRequiredAttribute, MouseButton } from './UIEventNormalizer';
 
@@ -476,7 +476,7 @@ describe('UIEventNormalizer', () => {
       const preventDefault = jest.fn();
       const type = KeyboardEventType.KEY_UP;
       const target = document.createElement('div');
-      target.setAttribute('data-type', DiagramMakerComponentsType.VIEW);
+      target.setAttribute('data-type', DiagrammerComponentsType.VIEW);
 
       const event: any = {
         code, ctrlKey, key, metaKey, preventDefault, shiftKey, target,
@@ -508,7 +508,7 @@ describe('UIEventNormalizer', () => {
       const preventDefault = jest.fn();
       const type = KeyboardEventType.KEY_UP;
       const target = document.createElement('div');
-      target.setAttribute('data-type', DiagramMakerComponentsType.VIEW);
+      target.setAttribute('data-type', DiagrammerComponentsType.VIEW);
 
       const event: any = {
         code, ctrlKey, key, metaKey, preventDefault, shiftKey, target,
@@ -540,7 +540,7 @@ describe('UIEventNormalizer', () => {
       const preventDefault = jest.fn();
       const type = KeyboardEventType.KEY_UP;
       const target = document.createElement('div');
-      target.setAttribute('data-type', DiagramMakerComponentsType.VIEW);
+      target.setAttribute('data-type', DiagrammerComponentsType.VIEW);
 
       const event: any = {
         code, ctrlKey, key, metaKey, preventDefault, shiftKey, target,
@@ -562,7 +562,7 @@ describe('UIEventNormalizer', () => {
       expect(event.preventDefault).toHaveBeenCalledTimes(1);
     });
 
-    it('doesnt normalize if target is not diagram maker view', () => {
+    it('doesnt normalize if target is not diagrammer view', () => {
       const key = 'Backspace';
       const code = 'KeyA';
       const ctrlKey = false;

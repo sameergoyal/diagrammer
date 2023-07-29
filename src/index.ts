@@ -1,10 +1,10 @@
-export { default as DiagramMaker } from './DiagramMaker';
+export { default as Diagrammer } from './Diagrammer';
 export {
   ConnectorPlacement,
   Shape,
   VisibleConnectorTypes,
 } from './service/ConfigService';
-export { DiagramMakerComponents } from './service/ui/types';
+export { DiagrammerComponents } from './service/ui/types';
 export { NormalizedEvent } from './service/ui/UIEventNormalizer';
 export { Event } from './service/ui/UIEventManager';
 export { EdgeAction, EdgeActions } from './state/edge/edgeActions';
@@ -21,7 +21,7 @@ export {
   WorkspaceAction,
   WorkspaceActions,
 } from './state/workspace/workspaceActions';
-export { DiagramMakerAction, DiagramMakerActions } from './state/actions';
+export { DiagrammerAction, DiagrammerActions } from './state/actions';
 export { EditorMode, PositionAnchor } from './state/types';
 export { sequenceReducers } from './state/common/sequenceReducers';
 export { default as ActionDispatcher } from './state/ActionDispatcher';

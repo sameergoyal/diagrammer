@@ -5,7 +5,7 @@ exports[`Panel renders at the given position and size 1`] = `
   className="dm-panel"
   data-event-target={true}
   data-id="myPanel"
-  data-type="DiagramMaker.Panel"
+  data-type="Diagrammer.Panel"
   style={
     Object {
       "height": 600,
@@ -26,7 +26,7 @@ exports[`Panel renders panel docked at bottom left with correct size 1`] = `
   className="dm-panel"
   data-event-target={true}
   data-id="myPanel"
-  data-type="DiagramMaker.Panel"
+  data-type="Diagrammer.Panel"
   style={
     Object {
       "height": 600,
@@ -47,7 +47,7 @@ exports[`Panel renders panel docked at bottom left with correct size and relativ
   className="dm-panel"
   data-event-target={true}
   data-id="myPanel"
-  data-type="DiagramMaker.Panel"
+  data-type="Diagrammer.Panel"
   style={
     Object {
       "height": 600,
@@ -68,7 +68,7 @@ exports[`Panel renders panel docked at bottom right with correct size 1`] = `
   className="dm-panel"
   data-event-target={true}
   data-id="myPanel"
-  data-type="DiagramMaker.Panel"
+  data-type="Diagrammer.Panel"
   style={
     Object {
       "height": 600,
@@ -89,7 +89,7 @@ exports[`Panel renders panel docked at bottom right with correct size and relati
   className="dm-panel"
   data-event-target={true}
   data-id="myPanel"
-  data-type="DiagramMaker.Panel"
+  data-type="Diagrammer.Panel"
   style={
     Object {
       "height": 600,
@@ -110,7 +110,7 @@ exports[`Panel renders panel docked at top left with correct size 1`] = `
   className="dm-panel"
   data-event-target={true}
   data-id="myPanel"
-  data-type="DiagramMaker.Panel"
+  data-type="Diagrammer.Panel"
   style={
     Object {
       "height": 600,
@@ -131,7 +131,7 @@ exports[`Panel renders panel docked at top left with correct size and relative p
   className="dm-panel"
   data-event-target={true}
   data-id="myPanel"
-  data-type="DiagramMaker.Panel"
+  data-type="Diagrammer.Panel"
   style={
     Object {
       "height": 600,
@@ -152,7 +152,7 @@ exports[`Panel renders panel docked at top right with correct size 1`] = `
   className="dm-panel"
   data-event-target={true}
   data-id="myPanel"
-  data-type="DiagramMaker.Panel"
+  data-type="Diagrammer.Panel"
   style={
     Object {
       "height": 600,
@@ -173,7 +173,7 @@ exports[`Panel renders panel docked at top right with correct size and relative 
   className="dm-panel"
   data-event-target={true}
   data-id="myPanel"
-  data-type="DiagramMaker.Panel"
+  data-type="Diagrammer.Panel"
   style={
     Object {
       "height": 600,

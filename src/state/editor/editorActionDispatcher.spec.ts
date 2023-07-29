@@ -1,5 +1,5 @@
-import { EditorMode } from 'diagramMaker/state/types';
-import { asMock } from 'diagramMaker/testing/testUtils';
+import { EditorMode } from 'diagrammer/state/types';
+import { asMock } from 'diagrammer/testing/testUtils';
 
 import {
   createFitAction,

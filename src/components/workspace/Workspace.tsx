@@ -1,10 +1,10 @@
 import classnames from 'classnames';
 import * as Preact from 'preact';
 
-import Canvas from 'diagramMaker/components/canvas/Canvas';
-import DotPattern from 'diagramMaker/components/canvas/patterns/DotPattern';
-import { DiagramMakerComponentsType } from 'diagramMaker/service/ui/types';
-import { Position, Size } from 'diagramMaker/state/types';
+import Canvas from 'diagrammer/components/canvas/Canvas';
+import DotPattern from 'diagrammer/components/canvas/patterns/DotPattern';
+import { DiagrammerComponentsType } from 'diagrammer/service/ui/types';
+import { Position, Size } from 'diagrammer/state/types';
 
 import './Workspace.scss';
 
@@ -33,7 +33,7 @@ function Workspace(props: Preact.RenderableProps<WorkspaceProps>): JSX.Element {
     <div
       className={classnames('dm-workspace', className)}
       style={{ height, width, transform }}
-      data-type={DiagramMakerComponentsType.WORKSPACE}
+      data-type={DiagrammerComponentsType.WORKSPACE}
       data-event-target
       data-draggable
       data-dropzone

@@ -1,13 +1,13 @@
-import { DiagramMakerPlugins } from 'diagramMaker/state/types';
+import { DiagrammerPlugins } from 'diagrammer/state/types';
 
 import pluginReducer from './pluginReducer';
 
 describe('pluginReducer', () => {
-  const getState1 = (): DiagramMakerPlugins => ({
+  const getState1 = (): DiagrammerPlugins => ({
 
   });
 
-  const getState2 = (): DiagramMakerPlugins => ({
+  const getState2 = (): DiagrammerPlugins => ({
     minimap: {
       data: {
         size: { width: 200, height: 240 },

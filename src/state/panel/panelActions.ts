@@ -1,6 +1,6 @@
 import { Action } from 'redux';
 
-import { Position, Size } from 'diagramMaker/state/types';
+import { Position, Size } from 'diagrammer/state/types';
 
 export enum PanelActionsType {
   /** Start dragging a panel */
@@ -34,7 +34,7 @@ export interface DragPanelAction extends Action {
     id: string;
     /** Updated position of the panel */
     position: Position;
-    /** Size of diagram maker container */
+    /** Size of diagrammer container */
     viewContainerSize: Size;
   };
 }

@@ -6,11 +6,11 @@ import {
 import { dragAndDropElement } from '../common/interaction';
 import { convertTranslate2dToMatrix } from '../common/utils';
 
-describe('DiagramMaker.Panels', () => {
+describe('Diagrammer.Panels', () => {
   const viewContainer = { width: 1200, height: 900 };
 
   beforeEach(() => {
-    cy.visit('/iframe.html?id=demos-diagram-maker--left-right-rectangular&args=&viewMode=story');
+    cy.visit('/iframe.html?id=demos-diagrammer--left-right-rectangular&args=&viewMode=story');
   });
 
   describe('panel rendering', () => {
@@ -87,7 +87,7 @@ describe('DiagramMaker.Panels', () => {
       cy.viewport(newViewPort.width, newViewPort.height);
 
       // Call update container
-      getElementByDataIdAndType('UpdateContainer', 'DiagramMaker.Tools').click();
+      getElementByDataIdAndType('UpdateContainer', 'Diagrammer.Tools').click();
 
       // Check panel is now in new top left
       expectedTransform = convertTranslate2dToMatrix(topLeftX, topLeftY);
@@ -115,7 +115,7 @@ describe('DiagramMaker.Panels', () => {
         cy.viewport(newViewPort.width, newViewPort.height);
 
         // Call update container
-        getElementByDataIdAndType('UpdateContainer', 'DiagramMaker.Tools').click();
+        getElementByDataIdAndType('UpdateContainer', 'Diagrammer.Tools').click();
 
         // Check panel is now in new top right
         expectedTransform = convertTranslate2dToMatrix(topRightX + 500, topRightY);
@@ -144,7 +144,7 @@ describe('DiagramMaker.Panels', () => {
         cy.viewport(newViewPort.width, newViewPort.height);
 
         // Call update container
-        getElementByDataIdAndType('UpdateContainer', 'DiagramMaker.Tools').click();
+        getElementByDataIdAndType('UpdateContainer', 'Diagrammer.Tools').click();
 
         // Check panel is now in new bottom left
         expectedTransform = convertTranslate2dToMatrix(bottomLeftX, bottomLeftY + 500);
@@ -173,7 +173,7 @@ describe('DiagramMaker.Panels', () => {
         cy.viewport(newViewPort.width, newViewPort.height);
 
         // Call update container
-        getElementByDataIdAndType('UpdateContainer', 'DiagramMaker.Tools').click();
+        getElementByDataIdAndType('UpdateContainer', 'Diagrammer.Tools').click();
 
         // Check panel is now in new bottom right
         expectedTransform = convertTranslate2dToMatrix(bottomRightX + 500, bottomRightY + 500);
@@ -199,7 +199,7 @@ describe('DiagramMaker.Panels', () => {
       cy.viewport(newViewPort.width, newViewPort.height);
 
       // Call update container
-      getElementByDataIdAndType('UpdateContainer', 'DiagramMaker.Tools').click();
+      getElementByDataIdAndType('UpdateContainer', 'Diagrammer.Tools').click();
 
       // Check panel hasn't moved
       getPanelById('library').should('have.css', 'transform').and('eq', expectedTransform);

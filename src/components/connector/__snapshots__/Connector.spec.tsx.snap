@@ -5,7 +5,7 @@ exports[`Connector renders at the given position with input data attributes 1`] 
   className="dm-connector dm-connector-input"
   data-dropzone={true}
   data-id="test"
-  data-type="DiagramMaker.Connector"
+  data-type="Diagrammer.Connector"
   style={
     Object {
       "transform": "translate3d(150px, 300px, 0)",
@@ -23,7 +23,7 @@ exports[`Connector renders at the given position with output data attributes 1`]
   className="dm-connector dm-connector-output"
   data-draggable={true}
   data-id="test"
-  data-type="DiagramMaker.Connector"
+  data-type="Diagrammer.Connector"
   style={
     Object {
       "transform": "translate3d(150px, 300px, 0)",

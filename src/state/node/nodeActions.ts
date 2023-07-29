@@ -1,6 +1,6 @@
 import { Action } from 'redux';
 
-import { Position, Rectangle, Size } from 'diagramMaker/state/types';
+import { Position, Rectangle, Size } from 'diagrammer/state/types';
 
 export enum NodeActionsType {
   NODE_CREATE = 'NODE_CREATE',

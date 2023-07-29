@@ -1,9 +1,9 @@
 import * as Preact from 'preact';
 
-import { ComposeView } from 'diagramMaker/components/common';
-import { BoundRenderCallback, DestroyCallback } from 'diagramMaker/service/ConfigService';
-import { DiagramMakerComponentsType } from 'diagramMaker/service/ui/types';
-import { Position } from 'diagramMaker/state/types';
+import { ComposeView } from 'diagrammer/components/common';
+import { BoundRenderCallback, DestroyCallback } from 'diagrammer/service/ConfigService';
+import { DiagrammerComponentsType } from 'diagrammer/service/ui/types';
+import { Position } from 'diagrammer/state/types';
 
 import './ContextMenu.scss';
 
@@ -23,7 +23,7 @@ export default class ContextMenu extends Preact.Component<ContextMenuProps> {
       <div
         className="dm-context-menu"
         style={{ transform }}
-        data-type={DiagramMakerComponentsType.CONTEXT_MENU}
+        data-type={DiagrammerComponentsType.CONTEXT_MENU}
       >
         <ComposeView
           renderCallback={renderCallback}

@@ -1,8 +1,8 @@
 import classnames from 'classnames';
 import * as Preact from 'preact';
 
-import { getInflectionPoint } from 'diagramMaker/service/positionUtils';
-import { Position } from 'diagramMaker/state/types';
+import { getInflectionPoint } from 'diagrammer/service/positionUtils';
+import { Position } from 'diagrammer/state/types';
 
 // @NOTE: Depending on node connector placement
 // the bezier curve is drawn differently, so we have two types

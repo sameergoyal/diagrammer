@@ -1,4 +1,4 @@
-import { Rectangle, Size } from 'diagramMaker/state/types';
+import { Rectangle, Size } from 'diagrammer/state/types';
 
 export function getBrowserSize(): Size {
   const { documentElement } = document;

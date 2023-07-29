@@ -1,5 +1,5 @@
 import {
-  getAllEdges, getAllNodes, getDiagramMakerView, getEdgeById, getElementByDataIdAndType, getNodeById,
+  getAllEdges, getAllNodes, getDiagrammerView, getEdgeById, getElementByDataIdAndType, getNodeById,
   getPanelById, getPotentialEdge, getPotentialNodeById, getSelectionMarquee, getWorkspace,
 } from '../common/getters';
 import {
@@ -7,12 +7,12 @@ import {
 } from '../common/interaction';
 import { convertScaleToMatrix, convertTranslate2dToMatrix } from '../common/utils';
 
-describe('DiagramMaker.API', () => {
+describe('Diagrammer.API', () => {
   beforeEach(() => {
-    cy.visit('/iframe.html?id=demos-diagram-maker--left-right-rectangular&args=&viewMode=story');
+    cy.visit('/iframe.html?id=demos-diagrammer--left-right-rectangular&args=&viewMode=story');
   });
 
-  const toolsType = 'DiagramMaker.Tools';
+  const toolsType = 'Diagrammer.Tools';
   const viewport = { width: 1200, height: 900 };
   const nodeRect = {
     width: 100, height: 50, top: 150, left: 200,
@@ -92,7 +92,7 @@ describe('DiagramMaker.API', () => {
         const width = 1200;
         let expectedTransform = convertTranslate2dToMatrix(width - panelWidth - 20, 20);
         getPanelById('library').should('have.css', 'transform').and('eq', expectedTransform);
-        getElementByDataIdAndType('UpdateContainer', 'DiagramMaker.Tools').click();
+        getElementByDataIdAndType('UpdateContainer', 'Diagrammer.Tools').click();
         expectedTransform = convertTranslate2dToMatrix(newViewport.width - panelWidth - 20, 20);
         getPanelById('library').should('have.css', 'transform').and('eq', expectedTransform);
       });
@@ -166,7 +166,7 @@ describe('DiagramMaker.API', () => {
 
       it('doesnt allow select all', () => {
         getElementByDataIdAndType(readOnlyId, toolsType).click();
-        triggerKeyboardEvent(getDiagramMakerView(), 'a', true);
+        triggerKeyboardEvent(getDiagrammerView(), 'a', true);
         getAllNodes().children('.dm-content').children().should('not.have.class', 'selected');
       });
 
@@ -174,7 +174,7 @@ describe('DiagramMaker.API', () => {
         const node = getNodeById('node1');
         clickElement(node);
         getElementByDataIdAndType(readOnlyId, toolsType).click();
-        triggerKeyboardEvent(getDiagramMakerView(), 'Delete');
+        triggerKeyboardEvent(getDiagrammerView(), 'Delete');
         getNodeById('node1').should('exist');
       });
 
@@ -182,7 +182,7 @@ describe('DiagramMaker.API', () => {
         const edge = getEdgeById('edge1');
         clickElement(edge);
         getElementByDataIdAndType(readOnlyId, toolsType).click();
-        triggerKeyboardEvent(getDiagramMakerView(), 'Delete');
+        triggerKeyboardEvent(getDiagrammerView(), 'Delete');
         getEdgeById('edge1').should('exist');
       });
     });
@@ -382,7 +382,7 @@ describe('DiagramMaker.API', () => {
       getAllNodes().should('have.length', 2);
       const node = getNodeById('node1');
       clickElement(node);
-      triggerKeyboardEvent(getDiagramMakerView(), 'Delete');
+      triggerKeyboardEvent(getDiagrammerView(), 'Delete');
       getAllNodes().should('have.length', 1);
       getElementByDataIdAndType(undoId, toolsType).click();
       getAllNodes().should('have.length', 2);
@@ -410,7 +410,7 @@ describe('DiagramMaker.API', () => {
       getAllEdges().should('have.length', 1);
       const edge = getEdgeById('edge1');
       clickElement(edge);
-      triggerKeyboardEvent(getDiagramMakerView(), 'Delete');
+      triggerKeyboardEvent(getDiagrammerView(), 'Delete');
       getAllEdges().should('have.length', 0);
       getElementByDataIdAndType(undoId, toolsType).click();
       getAllEdges().should('have.length', 1);

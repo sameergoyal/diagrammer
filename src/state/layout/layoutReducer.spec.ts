@@ -1,7 +1,7 @@
-import getInitialState from 'diagramMaker/state/getInitialState';
-import { DeleteItemsAction, GlobalActionsType } from 'diagramMaker/state/global/globalActions';
-import { DiagramMakerData } from 'diagramMaker/state/types';
-import { asMock } from 'diagramMaker/testing/testUtils';
+import getInitialState from 'diagrammer/state/getInitialState';
+import { DeleteItemsAction, GlobalActionsType } from 'diagrammer/state/global/globalActions';
+import { DiagrammerData } from 'diagrammer/state/types';
+import { asMock } from 'diagrammer/testing/testUtils';
 
 import hierarchicalLayout from './hierarchicalLayout';
 import {
@@ -16,7 +16,7 @@ jest.mock('./hierarchicalLayout', () => ({ default: jest.fn() }));
 jest.mock('./workflowLayout', () => ({ default: jest.fn() }));
 
 describe('layoutReducer', () => {
-  function getState(): DiagramMakerData<{}, {}> {
+  function getState(): DiagrammerData<{}, {}> {
     return getInitialState();
   }
 
@@ -26,7 +26,7 @@ describe('layoutReducer', () => {
    *
    * @param state - The original state passed to reducer. (Not the output of the reducer!)
    */
-  function checkReducerPurity(state: DiagramMakerData<{}, {}>) {
+  function checkReducerPurity(state: DiagrammerData<{}, {}>) {
     expect(state).toEqual(getState());
   }
 
@@ -114,7 +114,7 @@ describe('adjustWorkspace', () => {
     const state: any = {
       nodes: {
         node1: {
-          diagramMakerData: {
+          diagrammerData: {
             position: { x: 100, y: 100 },
             size: { height: 100, width: 100 },
           },
@@ -135,7 +135,7 @@ describe('adjustWorkspace', () => {
     const expectedState = {
       nodes: {
         node1: {
-          diagramMakerData: {
+          diagrammerData: {
             position: { x: 100, y: 100 },
             size: { height: 100, width: 100 },
           },
@@ -160,7 +160,7 @@ describe('adjustWorkspace', () => {
     const state: any = {
       nodes: {
         node1: {
-          diagramMakerData: {
+          diagrammerData: {
             position: { x: -100, y: -100 },
             size: { height: 100, width: 100 },
           },
@@ -181,7 +181,7 @@ describe('adjustWorkspace', () => {
     const expectedState = {
       nodes: {
         node1: {
-          diagramMakerData: {
+          diagrammerData: {
             position: { x: 0, y: 0 },
             size: { height: 100, width: 100 },
           },

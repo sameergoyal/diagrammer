@@ -1,7 +1,7 @@
 import { Store } from 'redux';
 import { v4 as uuid } from 'uuid';
 
-import { DiagramMakerData, Position } from 'diagramMaker/state/types';
+import { DiagrammerData, Position } from 'diagrammer/state/types';
 
 import {
   CreateEdgeAction,
@@ -75,7 +75,7 @@ function createMouseOutEdgeAction(id: string): MouseOutAction {
 }
 
 export function handleEdgeDragStart<NodeType, EdgeType>(
-  store: Store<DiagramMakerData<NodeType, EdgeType>>,
+  store: Store<DiagrammerData<NodeType, EdgeType>>,
   id: string | undefined,
   position: Position,
   connectorType?: string | undefined,
@@ -90,7 +90,7 @@ export function handleEdgeDragStart<NodeType, EdgeType>(
 }
 
 export function handleEdgeDragEnd<NodeType, EdgeType>(
-  store: Store<DiagramMakerData<NodeType, EdgeType>>,
+  store: Store<DiagrammerData<NodeType, EdgeType>>,
   id: string | undefined,
 ) {
   if (id) {
@@ -99,14 +99,14 @@ export function handleEdgeDragEnd<NodeType, EdgeType>(
 }
 
 export function handleEdgeDrag<NodeType, EdgeType>(
-  store: Store<DiagramMakerData<NodeType, EdgeType>>,
+  store: Store<DiagrammerData<NodeType, EdgeType>>,
   position: Position,
 ) {
   store.dispatch(createDragEdgeAction(position));
 }
 
 export function handleEdgeCreate<NodeType, EdgeType>(
-  store: Store<DiagramMakerData<NodeType, EdgeType>>,
+  store: Store<DiagrammerData<NodeType, EdgeType>>,
   src: string | undefined,
   dest: string | undefined,
   connectorSrcType?: string | undefined,
@@ -127,7 +127,7 @@ export function handleEdgeCreate<NodeType, EdgeType>(
 }
 
 export function handleEdgeClick<NodeType, EdgeType>(
-  store: Store<DiagramMakerData<NodeType, EdgeType>>,
+  store: Store<DiagrammerData<NodeType, EdgeType>>,
   id: string | undefined,
 ) {
   if (id) {
@@ -136,7 +136,7 @@ export function handleEdgeClick<NodeType, EdgeType>(
 }
 
 export function handleEdgeMouseOver<NodeType, EdgeType>(
-  store: Store<DiagramMakerData<NodeType, EdgeType>>,
+  store: Store<DiagrammerData<NodeType, EdgeType>>,
   id: string | undefined,
 ) {
   if (id) {
@@ -145,7 +145,7 @@ export function handleEdgeMouseOver<NodeType, EdgeType>(
 }
 
 export function handleEdgeMouseOut<NodeType, EdgeType>(
-  store: Store<DiagramMakerData<NodeType, EdgeType>>,
+  store: Store<DiagrammerData<NodeType, EdgeType>>,
   id: string | undefined,
 ) {
   if (id) {

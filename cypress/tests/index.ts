@@ -1,13 +1,13 @@
-import { getDiagramMakerView, getElementByDataIdAndType, getPanelById } from '../common/getters';
+import { getDiagrammerView, getElementByDataIdAndType, getPanelById } from '../common/getters';
 import { convertTranslate2dToMatrix } from '../common/utils';
 
-describe('DiagramMaker', () => {
+describe('Diagrammer', () => {
   beforeEach(() => {
-    cy.visit('/iframe.html?id=demos-diagram-maker--left-right-rectangular&args=&viewMode=story');
+    cy.visit('/iframe.html?id=demos-diagrammer--left-right-rectangular&args=&viewMode=story');
   });
 
-  it('successfully loads DiagramMaker', () => {
-    getDiagramMakerView().should('exist');
+  it('successfully loads Diagrammer', () => {
+    getDiagrammerView().should('exist');
   });
 
   describe('update container', () => {
@@ -29,16 +29,16 @@ describe('DiagramMaker', () => {
       const width = 1200;
       let expectedTransform = convertTranslate2dToMatrix(width - panelWidth - 20, 20);
       getPanelById('library').should('have.css', 'transform').and('eq', expectedTransform);
-      getElementByDataIdAndType('UpdateContainer', 'DiagramMaker.Tools').click();
+      getElementByDataIdAndType('UpdateContainer', 'Diagrammer.Tools').click();
       expectedTransform = convertTranslate2dToMatrix(newViewport.width - panelWidth - 20, 20);
       getPanelById('library').should('have.css', 'transform').and('eq', expectedTransform);
     });
   });
 
   describe('destroy', () => {
-    it('removes all of diagram maker rendered DOM', () => {
-      getElementByDataIdAndType('Destroy', 'DiagramMaker.Tools').click();
-      getDiagramMakerView().should('not.exist');
+    it('removes all of diagrammer rendered DOM', () => {
+      getElementByDataIdAndType('Destroy', 'Diagrammer.Tools').click();
+      getDiagrammerView().should('not.exist');
     });
   });
 });

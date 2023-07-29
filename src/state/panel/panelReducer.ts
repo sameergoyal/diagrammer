@@ -1,15 +1,15 @@
 import { Draft, produce } from 'immer';
 
-import { constrainRectangleWithinRectangle } from 'diagramMaker/service/positionUtils';
-import { DiagramMakerAction } from 'diagramMaker/state/actions';
+import { constrainRectangleWithinRectangle } from 'diagrammer/service/positionUtils';
+import { DiagrammerAction } from 'diagrammer/state/actions';
 import {
   DragPanelAction,
   DragStartPanelAction,
   PanelActionsType,
-} from 'diagramMaker/state/panel/panelActions';
+} from 'diagrammer/state/panel/panelActions';
 import {
-  DiagramMakerPanels, Position, PositionAnchor, Size,
-} from 'diagramMaker/state/types';
+  DiagrammerPanels, Position, PositionAnchor, Size,
+} from 'diagrammer/state/types';
 
 const ANCHOR_DISTANCE = 10;
 
@@ -31,7 +31,7 @@ const isPanelWithinAnchorBounds = (panelPosition: Position, panelSize: Size, con
 };
 
 const anchorPanel = (
-  draftState: Draft<DiagramMakerPanels>,
+  draftState: Draft<DiagrammerPanels>,
   action: DragPanelAction,
 ) => {
   const containerSize = action.payload.viewContainerSize;
@@ -56,7 +56,7 @@ const anchorPanel = (
   }
 };
 
-const dragStartReducer = (draftState: Draft<DiagramMakerPanels>, action: DragStartPanelAction) => {
+const dragStartReducer = (draftState: Draft<DiagrammerPanels>, action: DragStartPanelAction) => {
   const currentPanel = draftState[action.payload.id];
 
   // When in undocking mode, we wait until panel is outside docking bounds
@@ -70,7 +70,7 @@ const dragStartReducer = (draftState: Draft<DiagramMakerPanels>, action: DragSta
   currentPanel.positionAnchor = undefined;
 };
 
-const dragReducer = (draftState: Draft<DiagramMakerPanels>, action: DragPanelAction) => {
+const dragReducer = (draftState: Draft<DiagrammerPanels>, action: DragPanelAction) => {
   const currentPanel = draftState[action.payload.id];
 
   const { position, viewContainerSize } = action.payload;
@@ -94,9 +94,9 @@ const dragReducer = (draftState: Draft<DiagramMakerPanels>, action: DragPanelAct
 };
 
 export default function panelReducer<NodeType, EdgeType>(
-  state: DiagramMakerPanels | undefined,
-  action: DiagramMakerAction<NodeType, EdgeType>,
-): DiagramMakerPanels {
+  state: DiagrammerPanels | undefined,
+  action: DiagrammerAction<NodeType, EdgeType>,
+): DiagrammerPanels {
   if (state === undefined) {
     return {};
   }

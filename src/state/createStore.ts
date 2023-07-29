@@ -7,19 +7,19 @@ import {
   StoreEnhancer,
 } from 'redux';
 
-import { DiagramMakerAction } from 'diagramMaker/state/actions';
-import { getRootReducer } from 'diagramMaker/state/common/rootReducer';
-import { sequenceReducers } from 'diagramMaker/state/common/sequenceReducers';
-import { layoutReducer } from 'diagramMaker/state/layout';
-import { ActionInterceptor, createInterceptorMiddleware, getUndoMiddleware } from 'diagramMaker/state/middleware';
-import { DiagramMakerData } from 'diagramMaker/state/types';
+import { DiagrammerAction } from 'diagrammer/state/actions';
+import { getRootReducer } from 'diagrammer/state/common/rootReducer';
+import { sequenceReducers } from 'diagrammer/state/common/sequenceReducers';
+import { layoutReducer } from 'diagrammer/state/layout';
+import { ActionInterceptor, createInterceptorMiddleware, getUndoMiddleware } from 'diagrammer/state/middleware';
+import { DiagrammerData } from 'diagrammer/state/types';
 
 export default function createStore<NodeType, EdgeType>(
-  initialData?: DiagramMakerData<NodeType, EdgeType>,
-  consumerRootReducer?: Reducer<DiagramMakerData<NodeType, EdgeType>, DiagramMakerAction<NodeType, EdgeType>>,
+  initialData?: DiagrammerData<NodeType, EdgeType>,
+  consumerRootReducer?: Reducer<DiagrammerData<NodeType, EdgeType>, DiagrammerAction<NodeType, EdgeType>>,
   consumerEnhancer?: StoreEnhancer,
   actionInterceptor?: ActionInterceptor<NodeType, EdgeType>,
-): Store<DiagramMakerData<NodeType, EdgeType>> {
+): Store<DiagrammerData<NodeType, EdgeType>> {
   const interceptorMiddleware = applyMiddleware(createInterceptorMiddleware(actionInterceptor));
   const undoMiddleware = applyMiddleware(getUndoMiddleware());
   const middleware = compose(interceptorMiddleware, undoMiddleware);
@@ -36,7 +36,7 @@ export default function createStore<NodeType, EdgeType>(
    */
 
   return reduxCreateStore(
-    sequenceReducers<DiagramMakerData<NodeType, EdgeType>, DiagramMakerAction<NodeType, EdgeType>>(
+    sequenceReducers<DiagrammerData<NodeType, EdgeType>, DiagrammerAction<NodeType, EdgeType>>(
       getRootReducer(),
       layoutReducer,
       consumerRootReducer,

@@ -1,9 +1,9 @@
 import { Store } from 'redux';
 
-import ConfigService from 'diagramMaker/service/ConfigService';
-import Observer from 'diagramMaker/service/observer/Observer';
-import { subtract } from 'diagramMaker/service/positionUtils';
-import { DiagramMakerComponentsType } from 'diagramMaker/service/ui/types';
+import ConfigService from 'diagrammer/service/ConfigService';
+import Observer from 'diagrammer/service/observer/Observer';
+import { subtract } from 'diagrammer/service/positionUtils';
+import { DiagrammerComponentsType } from 'diagrammer/service/ui/types';
 import {
   ContainerEventType,
   DragEventType,
@@ -13,7 +13,7 @@ import {
   MouseClickEventType,
   MouseMoveEventType,
   WheelEventType,
-} from 'diagramMaker/service/ui/UIEventManager';
+} from 'diagrammer/service/ui/UIEventManager';
 import {
   KeyboardCode,
   KeyboardKey,
@@ -25,8 +25,8 @@ import {
   NormalizedMouseClickEvent,
   NormalizedMouseHoverEvent,
   NormalizedMouseScrollEvent,
-} from 'diagramMaker/service/ui/UIEventNormalizer';
-import UITargetNormalizer from 'diagramMaker/service/ui/UITargetNormalizer';
+} from 'diagrammer/service/ui/UIEventNormalizer';
+import UITargetNormalizer from 'diagrammer/service/ui/UITargetNormalizer';
 import {
   handleEdgeClick,
   handleEdgeCreate,
@@ -35,16 +35,16 @@ import {
   handleEdgeDragStart,
   handleEdgeMouseOut,
   handleEdgeMouseOver,
-} from 'diagramMaker/state/edge/edgeActionDispatcher';
+} from 'diagrammer/state/edge/edgeActionDispatcher';
 import {
   handleHideContextMenu,
   handleHideSelectionMarquee,
   handleShowContextMenu,
   handleShowSelectionMarquee,
   handleUpdateSelectionMarquee,
-} from 'diagramMaker/state/editor/editorActionDispatcher';
-import { handleDeleteSelectedItems } from 'diagramMaker/state/global/globalActionDispatcher';
-import { rootEventFilter } from 'diagramMaker/state/mode';
+} from 'diagrammer/state/editor/editorActionDispatcher';
+import { handleDeleteSelectedItems } from 'diagrammer/state/global/globalActionDispatcher';
+import { rootEventFilter } from 'diagrammer/state/mode';
 import {
   handleNodeClick,
   handleNodeCreate,
@@ -54,22 +54,22 @@ import {
   handlePotentialNodeDrag,
   handlePotentialNodeDragEnd,
   handlePotentialNodeDragStart,
-} from 'diagramMaker/state/node/nodeActionDispatcher';
+} from 'diagrammer/state/node/nodeActionDispatcher';
 import {
   handlePanelDrag,
   handlePanelDragStart,
-} from 'diagramMaker/state/panel/panelActionDispatcher';
+} from 'diagrammer/state/panel/panelActionDispatcher';
 
 import {
-  DiagramMakerData, DiagramMakerWorkspace, EditorMode, Position,
-} from 'diagramMaker/state/types';
+  DiagrammerData, DiagrammerWorkspace, EditorMode, Position,
+} from 'diagrammer/state/types';
 import {
   handleSelectAll,
   handleWorkspaceClick,
   handleWorkspaceDrag,
   handleWorkspaceResize,
   handleWorkspaceZoom,
-} from 'diagramMaker/state/workspace/workspaceActionDispatcher';
+} from 'diagrammer/state/workspace/workspaceActionDispatcher';
 
 const DATA_ATTR_TYPE = 'data-type';
 export default class ActionDispatcher<NodeType, EdgeType> {
@@ -80,7 +80,7 @@ export default class ActionDispatcher<NodeType, EdgeType> {
 
   private static getNormalizedPositionOffsetInWorkspace = (
     position: Position,
-    workspace: DiagramMakerWorkspace,
+    workspace: DiagrammerWorkspace,
     offset = { x: 0, y: 0 },
   ): Position => {
     const targetPosition = ActionDispatcher.getNormalizedPositionOffset(position, offset);
@@ -92,7 +92,7 @@ export default class ActionDispatcher<NodeType, EdgeType> {
 
   constructor(
     private observer: Observer,
-    private store: Store<DiagramMakerData<NodeType, EdgeType>>,
+    private store: Store<DiagrammerData<NodeType, EdgeType>>,
     private config: ConfigService<NodeType, EdgeType>,
   ) {
     this.subscribeToUIEvents();
@@ -109,7 +109,7 @@ export default class ActionDispatcher<NodeType, EdgeType> {
     } = DropEventType;
     const { MOUSE_WHEEL } = WheelEventType;
     const { KEY_DOWN } = KeyboardEventType;
-    const { DIAGRAM_MAKER_CONTAINER_UPDATE } = ContainerEventType;
+    const { DIAGRAMMER_CONTAINER_UPDATE } = ContainerEventType;
 
     this.subscribeWithFilter(LEFT_CLICK, this.handleLeftMouseClick);
     this.subscribeWithFilter(RIGHT_CLICK, this.handleRightMouseClick);
@@ -120,7 +120,7 @@ export default class ActionDispatcher<NodeType, EdgeType> {
     this.subscribeWithFilter(DRAG_START, this.handleDragStart);
     this.subscribeWithFilter(DRAG_END, this.handleDragEnd);
     this.subscribeWithFilter(DROP, this.handleDrop);
-    this.subscribeWithFilter(DIAGRAM_MAKER_CONTAINER_UPDATE, this.handleContainerUpdate);
+    this.subscribeWithFilter(DIAGRAMMER_CONTAINER_UPDATE, this.handleContainerUpdate);
     this.subscribeWithFilter(MOUSE_WHEEL, this.handleWheelScroll);
     this.subscribeWithFilter(KEY_DOWN, this.handleKeyDown);
   }
@@ -149,14 +149,14 @@ export default class ActionDispatcher<NodeType, EdgeType> {
     const { type, id } = target;
 
     switch (type) {
-      case DiagramMakerComponentsType.NODE:
+      case DiagrammerComponentsType.NODE:
         handleNodeClick(this.store, id);
         break;
-      case (DiagramMakerComponentsType.EDGE_BADGE):
-      case (DiagramMakerComponentsType.EDGE):
+      case (DiagrammerComponentsType.EDGE_BADGE):
+      case (DiagrammerComponentsType.EDGE):
         handleEdgeClick(this.store, id);
         break;
-      case (DiagramMakerComponentsType.WORKSPACE):
+      case (DiagrammerComponentsType.WORKSPACE):
         handleWorkspaceClick(this.store);
         break;
       default:
@@ -169,8 +169,8 @@ export default class ActionDispatcher<NodeType, EdgeType> {
     const { type, id } = target;
 
     switch (type) {
-      case (DiagramMakerComponentsType.EDGE_BADGE):
-      case (DiagramMakerComponentsType.EDGE):
+      case (DiagrammerComponentsType.EDGE_BADGE):
+      case (DiagrammerComponentsType.EDGE):
         handleEdgeMouseOver(this.store, id);
         break;
       default:
@@ -183,8 +183,8 @@ export default class ActionDispatcher<NodeType, EdgeType> {
     const { type, id } = target;
 
     switch (type) {
-      case (DiagramMakerComponentsType.EDGE_BADGE):
-      case (DiagramMakerComponentsType.EDGE):
+      case (DiagrammerComponentsType.EDGE_BADGE):
+      case (DiagrammerComponentsType.EDGE):
         handleEdgeMouseOut(this.store, id);
         break;
       default:
@@ -199,7 +199,7 @@ export default class ActionDispatcher<NodeType, EdgeType> {
     const workspaceState = this.store.getState().workspace;
 
     switch (type) {
-      case DiagramMakerComponentsType.PANEL_DRAG_HANDLE:
+      case DiagrammerComponentsType.PANEL_DRAG_HANDLE:
         if (id) {
           const normalizedPosition = ActionDispatcher.getNormalizedPositionOffset(position, offset);
           const draggableElement = target.originalTarget as HTMLElement;
@@ -212,14 +212,14 @@ export default class ActionDispatcher<NodeType, EdgeType> {
           );
         }
         break;
-      case DiagramMakerComponentsType.NODE:
+      case DiagrammerComponentsType.NODE:
         handleNodeDrag(this.store, id, ActionDispatcher.getNormalizedPositionOffsetInWorkspace(
           position,
           workspaceState,
           offset,
         ));
         break;
-      case DiagramMakerComponentsType.WORKSPACE:
+      case DiagrammerComponentsType.WORKSPACE:
         switch (editorMode) {
           case EditorMode.SELECT:
             handleUpdateSelectionMarquee(
@@ -233,14 +233,14 @@ export default class ActionDispatcher<NodeType, EdgeType> {
             break;
         }
         break;
-      case (DiagramMakerComponentsType.NODE_CONNECTOR):
+      case (DiagrammerComponentsType.NODE_CONNECTOR):
         handleEdgeDrag(
           this.store,
           // No item offset, bc we want to draw dragged edges right at the tip of the pointer
           ActionDispatcher.getNormalizedPositionOffsetInWorkspace(position, workspaceState),
         );
         break;
-      case (DiagramMakerComponentsType.POTENTIAL_NODE):
+      case (DiagrammerComponentsType.POTENTIAL_NODE):
         handlePotentialNodeDrag(
           this.store,
           ActionDispatcher.getNormalizedPositionOffsetInWorkspace(position, workspaceState),
@@ -257,7 +257,7 @@ export default class ActionDispatcher<NodeType, EdgeType> {
     const editorMode = this.store.getState().editor.mode;
     const workspaceState = this.store.getState().workspace;
     switch (type) {
-      case DiagramMakerComponentsType.WORKSPACE:
+      case DiagrammerComponentsType.WORKSPACE:
         if (editorMode === EditorMode.SELECT) {
           handleShowSelectionMarquee(
             this.store,
@@ -265,13 +265,13 @@ export default class ActionDispatcher<NodeType, EdgeType> {
           );
         }
         break;
-      case DiagramMakerComponentsType.PANEL_DRAG_HANDLE:
+      case DiagrammerComponentsType.PANEL_DRAG_HANDLE:
         handlePanelDragStart(this.store, id);
         break;
-      case DiagramMakerComponentsType.NODE:
+      case DiagrammerComponentsType.NODE:
         handleNodeDragStart(this.store, id);
         break;
-      case (DiagramMakerComponentsType.NODE_CONNECTOR): {
+      case (DiagrammerComponentsType.NODE_CONNECTOR): {
         const connectorType = target?.originalTarget?.getAttribute('data-connector-type') || undefined;
         if (connectorType) {
           handleEdgeDragStart(
@@ -291,7 +291,7 @@ export default class ActionDispatcher<NodeType, EdgeType> {
         }
         break;
       }
-      case (DiagramMakerComponentsType.POTENTIAL_NODE):
+      case (DiagrammerComponentsType.POTENTIAL_NODE):
         handlePotentialNodeDragStart(
           this.store,
           this.config,
@@ -311,18 +311,18 @@ export default class ActionDispatcher<NodeType, EdgeType> {
     const editorMode = editorState && editorState.mode;
 
     switch (type) {
-      case DiagramMakerComponentsType.WORKSPACE:
+      case DiagrammerComponentsType.WORKSPACE:
         if (editorMode === EditorMode.SELECT) {
           handleHideSelectionMarquee(this.store);
         }
         break;
-      case DiagramMakerComponentsType.NODE:
+      case DiagrammerComponentsType.NODE:
         handleNodeDragEnd(this.store, id);
         break;
-      case (DiagramMakerComponentsType.NODE_CONNECTOR):
+      case (DiagrammerComponentsType.NODE_CONNECTOR):
         handleEdgeDragEnd(this.store, id);
         break;
-      case (DiagramMakerComponentsType.POTENTIAL_NODE):
+      case (DiagrammerComponentsType.POTENTIAL_NODE):
         handlePotentialNodeDragEnd(this.store, id);
         break;
       default:
@@ -335,7 +335,7 @@ export default class ActionDispatcher<NodeType, EdgeType> {
 
     const editorState = this.store.getState().editor;
 
-    if (UITargetNormalizer.getTarget(originalEvent, DATA_ATTR_TYPE, DiagramMakerComponentsType.WORKSPACE)) {
+    if (UITargetNormalizer.getTarget(originalEvent, DATA_ATTR_TYPE, DiagrammerComponentsType.WORKSPACE)) {
       originalEvent.preventDefault();
 
       if (!editorState.contextMenu) {
@@ -351,8 +351,8 @@ export default class ActionDispatcher<NodeType, EdgeType> {
     const { type, id } = target;
 
     switch (dropzone.type) {
-      case (DiagramMakerComponentsType.NODE_CONNECTOR):
-        if (type === DiagramMakerComponentsType.NODE_CONNECTOR) {
+      case (DiagrammerComponentsType.NODE_CONNECTOR):
+        if (type === DiagrammerComponentsType.NODE_CONNECTOR) {
           const srcConnectorType = target?.originalTarget?.getAttribute('data-connector-type') || undefined;
           const destConnectorType = dropzone?.originalTarget?.getAttribute('data-connector-type') || undefined;
           if (srcConnectorType || destConnectorType) {
@@ -362,8 +362,8 @@ export default class ActionDispatcher<NodeType, EdgeType> {
           }
         }
         break;
-      case (DiagramMakerComponentsType.WORKSPACE):
-        if (type === DiagramMakerComponentsType.POTENTIAL_NODE) {
+      case (DiagrammerComponentsType.WORKSPACE):
+        if (type === DiagrammerComponentsType.POTENTIAL_NODE) {
           handleNodeCreate(this.store, id);
         }
         break;

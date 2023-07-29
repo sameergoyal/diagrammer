@@ -1,9 +1,9 @@
 import * as Preact from 'preact';
 
-import { ComposeView } from 'diagramMaker/components/common';
-import { BoundRenderCallback, DestroyCallback } from 'diagramMaker/service/ConfigService';
-import { DiagramMakerComponentsType } from 'diagramMaker/service/ui/types';
-import { Position, Size } from 'diagramMaker/state/types';
+import { ComposeView } from 'diagrammer/components/common';
+import { BoundRenderCallback, DestroyCallback } from 'diagrammer/service/ConfigService';
+import { DiagrammerComponentsType } from 'diagrammer/service/ui/types';
+import { Position, Size } from 'diagrammer/state/types';
 
 import './Node.scss';
 
@@ -29,7 +29,7 @@ export default class PotentialNode extends Preact.Component<PotentialNodeProps, 
         className="dm-potential-node"
         style={{ width, height, transform }}
         data-id={typeId}
-        data-type={DiagramMakerComponentsType.POTENTIAL_NODE}
+        data-type={DiagrammerComponentsType.POTENTIAL_NODE}
         data-event-target
       >
         <ComposeView

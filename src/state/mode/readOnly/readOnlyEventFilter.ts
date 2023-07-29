@@ -1,14 +1,14 @@
-import { DiagramMakerComponentsType } from 'diagramMaker/service/ui/types';
-import { ContainerEventType, DragEventType, WheelEventType } from 'diagramMaker/service/ui/UIEventManager';
-import { NormalizedDragEvent, NormalizedEvent } from 'diagramMaker/service/ui/UIEventNormalizer';
+import { DiagrammerComponentsType } from 'diagrammer/service/ui/types';
+import { ContainerEventType, DragEventType, WheelEventType } from 'diagrammer/service/ui/UIEventManager';
+import { NormalizedDragEvent, NormalizedEvent } from 'diagrammer/service/ui/UIEventNormalizer';
 
-const { WORKSPACE } = DiagramMakerComponentsType;
+const { WORKSPACE } = DiagrammerComponentsType;
 
 export default function readOnlyEventFilter(event: NormalizedEvent): boolean {
   const { type } = event;
 
   switch (type) {
-    case ContainerEventType.DIAGRAM_MAKER_CONTAINER_UPDATE:
+    case ContainerEventType.DIAGRAMMER_CONTAINER_UPDATE:
     case WheelEventType.MOUSE_WHEEL:
       return true;
     case DragEventType.DRAG: {

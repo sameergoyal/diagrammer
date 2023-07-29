@@ -1,5 +1,5 @@
-import { NormalizedEvent } from 'diagramMaker/service/ui/UIEventNormalizer';
-import { EditorMode, EditorModeType } from 'diagramMaker/state/types';
+import { NormalizedEvent } from 'diagrammer/service/ui/UIEventNormalizer';
+import { EditorMode, EditorModeType } from 'diagrammer/state/types';
 
 import readOnlyEventFilter from './readOnly/readOnlyEventFilter';
 

@@ -1,7 +1,7 @@
-import { DiagramMakerData, EditorMode } from 'diagramMaker/state/types';
-import { getDefaultWorkspaceState } from 'diagramMaker/state/workspace';
+import { DiagrammerData, EditorMode } from 'diagrammer/state/types';
+import { getDefaultWorkspaceState } from 'diagrammer/state/workspace';
 
-export default function getInitialState<NodeType, EdgeType>(): DiagramMakerData<NodeType, EdgeType> {
+export default function getInitialState<NodeType, EdgeType>(): DiagrammerData<NodeType, EdgeType> {
   return {
     nodes: {},
     edges: {},

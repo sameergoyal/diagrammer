@@ -1,14 +1,14 @@
 import { Dispatch } from 'redux';
 
-import { DiagramMakerAction } from 'diagramMaker/state/actions';
-import { NodeActionsType } from 'diagramMaker/state/node';
+import { DiagrammerAction } from 'diagrammer/state/actions';
+import { NodeActionsType } from 'diagrammer/state/node';
 
 import { createInterceptorMiddleware } from '.';
 
 describe('interceptor middleware', () => {
   let dispatch: Dispatch;
   let getState: () => {};
-  let action: DiagramMakerAction<{}, {}>;
+  let action: DiagrammerAction<{}, {}>;
   let next: Dispatch;
 
   beforeEach(() => {

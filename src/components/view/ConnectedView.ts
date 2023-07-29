@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
-import ConfigService from 'diagramMaker/service/ConfigService';
-import { DiagramMakerData } from 'diagramMaker/state/types';
+import ConfigService from 'diagrammer/service/ConfigService';
+import { DiagrammerData } from 'diagrammer/state/types';
 
 import { View } from './View';
 
@@ -10,8 +10,8 @@ export interface ConnectedViewOwnProps<NodeType, EdgeType> {
 }
 
 function mapStateToProps<NodeType, EdgeType>(
-  state: DiagramMakerData<NodeType, EdgeType>,
-): { state: DiagramMakerData<NodeType, EdgeType> } {
+  state: DiagrammerData<NodeType, EdgeType>,
+): { state: DiagrammerData<NodeType, EdgeType> } {
   return { state };
 }
 

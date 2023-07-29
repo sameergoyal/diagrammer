@@ -1,4 +1,4 @@
-@import '~diagramMaker/styles/mixins';
+@import '~diagrammer/styles/mixins';
 
 html, body {
   .sb-show-main.sb-main-padded {
@@ -8,13 +8,13 @@ html, body {
   width: 100%;
 }
 
-#root, #diagramMakerRoot {
+#root, #diagrammerRoot {
   height: 100%;
   width: 100%;
 }
 
-#diagramMakerContainer {
-  color: var(--diagram-maker-text-color);
+#diagrammerContainer {
+  color: var(--diagrammer-text-color);
   height: 100%;
   width: 100%;
   position: relative;
@@ -26,14 +26,14 @@ html, body {
   overflow: auto;
   .draggableElement {
     height: 20px;
-    background: var(--diagram-maker-container_disabled-background-color);
+    background: var(--diagrammer-container_disabled-background-color);
   }
 }
 
 .example-node {
   box-sizing: border-box;
-  border: 1px solid var(--diagram-maker-border-color);
-  background-color: var(--diagram-maker-container-background-color);
+  border: 1px solid var(--diagrammer-border-color);
+  background-color: var(--diagrammer-container-background-color);
   padding: 10px;
   height: 100%;
   transition: all .2s ease;
@@ -51,21 +51,21 @@ html, body {
   }
 
   & input, & select {
-    background-color: var(--diagram-maker-input-background-color);
-    border: var(--diagram-maker-input-border);
-    color: var(--diagram-maker-text-color);
+    background-color: var(--diagrammer-input-background-color);
+    border: var(--diagrammer-input-border);
+    color: var(--diagrammer-text-color);
   }
 }
 
 .testInput {
-  background-color: var(--diagram-maker-input-background-color);
-  border: var(--diagram-maker-input-border);
-  color: var(--diagram-maker-text-color);
+  background-color: var(--diagrammer-input-background-color);
+  border: var(--diagrammer-input-border);
+  color: var(--diagrammer-text-color);
   width: 100%;
 }
 
 .contextMenu {
   @include dm-container-shadow;
-  background-color: var(--diagram-maker-container-background-color);
+  background-color: var(--diagrammer-container-background-color);
   padding: 5px;
 }

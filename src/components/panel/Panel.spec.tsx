@@ -2,8 +2,8 @@ import * as Preact from 'preact';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-import { Panel } from 'diagramMaker/components/panel';
-import { PositionAnchorType } from 'diagramMaker/state/types';
+import { Panel } from 'diagrammer/components/panel';
+import { PositionAnchorType } from 'diagrammer/state/types';
 
 describe('Panel', () => {
   const destroyCallback = jest.fn();

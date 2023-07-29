@@ -1,6 +1,6 @@
 import { produce } from 'immer';
 
-import { fromAdjacencyList } from 'diagramMaker/testing/diagramMakerDataBuilder';
+import { fromAdjacencyList } from 'diagrammer/testing/diagrammerDataBuilder';
 
 import hierarchicalLayout from './hierarchicalLayout';
 import { HierarchicalLayoutConfig, LayoutType } from './layoutActions';
@@ -36,7 +36,7 @@ describe('hierarchicalLayout', () => {
   it('does not do anything to single node graph', () => {
     let graph = fromAdjacencyList({ node: [] });
     graph = produce(graph, (draft) => {
-      draft.nodes.node.diagramMakerData.position = { x: 123, y: 456 };
+      draft.nodes.node.diagrammerData.position = { x: 123, y: 456 };
     });
 
     const layoutConfig: HierarchicalLayoutConfig = {
@@ -54,8 +54,8 @@ describe('hierarchicalLayout', () => {
       'node-2': [],
     });
     graph = produce(graph, (draft) => {
-      draft.nodes['node-1'].diagramMakerData.position = { x: 123, y: 456 };
-      draft.nodes['node-2'].diagramMakerData.position = { x: 111, y: 222 };
+      draft.nodes['node-1'].diagrammerData.position = { x: 123, y: 456 };
+      draft.nodes['node-2'].diagrammerData.position = { x: 111, y: 222 };
     });
 
     const layoutConfig: HierarchicalLayoutConfig = {
@@ -88,7 +88,7 @@ describe('hierarchicalLayout', () => {
       { width: 30, height: 30 },
     );
     graph = produce(graph, (draft) => {
-      draft.nodes['node-start'].diagramMakerData.position = { x: 400, y: 400 };
+      draft.nodes['node-start'].diagrammerData.position = { x: 400, y: 400 };
     });
     const layoutConfig: HierarchicalLayoutConfig = {
       layoutType: LayoutType.HIERARCHICAL,
@@ -122,9 +122,9 @@ describe('hierarchicalLayout', () => {
       { width: 20, height: 20 },
     );
     graph = produce(graph, (draft) => {
-      draft.nodes['node-a'].diagramMakerData.position = { x: 300, y: 400 };
-      draft.nodes['node-b'].diagramMakerData.position = { x: 500, y: 400 };
-      draft.nodes['node-c-1'].diagramMakerData.position = { x: 400, y: 100 };
+      draft.nodes['node-a'].diagrammerData.position = { x: 300, y: 400 };
+      draft.nodes['node-b'].diagrammerData.position = { x: 500, y: 400 };
+      draft.nodes['node-c-1'].diagrammerData.position = { x: 400, y: 100 };
     });
     const layoutConfig: HierarchicalLayoutConfig = {
       layoutType: LayoutType.HIERARCHICAL,
@@ -152,9 +152,9 @@ describe('hierarchicalLayout', () => {
       { width: 40, height: 40 },
     );
     graph = produce(graph, (draft) => {
-      draft.nodes['fixed-node-1'].diagramMakerData.position = { x: 300, y: 400 };
-      draft.nodes['fixed-node-2'].diagramMakerData.position = { x: 500, y: 400 };
-      draft.nodes['fixed-node-3'].diagramMakerData.position = { x: 500, y: 300 };
+      draft.nodes['fixed-node-1'].diagrammerData.position = { x: 300, y: 400 };
+      draft.nodes['fixed-node-2'].diagrammerData.position = { x: 500, y: 400 };
+      draft.nodes['fixed-node-3'].diagrammerData.position = { x: 500, y: 300 };
     });
     const layoutConfig: HierarchicalLayoutConfig = {
       layoutType: LayoutType.HIERARCHICAL,
@@ -176,7 +176,7 @@ describe('hierarchicalLayout', () => {
       { width: 30, height: 30 },
     );
     graph = produce(graph, (draft) => {
-      draft.nodes['node-start'].diagramMakerData.position = { x: 500, y: 500 };
+      draft.nodes['node-start'].diagrammerData.position = { x: 500, y: 500 };
     });
     const layoutConfig: HierarchicalLayoutConfig = {
       layoutType: LayoutType.HIERARCHICAL,
@@ -201,7 +201,7 @@ describe('hierarchicalLayout', () => {
       { width: 30, height: 30 },
     );
     graph = produce(graph, (draft) => {
-      draft.nodes['node-start'].diagramMakerData.position = { x: 500, y: 500 };
+      draft.nodes['node-start'].diagrammerData.position = { x: 500, y: 500 };
     });
     const layoutConfig: HierarchicalLayoutConfig = {
       layoutType: LayoutType.HIERARCHICAL,
@@ -223,7 +223,7 @@ describe('hierarchicalLayout', () => {
       { width: 30, height: 30 },
     );
     graph = produce(graph, (draft) => {
-      draft.nodes['node-start'].diagramMakerData.position = { x: 450, y: 450 };
+      draft.nodes['node-start'].diagrammerData.position = { x: 450, y: 450 };
     });
     const layoutConfig: HierarchicalLayoutConfig = {
       layoutType: LayoutType.HIERARCHICAL,
@@ -249,7 +249,7 @@ describe('hierarchicalLayout', () => {
       { width: 30, height: 30 },
     );
     graph = produce(graph, (draft) => {
-      draft.nodes['node-start'].diagramMakerData.position = { x: 300, y: 450 };
+      draft.nodes['node-start'].diagrammerData.position = { x: 300, y: 450 };
     });
     const layoutConfig: HierarchicalLayoutConfig = {
       layoutType: LayoutType.HIERARCHICAL,
@@ -274,7 +274,7 @@ describe('hierarchicalLayout', () => {
       { width: 30, height: 30 },
     );
     graph = produce(graph, (draft) => {
-      draft.nodes['node-start'].diagramMakerData.position = { x: 300, y: 450 };
+      draft.nodes['node-start'].diagrammerData.position = { x: 300, y: 450 };
     });
     const layoutConfig: HierarchicalLayoutConfig = {
       layoutType: LayoutType.HIERARCHICAL,
@@ -304,9 +304,9 @@ describe('hierarchicalLayout', () => {
       { width: 40, height: 40 },
     );
     graph = produce(graph, (draft) => {
-      draft.nodes['fixed-node-1'].diagramMakerData.position = { x: 300, y: 400 };
-      draft.nodes['fixed-node-2'].diagramMakerData.position = { x: 500, y: 400 };
-      draft.nodes['fixed-node-3'].diagramMakerData.position = { x: 500, y: 300 };
+      draft.nodes['fixed-node-1'].diagrammerData.position = { x: 300, y: 400 };
+      draft.nodes['fixed-node-2'].diagrammerData.position = { x: 500, y: 400 };
+      draft.nodes['fixed-node-3'].diagrammerData.position = { x: 500, y: 300 };
     });
     const layoutConfig: HierarchicalLayoutConfig = {
       layoutType: LayoutType.HIERARCHICAL,
@@ -330,8 +330,8 @@ describe('hierarchicalLayout', () => {
       { width: 50, height: 50 },
     );
     graph = produce(graph, (draft) => {
-      draft.nodes['fixed-node-1'].diagramMakerData.position = { x: 300, y: 400 };
-      draft.nodes['fixed-node-2'].diagramMakerData.position = { x: 500, y: 400 };
+      draft.nodes['fixed-node-1'].diagrammerData.position = { x: 300, y: 400 };
+      draft.nodes['fixed-node-2'].diagrammerData.position = { x: 500, y: 400 };
     });
     const layoutConfig: HierarchicalLayoutConfig = {
       layoutType: LayoutType.HIERARCHICAL,
@@ -365,7 +365,7 @@ describe('hierarchicalLayout', () => {
       { width: 30, height: 30 },
     );
     graph = produce(graph, (draft) => {
-      draft.nodes['node-start'].diagramMakerData.position = { x: 400, y: 400 };
+      draft.nodes['node-start'].diagrammerData.position = { x: 400, y: 400 };
     });
     const layoutConfig: HierarchicalLayoutConfig = {
       layoutType: LayoutType.HIERARCHICAL,
@@ -387,11 +387,11 @@ describe('hierarchicalLayout', () => {
       'node-2': [],
     });
     graph = produce(graph, (draft) => {
-      draft.nodes['node-start'].diagramMakerData.position = { x: 300, y: 300 };
+      draft.nodes['node-start'].diagrammerData.position = { x: 300, y: 300 };
 
-      draft.nodes['node-start'].diagramMakerData.size = { width: 150, height: 10 };
-      draft.nodes['node-1'].diagramMakerData.size = { width: 20, height: 80 };
-      draft.nodes['node-2'].diagramMakerData.size = { width: 50, height: 50 };
+      draft.nodes['node-start'].diagrammerData.size = { width: 150, height: 10 };
+      draft.nodes['node-1'].diagrammerData.size = { width: 20, height: 80 };
+      draft.nodes['node-2'].diagrammerData.size = { width: 50, height: 50 };
     });
     const layoutConfig: HierarchicalLayoutConfig = {
       layoutType: LayoutType.HIERARCHICAL,

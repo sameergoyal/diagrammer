@@ -1,14 +1,14 @@
 import {
-  ConnectorPlacement, DiagramMaker, DiagramMakerAction,
-  DiagramMakerActions, Shape, VisibleConnectorTypes,
-} from 'diagramMaker/index';
+  ConnectorPlacement, Diagrammer, DiagrammerAction,
+  DiagrammerActions, Shape, VisibleConnectorTypes,
+} from 'diagrammer/index';
 import {
   ConnectorPlacementType, ContextMenuRenderCallbacks, ShapeType,
-} from 'diagramMaker/service/ConfigService';
-import { CreateEdgeAction } from 'diagramMaker/state/edge/edgeActions';
+} from 'diagrammer/service/ConfigService';
+import { CreateEdgeAction } from 'diagrammer/state/edge/edgeActions';
 import {
-  DiagramMakerData, DiagramMakerEdge, DiagramMakerNode, DiagramMakerPotentialNode,
-} from 'diagramMaker/state/types';
+  DiagrammerData, DiagrammerEdge, DiagrammerNode, DiagrammerPotentialNode,
+} from 'diagrammer/state/types';
 import 'preact/devtools';
 import { Action, Dispatch } from 'redux';
 
@@ -32,7 +32,7 @@ import './scss/Logger.scss';
 import './scss/RectangularNode.scss';
 
 export default {
-  title: 'Demos/Diagram Maker',
+  title: 'Demos/Diagrammer',
   argTypes: {
     onAction: {
       action: 'action',
@@ -47,7 +47,7 @@ const createDivWithId = (id: string) => {
 };
 
 interface ArgTypes {
-  initialData: DiagramMakerData<{}, {}>;
+  initialData: DiagrammerData<{}, {}>;
   connectorPlacement?: ConnectorPlacementType;
   showArrowhead?: boolean;
   shape?: ShapeType;
@@ -69,9 +69,9 @@ const Template = ({
   plugin,
   onAction,
 }: ArgTypes) => {
-  const dmContainer = createDivWithId('diagramMakerContainer');
-  const logger = createDivWithId('diagramMakerLogger');
-  const root = createDivWithId('diagramMakerRoot');
+  const dmContainer = createDivWithId('diagrammerContainer');
+  const logger = createDivWithId('diagrammerLogger');
+  const root = createDivWithId('diagrammerRoot');
   root.appendChild(dmContainer);
   root.appendChild(logger);
   if (darkTheme) {
@@ -80,7 +80,7 @@ const Template = ({
     document.body.classList.remove('dm-dark-theme');
   }
   const windowAsAny = window as any;
-  windowAsAny.diagramMaker = new DiagramMaker(
+  windowAsAny.diagrammer = new Diagrammer(
     dmContainer,
     {
       options: {
@@ -89,7 +89,7 @@ const Template = ({
       },
       renderCallbacks: {
         destroy: () => undefined,
-        node: (node: DiagramMakerNode<{}>, container: HTMLElement) => {
+        node: (node: DiagrammerNode<{}>, container: HTMLElement) => {
           if (node.typeId === 'testId-centered') {
             return createCircularNode(node, container);
           }
@@ -107,7 +107,7 @@ const Template = ({
           }
           return createRectangularNode(node, container);
         },
-        edge: edgeBadge ? (edge: DiagramMakerEdge<{}>, container: HTMLElement): HTMLElement | undefined => {
+        edge: edgeBadge ? (edge: DiagrammerEdge<{}>, container: HTMLElement): HTMLElement | undefined => {
           if (container.innerHTML === '') {
             const element = document.createElement('div');
             element.textContent = edge.id.substring(0, 10);
@@ -118,7 +118,7 @@ const Template = ({
           return undefined;
         } : undefined,
         potentialNode:
-          (node: DiagramMakerPotentialNode, container: HTMLElement) => createPotentialNode(node, container),
+          (node: DiagrammerPotentialNode, container: HTMLElement) => createPotentialNode(node, container),
         panels: {
           library: (panel: any, state: any, container: HTMLElement) => createLibraryPanel(container),
           ...(plugin && {
@@ -133,7 +133,7 @@ const Template = ({
               panel: any,
               state: any,
               container: HTMLElement,
-            ) => createToolsPanel(container, () => windowAsAny.diagramMaker),
+            ) => createToolsPanel(container, () => windowAsAny.diagrammer),
           }),
         },
         contextMenu: {
@@ -143,33 +143,33 @@ const Template = ({
           workspace: (container: HTMLElement) => createWorkspaceContextMenu(container),
         } as ContextMenuRenderCallbacks,
       },
-      actionInterceptor: (action: Action, next: Dispatch<Action>, getState: () => DiagramMakerData<{}, {}>) => {
+      actionInterceptor: (action: Action, next: Dispatch<Action>, getState: () => DiagrammerData<{}, {}>) => {
         onAction(action);
         if (actionInterceptor) {
-          const diagramMakerAction = action as DiagramMakerAction<{ odd: boolean }, {}>;
+          const diagrammerAction = action as DiagrammerAction<{ odd: boolean }, {}>;
           updateActionInLogger(action);
-          if (diagramMakerAction.type === DiagramMakerActions.DELETE_ITEMS
-                && diagramMakerAction.payload.nodeIds.length > 0) {
+          if (diagrammerAction.type === DiagrammerActions.DELETE_ITEMS
+                && diagrammerAction.payload.nodeIds.length > 0) {
             return;
           }
 
-          if (diagramMakerAction.type === DiagramMakerActions.NODE_CREATE) {
+          if (diagrammerAction.type === DiagrammerActions.NODE_CREATE) {
             // nodes before are even so this odd
-            diagramMakerAction.payload.consumerData = {
+            diagrammerAction.payload.consumerData = {
               odd: Object.keys(getState().nodes).length % 2 === 0,
             };
-            next(diagramMakerAction);
+            next(diagrammerAction);
             return;
           }
 
-          if (diagramMakerAction.type === DiagramMakerActions.EDGE_CREATE) {
-            next(diagramMakerAction);
+          if (diagrammerAction.type === DiagrammerActions.EDGE_CREATE) {
+            next(diagrammerAction);
             const newAction: CreateEdgeAction<{}> = {
-              type: DiagramMakerActions.EDGE_CREATE,
+              type: DiagrammerActions.EDGE_CREATE,
               payload: {
-                id: `${diagramMakerAction.payload.id}-2`,
-                src: diagramMakerAction.payload.dest,
-                dest: diagramMakerAction.payload.src,
+                id: `${diagrammerAction.payload.id}-2`,
+                src: diagrammerAction.payload.dest,
+                dest: diagrammerAction.payload.src,
               },
             };
             setTimeout(() => next(newAction), 1000);
@@ -227,7 +227,7 @@ const Template = ({
     {
       consumerEnhancer: addDevTools(),
       eventListener: plugin ? (event) => {
-        handleTestPluginEvent(event, windowAsAny.diagramMaker);
+        handleTestPluginEvent(event, windowAsAny.diagrammer);
       } : undefined,
       initialData,
     },
@@ -240,7 +240,7 @@ ActionInterceptor.args = {
   initialData: ActionInterceptorData,
   actionInterceptor: true,
 };
-ActionInterceptor.play = () => (window as any).diagramMaker.updateContainer();
+ActionInterceptor.play = () => (window as any).diagrammer.updateContainer();
 
 export const BoundaryCircular: any = Template.bind({});
 BoundaryCircular.args = {
@@ -250,7 +250,7 @@ BoundaryCircular.args = {
   shape: Shape.CIRCLE,
   edgeBadge: true,
 };
-BoundaryCircular.play = () => (window as any).diagramMaker.updateContainer();
+BoundaryCircular.play = () => (window as any).diagrammer.updateContainer();
 
 export const BoundaryRectangular: any = Template.bind({});
 BoundaryRectangular.args = {
@@ -260,38 +260,38 @@ BoundaryRectangular.args = {
   shape: Shape.RECTANGLE,
   edgeBadge: true,
 };
-BoundaryRectangular.play = () => (window as any).diagramMaker.updateContainer();
+BoundaryRectangular.play = () => (window as any).diagrammer.updateContainer();
 
 export const DarkTheme: any = Template.bind({});
 DarkTheme.args = {
   darkTheme: true,
   initialData: DarkThemeData,
 };
-DarkTheme.play = () => (window as any).diagramMaker.updateContainer();
+DarkTheme.play = () => (window as any).diagrammer.updateContainer();
 
 export const Layout: any = Template.bind({});
 Layout.args = {
   initialData: LayoutData,
 };
-Layout.play = () => (window as any).diagramMaker.updateContainer();
+Layout.play = () => (window as any).diagrammer.updateContainer();
 
 export const LeftRightRectangular: any = Template.bind({});
 LeftRightRectangular.args = {
   initialData: LeftRightRectangularData,
   connectorPlacement: ConnectorPlacementType.LEFT_RIGHT,
 };
-LeftRightRectangular.play = () => (window as any).diagramMaker.updateContainer();
+LeftRightRectangular.play = () => (window as any).diagrammer.updateContainer();
 
 export const Plugins: any = Template.bind({});
 Plugins.args = {
   initialData: PluginsData,
   plugin: true,
 };
-Plugins.play = () => (window as any).diagramMaker.updateContainer();
+Plugins.play = () => (window as any).diagrammer.updateContainer();
 
 export const TopBottomRectangular: any = Template.bind({});
 TopBottomRectangular.args = {
   initialData: TopBottomRectangularData,
   connectorPlacement: ConnectorPlacementType.TOP_BOTTOM,
 };
-TopBottomRectangular.play = () => (window as any).diagramMaker.updateContainer();
+TopBottomRectangular.play = () => (window as any).diagrammer.updateContainer();

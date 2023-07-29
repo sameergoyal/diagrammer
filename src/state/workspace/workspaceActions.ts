@@ -1,6 +1,6 @@
 import { Action } from 'redux';
 
-import { Position, Size } from 'diagramMaker/state/types';
+import { Position, Size } from 'diagrammer/state/types';
 
 export enum WorkspaceActionsType {
   /** Deselect all selected items */

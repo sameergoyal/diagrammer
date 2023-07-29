@@ -4,7 +4,7 @@ exports[`SelectionMarquee renders at the given position and size 1`] = `
 <div
   className="dm-marquee"
   data-event-target={true}
-  data-type="DiagramMaker.SelectionMarquee"
+  data-type="Diagrammer.SelectionMarquee"
   style={
     Object {
       "height": 400,

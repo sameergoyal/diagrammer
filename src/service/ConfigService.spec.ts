@@ -1,7 +1,7 @@
 import ConfigService, {
-  ConnectorPlacement, DiagramMakerConfig, Shape, VisibleConnectorTypes,
-} from 'diagramMaker/service/ConfigService';
-import { DiagramMakerComponentsType } from 'diagramMaker/service/ui/types';
+  ConnectorPlacement, DiagrammerConfig, Shape, VisibleConnectorTypes,
+} from 'diagrammer/service/ConfigService';
+import { DiagrammerComponentsType } from 'diagrammer/service/ui/types';
 
 describe('ConfigService', () => {
   const renderDestroy = jest.fn();
@@ -35,7 +35,7 @@ describe('ConfigService', () => {
     potentialNode: renderPotentialNode,
   };
 
-  const config: DiagramMakerConfig<void, void> = {
+  const config: DiagrammerConfig<void, void> = {
     options,
     renderCallbacks,
     actionInterceptor,
@@ -101,32 +101,32 @@ describe('ConfigService', () => {
   });
 
   describe('getBoundRenderContextMenu', () => {
-    it('returns node context menu render callback bound to id for DiagramMaker.Node', () => {
+    it('returns node context menu render callback bound to id for Diagrammer.Node', () => {
       const id = 'testId';
-      const boundCallback = configService.getBoundRenderContextMenu(DiagramMakerComponentsType.NODE, id) as any;
+      const boundCallback = configService.getBoundRenderContextMenu(DiagrammerComponentsType.NODE, id) as any;
       boundCallback();
       expect(renderNodeContextMenu).toHaveBeenCalledWith(id);
       expect(renderNodeContextMenu).toHaveBeenCalledTimes(1);
     });
 
-    it('returns edge context menu render callback bound to id for DiagramMaker.Edge', () => {
+    it('returns edge context menu render callback bound to id for Diagrammer.Edge', () => {
       const id = 'testId';
-      const boundCallback = configService.getBoundRenderContextMenu(DiagramMakerComponentsType.EDGE, id) as any;
+      const boundCallback = configService.getBoundRenderContextMenu(DiagrammerComponentsType.EDGE, id) as any;
       boundCallback();
       expect(renderEdgeContextMenu).toHaveBeenCalledWith(id);
       expect(renderEdgeContextMenu).toHaveBeenCalledTimes(1);
     });
 
-    it('returns panel context menu render callback bound to id for DiagramMaker.Panel', () => {
+    it('returns panel context menu render callback bound to id for Diagrammer.Panel', () => {
       const id = 'testId';
-      const boundCallback = configService.getBoundRenderContextMenu(DiagramMakerComponentsType.PANEL, id) as any;
+      const boundCallback = configService.getBoundRenderContextMenu(DiagrammerComponentsType.PANEL, id) as any;
       boundCallback();
       expect(renderPanelContextMenu).toHaveBeenCalledWith(id);
       expect(renderPanelContextMenu).toHaveBeenCalledTimes(1);
     });
 
-    it('returns workspace context menu render callback for DiagramMaker.Workspace', () => {
-      const boundCallback = configService.getBoundRenderContextMenu(DiagramMakerComponentsType.WORKSPACE) as any;
+    it('returns workspace context menu render callback for Diagrammer.Workspace', () => {
+      const boundCallback = configService.getBoundRenderContextMenu(DiagrammerComponentsType.WORKSPACE) as any;
       boundCallback();
       expect(renderWorkspaceContextMenu).toHaveBeenCalledTimes(1);
     });
@@ -135,7 +135,7 @@ describe('ConfigService', () => {
       const configWithoutContextMenu: any = { renderCallbacks: {} };
       const configServiceWithoutContextMenu = new ConfigService(configWithoutContextMenu);
       const boundCallback = configServiceWithoutContextMenu
-        .getBoundRenderContextMenu(DiagramMakerComponentsType.WORKSPACE) as any;
+        .getBoundRenderContextMenu(DiagrammerComponentsType.WORKSPACE) as any;
       expect(boundCallback).toBeUndefined();
     });
   });
@@ -156,7 +156,7 @@ describe('ConfigService', () => {
   describe('getSizeForNodeType', () => {
     it('returns size if it is specified in node type config', () => {
       const type = 'mockNodeType';
-      const configWithTypeConfig: DiagramMakerConfig<void, void> = {
+      const configWithTypeConfig: DiagrammerConfig<void, void> = {
         renderCallbacks,
         nodeTypeConfig: {
           [type]: { size },
@@ -176,7 +176,7 @@ describe('ConfigService', () => {
     it('returns connector placement if it is specified in node type config', () => {
       const type = 'mockNodeType';
       const connectorPlacementOverride = ConnectorPlacement.LEFT_RIGHT;
-      const configWithTypeConfig: DiagramMakerConfig<void, void> = {
+      const configWithTypeConfig: DiagrammerConfig<void, void> = {
         renderCallbacks,
         nodeTypeConfig: {
           [type]: { size, connectorPlacementOverride },
@@ -188,7 +188,7 @@ describe('ConfigService', () => {
 
     it('returns default value if connector placement is not specified in node type config', () => {
       const type = 'mockNodeType';
-      const configWithTypeConfig: DiagramMakerConfig<void, void> = {
+      const configWithTypeConfig: DiagrammerConfig<void, void> = {
         renderCallbacks,
         nodeTypeConfig: {
           [type]: { size },
@@ -209,7 +209,7 @@ describe('ConfigService', () => {
     it('returns shape if it is specified in node type config', () => {
       const type = 'mockNodeType';
       const shape = Shape.CIRCLE;
-      const configWithTypeConfig: DiagramMakerConfig<void, void> = {
+      const configWithTypeConfig: DiagrammerConfig<void, void> = {
         renderCallbacks,
         nodeTypeConfig: {
           [type]: { size, shape },
@@ -221,7 +221,7 @@ describe('ConfigService', () => {
 
     it('returns undefined if it is not specified in node type config', () => {
       const type = 'mockNodeType';
-      const configWithTypeConfig: DiagramMakerConfig<void, void> = {
+      const configWithTypeConfig: DiagrammerConfig<void, void> = {
         renderCallbacks,
         nodeTypeConfig: {
           [type]: { size },
@@ -241,7 +241,7 @@ describe('ConfigService', () => {
     it('returns visible connector config if it is specified in node type config', () => {
       const type = 'mockNodeType';
       const visibleConnectorTypes = VisibleConnectorTypes.INPUT_ONLY;
-      const configWithTypeConfig: DiagramMakerConfig<void, void> = {
+      const configWithTypeConfig: DiagrammerConfig<void, void> = {
         renderCallbacks,
         nodeTypeConfig: {
           [type]: { size, visibleConnectorTypes },
@@ -253,7 +253,7 @@ describe('ConfigService', () => {
 
     it('returns undefined if it is not specified in node type config', () => {
       const type = 'mockNodeType';
-      const configWithTypeConfig: DiagramMakerConfig<void, void> = {
+      const configWithTypeConfig: DiagrammerConfig<void, void> = {
         renderCallbacks,
         nodeTypeConfig: {
           [type]: { size },

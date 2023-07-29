@@ -1,11 +1,11 @@
 import { Store } from 'redux';
 
-import ConfigService from 'diagramMaker/service/ConfigService';
-import { DiagramMakerComponentsType } from 'diagramMaker/service/ui/types';
-import { NormalizedMouseClickEvent } from 'diagramMaker/service/ui/UIEventNormalizer';
+import ConfigService from 'diagrammer/service/ConfigService';
+import { DiagrammerComponentsType } from 'diagrammer/service/ui/types';
+import { NormalizedMouseClickEvent } from 'diagrammer/service/ui/UIEventNormalizer';
 import {
-  DiagramMakerData, EditorModeType, Position, Rectangle, Size,
-} from 'diagramMaker/state/types';
+  DiagrammerData, EditorModeType, Position, Rectangle, Size,
+} from 'diagrammer/state/types';
 
 import {
   EditorActionsType,
@@ -27,7 +27,7 @@ function createHideContextMenuAction(): HideContextMenuAction {
 
 function createShowContextMenuAction(
   position: Position,
-  targetType: DiagramMakerComponentsType,
+  targetType: DiagrammerComponentsType,
   targetId?: string,
 ): ShowContextMenuAction {
   return {
@@ -95,7 +95,7 @@ export function createFitAction(nodeRects: Rectangle[], leftPanelWidth?: number,
 }
 
 export function handleShowContextMenu<NodeType, EdgeType>(
-  store: Store<DiagramMakerData<NodeType, EdgeType>>,
+  store: Store<DiagrammerData<NodeType, EdgeType>>,
   config: ConfigService<NodeType, EdgeType>,
   event: NormalizedMouseClickEvent,
 ) {
@@ -105,7 +105,7 @@ export function handleShowContextMenu<NodeType, EdgeType>(
     const renderContextMenu = config.getBoundRenderContextMenu(type, id);
     if (renderContextMenu) {
       originalEvent.preventDefault();
-      const action = createShowContextMenuAction(position, type as DiagramMakerComponentsType, id);
+      const action = createShowContextMenuAction(position, type as DiagrammerComponentsType, id);
 
       store.dispatch(action);
     }
@@ -113,7 +113,7 @@ export function handleShowContextMenu<NodeType, EdgeType>(
 }
 
 export function handleHideContextMenu<NodeType, EdgeType>(
-  store: Store<DiagramMakerData<NodeType, EdgeType>>,
+  store: Store<DiagrammerData<NodeType, EdgeType>>,
 ) {
   const state = store.getState();
   if (state.editor && state.editor.contextMenu) {
@@ -124,7 +124,7 @@ export function handleHideContextMenu<NodeType, EdgeType>(
 }
 
 export function handleShowSelectionMarquee<NodeType, EdgeType>(
-  store: Store<DiagramMakerData<NodeType, EdgeType>>,
+  store: Store<DiagrammerData<NodeType, EdgeType>>,
   anchor: Position,
 ) {
   const action = createShowSelectionMarqueeAction(anchor);
@@ -133,7 +133,7 @@ export function handleShowSelectionMarquee<NodeType, EdgeType>(
 }
 
 export function handleUpdateSelectionMarquee<NodeType, EdgeType>(
-  store: Store<DiagramMakerData<NodeType, EdgeType>>,
+  store: Store<DiagrammerData<NodeType, EdgeType>>,
   position: Position,
 ) {
   const state = store.getState();
@@ -146,7 +146,7 @@ export function handleUpdateSelectionMarquee<NodeType, EdgeType>(
 }
 
 export function handleHideSelectionMarquee<NodeType, EdgeType>(
-  store: Store<DiagramMakerData<NodeType, EdgeType>>,
+  store: Store<DiagrammerData<NodeType, EdgeType>>,
 ) {
   const state = store.getState();
   if (state.editor.selectionMarquee) {

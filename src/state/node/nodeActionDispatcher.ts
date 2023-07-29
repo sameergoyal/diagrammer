@@ -1,15 +1,15 @@
 import { Store } from 'redux';
 import { v4 as uuid } from 'uuid';
 
-import ConfigService from 'diagramMaker/service/ConfigService';
-import { getCenteredPosition } from 'diagramMaker/service/positionUtils';
-import { NormalizedTarget } from 'diagramMaker/service/ui/UITargetNormalizer';
+import ConfigService from 'diagrammer/service/ConfigService';
+import { getCenteredPosition } from 'diagrammer/service/positionUtils';
+import { NormalizedTarget } from 'diagrammer/service/ui/UITargetNormalizer';
 import {
-  DiagramMakerData,
+  DiagrammerData,
   Position,
   Rectangle,
   Size,
-} from 'diagramMaker/state/types';
+} from 'diagrammer/state/types';
 
 import {
   CreateNodeAction, DragEndNodeAction, DragEndPotentialNodeAction, DragNodeAction, DragPotentialNodeAction,
@@ -105,7 +105,7 @@ function getSizeFromDataAttrs(target: NormalizedTarget): Size | undefined {
 }
 
 export function handleNodeClick<NodeType, EdgeType>(
-  store: Store<DiagramMakerData<NodeType, EdgeType>>,
+  store: Store<DiagrammerData<NodeType, EdgeType>>,
   id: string | undefined,
 ) {
   if (id) {
@@ -115,7 +115,7 @@ export function handleNodeClick<NodeType, EdgeType>(
 }
 
 export function handleNodeDragStart<NodeType, EdgeType>(
-  store: Store<DiagramMakerData<NodeType, EdgeType>>,
+  store: Store<DiagrammerData<NodeType, EdgeType>>,
   id: string | undefined,
 ) {
   if (id) {
@@ -125,7 +125,7 @@ export function handleNodeDragStart<NodeType, EdgeType>(
 }
 
 export function handleNodeDrag<NodeType, EdgeType>(
-  store: Store<DiagramMakerData<NodeType, EdgeType>>,
+  store: Store<DiagrammerData<NodeType, EdgeType>>,
   id: string | undefined,
   position: Position,
 ) {
@@ -137,7 +137,7 @@ export function handleNodeDrag<NodeType, EdgeType>(
     };
     const node = store.getState().nodes[id];
     if (node) {
-      const { size } = node.diagramMakerData;
+      const { size } = node.diagrammerData;
       const action = createDragNodeAction(id, position, workspaceRectangle, size);
       store.dispatch(action);
     }
@@ -145,7 +145,7 @@ export function handleNodeDrag<NodeType, EdgeType>(
 }
 
 export function handleNodeDragEnd<NodeType, EdgeType>(
-  store: Store<DiagramMakerData<NodeType, EdgeType>>,
+  store: Store<DiagrammerData<NodeType, EdgeType>>,
   id: string | undefined,
 ) {
   if (id) {
@@ -155,7 +155,7 @@ export function handleNodeDragEnd<NodeType, EdgeType>(
 }
 
 export function handlePotentialNodeDragStart<NodeType, EdgeType>(
-  store: Store<DiagramMakerData<NodeType, EdgeType>>,
+  store: Store<DiagrammerData<NodeType, EdgeType>>,
   config: ConfigService<NodeType, EdgeType>,
   target: NormalizedTarget,
   position: Position,
@@ -171,7 +171,7 @@ export function handlePotentialNodeDragStart<NodeType, EdgeType>(
 }
 
 export function handlePotentialNodeDrag<NodeType, EdgeType>(
-  store: Store<DiagramMakerData<NodeType, EdgeType>>,
+  store: Store<DiagrammerData<NodeType, EdgeType>>,
   position: Position,
 ) {
   const { canvasSize } = store.getState().workspace;
@@ -189,7 +189,7 @@ export function handlePotentialNodeDrag<NodeType, EdgeType>(
 }
 
 export function handlePotentialNodeDragEnd<NodeType, EdgeType>(
-  store: Store<DiagramMakerData<NodeType, EdgeType>>,
+  store: Store<DiagrammerData<NodeType, EdgeType>>,
   typeId: string | undefined,
 ) {
   if (typeId) {
@@ -199,7 +199,7 @@ export function handlePotentialNodeDragEnd<NodeType, EdgeType>(
 }
 
 export function handleNodeCreate<NodeType, EdgeType>(
-  store: Store<DiagramMakerData<NodeType, EdgeType>>,
+  store: Store<DiagrammerData<NodeType, EdgeType>>,
   typeId: string | undefined,
 ) {
   if (typeId) {

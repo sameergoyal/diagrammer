@@ -1,6 +1,6 @@
 import { Action } from 'redux';
 
-import { Position } from 'diagramMaker/state/types';
+import { Position } from 'diagrammer/state/types';
 
 export enum EdgeActionsType {
   /** Edge creation */

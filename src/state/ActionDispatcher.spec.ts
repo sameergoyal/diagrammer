@@ -1,8 +1,8 @@
 import { Store } from 'redux';
 
-import ConfigService from 'diagramMaker/service/ConfigService';
-import Observer from 'diagramMaker/service/observer/Observer';
-import { DiagramMakerComponentsType } from 'diagramMaker/service/ui/types';
+import ConfigService from 'diagrammer/service/ConfigService';
+import Observer from 'diagrammer/service/observer/Observer';
+import { DiagrammerComponentsType } from 'diagrammer/service/ui/types';
 import {
   ContainerEventType,
   DragEventType,
@@ -11,30 +11,30 @@ import {
   MouseClickEventType,
   MouseMoveEventType,
   WheelEventType,
-} from 'diagramMaker/service/ui/UIEventManager';
-import { KeyboardCode } from 'diagramMaker/service/ui/UIEventNormalizer';
-import UITargetNormalizer from 'diagramMaker/service/ui/UITargetNormalizer';
-import * as EdgeActionHandlers from 'diagramMaker/state/edge/edgeActionDispatcher';
-import * as EditorActionHandlers from 'diagramMaker/state/editor/editorActionDispatcher';
-import * as GlobalActionHandlers from 'diagramMaker/state/global/globalActionDispatcher';
-import * as NodeActionHandlers from 'diagramMaker/state/node/nodeActionDispatcher';
-import * as PanelActionHandlers from 'diagramMaker/state/panel/panelActionDispatcher';
+} from 'diagrammer/service/ui/UIEventManager';
+import { KeyboardCode } from 'diagrammer/service/ui/UIEventNormalizer';
+import UITargetNormalizer from 'diagrammer/service/ui/UITargetNormalizer';
+import * as EdgeActionHandlers from 'diagrammer/state/edge/edgeActionDispatcher';
+import * as EditorActionHandlers from 'diagrammer/state/editor/editorActionDispatcher';
+import * as GlobalActionHandlers from 'diagrammer/state/global/globalActionDispatcher';
+import * as NodeActionHandlers from 'diagrammer/state/node/nodeActionDispatcher';
+import * as PanelActionHandlers from 'diagrammer/state/panel/panelActionDispatcher';
 import {
-  DiagramMakerContextMenu, DiagramMakerEditor, DiagramMakerWorkspace, EditorMode, EditorModeType, Position, Size,
-} from 'diagramMaker/state/types';
-import * as WorkspaceActionHandlers from 'diagramMaker/state/workspace/workspaceActionDispatcher';
-import { asMock } from 'diagramMaker/testing/testUtils';
+  DiagrammerContextMenu, DiagrammerEditor, DiagrammerWorkspace, EditorMode, EditorModeType, Position, Size,
+} from 'diagrammer/state/types';
+import * as WorkspaceActionHandlers from 'diagrammer/state/workspace/workspaceActionDispatcher';
+import { asMock } from 'diagrammer/testing/testUtils';
 
 import ActionDispatcher from './ActionDispatcher';
 import { rootEventFilter } from './mode';
 
-jest.mock('diagramMaker/state/mode/rootEventFilter', () => ({ default: jest.fn(() => true) }));
-jest.mock('diagramMaker/service/ui/UITargetNormalizer', () => ({ default: { getTarget: jest.fn(() => true) } }));
+jest.mock('diagrammer/state/mode/rootEventFilter', () => ({ default: jest.fn(() => true) }));
+jest.mock('diagrammer/service/ui/UITargetNormalizer', () => ({ default: { getTarget: jest.fn(() => true) } }));
 
 interface MockStore {
   getState: () => {
-    editor: DiagramMakerEditor,
-    workspace: DiagramMakerWorkspace
+    editor: DiagrammerEditor,
+    workspace: DiagrammerWorkspace
   };
 }
 
@@ -43,18 +43,18 @@ const { DRAG, DRAG_START, DRAG_END } = DragEventType;
 const { DROP } = DropEventType;
 const { MOUSE_WHEEL } = WheelEventType;
 const { KEY_DOWN } = KeyboardEventType;
-const { DIAGRAM_MAKER_CONTAINER_UPDATE } = ContainerEventType;
+const { DIAGRAMMER_CONTAINER_UPDATE } = ContainerEventType;
 const { MOUSE_OUT, MOUSE_OVER } = MouseMoveEventType;
 
 const {
   NODE, EDGE, EDGE_BADGE, NODE_CONNECTOR, PANEL_DRAG_HANDLE, POTENTIAL_NODE, WORKSPACE,
-} = DiagramMakerComponentsType;
+} = DiagrammerComponentsType;
 
 let observer: Observer;
 let store: MockStore;
 let config: ConfigService<{}, {}>;
 
-const getMockStore = (workspace: DiagramMakerWorkspace, editor: DiagramMakerEditor) => ({
+const getMockStore = (workspace: DiagrammerWorkspace, editor: DiagrammerEditor) => ({
   dispatch: jest.fn(),
   getState: () => ({
     workspace, editor, nodes: {}, edges: {},
@@ -65,7 +65,7 @@ const initialize = (
   position: Position,
   scale: number,
   mode: EditorModeType = EditorMode.DRAG,
-  contextMenu?: DiagramMakerContextMenu,
+  contextMenu?: DiagrammerContextMenu,
 ) => {
   const canvasSize: Size = {
     width: 1200,
@@ -107,7 +107,7 @@ describe('ActionDispatcher', () => {
   });
 
   describe('handleLeftMouseClick', () => {
-    it('calls handleNodeClick if type is DiagramMakerComponents.NODE', () => {
+    it('calls handleNodeClick if type is DiagrammerComponents.NODE', () => {
       initialize({ x: 200, y: 300 }, 2);
 
       const handleNodeClickSpy = jest.spyOn(NodeActionHandlers, 'handleNodeClick');
@@ -122,7 +122,7 @@ describe('ActionDispatcher', () => {
       expect(handleNodeClickSpy).toHaveBeenCalledWith(store, id);
     });
 
-    it('calls handleEdgeClick if type is DiagramMakerComponents.EDGE', () => {
+    it('calls handleEdgeClick if type is DiagrammerComponents.EDGE', () => {
       initialize({ x: 200, y: 300 }, 2);
 
       const handleEdgeClickSpy = jest.spyOn(EdgeActionHandlers, 'handleEdgeClick');
@@ -137,7 +137,7 @@ describe('ActionDispatcher', () => {
       expect(handleEdgeClickSpy).toHaveBeenCalledWith(store, id);
     });
 
-    it('calls handleEdgeClick if type is DiagramMakerComponents.EDGE_BADGE', () => {
+    it('calls handleEdgeClick if type is DiagrammerComponents.EDGE_BADGE', () => {
       initialize({ x: 200, y: 300 }, 2);
 
       const handleEdgeClickSpy = jest.spyOn(EdgeActionHandlers, 'handleEdgeClick');
@@ -152,7 +152,7 @@ describe('ActionDispatcher', () => {
       expect(handleEdgeClickSpy).toHaveBeenCalledWith(store, id);
     });
 
-    it('calls handleWorkspaceClick if type is DiagramMakerComponents.WORKSPACE', () => {
+    it('calls handleWorkspaceClick if type is DiagrammerComponents.WORKSPACE', () => {
       initialize({ x: 200, y: 300 }, 2);
 
       const handleWorkspaceClickSpy = jest.spyOn(WorkspaceActionHandlers, 'handleWorkspaceClick');
@@ -168,7 +168,7 @@ describe('ActionDispatcher', () => {
 
   describe('handleMouseOver', () => {
     [EDGE, EDGE_BADGE].forEach((type) => {
-      it(`calls handleMouseOver if type is DiagramMakerComponents.${type}`, () => {
+      it(`calls handleMouseOver if type is DiagrammerComponents.${type}`, () => {
         initialize({ x: 200, y: 300 }, 2);
 
         const handleEdgeMouseOverSpy = jest.spyOn(EdgeActionHandlers, 'handleEdgeMouseOver');
@@ -184,7 +184,7 @@ describe('ActionDispatcher', () => {
 
   describe('handleMouseOut', () => {
     [EDGE, EDGE_BADGE].forEach((type) => {
-      it(`calls handleMouseOut if type is DiagramMakerComponents.${type}`, () => {
+      it(`calls handleMouseOut if type is DiagrammerComponents.${type}`, () => {
         initialize({ x: 200, y: 300 }, 2);
 
         const handleEdgeMouseOutSpy = jest.spyOn(EdgeActionHandlers, 'handleEdgeMouseOut');
@@ -201,7 +201,7 @@ describe('ActionDispatcher', () => {
   describe('handleDrag', () => {
     const id = 1234;
 
-    it('calls handlePanelDrag if type is DiagramMakerComponents.PANEL_DRAG_HANDLE', () => {
+    it('calls handlePanelDrag if type is DiagrammerComponents.PANEL_DRAG_HANDLE', () => {
       const position: Position = { x: 200, y: 200 };
       const offset: Position = { x: 50, y: 50 };
       const { viewContainerSize } = store.getState().workspace;
@@ -234,7 +234,7 @@ describe('ActionDispatcher', () => {
       );
     });
 
-    it('calls handleNodeDrag if type is DiagramMakerComponents.NODE and workspace has offset', () => {
+    it('calls handleNodeDrag if type is DiagrammerComponents.NODE and workspace has offset', () => {
       const position: Position = { x: 200, y: 200 };
       const offset: Position = { x: 50, y: 50 };
       initialize({ x: 200, y: 300 }, 2);
@@ -255,7 +255,7 @@ describe('ActionDispatcher', () => {
       expect(handleNodeDragSpy).toHaveBeenCalledWith(store, id, normalizedPosition);
     });
 
-    it('calls handleNodeDrag if type is DiagramMakerComponents.NODE and workspace no offset, but is scaled', () => {
+    it('calls handleNodeDrag if type is DiagrammerComponents.NODE and workspace no offset, but is scaled', () => {
       const position: Position = { x: 200, y: 200 };
       const offset: Position = { x: 50, y: 50 };
       initialize({ x: 0, y: 0 }, 5);
@@ -276,7 +276,7 @@ describe('ActionDispatcher', () => {
       expect(handleNodeDragSpy).toHaveBeenCalledWith(store, id, normalizedPosition);
     });
 
-    it('calls handleNodeDrag if type is DiagramMakerComponents.NODE and workspace has no offset', () => {
+    it('calls handleNodeDrag if type is DiagrammerComponents.NODE and workspace has no offset', () => {
       const position: Position = { x: 200, y: 200 };
       const offset: Position = { x: 50, y: 50 };
       initialize({ x: 0, y: 0 }, 1); // No workspace offet, scale of 1
@@ -365,7 +365,7 @@ describe('ActionDispatcher', () => {
       expect(handleUpdateSelectionMarqueeSpy).toHaveBeenCalledWith(store, normalizedPosition);
     });
 
-    it('calls handleWorkspaceDrag if type is DiagramMakerComponents.WORKSPACE and EditorMode is DRAG', () => {
+    it('calls handleWorkspaceDrag if type is DiagrammerComponents.WORKSPACE and EditorMode is DRAG', () => {
       const position: Position = { x: 200, y: 200 };
       const offset: Position = { x: 50, y: 50 };
       initialize({ x: 200, y: 300 }, 2, EditorMode.DRAG);
@@ -387,7 +387,7 @@ describe('ActionDispatcher', () => {
       expect(handleWorkspaceDragSpy).toHaveBeenCalledWith(store, normalizedPosition);
     });
 
-    it('calls handleEdgeDrag if type is DiagramMakerComponents.NODE_CONNECTOR', () => {
+    it('calls handleEdgeDrag if type is DiagrammerComponents.NODE_CONNECTOR', () => {
       initialize({ x: 200, y: 300 }, 2);
       const handleEdgeDragSpy = jest.spyOn(EdgeActionHandlers, 'handleEdgeDrag');
       const event = {
@@ -404,7 +404,7 @@ describe('ActionDispatcher', () => {
       expect(handleEdgeDragSpy).toHaveBeenCalledWith(store, expectedPosition);
     });
 
-    it('calls handlePotentialNodeDrag if type is DiagramMakerComponents.POTENTIAL_NODE', () => {
+    it('calls handlePotentialNodeDrag if type is DiagrammerComponents.POTENTIAL_NODE', () => {
       const position: Position = { x: 200, y: 200 };
       const offset: Position = { x: 50, y: 50 };
       initialize({ x: 0, y: 0 }, 1); // No workspace offet, scale of 1
@@ -430,7 +430,7 @@ describe('ActionDispatcher', () => {
   describe('handleDragStart', () => {
     const id = 1234;
 
-    it('calls handleShowSelectionMarquee if type is DiagramMakerComponents.WORKSPACE and EditorMode is SELECT', () => {
+    it('calls handleShowSelectionMarquee if type is DiagrammerComponents.WORKSPACE and EditorMode is SELECT', () => {
       const position = { x: 200, y: 200 };
       initialize({ x: 0, y: 0 }, 1, EditorMode.SELECT);
 
@@ -449,7 +449,7 @@ describe('ActionDispatcher', () => {
       expect(handleShowSelectionMarqueeSpy).toHaveBeenCalledWith(store, position);
     });
 
-    it('calls handlePanelDragStart if type is DiagramMakerComponents.PANEL_DRAG_HANDLE', () => {
+    it('calls handlePanelDragStart if type is DiagrammerComponents.PANEL_DRAG_HANDLE', () => {
       initialize({ x: 200, y: 300 }, 2);
 
       const handlePanelDragStartSpy = jest.spyOn(PanelActionHandlers, 'handlePanelDragStart');
@@ -466,7 +466,7 @@ describe('ActionDispatcher', () => {
       expect(handlePanelDragStartSpy).toHaveBeenCalledWith(store, id);
     });
 
-    it('calls handleNodeDragStart if type is DiagramMakerComponents.NODE', () => {
+    it('calls handleNodeDragStart if type is DiagrammerComponents.NODE', () => {
       initialize({ x: 200, y: 300 }, 2);
 
       const handleNodeDragStartSpy = jest.spyOn(NodeActionHandlers, 'handleNodeDragStart');
@@ -483,7 +483,7 @@ describe('ActionDispatcher', () => {
       expect(handleNodeDragStartSpy).toHaveBeenCalledWith(store, id);
     });
 
-    it('calls handleEdgeDragStart if type is DiagramMakerComponents.NODE_CONNECTOR', () => {
+    it('calls handleEdgeDragStart if type is DiagrammerComponents.NODE_CONNECTOR', () => {
       initialize({ x: 0, y: 0 }, 1); // No workspace offet, scale of 1
 
       const handleEdgeDragStartSpy = jest.spyOn(EdgeActionHandlers, 'handleEdgeDragStart');
@@ -502,7 +502,7 @@ describe('ActionDispatcher', () => {
       expect(handleEdgeDragStartSpy).toHaveBeenCalledWith(store, id, position);
     });
 
-    it('calls handleEdgeDragStart if type is DiagramMakerComponents.NODE_CONNECTOR and is a custom connector', () => {
+    it('calls handleEdgeDragStart if type is DiagrammerComponents.NODE_CONNECTOR and is a custom connector', () => {
       initialize({ x: 0, y: 0 }, 1); // No workspace offet, scale of 1
 
       const handleEdgeDragStartSpy = jest.spyOn(EdgeActionHandlers, 'handleEdgeDragStart');
@@ -525,7 +525,7 @@ describe('ActionDispatcher', () => {
       expect(handleEdgeDragStartSpy).toHaveBeenCalledWith(store, id, position, CONNECTOR_TYPE);
     });
 
-    it('calls handlePotentialNodeDragStart if type is DiagramMakerComponents.POTENTIAL_NODE', () => {
+    it('calls handlePotentialNodeDragStart if type is DiagrammerComponents.POTENTIAL_NODE', () => {
       const position: Position = { x: 200, y: 200 };
       const offset: Position = { x: 50, y: 50 };
       initialize({ x: 0, y: 0 }, 1); // No workspace offet, scale of 1
@@ -573,7 +573,7 @@ describe('ActionDispatcher', () => {
       expect(handleHideSelectionMarqueeSpy).toHaveBeenCalledWith(store);
     });
 
-    it('calls handleNodeDragEnd if type is DiagramMakerComponents.NODE', () => {
+    it('calls handleNodeDragEnd if type is DiagrammerComponents.NODE', () => {
       initialize({ x: 200, y: 300 }, 2);
 
       const handleNodeDragEndSpy = jest.spyOn(NodeActionHandlers, 'handleNodeDragEnd');
@@ -590,7 +590,7 @@ describe('ActionDispatcher', () => {
       expect(handleNodeDragEndSpy).toHaveBeenCalledWith(store, id);
     });
 
-    it('calls handleEdgeCreate if type is DiagramMakerComponents.NODE_CONNECTOR', () => {
+    it('calls handleEdgeCreate if type is DiagrammerComponents.NODE_CONNECTOR', () => {
       initialize({ x: 200, y: 300 }, 2);
 
       const handleEdgeDragEndSpy = jest.spyOn(EdgeActionHandlers, 'handleEdgeDragEnd');
@@ -607,7 +607,7 @@ describe('ActionDispatcher', () => {
       expect(handleEdgeDragEndSpy).toHaveBeenCalledWith(store, id);
     });
 
-    it('calls handlePotentialNodeDragEnd if type is DiagramMakerComponents.POTENTIAL_NODE', () => {
+    it('calls handlePotentialNodeDragEnd if type is DiagrammerComponents.POTENTIAL_NODE', () => {
       const position: Position = { x: 200, y: 200 };
       const offset: Position = { x: 50, y: 50 };
       initialize({ x: 0, y: 0 }, 1); // No workspace offet, scale of 1
@@ -650,7 +650,7 @@ describe('ActionDispatcher', () => {
       expect(originalEvent.preventDefault).toHaveBeenCalledTimes(1);
       expect(handleWorkspaceZoomSpy).toHaveBeenCalledWith(store, -delta, position);
       expect(UITargetNormalizer.getTarget)
-        .toHaveBeenCalledWith(originalEvent, 'data-type', DiagramMakerComponentsType.WORKSPACE);
+        .toHaveBeenCalledWith(originalEvent, 'data-type', DiagrammerComponentsType.WORKSPACE);
     });
 
     it('doesnt call handleWorkspaceZoom if UITargetNormalizer cannot find workspace in target parent chain', () => {
@@ -674,13 +674,13 @@ describe('ActionDispatcher', () => {
       expect(handleWorkspaceZoomSpy).toHaveBeenCalledTimes(0);
       expect(originalEvent.preventDefault).toHaveBeenCalledTimes(0);
       expect(UITargetNormalizer.getTarget)
-        .toHaveBeenCalledWith(originalEvent, 'data-type', DiagramMakerComponentsType.WORKSPACE);
+        .toHaveBeenCalledWith(originalEvent, 'data-type', DiagrammerComponentsType.WORKSPACE);
     });
 
     it('doesnt call handleWorkspaceZoom if context menu is open', () => {
-      const contextMenu: DiagramMakerContextMenu = {
+      const contextMenu: DiagrammerContextMenu = {
         position: { x: 0, y: 0 },
-        targetType: DiagramMakerComponentsType.NODE,
+        targetType: DiagrammerComponentsType.NODE,
       };
 
       initialize({ x: 200, y: 300 }, 2, EditorMode.DRAG, contextMenu);
@@ -701,7 +701,7 @@ describe('ActionDispatcher', () => {
       expect(handleWorkspaceZoomSpy).toHaveBeenCalledTimes(0);
       expect(originalEvent.preventDefault).toHaveBeenCalledTimes(1);
       expect(UITargetNormalizer.getTarget)
-        .toHaveBeenCalledWith(originalEvent, 'data-type', DiagramMakerComponentsType.WORKSPACE);
+        .toHaveBeenCalledWith(originalEvent, 'data-type', DiagrammerComponentsType.WORKSPACE);
     });
   });
 
@@ -874,7 +874,7 @@ describe('ActionDispatcher', () => {
       const mockEvent = { contextRect };
       const size = { height: mockEvent.contextRect.height, width: mockEvent.contextRect.width };
 
-      observer.publish(DIAGRAM_MAKER_CONTAINER_UPDATE, mockEvent);
+      observer.publish(DIAGRAMMER_CONTAINER_UPDATE, mockEvent);
 
       expect(handleContainerUpdateSpy).toHaveBeenCalledTimes(1);
       expect(handleContainerUpdateSpy).toHaveBeenCalledWith(store, size);

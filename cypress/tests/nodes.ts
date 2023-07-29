@@ -1,16 +1,16 @@
 import {
-  getAllNodes, getDiagramMakerView, getEdgeById, getNodeById, getPanelById, getPotentialNodeById,
+  getAllNodes, getDiagrammerView, getEdgeById, getNodeById, getPanelById, getPotentialNodeById,
 } from '../common/getters';
 import {
   clickElement, dragAndDropElement, dragElement, dragStartElement, dropElement, triggerKeyboardEvent,
 } from '../common/interaction';
 import { convertTranslate2dToMatrix } from '../common/utils';
 
-describe('DiagramMaker.Nodes', () => {
+describe('Diagrammer.Nodes', () => {
   const nodeRect = { width: 100, height: 50 };
 
   beforeEach(() => {
-    cy.visit('/iframe.html?id=demos-diagram-maker--left-right-rectangular&args=&viewMode=story');
+    cy.visit('/iframe.html?id=demos-diagrammer--left-right-rectangular&args=&viewMode=story');
   });
 
   describe('node rendering', () => {
@@ -127,7 +127,7 @@ describe('DiagramMaker.Nodes', () => {
     function selectNodeAndKeyboardEvent(keyboardEvent: string, nodeId: string = 'node1'): Cypress.Chainable {
       const node = getNodeById(nodeId);
       clickElement(node);
-      triggerKeyboardEvent(getDiagramMakerView(), keyboardEvent);
+      triggerKeyboardEvent(getDiagrammerView(), keyboardEvent);
       return node;
     }
     it('deletes selected node when Backspace is pressed', () => {

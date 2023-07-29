@@ -1,17 +1,17 @@
-import Observer from 'diagramMaker/service/observer/Observer';
-import { fromContainerToPage, fromScreenToPage, subtract } from 'diagramMaker/service/positionUtils';
+import Observer from 'diagrammer/service/observer/Observer';
+import { fromContainerToPage, fromScreenToPage, subtract } from 'diagrammer/service/positionUtils';
 import {
   EventAttribute,
   MouseButton,
   NormalizedDragEvent,
   NormalizedDropEvent,
-} from 'diagramMaker/service/ui/UIEventNormalizer';
+} from 'diagrammer/service/ui/UIEventNormalizer';
 import {
   mockGetDropZoneTarget,
   mockGetElementsFromPoint,
   unmockGetDropZoneTarget,
   unmockGetElementsFromPoint,
-} from 'diagramMaker/service/ui/UITargetNormalizer.spec';
+} from 'diagrammer/service/ui/UITargetNormalizer.spec';
 
 import UIEventManager, {
   ContainerEventType,
@@ -238,7 +238,7 @@ describe('UIEventManager', () => {
       const contextRect = { top: topOffset, left: leftOffset };
       const mockEvent = { contextRect };
 
-      observer.publish(ContainerEventType.DIAGRAM_MAKER_CONTAINER_UPDATE, mockEvent);
+      observer.publish(ContainerEventType.DIAGRAMMER_CONTAINER_UPDATE, mockEvent);
 
       expect(setContextOffsetSpy).toBeCalledTimes(1);
       expect(setContextOffsetSpy).toBeCalledWith({ x: leftOffset, y: topOffset });

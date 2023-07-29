@@ -16,7 +16,7 @@ exports[`EdgeBadge renders badge if passed 1`] = `
     className="dm-badge-inner"
     data-event-target={true}
     data-id="testBadge"
-    data-type="DiagramMaker.EdgeBadge"
+    data-type="Diagrammer.EdgeBadge"
   >
     <ComposeView
       destroyCallback={[MockFunction]}
@@ -42,7 +42,7 @@ exports[`EdgeBadge renders badge when isPartOfEdgePair is true 1`] = `
     className="dm-badge-inner"
     data-event-target={true}
     data-id="overlappingBadge"
-    data-type="DiagramMaker.EdgeBadge"
+    data-type="Diagrammer.EdgeBadge"
   >
     <ComposeView
       destroyCallback={[MockFunction]}

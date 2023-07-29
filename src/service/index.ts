@@ -1,4 +1,4 @@
-export { default as DiagramMakerApi } from './DiagramMakerApi';
+export { default as DiagrammerApi } from './DiagrammerApi';
 export { default as Observer } from './observer/Observer';
 export { default as UIEventManager } from './ui/UIEventManager';
 export { default as UIEventNormalizer } from './ui/UIEventNormalizer';
