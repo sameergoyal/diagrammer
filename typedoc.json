@@ -1,0 +1,12 @@
+{
+  "entryPoints": [
+    "src/components/index.ts",
+    "src/state/index.ts",
+    "src/service/index.ts",
+    "src/index.ts"
+  ],
+  "out": "docs/typedoc/",
+  "theme": "default",
+  "excludeExternals": true,
+  "excludePrivate": true
+}

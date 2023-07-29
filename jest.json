@@ -1,0 +1,42 @@
+{
+  "collectCoverage": true,
+  "collectCoverageFrom": ["src/**/*.{ts,tsx}"],
+  "coveragePathIgnorePatterns": [
+    "/testing/",
+    "/typings/",
+    "/src/components/index.ts",
+    "/src/state/index.ts",
+    "/src/service/index.ts"
+  ],
+  "coverageDirectory": "<rootDir>/coverage",
+  "coverageReporters": ["text-summary", "cobertura", "html", "json-summary"],
+  "coverageThreshold": {
+    "global": {
+      "branches": 90,
+      "functions": 90,
+      "lines": 90,
+      "statements": 90
+    }
+  },
+  "moduleFileExtensions": ["ts", "tsx", "js", "jsx"],
+  "moduleNameMapper": {
+    "\\.(css|less|sass|scss)$": "<rootDir>/src/__mocks__/style.ts",
+    "^diagrammer/(.*)$": "<rootDir>/src/$1",
+    "^react$": "preact/compat",
+    "^react-dom/test-utils$": "preact/test-utils",
+    "^react-dom$": "preact/compat",
+    "^react/jsx-runtime$": "preact/jsx-runtime"
+  },
+  "setupFiles": [
+    "<rootDir>/src/testing/test-setup.ts"
+  ],
+  "testEnvironment": "jsdom",
+  "testMatch": ["**/?(*.)(spec|test).(ts|tsx)"],
+  "testURL": "http://console.aws.amazon.com#mock",
+  "transform": {
+    "\\.(ts|tsx|js|jsx)": "ts-jest"
+  },
+  "transformIgnorePatterns": [
+    "/node_modules/(?!lodash-es)"
+  ]
+}

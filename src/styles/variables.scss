@@ -1,0 +1,33 @@
+:root {
+  --diagrammer-border-shadow-15-perc: rgba(0, 28, 36, 0.15);
+  --diagrammer-border-shadow-30-perc: rgba(0, 28, 36, 0.3);
+  --diagrammer-border-color: #eaeded;
+  --diagrammer-container-background-color: white;
+  --diagrammer-container_disabled-background-color: lightgray;
+  --diagrammer-canvas-background-color: #f2f3f3;
+  --diagrammer-canvas-dots-color: #d5dbdb;
+  --diagrammer-connector-color: #16191f;
+  --diagrammer-input-background-color: inherit;
+  --diagrammer-input-border: 1px solid #767676;
+  --diagrammer-line-color: #879596;
+  --diagrammer-placeholder-text-color: inherit;
+  --diagrammer-text-color: black;
+}
+
+:root {
+  .dm-dark-theme {
+    --diagrammer-border-shadow-15-perc: rgba(234, 237, 237, 0.15);
+    --diagrammer-border-shadow-30-perc: rgba(234, 237, 237, 0.3);
+    --diagrammer-border-color: #b7baba;
+    --diagrammer-container-background-color: #414750;
+    --diagrammer-container_disabled-background-color: #1a2029;
+    --diagrammer-canvas-background-color: #687078;
+    --diagrammer-canvas-dots-color: #a6a7a7;
+    --diagrammer-connector-color: lightgray;
+    --diagrammer-input-background-color: #1a2029;
+    --diagrammer-input-border: 1px solid #879596;
+    --diagrammer-line-color: #edfbfc;
+    --diagrammer-placeholder-text-color: #687078;
+    --diagrammer-text-color: #d5dbdb;
+  }
+}

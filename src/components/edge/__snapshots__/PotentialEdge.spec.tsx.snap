@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PotentialEdge passes show arrowhead 1`] = `
+<g
+  className="dm-edge"
+  data-type="Diagrammer.PotentialEdge"
+>
+  <EdgeCurve
+    className="dm-path-inner"
+    dest={
+      Object {
+        "x": 100,
+        "y": 0,
+      }
+    }
+    edgeStyle={0}
+    showArrowhead={true}
+    src={
+      Object {
+        "x": 0,
+        "y": 100,
+      }
+    }
+  />
+</g>
+`;
+
+exports[`PotentialEdge renders the paths using props 1`] = `
+<g
+  className="dm-edge"
+  data-type="Diagrammer.PotentialEdge"
+>
+  <EdgeCurve
+    className="dm-path-inner"
+    dest={
+      Object {
+        "x": 100,
+        "y": 0,
+      }
+    }
+    edgeStyle={0}
+    src={
+      Object {
+        "x": 0,
+        "y": 100,
+      }
+    }
+  />
+</g>
+`;

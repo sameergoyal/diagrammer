@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectionMarquee renders at the given position and size 1`] = `
+<div
+  className="dm-marquee"
+  data-event-target={true}
+  data-type="Diagrammer.SelectionMarquee"
+  style={
+    Object {
+      "height": 400,
+      "left": 200,
+      "top": 100,
+      "width": 600,
+    }
+  }
+/>
+`;

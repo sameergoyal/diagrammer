@@ -1,0 +1,265 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Node renders at the given position and size 1`] = `
+<div
+  className="dm-node"
+  data-draggable={true}
+  data-event-target={true}
+  data-id="myNode"
+  data-type="Diagrammer.Node"
+  style={
+    Object {
+      "height": 300,
+      "transform": "translate3d(400px, 600px, 0)",
+      "width": 200,
+    }
+  }
+>
+  <ComposeView
+    destroyCallback={[MockFunction]}
+    renderCallback={[MockFunction]}
+  />
+</div>
+`;
+
+exports[`Node renders connectors on the left and right 1`] = `
+<div
+  className="dm-node"
+  data-draggable={true}
+  data-event-target={true}
+  data-id="myNode"
+  data-type="Diagrammer.Node"
+  style={
+    Object {
+      "height": 300,
+      "transform": "translate3d(400px, 600px, 0)",
+      "width": 200,
+    }
+  }
+>
+  <ComposeView
+    destroyCallback={[MockFunction]}
+    renderCallback={[MockFunction]}
+  />
+  <Connector
+    id="myNode"
+    key="myNode-0"
+    position={
+      Object {
+        "x": 0,
+        "y": 150,
+      }
+    }
+    type={0}
+  />
+  <Connector
+    id="myNode"
+    key="myNode-1"
+    position={
+      Object {
+        "x": 200,
+        "y": 150,
+      }
+    }
+    type={1}
+  />
+</div>
+`;
+
+exports[`Node renders connectors on the top and bottom 1`] = `
+<div
+  className="dm-node"
+  data-draggable={true}
+  data-event-target={true}
+  data-id="myNode"
+  data-type="Diagrammer.Node"
+  style={
+    Object {
+      "height": 300,
+      "transform": "translate3d(400px, 600px, 0)",
+      "width": 200,
+    }
+  }
+>
+  <ComposeView
+    destroyCallback={[MockFunction]}
+    renderCallback={[MockFunction]}
+  />
+  <Connector
+    id="myNode"
+    key="myNode-0"
+    position={
+      Object {
+        "x": 100,
+        "y": 0,
+      }
+    }
+    type={0}
+  />
+  <Connector
+    id="myNode"
+    key="myNode-1"
+    position={
+      Object {
+        "x": 100,
+        "y": 300,
+      }
+    }
+    type={1}
+  />
+</div>
+`;
+
+exports[`Node renders without any connectors 1`] = `
+<div
+  className="dm-node"
+  data-draggable={true}
+  data-event-target={true}
+  data-id="myNode"
+  data-type="Diagrammer.Node"
+  style={
+    Object {
+      "height": 300,
+      "transform": "translate3d(400px, 600px, 0)",
+      "width": 200,
+    }
+  }
+>
+  <ComposeView
+    destroyCallback={[MockFunction]}
+    renderCallback={[MockFunction]}
+  />
+</div>
+`;
+
+exports[`Node visibleConnectorTypes renders connector only for input 1`] = `
+<div
+  className="dm-node"
+  data-draggable={true}
+  data-event-target={true}
+  data-id="myNode"
+  data-type="Diagrammer.Node"
+  style={
+    Object {
+      "height": 300,
+      "transform": "translate3d(400px, 600px, 0)",
+      "width": 200,
+    }
+  }
+>
+  <ComposeView
+    destroyCallback={[MockFunction]}
+    renderCallback={[MockFunction]}
+  />
+  <Connector
+    id="myNode"
+    key="myNode-0"
+    position={
+      Object {
+        "x": 0,
+        "y": 150,
+      }
+    }
+    type={0}
+  />
+</div>
+`;
+
+exports[`Node visibleConnectorTypes renders connector only for output 1`] = `
+<div
+  className="dm-node"
+  data-draggable={true}
+  data-event-target={true}
+  data-id="myNode"
+  data-type="Diagrammer.Node"
+  style={
+    Object {
+      "height": 300,
+      "transform": "translate3d(400px, 600px, 0)",
+      "width": 200,
+    }
+  }
+>
+  <ComposeView
+    destroyCallback={[MockFunction]}
+    renderCallback={[MockFunction]}
+  />
+  <Connector
+    id="myNode"
+    key="myNode-1"
+    position={
+      Object {
+        "x": 200,
+        "y": 150,
+      }
+    }
+    type={1}
+  />
+</div>
+`;
+
+exports[`Node visibleConnectorTypes renders input & output connectors 1`] = `
+<div
+  className="dm-node"
+  data-draggable={true}
+  data-event-target={true}
+  data-id="myNode"
+  data-type="Diagrammer.Node"
+  style={
+    Object {
+      "height": 300,
+      "transform": "translate3d(400px, 600px, 0)",
+      "width": 200,
+    }
+  }
+>
+  <ComposeView
+    destroyCallback={[MockFunction]}
+    renderCallback={[MockFunction]}
+  />
+  <Connector
+    id="myNode"
+    key="myNode-0"
+    position={
+      Object {
+        "x": 0,
+        "y": 150,
+      }
+    }
+    type={0}
+  />
+  <Connector
+    id="myNode"
+    key="myNode-1"
+    position={
+      Object {
+        "x": 200,
+        "y": 150,
+      }
+    }
+    type={1}
+  />
+</div>
+`;
+
+exports[`Node visibleConnectorTypes renders no connectors 1`] = `
+<div
+  className="dm-node"
+  data-draggable={true}
+  data-event-target={true}
+  data-id="myNode"
+  data-type="Diagrammer.Node"
+  style={
+    Object {
+      "height": 300,
+      "transform": "translate3d(400px, 600px, 0)",
+      "width": 200,
+    }
+  }
+>
+  <ComposeView
+    destroyCallback={[MockFunction]}
+    renderCallback={[MockFunction]}
+  />
+</div>
+`;

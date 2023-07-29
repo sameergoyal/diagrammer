@@ -1,0 +1,3503 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`View does not render edge when accomplying node(s) do not exist 1`] = `
+<div
+  className="dm-view"
+  data-type="Diagrammer.View"
+  tabIndex={0}
+>
+  <Workspace
+    canvasSize={
+      Object {
+        "height": 10,
+        "width": 10,
+      }
+    }
+    position={
+      Object {
+        "x": 0,
+        "y": 0,
+      }
+    }
+    scale={1.2}
+  >
+    <div
+      className="dm-elements"
+    >
+      <svg
+        className="dm-edges"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+      <Node
+        connectorPlacement="Centered"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 0,
+                "y": 0,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-1",
+            "typeId": undefined,
+          }
+        }
+        key="node_node-1"
+        renderCallback={[Function]}
+      />
+      <Node
+        connectorPlacement="Centered"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 100,
+                "y": 200,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-2",
+            "typeId": undefined,
+          }
+        }
+        key="node_node-2"
+        renderCallback={[Function]}
+      />
+      <svg
+        className="dm-potential-edge"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </Workspace>
+  <div
+    className="dm-panels"
+  />
+  <div
+    className="dm-interim"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-selection"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-menu"
+  />
+</div>
+`;
+
+exports[`View nodes with edge & a new edge drawing renders a new edge with centered connector 1`] = `
+<div
+  className="dm-view"
+  data-type="Diagrammer.View"
+  tabIndex={0}
+>
+  <Workspace
+    canvasSize={
+      Object {
+        "height": 10,
+        "width": 10,
+      }
+    }
+    position={
+      Object {
+        "x": 0,
+        "y": 0,
+      }
+    }
+    scale={1.2}
+  >
+    <div
+      className="dm-elements"
+    >
+      <svg
+        className="dm-edges"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <Edge
+          dest={
+            Object {
+              "x": 150,
+              "y": 250,
+            }
+          }
+          edgeStyle={2}
+          id="edge-1"
+          key="edge_edge-1"
+          showArrowhead={false}
+          src={
+            Object {
+              "x": 50,
+              "y": 50,
+            }
+          }
+        />
+      </svg>
+      <Node
+        connectorPlacement="Centered"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 0,
+                "y": 0,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-1",
+            "typeId": undefined,
+          }
+        }
+        key="node_node-1"
+        renderCallback={[Function]}
+      />
+      <Node
+        connectorPlacement="Centered"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 100,
+                "y": 200,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-2",
+            "typeId": undefined,
+          }
+        }
+        key="node_node-2"
+        renderCallback={[Function]}
+      />
+      <svg
+        className="dm-potential-edge"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <PotentialEdge
+          dest={
+            Object {
+              "x": 0,
+              "y": 0,
+            }
+          }
+          edgeStyle={2}
+          key="potentialEdge"
+          showArrowhead={false}
+          src={
+            Object {
+              "x": 50,
+              "y": 50,
+            }
+          }
+        />
+      </svg>
+    </div>
+  </Workspace>
+  <div
+    className="dm-panels"
+  />
+  <div
+    className="dm-interim"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-selection"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-menu"
+  />
+</div>
+`;
+
+exports[`View nodes with edge & a new edge drawing renders a new edge with default connector 1`] = `
+<div
+  className="dm-view"
+  data-type="Diagrammer.View"
+  tabIndex={0}
+>
+  <Workspace
+    canvasSize={
+      Object {
+        "height": 10,
+        "width": 10,
+      }
+    }
+    position={
+      Object {
+        "x": 0,
+        "y": 0,
+      }
+    }
+    scale={1.2}
+  >
+    <div
+      className="dm-elements"
+    >
+      <svg
+        className="dm-edges"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <Edge
+          dest={
+            Object {
+              "x": 150,
+              "y": 250,
+            }
+          }
+          edgeStyle={2}
+          id="edge-1"
+          key="edge_edge-1"
+          showArrowhead={false}
+          src={
+            Object {
+              "x": 50,
+              "y": 50,
+            }
+          }
+        />
+      </svg>
+      <Node
+        connectorPlacement="Centered"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 0,
+                "y": 0,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-1",
+            "typeId": undefined,
+          }
+        }
+        key="node_node-1"
+        renderCallback={[Function]}
+      />
+      <Node
+        connectorPlacement="Centered"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 100,
+                "y": 200,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-2",
+            "typeId": undefined,
+          }
+        }
+        key="node_node-2"
+        renderCallback={[Function]}
+      />
+      <svg
+        className="dm-potential-edge"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <PotentialEdge
+          dest={
+            Object {
+              "x": 0,
+              "y": 0,
+            }
+          }
+          edgeStyle={2}
+          key="potentialEdge"
+          showArrowhead={false}
+          src={
+            Object {
+              "x": 50,
+              "y": 50,
+            }
+          }
+        />
+      </svg>
+    </div>
+  </Workspace>
+  <div
+    className="dm-panels"
+  />
+  <div
+    className="dm-interim"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-selection"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-menu"
+  />
+</div>
+`;
+
+exports[`View nodes with edge & a new edge drawing renders a new edge with left/right connector 1`] = `
+<div
+  className="dm-view"
+  data-type="Diagrammer.View"
+  tabIndex={0}
+>
+  <Workspace
+    canvasSize={
+      Object {
+        "height": 10,
+        "width": 10,
+      }
+    }
+    position={
+      Object {
+        "x": 0,
+        "y": 0,
+      }
+    }
+    scale={1.2}
+  >
+    <div
+      className="dm-elements"
+    >
+      <svg
+        className="dm-edges"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <Edge
+          dest={
+            Object {
+              "x": 100,
+              "y": 250,
+            }
+          }
+          edgeStyle={0}
+          id="edge-1"
+          key="edge_edge-1"
+          showArrowhead={false}
+          src={
+            Object {
+              "x": 100,
+              "y": 50,
+            }
+          }
+        />
+      </svg>
+      <Node
+        connectorPlacement="LeftRight"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 0,
+                "y": 0,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-1",
+            "typeId": undefined,
+          }
+        }
+        key="node_node-1"
+        renderCallback={[Function]}
+      />
+      <Node
+        connectorPlacement="LeftRight"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 100,
+                "y": 200,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-2",
+            "typeId": undefined,
+          }
+        }
+        key="node_node-2"
+        renderCallback={[Function]}
+      />
+      <svg
+        className="dm-potential-edge"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <PotentialEdge
+          dest={
+            Object {
+              "x": 0,
+              "y": 0,
+            }
+          }
+          edgeStyle={0}
+          key="potentialEdge"
+          showArrowhead={false}
+          src={
+            Object {
+              "x": 100,
+              "y": 50,
+            }
+          }
+        />
+      </svg>
+    </div>
+  </Workspace>
+  <div
+    className="dm-panels"
+  />
+  <div
+    className="dm-interim"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-selection"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-menu"
+  />
+</div>
+`;
+
+exports[`View nodes with edge & a new edge drawing renders a new edge with top/bottom connector 1`] = `
+<div
+  className="dm-view"
+  data-type="Diagrammer.View"
+  tabIndex={0}
+>
+  <Workspace
+    canvasSize={
+      Object {
+        "height": 10,
+        "width": 10,
+      }
+    }
+    position={
+      Object {
+        "x": 0,
+        "y": 0,
+      }
+    }
+    scale={1.2}
+  >
+    <div
+      className="dm-elements"
+    >
+      <svg
+        className="dm-edges"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <Edge
+          dest={
+            Object {
+              "x": 150,
+              "y": 200,
+            }
+          }
+          edgeStyle={1}
+          id="edge-1"
+          key="edge_edge-1"
+          showArrowhead={false}
+          src={
+            Object {
+              "x": 50,
+              "y": 100,
+            }
+          }
+        />
+      </svg>
+      <Node
+        connectorPlacement="TopBottom"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 0,
+                "y": 0,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-1",
+            "typeId": undefined,
+          }
+        }
+        key="node_node-1"
+        renderCallback={[Function]}
+      />
+      <Node
+        connectorPlacement="TopBottom"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 100,
+                "y": 200,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-2",
+            "typeId": undefined,
+          }
+        }
+        key="node_node-2"
+        renderCallback={[Function]}
+      />
+      <svg
+        className="dm-potential-edge"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <PotentialEdge
+          dest={
+            Object {
+              "x": 0,
+              "y": 0,
+            }
+          }
+          edgeStyle={1}
+          key="potentialEdge"
+          showArrowhead={false}
+          src={
+            Object {
+              "x": 50,
+              "y": 100,
+            }
+          }
+        />
+      </svg>
+    </div>
+  </Workspace>
+  <div
+    className="dm-panels"
+  />
+  <div
+    className="dm-interim"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-selection"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-menu"
+  />
+</div>
+`;
+
+exports[`View nodes with edge & a new node dragging doesnt render potential node with no render callback 1`] = `
+<div
+  className="dm-view"
+  data-type="Diagrammer.View"
+  tabIndex={0}
+>
+  <Workspace
+    canvasSize={
+      Object {
+        "height": 10,
+        "width": 10,
+      }
+    }
+    position={
+      Object {
+        "x": 0,
+        "y": 0,
+      }
+    }
+    scale={1.2}
+  >
+    <div
+      className="dm-elements"
+    >
+      <svg
+        className="dm-edges"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <Edge
+          dest={
+            Object {
+              "x": 150,
+              "y": 250,
+            }
+          }
+          edgeStyle={2}
+          id="edge-1"
+          key="edge_edge-1"
+          showArrowhead={false}
+          src={
+            Object {
+              "x": 50,
+              "y": 50,
+            }
+          }
+        />
+      </svg>
+      <Node
+        connectorPlacement="Centered"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 0,
+                "y": 0,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-1",
+            "typeId": undefined,
+          }
+        }
+        key="node_node-1"
+        renderCallback={[Function]}
+      />
+      <Node
+        connectorPlacement="Centered"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 100,
+                "y": 200,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-2",
+            "typeId": undefined,
+          }
+        }
+        key="node_node-2"
+        renderCallback={[Function]}
+      />
+      <svg
+        className="dm-potential-edge"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </Workspace>
+  <div
+    className="dm-panels"
+  />
+  <div
+    className="dm-interim"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-selection"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-menu"
+  />
+</div>
+`;
+
+exports[`View nodes with edge & a new node dragging renders a potential node when render callback is provided 1`] = `
+<div
+  className="dm-view"
+  data-type="Diagrammer.View"
+  tabIndex={0}
+>
+  <Workspace
+    canvasSize={
+      Object {
+        "height": 10,
+        "width": 10,
+      }
+    }
+    position={
+      Object {
+        "x": 0,
+        "y": 0,
+      }
+    }
+    scale={1.2}
+  >
+    <div
+      className="dm-elements"
+    >
+      <svg
+        className="dm-edges"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <Edge
+          dest={
+            Object {
+              "x": 150,
+              "y": 250,
+            }
+          }
+          edgeStyle={2}
+          id="edge-1"
+          key="edge_edge-1"
+          showArrowhead={false}
+          src={
+            Object {
+              "x": 50,
+              "y": 50,
+            }
+          }
+        />
+      </svg>
+      <Node
+        connectorPlacement="Centered"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 0,
+                "y": 0,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-1",
+            "typeId": undefined,
+          }
+        }
+        key="node_node-1"
+        renderCallback={[Function]}
+      />
+      <Node
+        connectorPlacement="Centered"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 100,
+                "y": 200,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-2",
+            "typeId": undefined,
+          }
+        }
+        key="node_node-2"
+        renderCallback={[Function]}
+      />
+      <svg
+        className="dm-potential-edge"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </Workspace>
+  <div
+    className="dm-panels"
+  />
+  <div
+    className="dm-interim"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  >
+    <PotentialNode
+      destroyCallback={[MockFunction]}
+      key="potentialNode"
+      position={
+        Object {
+          "x": 0,
+          "y": 0,
+        }
+      }
+      renderCallback={[Function]}
+      size={
+        Object {
+          "height": 100,
+          "width": 150,
+        }
+      }
+      typeId="node-type-1"
+    />
+  </div>
+  <div
+    className="dm-selection"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-menu"
+  />
+</div>
+`;
+
+exports[`View nodes with edge and context menu doesnt render if render context menu callbacks dont exist 1`] = `
+<div
+  className="dm-view"
+  data-type="Diagrammer.View"
+  tabIndex={0}
+>
+  <Workspace
+    canvasSize={
+      Object {
+        "height": 10,
+        "width": 10,
+      }
+    }
+    position={
+      Object {
+        "x": 0,
+        "y": 0,
+      }
+    }
+    scale={1.2}
+  >
+    <div
+      className="dm-elements"
+    >
+      <svg
+        className="dm-edges"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <Edge
+          dest={
+            Object {
+              "x": 100,
+              "y": 250,
+            }
+          }
+          edgeStyle={0}
+          id="edge-1"
+          key="edge_edge-1"
+          showArrowhead={false}
+          src={
+            Object {
+              "x": 100,
+              "y": 50,
+            }
+          }
+        />
+      </svg>
+      <Node
+        connectorPlacement="LeftRight"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 0,
+                "y": 0,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-1",
+            "typeId": undefined,
+          }
+        }
+        key="node_node-1"
+        renderCallback={[Function]}
+      />
+      <Node
+        connectorPlacement="LeftRight"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 100,
+                "y": 200,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-2",
+            "typeId": undefined,
+          }
+        }
+        key="node_node-2"
+        renderCallback={[Function]}
+      />
+      <svg
+        className="dm-potential-edge"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </Workspace>
+  <div
+    className="dm-panels"
+  />
+  <div
+    className="dm-interim"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-selection"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-menu"
+  />
+</div>
+`;
+
+exports[`View nodes with edge and context menu renders context menu if render context menu callbacks do exist 1`] = `
+<div
+  className="dm-view"
+  data-type="Diagrammer.View"
+  tabIndex={0}
+>
+  <Workspace
+    canvasSize={
+      Object {
+        "height": 10,
+        "width": 10,
+      }
+    }
+    position={
+      Object {
+        "x": 0,
+        "y": 0,
+      }
+    }
+    scale={1.2}
+  >
+    <div
+      className="dm-elements"
+    >
+      <svg
+        className="dm-edges"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <Edge
+          dest={
+            Object {
+              "x": 150,
+              "y": 250,
+            }
+          }
+          edgeStyle={2}
+          id="edge-1"
+          key="edge_edge-1"
+          showArrowhead={false}
+          src={
+            Object {
+              "x": 50,
+              "y": 50,
+            }
+          }
+        />
+      </svg>
+      <Node
+        connectorPlacement="Centered"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 0,
+                "y": 0,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-1",
+            "typeId": undefined,
+          }
+        }
+        key="node_node-1"
+        renderCallback={[Function]}
+      />
+      <Node
+        connectorPlacement="Centered"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 100,
+                "y": 200,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-2",
+            "typeId": undefined,
+          }
+        }
+        key="node_node-2"
+        renderCallback={[Function]}
+      />
+      <svg
+        className="dm-potential-edge"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </Workspace>
+  <div
+    className="dm-panels"
+  />
+  <div
+    className="dm-interim"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-selection"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-menu"
+  >
+    <ContextMenu
+      destroyCallback={[MockFunction]}
+      position={
+        Object {
+          "x": 0,
+          "y": 0,
+        }
+      }
+      renderCallback={[Function]}
+    />
+  </div>
+</div>
+`;
+
+exports[`View nodes with edge nodes with types with connector placement override renders the node passing the correct connector placement 1`] = `
+<div
+  className="dm-view"
+  data-type="Diagrammer.View"
+  tabIndex={0}
+>
+  <Workspace
+    canvasSize={
+      Object {
+        "height": 10,
+        "width": 10,
+      }
+    }
+    position={
+      Object {
+        "x": 0,
+        "y": 0,
+      }
+    }
+    scale={1.2}
+  >
+    <div
+      className="dm-elements"
+    >
+      <svg
+        className="dm-edges"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <Edge
+          dest={
+            Object {
+              "x": 150,
+              "y": 250,
+            }
+          }
+          destTypeId="type-2"
+          edgeStyle={2}
+          id="edge-1"
+          key="edge_edge-1"
+          showArrowhead={false}
+          src={
+            Object {
+              "x": 50,
+              "y": 100,
+            }
+          }
+          srcTypeId="type-1"
+        />
+      </svg>
+      <Node
+        connectorPlacement="TopBottom"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 0,
+                "y": 0,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-1",
+            "typeId": "type-1",
+          }
+        }
+        key="node_node-1"
+        renderCallback={[Function]}
+      />
+      <Node
+        connectorPlacement="Centered"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 100,
+                "y": 200,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-2",
+            "typeId": "type-2",
+          }
+        }
+        key="node_node-2"
+        renderCallback={[Function]}
+      />
+      <svg
+        className="dm-potential-edge"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </Workspace>
+  <div
+    className="dm-panels"
+  />
+  <div
+    className="dm-interim"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-selection"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-menu"
+  />
+</div>
+`;
+
+exports[`View nodes with edge nodes with types with shape & boundary defined defaults to center based edges if circles overlap each other perfectly 1`] = `
+<div
+  className="dm-view"
+  data-type="Diagrammer.View"
+  tabIndex={0}
+>
+  <Workspace
+    canvasSize={
+      Object {
+        "height": 10,
+        "width": 10,
+      }
+    }
+    position={
+      Object {
+        "x": 0,
+        "y": 0,
+      }
+    }
+    scale={1.2}
+  >
+    <div
+      className="dm-elements"
+    >
+      <svg
+        className="dm-edges"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <Edge
+          dest={
+            Object {
+              "x": 50,
+              "y": 50,
+            }
+          }
+          destTypeId="type-1"
+          edgeStyle={2}
+          id="edge-1"
+          key="edge_edge-1"
+          showArrowhead={false}
+          src={
+            Object {
+              "x": 50,
+              "y": 50,
+            }
+          }
+          srcTypeId="type-1"
+        />
+      </svg>
+      <Node
+        connectorPlacement="Boundary"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 0,
+                "y": 0,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-1",
+            "typeId": "type-1",
+          }
+        }
+        key="node_node-1"
+        renderCallback={[Function]}
+      />
+      <Node
+        connectorPlacement="Boundary"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 0,
+                "y": 0,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-2",
+            "typeId": "type-1",
+          }
+        }
+        key="node_node-2"
+        renderCallback={[Function]}
+      />
+      <svg
+        className="dm-potential-edge"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </Workspace>
+  <div
+    className="dm-panels"
+  />
+  <div
+    className="dm-interim"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-selection"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-menu"
+  />
+</div>
+`;
+
+exports[`View nodes with edge nodes with types with shape & boundary defined renders the edge from the boundary of the node 1`] = `
+<div
+  className="dm-view"
+  data-type="Diagrammer.View"
+  tabIndex={0}
+>
+  <Workspace
+    canvasSize={
+      Object {
+        "height": 10,
+        "width": 10,
+      }
+    }
+    position={
+      Object {
+        "x": 0,
+        "y": 0,
+      }
+    }
+    scale={1.2}
+  >
+    <div
+      className="dm-elements"
+    >
+      <svg
+        className="dm-edges"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <Edge
+          dest={
+            Object {
+              "x": 125,
+              "y": 200,
+            }
+          }
+          destTypeId="type-2"
+          edgeStyle={2}
+          id="edge-1"
+          key="edge_edge-1"
+          showArrowhead={false}
+          src={
+            Object {
+              "x": 72.3606797749979,
+              "y": 94.72135954999581,
+            }
+          }
+          srcTypeId="type-1"
+        />
+      </svg>
+      <Node
+        connectorPlacement="Boundary"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 0,
+                "y": 0,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-1",
+            "typeId": "type-1",
+          }
+        }
+        key="node_node-1"
+        renderCallback={[Function]}
+      />
+      <Node
+        connectorPlacement="Boundary"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 100,
+                "y": 200,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-2",
+            "typeId": "type-2",
+          }
+        }
+        key="node_node-2"
+        renderCallback={[Function]}
+      />
+      <svg
+        className="dm-potential-edge"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </Workspace>
+  <div
+    className="dm-panels"
+  />
+  <div
+    className="dm-interim"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-selection"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-menu"
+  />
+</div>
+`;
+
+exports[`View nodes with edge nodes with types with shape & boundary defined renders the edge on the boundary of a rectangular node when orthogonal 1`] = `
+<div
+  className="dm-view"
+  data-type="Diagrammer.View"
+  tabIndex={0}
+>
+  <Workspace
+    canvasSize={
+      Object {
+        "height": 10,
+        "width": 10,
+      }
+    }
+    position={
+      Object {
+        "x": 0,
+        "y": 0,
+      }
+    }
+    scale={1.2}
+  >
+    <div
+      className="dm-elements"
+    >
+      <svg
+        className="dm-edges"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <Edge
+          dest={
+            Object {
+              "x": 50,
+              "y": 200,
+            }
+          }
+          destTypeId="type-2"
+          edgeStyle={2}
+          id="edge-1"
+          key="edge_edge-1"
+          showArrowhead={false}
+          src={
+            Object {
+              "x": 50,
+              "y": 100,
+            }
+          }
+          srcTypeId="type-2"
+        />
+        <Edge
+          dest={
+            Object {
+              "x": 50,
+              "y": 300,
+            }
+          }
+          destTypeId="type-2"
+          edgeStyle={2}
+          id="edge-2"
+          key="edge_edge-2"
+          showArrowhead={false}
+          src={
+            Object {
+              "x": 50,
+              "y": 400,
+            }
+          }
+          srcTypeId="type-2"
+        />
+        <Edge
+          dest={
+            Object {
+              "x": 100,
+              "y": 250,
+            }
+          }
+          destTypeId="type-2"
+          edgeStyle={2}
+          id="edge-3"
+          key="edge_edge-3"
+          showArrowhead={false}
+          src={
+            Object {
+              "x": 200,
+              "y": 250,
+            }
+          }
+          srcTypeId="type-2"
+        />
+        <Edge
+          dest={
+            Object {
+              "x": 200,
+              "y": 450,
+            }
+          }
+          destTypeId="type-2"
+          edgeStyle={2}
+          id="edge-4"
+          key="edge_edge-4"
+          showArrowhead={false}
+          src={
+            Object {
+              "x": 100,
+              "y": 450,
+            }
+          }
+          srcTypeId="type-2"
+        />
+      </svg>
+      <Node
+        connectorPlacement="Boundary"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 0,
+                "y": 0,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-1",
+            "typeId": "type-2",
+          }
+        }
+        key="node_node-1"
+        renderCallback={[Function]}
+      />
+      <Node
+        connectorPlacement="Boundary"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 0,
+                "y": 200,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-2",
+            "typeId": "type-2",
+          }
+        }
+        key="node_node-2"
+        renderCallback={[Function]}
+      />
+      <Node
+        connectorPlacement="Boundary"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 0,
+                "y": 400,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-3",
+            "typeId": "type-2",
+          }
+        }
+        key="node_node-3"
+        renderCallback={[Function]}
+      />
+      <Node
+        connectorPlacement="Boundary"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 200,
+                "y": 200,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-4",
+            "typeId": "type-2",
+          }
+        }
+        key="node_node-4"
+        renderCallback={[Function]}
+      />
+      <Node
+        connectorPlacement="Boundary"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 200,
+                "y": 400,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-5",
+            "typeId": "type-2",
+          }
+        }
+        key="node_node-5"
+        renderCallback={[Function]}
+      />
+      <svg
+        className="dm-potential-edge"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </Workspace>
+  <div
+    className="dm-panels"
+  />
+  <div
+    className="dm-interim"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-selection"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-menu"
+  />
+</div>
+`;
+
+exports[`View nodes with edge nodes with types with shape & boundary defined renders the edge on the side boundary of a rectangular node 1`] = `
+<div
+  className="dm-view"
+  data-type="Diagrammer.View"
+  tabIndex={0}
+>
+  <Workspace
+    canvasSize={
+      Object {
+        "height": 10,
+        "width": 10,
+      }
+    }
+    position={
+      Object {
+        "x": 0,
+        "y": 0,
+      }
+    }
+    scale={1.2}
+  >
+    <div
+      className="dm-elements"
+    >
+      <svg
+        className="dm-edges"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <Edge
+          dest={
+            Object {
+              "x": 200,
+              "y": 87.5,
+            }
+          }
+          destTypeId="type-2"
+          edgeStyle={2}
+          id="edge-1"
+          key="edge_edge-1"
+          showArrowhead={false}
+          src={
+            Object {
+              "x": 100,
+              "y": 62.5,
+            }
+          }
+          srcTypeId="type-2"
+        />
+      </svg>
+      <Node
+        connectorPlacement="Boundary"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 0,
+                "y": 0,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-1",
+            "typeId": "type-2",
+          }
+        }
+        key="node_node-1"
+        renderCallback={[Function]}
+      />
+      <Node
+        connectorPlacement="Boundary"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 200,
+                "y": 50,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-2",
+            "typeId": "type-2",
+          }
+        }
+        key="node_node-2"
+        renderCallback={[Function]}
+      />
+      <svg
+        className="dm-potential-edge"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </Workspace>
+  <div
+    className="dm-panels"
+  />
+  <div
+    className="dm-interim"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-selection"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-menu"
+  />
+</div>
+`;
+
+exports[`View nodes with edge nodes with types with shape & boundary defined renders the edge on the top boundary of a rectangular node 1`] = `
+<div
+  className="dm-view"
+  data-type="Diagrammer.View"
+  tabIndex={0}
+>
+  <Workspace
+    canvasSize={
+      Object {
+        "height": 10,
+        "width": 10,
+      }
+    }
+    position={
+      Object {
+        "x": 0,
+        "y": 0,
+      }
+    }
+    scale={1.2}
+  >
+    <div
+      className="dm-elements"
+    >
+      <svg
+        className="dm-edges"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <Edge
+          dest={
+            Object {
+              "x": 87.5,
+              "y": 200,
+            }
+          }
+          destTypeId="type-2"
+          edgeStyle={2}
+          id="edge-1"
+          key="edge_edge-1"
+          showArrowhead={false}
+          src={
+            Object {
+              "x": 62.49999999999999,
+              "y": 100,
+            }
+          }
+          srcTypeId="type-2"
+        />
+      </svg>
+      <Node
+        connectorPlacement="Boundary"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 0,
+                "y": 0,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-1",
+            "typeId": "type-2",
+          }
+        }
+        key="node_node-1"
+        renderCallback={[Function]}
+      />
+      <Node
+        connectorPlacement="Boundary"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 50,
+                "y": 200,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-2",
+            "typeId": "type-2",
+          }
+        }
+        key="node_node-2"
+        renderCallback={[Function]}
+      />
+      <svg
+        className="dm-potential-edge"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </Workspace>
+  <div
+    className="dm-panels"
+  />
+  <div
+    className="dm-interim"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-selection"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-menu"
+  />
+</div>
+`;
+
+exports[`View nodes with edge nodes with types with visible connector types config renders the node passing the correct visible connector typess config 1`] = `
+<div
+  className="dm-view"
+  data-type="Diagrammer.View"
+  tabIndex={0}
+>
+  <Workspace
+    canvasSize={
+      Object {
+        "height": 10,
+        "width": 10,
+      }
+    }
+    position={
+      Object {
+        "x": 0,
+        "y": 0,
+      }
+    }
+    scale={1.2}
+  >
+    <div
+      className="dm-elements"
+    >
+      <svg
+        className="dm-edges"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <Edge
+          dest={
+            Object {
+              "x": 150,
+              "y": 250,
+            }
+          }
+          destTypeId="type-2"
+          edgeStyle={2}
+          id="edge-1"
+          key="edge_edge-1"
+          showArrowhead={false}
+          src={
+            Object {
+              "x": 50,
+              "y": 50,
+            }
+          }
+          srcTypeId="type-1"
+        />
+      </svg>
+      <Node
+        connectorPlacement="Centered"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 0,
+                "y": 0,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-1",
+            "typeId": "type-1",
+          }
+        }
+        key="node_node-1"
+        renderCallback={[Function]}
+        visibleConnectorTypes="Output"
+      />
+      <Node
+        connectorPlacement="Centered"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 100,
+                "y": 200,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-2",
+            "typeId": "type-2",
+          }
+        }
+        key="node_node-2"
+        renderCallback={[Function]}
+      />
+      <svg
+        className="dm-potential-edge"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </Workspace>
+  <div
+    className="dm-panels"
+  />
+  <div
+    className="dm-interim"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-selection"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-menu"
+  />
+</div>
+`;
+
+exports[`View nodes with edge renders at the given position and size with nodes and a single edge with arrowhead 1`] = `
+<div
+  className="dm-view"
+  data-type="Diagrammer.View"
+  tabIndex={0}
+>
+  <Workspace
+    canvasSize={
+      Object {
+        "height": 10,
+        "width": 10,
+      }
+    }
+    position={
+      Object {
+        "x": 0,
+        "y": 0,
+      }
+    }
+    scale={1.2}
+  >
+    <div
+      className="dm-elements"
+    >
+      <svg
+        className="dm-edges"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <marker
+            fill="#879596"
+            id="arrow"
+            markerHeight="5"
+            markerWidth="5"
+            orient="auto"
+            refX="5"
+            refY="2.5"
+            stroke="#879596"
+          >
+            <path
+              d="M0,0 L5,2.5 0,5"
+            />
+          </marker>
+        </defs>
+        <Edge
+          dest={
+            Object {
+              "x": 150,
+              "y": 250,
+            }
+          }
+          edgeStyle={2}
+          id="edge-1"
+          key="edge_edge-1"
+          showArrowhead={true}
+          src={
+            Object {
+              "x": 50,
+              "y": 50,
+            }
+          }
+        />
+      </svg>
+      <Node
+        connectorPlacement="Centered"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 0,
+                "y": 0,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-1",
+            "typeId": undefined,
+          }
+        }
+        key="node_node-1"
+        renderCallback={[Function]}
+      />
+      <Node
+        connectorPlacement="Centered"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 100,
+                "y": 200,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-2",
+            "typeId": undefined,
+          }
+        }
+        key="node_node-2"
+        renderCallback={[Function]}
+      />
+      <svg
+        className="dm-potential-edge"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </Workspace>
+  <div
+    className="dm-panels"
+  />
+  <div
+    className="dm-interim"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-selection"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-menu"
+  />
+</div>
+`;
+
+exports[`View nodes with edge renders at the given position and size with nodes and a single edge with centered connector 1`] = `
+<div
+  className="dm-view"
+  data-type="Diagrammer.View"
+  tabIndex={0}
+>
+  <Workspace
+    canvasSize={
+      Object {
+        "height": 10,
+        "width": 10,
+      }
+    }
+    position={
+      Object {
+        "x": 0,
+        "y": 0,
+      }
+    }
+    scale={1.2}
+  >
+    <div
+      className="dm-elements"
+    >
+      <svg
+        className="dm-edges"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <Edge
+          dest={
+            Object {
+              "x": 150,
+              "y": 250,
+            }
+          }
+          edgeStyle={2}
+          id="edge-1"
+          key="edge_edge-1"
+          showArrowhead={false}
+          src={
+            Object {
+              "x": 50,
+              "y": 50,
+            }
+          }
+        />
+      </svg>
+      <Node
+        connectorPlacement="Centered"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 0,
+                "y": 0,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-1",
+            "typeId": undefined,
+          }
+        }
+        key="node_node-1"
+        renderCallback={[Function]}
+      />
+      <Node
+        connectorPlacement="Centered"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 100,
+                "y": 200,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-2",
+            "typeId": undefined,
+          }
+        }
+        key="node_node-2"
+        renderCallback={[Function]}
+      />
+      <svg
+        className="dm-potential-edge"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </Workspace>
+  <div
+    className="dm-panels"
+  />
+  <div
+    className="dm-interim"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-selection"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-menu"
+  />
+</div>
+`;
+
+exports[`View nodes with edge renders at the given position and size with nodes and a single edge with default connector 1`] = `
+<div
+  className="dm-view"
+  data-type="Diagrammer.View"
+  tabIndex={0}
+>
+  <Workspace
+    canvasSize={
+      Object {
+        "height": 10,
+        "width": 10,
+      }
+    }
+    position={
+      Object {
+        "x": 0,
+        "y": 0,
+      }
+    }
+    scale={1.2}
+  >
+    <div
+      className="dm-elements"
+    >
+      <svg
+        className="dm-edges"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <Edge
+          dest={
+            Object {
+              "x": 150,
+              "y": 250,
+            }
+          }
+          edgeStyle={2}
+          id="edge-1"
+          key="edge_edge-1"
+          showArrowhead={false}
+          src={
+            Object {
+              "x": 50,
+              "y": 50,
+            }
+          }
+        />
+      </svg>
+      <Node
+        connectorPlacement="Centered"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 0,
+                "y": 0,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-1",
+            "typeId": undefined,
+          }
+        }
+        key="node_node-1"
+        renderCallback={[Function]}
+      />
+      <Node
+        connectorPlacement="Centered"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 100,
+                "y": 200,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-2",
+            "typeId": undefined,
+          }
+        }
+        key="node_node-2"
+        renderCallback={[Function]}
+      />
+      <svg
+        className="dm-potential-edge"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </Workspace>
+  <div
+    className="dm-panels"
+  />
+  <div
+    className="dm-interim"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-selection"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-menu"
+  />
+</div>
+`;
+
+exports[`View nodes with edge renders at the given position and size with nodes and a single edge with edge render callback 1`] = `
+<div
+  className="dm-view"
+  data-type="Diagrammer.View"
+  tabIndex={0}
+>
+  <Workspace
+    canvasSize={
+      Object {
+        "height": 10,
+        "width": 10,
+      }
+    }
+    position={
+      Object {
+        "x": 0,
+        "y": 0,
+      }
+    }
+    scale={1.2}
+  >
+    <div
+      className="dm-elements"
+    >
+      <svg
+        className="dm-edges"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <Edge
+          dest={
+            Object {
+              "x": 150,
+              "y": 250,
+            }
+          }
+          edgeStyle={2}
+          id="edge-1"
+          key="edge_edge-1"
+          showArrowhead={false}
+          src={
+            Object {
+              "x": 50,
+              "y": 50,
+            }
+          }
+        />
+      </svg>
+      <EdgeBadge
+        dest={
+          Object {
+            "x": 150,
+            "y": 250,
+          }
+        }
+        destroyCallback={[MockFunction]}
+        id="edge-1"
+        key="edgeBadge_edge-1"
+        renderCallback={[Function]}
+        src={
+          Object {
+            "x": 50,
+            "y": 50,
+          }
+        }
+      />
+      <Node
+        connectorPlacement="Centered"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 0,
+                "y": 0,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-1",
+            "typeId": undefined,
+          }
+        }
+        key="node_node-1"
+        renderCallback={[Function]}
+      />
+      <Node
+        connectorPlacement="Centered"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 100,
+                "y": 200,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-2",
+            "typeId": undefined,
+          }
+        }
+        key="node_node-2"
+        renderCallback={[Function]}
+      />
+      <svg
+        className="dm-potential-edge"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </Workspace>
+  <div
+    className="dm-panels"
+  />
+  <div
+    className="dm-interim"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-selection"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-menu"
+  />
+</div>
+`;
+
+exports[`View nodes with edge renders at the given position and size with nodes and a single edge with left/right connector 1`] = `
+<div
+  className="dm-view"
+  data-type="Diagrammer.View"
+  tabIndex={0}
+>
+  <Workspace
+    canvasSize={
+      Object {
+        "height": 10,
+        "width": 10,
+      }
+    }
+    position={
+      Object {
+        "x": 0,
+        "y": 0,
+      }
+    }
+    scale={1.2}
+  >
+    <div
+      className="dm-elements"
+    >
+      <svg
+        className="dm-edges"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <Edge
+          dest={
+            Object {
+              "x": 100,
+              "y": 250,
+            }
+          }
+          edgeStyle={0}
+          id="edge-1"
+          key="edge_edge-1"
+          showArrowhead={false}
+          src={
+            Object {
+              "x": 100,
+              "y": 50,
+            }
+          }
+        />
+      </svg>
+      <Node
+        connectorPlacement="LeftRight"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 0,
+                "y": 0,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-1",
+            "typeId": undefined,
+          }
+        }
+        key="node_node-1"
+        renderCallback={[Function]}
+      />
+      <Node
+        connectorPlacement="LeftRight"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 100,
+                "y": 200,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-2",
+            "typeId": undefined,
+          }
+        }
+        key="node_node-2"
+        renderCallback={[Function]}
+      />
+      <svg
+        className="dm-potential-edge"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </Workspace>
+  <div
+    className="dm-panels"
+  />
+  <div
+    className="dm-interim"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-selection"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-menu"
+  />
+</div>
+`;
+
+exports[`View nodes with edge renders at the given position and size with nodes and a single edge with top/bottom connector 1`] = `
+<div
+  className="dm-view"
+  data-type="Diagrammer.View"
+  tabIndex={0}
+>
+  <Workspace
+    canvasSize={
+      Object {
+        "height": 10,
+        "width": 10,
+      }
+    }
+    position={
+      Object {
+        "x": 0,
+        "y": 0,
+      }
+    }
+    scale={1.2}
+  >
+    <div
+      className="dm-elements"
+    >
+      <svg
+        className="dm-edges"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <Edge
+          dest={
+            Object {
+              "x": 150,
+              "y": 200,
+            }
+          }
+          edgeStyle={1}
+          id="edge-1"
+          key="edge_edge-1"
+          showArrowhead={false}
+          src={
+            Object {
+              "x": 50,
+              "y": 100,
+            }
+          }
+        />
+      </svg>
+      <Node
+        connectorPlacement="TopBottom"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 0,
+                "y": 0,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-1",
+            "typeId": undefined,
+          }
+        }
+        key="node_node-1"
+        renderCallback={[Function]}
+      />
+      <Node
+        connectorPlacement="TopBottom"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 100,
+                "y": 200,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-2",
+            "typeId": undefined,
+          }
+        }
+        key="node_node-2"
+        renderCallback={[Function]}
+      />
+      <svg
+        className="dm-potential-edge"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </Workspace>
+  <div
+    className="dm-panels"
+  />
+  <div
+    className="dm-interim"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-selection"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-menu"
+  />
+</div>
+`;
+
+exports[`View nodes with overlapping edges renders two curved lines when an overlapping edge exists 1`] = `
+<div
+  className="dm-view"
+  data-type="Diagrammer.View"
+  tabIndex={0}
+>
+  <Workspace
+    canvasSize={
+      Object {
+        "height": 10,
+        "width": 10,
+      }
+    }
+    position={
+      Object {
+        "x": 0,
+        "y": 0,
+      }
+    }
+    scale={1.2}
+  >
+    <div
+      className="dm-elements"
+    >
+      <svg
+        className="dm-edges"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <Edge
+          dest={
+            Object {
+              "x": 50,
+              "y": 50,
+            }
+          }
+          edgeStyle={3}
+          id="edge-2"
+          key="edge_edge-2"
+          showArrowhead={false}
+          src={
+            Object {
+              "x": 150,
+              "y": 250,
+            }
+          }
+        />
+        <Edge
+          dest={
+            Object {
+              "x": 150,
+              "y": 250,
+            }
+          }
+          edgeStyle={3}
+          id="edge-1"
+          key="edge_edge-1"
+          showArrowhead={false}
+          src={
+            Object {
+              "x": 50,
+              "y": 50,
+            }
+          }
+        />
+      </svg>
+      <EdgeBadge
+        dest={
+          Object {
+            "x": 50,
+            "y": 50,
+          }
+        }
+        destroyCallback={[MockFunction]}
+        id="edge-2"
+        isPartOfEdgePair={true}
+        key="edgeBadge_edge-2"
+        renderCallback={[Function]}
+        src={
+          Object {
+            "x": 150,
+            "y": 250,
+          }
+        }
+      />
+      <EdgeBadge
+        dest={
+          Object {
+            "x": 150,
+            "y": 250,
+          }
+        }
+        destroyCallback={[MockFunction]}
+        id="edge-1"
+        isPartOfEdgePair={true}
+        key="edgeBadge_edge-1"
+        renderCallback={[Function]}
+        src={
+          Object {
+            "x": 50,
+            "y": 50,
+          }
+        }
+      />
+      <Node
+        connectorPlacement="Centered"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 0,
+                "y": 0,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-1",
+            "typeId": undefined,
+          }
+        }
+        key="node_node-1"
+        renderCallback={[Function]}
+      />
+      <Node
+        connectorPlacement="Centered"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 100,
+                "y": 200,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-2",
+            "typeId": undefined,
+          }
+        }
+        key="node_node-2"
+        renderCallback={[Function]}
+      />
+      <svg
+        className="dm-potential-edge"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </Workspace>
+  <div
+    className="dm-panels"
+  />
+  <div
+    className="dm-interim"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-selection"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-menu"
+  />
+</div>
+`;
+
+exports[`View renders selection marquee 1`] = `
+<div
+  className="dm-view"
+  data-type="Diagrammer.View"
+  tabIndex={0}
+>
+  <Workspace
+    canvasSize={
+      Object {
+        "height": 10,
+        "width": 10,
+      }
+    }
+    position={
+      Object {
+        "x": 0,
+        "y": 0,
+      }
+    }
+    scale={1.2}
+  >
+    <div
+      className="dm-elements"
+    >
+      <svg
+        className="dm-edges"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+      <Node
+        connectorPlacement="Centered"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 0,
+                "y": 0,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-1",
+            "typeId": undefined,
+          }
+        }
+        key="node_node-1"
+        renderCallback={[Function]}
+      />
+      <Node
+        connectorPlacement="Centered"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 100,
+                "y": 200,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-2",
+            "typeId": undefined,
+          }
+        }
+        key="node_node-2"
+        renderCallback={[Function]}
+      />
+      <svg
+        className="dm-potential-edge"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </Workspace>
+  <div
+    className="dm-panels"
+  />
+  <div
+    className="dm-interim"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-selection"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  >
+    <SelectionMarquee
+      anchor={
+        Object {
+          "x": 500,
+          "y": 600,
+        }
+      }
+      position={
+        Object {
+          "x": 510,
+          "y": 610,
+        }
+      }
+    />
+  </div>
+  <div
+    className="dm-menu"
+  />
+</div>
+`;
+
+exports[`View renders two nodes without edges 1`] = `
+<div
+  className="dm-view"
+  data-type="Diagrammer.View"
+  tabIndex={0}
+>
+  <Workspace
+    canvasSize={
+      Object {
+        "height": 10,
+        "width": 10,
+      }
+    }
+    position={
+      Object {
+        "x": 0,
+        "y": 0,
+      }
+    }
+    scale={1.2}
+  >
+    <div
+      className="dm-elements"
+    >
+      <svg
+        className="dm-edges"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+      <Node
+        connectorPlacement="Centered"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 0,
+                "y": 0,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-1",
+            "typeId": undefined,
+          }
+        }
+        key="node_node-1"
+        renderCallback={[Function]}
+      />
+      <Node
+        connectorPlacement="Centered"
+        destroyCallback={[MockFunction]}
+        diagrammerNode={
+          Object {
+            "consumerData": undefined,
+            "diagrammerData": Object {
+              "position": Object {
+                "x": 100,
+                "y": 200,
+              },
+              "size": Object {
+                "height": 100,
+                "width": 100,
+              },
+            },
+            "id": "node-2",
+            "typeId": undefined,
+          }
+        }
+        key="node_node-2"
+        renderCallback={[Function]}
+      />
+      <svg
+        className="dm-potential-edge"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </Workspace>
+  <div
+    className="dm-panels"
+  />
+  <div
+    className="dm-interim"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-selection"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-menu"
+  />
+</div>
+`;
+
+exports[`View renders two panels without nodes or edges 1`] = `
+<div
+  className="dm-view"
+  data-type="Diagrammer.View"
+  tabIndex={0}
+>
+  <Workspace
+    canvasSize={
+      Object {
+        "height": 10,
+        "width": 10,
+      }
+    }
+    position={
+      Object {
+        "x": 0,
+        "y": 0,
+      }
+    }
+    scale={1.2}
+  >
+    <div
+      className="dm-elements"
+    >
+      <svg
+        className="dm-edges"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+      <svg
+        className="dm-potential-edge"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </Workspace>
+  <div
+    className="dm-panels"
+  >
+    <Panel
+      destroyCallback={[MockFunction]}
+      id="panel-1"
+      key="panel_panel-1"
+      position={
+        Object {
+          "x": 0,
+          "y": 0,
+        }
+      }
+      renderCallback={[Function]}
+      size={
+        Object {
+          "height": 300,
+          "width": 300,
+        }
+      }
+      viewContainerSize={
+        Object {
+          "height": 5,
+          "width": 5,
+        }
+      }
+    />
+    <Panel
+      destroyCallback={[MockFunction]}
+      id="panel-2"
+      key="panel_panel-2"
+      position={
+        Object {
+          "x": 800,
+          "y": 200,
+        }
+      }
+      renderCallback={[Function]}
+      size={
+        Object {
+          "height": 300,
+          "width": 300,
+        }
+      }
+      viewContainerSize={
+        Object {
+          "height": 5,
+          "width": 5,
+        }
+      }
+    />
+  </div>
+  <div
+    className="dm-interim"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-selection"
+    style={
+      Object {
+        "transform": "translate3d(0px, 0px, 0) scale(1.2)",
+      }
+    }
+  />
+  <div
+    className="dm-menu"
+  />
+</div>
+`;
