@@ -1,5 +1,8 @@
 # Changelog for Diagrammer
 
+## 1.0.3
+* chore: Update package-lock.json
+
 ## 1.0.2
 * chore: Upgrade deps
 
