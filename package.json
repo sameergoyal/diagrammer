@@ -1,7 +1,7 @@
 {
   "name": "diagrammer",
   "description": "A library to display an interactive editor for any graph-like data.",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": {
     "name": "Sameer Goyal"
   },
