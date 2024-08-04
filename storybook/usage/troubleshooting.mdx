@@ -1,4 +1,4 @@
-import { Meta } from "@storybook/addon-docs";
+import { Meta } from "@storybook/blocks";
 
 <Meta title="Docs/Usage/Troubleshooting" />
 
@@ -10,8 +10,8 @@ There are several ways of troubleshooting issues with diagrammer.
 
 Redux DevTools are the easiest and most effective way to troubleshoot issues with diagrammer. This extension allows you to inspect the state of the redux store, the action objects with timestamps, and how the state changes over time. It lets you modify the state and see the page content change with state, and supports a time traveling debugger. To use this:
 
-- Follow installation steps for your browser of choice here: http://extension.remotedev.io/
-- In your diagrammer instantiation, pass this in place of consumerEnhancer:
+* Follow installation steps for your browser of choice here: http://extension.remotedev.io/
+* In your diagrammer instantiation, pass this in place of consumerEnhancer:
 
 ```javascript
 function addDevTools() {

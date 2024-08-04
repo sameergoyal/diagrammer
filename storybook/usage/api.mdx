@@ -1,4 +1,4 @@
-import { Meta } from "@storybook/addon-docs";
+import { Meta } from "@storybook/blocks";
 
 <Meta title="Docs/Usage/API" />
 
@@ -174,9 +174,9 @@ interface WorkflowLayoutConfig {
 
 This API is used to switch editor modes. Usually this API is called when the user changes tools in the tools panel. There are 3 different editor modes currently supported:
 
-- **Drag** - This is default mode. Clicking & Dragging on the canvas pans the workspace.
-- **Select** - Clicking & Dragging on the canvas draws a selection marquee which selects all the nodes within its boundary.
-- **Read Only** - Clicking & Dragging on the canvas pans the workspace. However, apart from this & the workspace zoom or mouse wheel, all other actions like node select, create, delete or edge select, create, delete are prevented.
+* **Drag** - This is default mode. Clicking & Dragging on the canvas pans the workspace.
+* **Select** - Clicking & Dragging on the canvas draws a selection marquee which selects all the nodes within its boundary.
+* **Read Only** - Clicking & Dragging on the canvas pans the workspace. However, apart from this & the workspace zoom or mouse wheel, all other actions like node select, create, delete or edge select, create, delete are prevented.
 
 The API is used like so:
 

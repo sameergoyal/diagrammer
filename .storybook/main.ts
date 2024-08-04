@@ -8,7 +8,7 @@ const config: StorybookConfig = {
     options: {}
   },
   core: { disableTelemetry: true },
-  stories: ["../storybook/**/*.stories.mdx", "../integ/*.stories.@(js|jsx|ts|tsx)"],
+  stories: ["../storybook/**/*.mdx", "../integ/*.stories.@(js|jsx|ts|tsx)"],
   addons: ["@storybook/addon-essentials", "@storybook/addon-storysource"],
   webpackFinal: async config => {
     return {
